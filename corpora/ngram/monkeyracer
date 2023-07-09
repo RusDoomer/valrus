@@ -1,0 +1,12945 @@
+t    193
+t  " 74
+t  ' 17
+t  ( 1
+t  . 4
+t  / 2
+t  1 1
+t  = 1
+t  a 681
+t  b 234
+t  c 134
+t  d 236
+t  e 181
+t  f 214
+t  g 96
+t  h 368
+t  i 2097
+t  j 55
+t  k 23
+t  l 253
+t  m 334
+t  n 214
+t  o 298
+t  p 144
+t  q 10
+t  r 101
+t  s 526
+t  t 1428
+t  u 30
+t  v 32
+t  w 852
+t  x 1
+t  y 539
+t  z 5
+b    9379
+t "  3
+t ", 2
+t ". 1
+t "/ 1
+t "0 1
+t "a 55
+t "b 33
+t "c 28
+t "d 39
+t "e 14
+t "f 33
+t "g 36
+t "h 53
+t "i 158
+t "j 8
+t "k 3
+t "l 26
+t "m 38
+t "n 44
+t "o 40
+t "p 16
+t "r 22
+t "s 52
+t "t 102
+t "u 9
+t "v 2
+t "w 97
+t "y 45
+t "z 1
+b "  962
+t #' 1
+t #1 1
+t #2 2
+b #  4
+t $1 7
+t $2 4
+t $4 2
+t $5 5
+t $6 1
+t $7 1
+t $8 1
+b $  21
+t %  1
+b %  1
+t &  7
+t &d 1
+b &  8
+t '( 1
+t '5 1
+t '6 2
+t '7 2
+t '8 5
+t 'a 4
+t 'b 16
+t 'c 184
+t 'd 5
+t 'e 63
+t 'f 5
+t 'g 4
+t 'h 7
+t 'i 32
+t 'l 2
+t 'm 4
+t 'n 13
+t 'o 2
+t 'p 4
+t 'r 13
+t 's 7
+t 't 41
+t 'u 1
+t 'v 1
+t 'w 5
+t 'y 4
+b '  428
+t (" 4
+t (( 2
+t (6 1
+t (7 1
+t (8 2
+t (9 2
+t (; 5
+t (= 1
+t (a 23
+t (b 11
+t (c 8
+t (d 1
+t (e 10
+t (f 4
+t (g 1
+t (h 9
+t (i 22
+t (j 4
+t (k 1
+t (l 3
+t (m 7
+t (n 5
+t (o 14
+t (p 6
+t (r 7
+t (s 6
+t (t 20
+t (u 6
+t (w 20
+t (x 1
+t (y 2
+b (  209
+t *  1
+t *) 1
+t */ 3
+t *a 1
+t *b 1
+t *v 1
+b *  8
+t ,  4
+b ,  4
+t -  993
+t -- 2
+t -1 2
+t -5 1
+t -i 3
+t -r 2
+b -  1003
+t .  1
+t .. 6
+t .1 3
+b .  10
+t /* 4
+b /  4
+t 0  6
+t 0) 2
+t 0, 1
+t 00 1
+t 01 1
+t 0; 1
+b 0  12
+t 1  9
+t 1% 3
+t 1, 11
+t 1. 9
+t 1/ 1
+t 10 43
+t 11 16
+t 12 15
+t 13 7
+t 14 6
+t 15 15
+t 16 7
+t 17 16
+t 18 22
+t 19 81
+t 1; 3
+t 1s 2
+t 1u 1
+b 1  267
+t 2  5
+t 2, 4
+t 2- 2
+t 2. 5
+t 20 41
+t 21 9
+t 22 8
+t 23 4
+t 24 5
+t 25 10
+t 26 5
+t 27 4
+t 28 3
+t 2; 2
+t 2= 1
+b 2  108
+t 3  3
+t 3, 2
+t 3- 1
+t 3. 1
+t 30 22
+t 32 5
+t 33 1
+t 34 1
+t 35 7
+t 36 6
+t 37 3
+t 3; 1
+t 3d 1
+t 3r 4
+b 3  58
+t 4  8
+t 4, 1
+t 4. 3
+t 40 14
+t 42 1
+t 43 2
+t 44 1
+t 45 3
+t 46 2
+t 49 3
+t 4; 1
+t 4t 1
+b 4  40
+t 5  3
+t 5) 1
+t 5, 5
+t 5- 1
+t 5. 2
+t 50 19
+t 52 1
+t 54 1
+t 55 1
+t 5b 1
+t 5t 2
+b 5  37
+t 6  5
+t 6, 2
+t 6. 1
+t 60 6
+t 61 2
+t 64 2
+t 65 1
+t 66 1
+t 68 1
+b 6  21
+t 7  1
+t 7, 3
+t 7. 1
+t 70 6
+t 71 1
+t 72 3
+t 74 1
+t 75 6
+t 78 3
+t 79 1
+t 7; 2
+t 7t 1
+b 7  29
+t 8  4
+t 8, 1
+t 8- 2
+t 80 7
+t 81 2
+t 83 2
+t 85 1
+t 87 2
+t 88 2
+b 8  23
+t 9  3
+t 9, 2
+t 90 18
+t 91 6
+t 92 2
+t 93 1
+t 99 6
+t 9; 1
+t 9s 1
+b 9  40
+t ;c 2
+t ;f 1
+t ;p 1
+b ;  4
+t =  31
+t =1 2
+t == 3
+b =  36
+t [  9
+t [1 1
+t [] 1
+t [b 3
+t [d 1
+t [f 1
+t [l 1
+t [m 1
+t [p 1
+t [q 1
+t [s 3
+t [v 1
+t [w 1
+b [  25
+t ]  8
+b ]  8
+t a  10142
+t a' 3
+t a) 1
+t a, 2
+t a- 11
+t a. 9
+t aa 3
+t ab 1557
+t ac 909
+t ad 401
+t ae 12
+t af 596
+t ag 866
+t ah 92
+t ai 291
+t ak 6
+t al 4161
+t am 926
+t an 15152
+t ao 1
+t ap 478
+t aq 8
+t ar 3528
+t as 2929
+t at 1862
+t au 161
+t av 133
+t aw 531
+t ax 13
+t ay 1
+t az 11
+b a  44796
+t b  4
+t b, 1
+t b- 5
+t b. 7
+t ba 1728
+t bb 1
+t bc 2
+t be 8476
+t bh 2
+t bi 687
+t bl 778
+t bm 2
+t bo 1531
+t bp 1
+t br 1409
+t bs 1
+t bu 3726
+t bw 2
+t by 1184
+b b  19547
+t c' 1
+t c, 1
+t c- 3
+t c. 2
+t ca 4606
+t ce 431
+t ch 2004
+t ci 282
+t cj 1
+t cl 1040
+t co 5964
+t cp 2
+t cr 1086
+t cu 417
+t cy 40
+t cz 1
+b c  15881
+t d  1
+t d& 1
+t d' 6
+t d. 3
+t da 1847
+t dc 2
+t dd 2
+t de 2802
+t dh 2
+t di 2616
+t dj 1
+t dm 2
+t dn 3
+t do 5134
+t dr 1183
+t ds 2
+t du 321
+t dv 13
+t dw 27
+t dy 72
+b d  14040
+t e' 1
+t e) 4
+t e- 4
+t e. 1
+t ea 980
+t eb 3
+t ec 87
+t ed 116
+t ee 11
+t ef 149
+t eg 44
+t eh 5
+t ei 143
+t ej 2
+t el 493
+t em 340
+t en 1559
+t eo 2
+t ep 16
+t eq 95
+t er 81
+t es 216
+t et 93
+t eu 40
+t ev 2847
+t ew 4
+t ex 1367
+t ey 369
+t ez 1
+b e  9073
+t f  3
+t f. 1
+t fa 2242
+t fb 10
+t fc 1
+t fd 4
+t fe 1695
+t fi 2422
+t fl 694
+t fo 5022
+t fr 2492
+t ft 1
+t fu 628
+t fw 2
+b f  15217
+t g  2
+t g- 1
+t g. 5
+t ga 614
+t gb 1
+t gd 1
+t ge 1465
+t gh 49
+t gi 779
+t gl 300
+t gn 12
+t go 3570
+t gp 1
+t gr 1529
+t gu 517
+t gw 2
+t gy 9
+b g  8857
+t h- 1
+t h. 2
+t ha 6406
+t he 5619
+t hi 3011
+t hm 8
+t ho 2664
+t hp 1
+t hr 4
+t ht 3
+t hu 897
+t hy 62
+t hz 1
+b h  18679
+t i  9126
+t i' 2360
+t i, 21
+t i- 4
+t i. 29
+t i/ 13
+t ia 1
+t ib 2
+t ic 33
+t id 311
+t if 1913
+t ig 62
+t ii 5
+t ik 1
+t il 119
+t im 793
+t in 9497
+t io 8
+t ip 3
+t iq 5
+t ir 90
+t is 5771
+t it 7663
+t iv 8
+t iw 1
+t iz 1
+b i  37840
+t ja 163
+t je 129
+t jh 1
+t ji 30
+t jo 418
+t jr 2
+t ju 1602
+b j  2345
+t k  1
+t k, 1
+t k- 1
+t k= 1
+t ka 56
+t ke 537
+t kg 3
+t kh 5
+t ki 923
+t kl 9
+t kn 2435
+t ko 20
+t kp 3
+t kr 21
+t ku 10
+t kw 4
+t ky 1
+b k  4031
+t l  1
+t l. 2
+t la 1492
+t le 2117
+t li 5522
+t ll 5
+t lo 3577
+t ls 2
+t lu 183
+t ly 47
+b l  12948
+t m  22
+t m' 1
+t m- 2
+t m. 2
+t m1 1
+t ma 5104
+t mb 1
+t mc 20
+t me 4561
+t mi 1864
+t ml 1
+t mm 2
+t mn 2
+t mo 3361
+t mp 2
+t mr 103
+t ms 5
+t mt 2
+t mu 1251
+t mv 1
+t my 3248
+b m  19556
+t n' 1
+t na 710
+t ne 2580
+t nf 1
+t nh 1
+t ni 630
+t nk 1
+t no 6097
+t ns 4
+t nu 239
+t nv 1
+t ny 3
+b n  10268
+t o  10
+t o' 25
+t o, 1
+t o- 1
+t oa 15
+t ob 286
+t oc 158
+t od 35
+t oe 1
+t of 10288
+t og 3
+t oh 205
+t oi 21
+t ok 88
+t ol 364
+t om 19
+t on 5432
+t oo 15
+t op 483
+t or 1960
+t os 13
+t ot 796
+t ou 2523
+t ov 603
+t ow 464
+t ox 15
+t oy 3
+t oz 8
+b o  23835
+t p  2
+t p, 2
+t p- 1
+t p. 3
+t pa 2062
+t pb 1
+t pc 5
+t pd 1
+t pe 2348
+t ph 267
+t pi 566
+t pl 1302
+t pm 3
+t pn 2
+t po 1606
+t pr 2554
+t ps 45
+t pt 3
+t pu 813
+t pw 3
+t py 15
+b p  11604
+t q- 2
+t qi 1
+t qu 676
+t qw 19
+b q  698
+t r  1
+t r- 2
+t r. 2
+t r/ 4
+t ra 894
+t re 4479
+t rh 38
+t ri 1191
+t ro 976
+t rp 1
+t ru 633
+t ry 9
+b r  8230
+t s  46
+t s- 2
+t s. 2
+t sa 2550
+t sc 757
+t se 3451
+t sg 1
+t sh 2772
+t si 1697
+t sj 1
+t sk 370
+t sl 519
+t sm 543
+t sn 133
+t so 5471
+t sp 1290
+t sq 63
+t ss 2
+t st 4150
+t su 2171
+t sw 387
+t sx 1
+t sy 188
+b s  26567
+t t  34
+t t' 1
+t t- 2
+t t. 3
+t t1 1
+t ta 1531
+t tb 3
+t te 1558
+t th 42468
+t ti 1692
+t tl 1
+t to 13699
+t tr 2238
+t ts 1
+t tu 466
+t tv 27
+t tw 604
+t ty 159
+t tz 1
+b t  64489
+t u- 1
+t u. 7
+t u2 3
+t u3 1
+t ua 1
+t ub 1
+t uc 2
+t ud 1
+t uf 1
+t ug 29
+t uh 38
+t ul 49
+t um 14
+t un 1825
+t up 1471
+t ur 43
+t us 1347
+t ut 38
+b u  4872
+t v  2
+t v- 1
+t v. 3
+t v; 3
+t va 459
+t vb 1
+t vc 1
+t ve 665
+t vi 598
+t vl 1
+t vo 262
+t vr 1
+t vu 21
+t vv 1
+b v  2019
+t w. 2
+t wa 6292
+t wb 1
+t wd 1
+t we 5360
+t wh 7955
+t wi 5558
+t wk 1
+t wo 4048
+t wp 1
+t wr 546
+t wu 4
+t wy 3
+b w  29772
+t x  15
+t x, 1
+t x- 6
+t xa 1
+t xe 6
+t xh 1
+t xi 1
+t xy 1
+b x  32
+t y  9
+t y' 8
+t y) 1
+t y- 4
+t y. 2
+t ya 76
+t ye 997
+t yi 14
+t yo 14011
+t yu 5
+b y  15127
+t z  1
+t z" 1
+t z. 2
+t za 15
+t ze 45
+t zh 4
+t zi 12
+t zo 35
+t zu 3
+t zy 3
+b z  121
+m    433194
+t!   448
+t! " 4
+t! ' 1
+t! ( 3
+t! - 5
+t! a 96
+t! b 47
+t! c 23
+t! d 28
+t! e 19
+t! f 8
+t! g 16
+t! h 58
+t! i 248
+t! j 13
+t! k 6
+t! l 21
+t! m 31
+t! n 44
+t! o 43
+t! p 9
+t! r 10
+t! s 42
+t! t 125
+t! u 2
+t! v 2
+t! w 93
+t! y 98
+b!   1543
+t!!  4
+t!!! 2
+b!!  6
+t!"  76
+t!", 2
+t!"\ 1
+b!"  79
+t!'  14
+b!'  14
+t!)  2
+t!). 1
+b!)  3
+t!.. 1
+b!.  1
+t!/  8
+b!/  8
+m!   1654
+t"   203
+t" " 20
+t" ' 1
+t" ( 5
+t" - 8
+t" ; 2
+t" = 1
+t" a 79
+t" b 36
+t" c 11
+t" d 14
+t" e 11
+t" f 13
+t" g 7
+t" h 53
+t" i 101
+t" j 5
+t" k 1
+t" l 6
+t" m 19
+t" n 11
+t" o 35
+t" p 8
+t" r 10
+t" s 65
+t" t 88
+t" v 10
+t" w 42
+t" y 13
+b"   878
+t"!  7
+b"!  7
+t")  1
+t")) 3
+t"), 1
+t"). 1
+b")  6
+t",  26
+b",  26
+t".  37
+t".. 2
+b".  39
+t"/  8
+t"/h 1
+b"/  9
+t"00 1
+b"0  1
+t";  7
+b";  7
+t"\n 1
+b"\  1
+t"a  10
+t"a" 1
+t"ac 2
+t"ad 3
+t"af 1
+t"ag 1
+t"ah 3
+t"al 7
+t"am 2
+t"an 9
+t"ar 11
+t"at 2
+t"av 3
+b"a  55
+t"ba 4
+t"be 5
+t"bl 7
+t"bo 3
+t"br 1
+t"bu 13
+b"b  33
+t"c" 1
+t"ca 6
+t"ch 7
+t"ci 1
+t"cl 1
+t"co 11
+t"cu 1
+b"c  28
+t"da 3
+t"de 4
+t"di 9
+t"do 17
+t"dr 3
+t"du 3
+b"d  39
+t"ea 1
+t"ei 1
+t"es 1
+t"eu 1
+t"ev 7
+t"ex 3
+b"e  14
+t"f" 1
+t"fa 8
+t"fe 1
+t"fi 12
+t"fl 1
+t"fo 8
+t"fr 2
+t"fs 1
+b"f  34
+t"ga 2
+t"ge 6
+t"gi 2
+t"gl 1
+t"go 12
+t"gr 6
+t"gu 7
+b"g  36
+t"ha 7
+t"he 26
+t"hi 3
+t"ho 16
+t"hu 1
+b"h  53
+t"i  73
+t"i" 5
+t"i' 23
+t"i, 1
+t"id 3
+t"if 13
+t"im 2
+t"in 8
+t"ir 1
+t"is 7
+t"it 22
+b"i  158
+t"ja 1
+t"je 1
+t"jo 1
+t"ju 5
+b"j  8
+t"ki 2
+t"kn 1
+b"k  3
+t"l" 1
+t"la 4
+t"le 3
+t"li 11
+t"lo 6
+t"lu 1
+b"l  26
+t"ma 8
+t"me 4
+t"mi 4
+t"mo 11
+t"mr 4
+t"mu 1
+t"my 6
+b"m  38
+t"n" 1
+t"na 1
+t"ne 12
+t"no 30
+b"n  44
+t"o  2
+t"od 1
+t"of 2
+t"oh 19
+t"ok 1
+t"on 5
+t"oo 1
+t"op 2
+t"or 5
+t"ot 1
+t"ou 2
+b"o  41
+t"pa 3
+t"pe 2
+t"pl 4
+t"po 2
+t"pr 4
+t"pu 2
+t"py 1
+b"p  18
+t"re 16
+t"ri 3
+t"ro 4
+b"r  23
+t"sa 1
+t"sc 1
+t"se 7
+t"sh 5
+t"si 2
+t"sl 2
+t"sm 2
+t"so 8
+t"sp 2
+t"st 13
+t"su 11
+t"sy 1
+b"s  55
+t"ta 1
+t"te 6
+t"th 73
+t"ti 2
+t"to 15
+t"tr 5
+t"tu 2
+t"tw 1
+b"t  105
+t"u" 1
+t"un 4
+t"us 4
+b"u  9
+t"vi 1
+t"vo 1
+b"v  2
+t"wa 4
+t"we 27
+t"wh 56
+t"wi 6
+t"wo 4
+b"w  97
+t"ye 8
+t"yo 37
+b"y  45
+t"ze 1
+b"z  1
+m"   1939
+t##- 1
+t##s 1
+b##  2
+t#'( 1
+b#'  1
+t#-b 1
+b#-  1
+t#1  1
+b#1  1
+t#2  1
+t#2. 1
+b#2  2
+t#si 1
+b#s  1
+m#   8
+t$1, 1
+t$1. 1
+t$10 4
+t$12 1
+b$1  7
+t$20 3
+t$24 1
+b$2  4
+t$40 2
+b$4  2
+t$5, 1
+t$50 4
+b$5  5
+t$68 1
+b$6  1
+t$72 1
+b$7  1
+t$8, 1
+b$8  1
+m$   21
+t% ( 1
+t% 1 1
+t% c 2
+t% f 2
+t% o 14
+t% r 1
+t% t 2
+b%   23
+t%), 1
+t%). 2
+b%)  3
+t%,  1
+b%,  1
+t%.  2
+b%.  2
+t%s) 1
+b%s  1
+m%   30
+t& e 1
+t& g 1
+t& o 1
+t& s 1
+t& u 2
+t& v 1
+b&   7
+t&d. 1
+t&da 1
+b&d  2
+t&pc 2
+b&p  2
+m&   11
+t'   16
+t' ' 7
+t' - 2
+t' a 37
+t' b 15
+t' c 17
+t' d 11
+t' e 5
+t' f 20
+t' g 10
+t' h 18
+t' i 35
+t' j 2
+t' k 1
+t' l 12
+t' m 15
+t' n 3
+t' o 19
+t' p 9
+t' q 2
+t' r 9
+t' s 24
+t' t 59
+t' u 5
+t' v 1
+t' w 25
+t' y 4
+b'   383
+t'!  4
+b'!  4
+t'(" 1
+t'(l 1
+b'(  2
+t',  36
+t'," 1
+b',  37
+t'.  27
+t'.. 2
+b'.  29
+t'/  5
+b'/  5
+t'58 1
+b'5  1
+t'60 1
+t'68 1
+b'6  2
+t'77 1
+t'78 1
+b'7  2
+t'80 3
+t'87 1
+t'88 1
+b'8  5
+t']  1
+b']  1
+t'al 5
+t'am 4
+t'an 2
+t'ar 6
+t'au 2
+t'av 1
+b'a  20
+t'ba 1
+t'be 5
+t'bo 7
+t'bu 3
+b'b  16
+t'ca 174
+t'cl 7
+t'co 2
+t'cr 3
+t'cu 4
+b'c  190
+t'd  459
+t'do 2
+t'dr 3
+b'd  464
+t'ea 2
+t'em 59
+t'en 1
+t'er 9
+t'ev 1
+b'e  72
+t'fe 1
+t'fo 2
+t'fu 2
+b'f  5
+t'ge 1
+t'go 1
+t'gu 2
+b'g  4
+t'he 3
+t'ho 2
+t'hr 1
+t'hu 2
+b'h  8
+t'i  14
+t'i' 4
+t'if 2
+t'ig 1
+t'im 2
+t'in 4
+t'it 7
+b'i  34
+t'kn 3
+b'k  3
+t'la 1
+t'le 2
+t'li 1
+t'll 900
+t'lo 1
+b'l  905
+t'm  1285
+t'm, 2
+t'm. 2
+t'ma 1
+t'mo 2
+t'my 3
+b'm  1295
+t'n  4
+t'n' 3
+t'n. 1
+t'na 1
+t'ne 4
+t'ni 2
+t'no 4
+b'n  19
+t'oh 1
+t'or 1
+b'o  2
+t'pl 2
+t'pr 2
+b'p  4
+t're 1509
+t'ri 2
+t'ro 12
+t'ry 2
+b'r  1525
+t's  4295
+t's" 1
+t's, 9
+t's. 12
+t's/ 2
+t's; 1
+t'sa 1
+t'se 3
+t'sh 1
+t'si 2
+t'sk 1
+t'so 1
+t'sp 1
+b's  4330
+t't  3266
+t't! 3
+t't, 24
+t't. 63
+t't/ 5
+t't; 2
+t'th 16
+t'ti 23
+t'tr 2
+t'tw 2
+b't  3406
+t'un 1
+b'u  1
+t've 922
+b'v  922
+t'we 2
+t'wh 1
+t'wo 2
+b'w  5
+t'y  1
+t'ye 1
+t'yn 1
+t'yo 4
+b'y  7
+m'   13708
+t("f 1
+t("p 2
+t("r 1
+t("s 3
+t("t 2
+b("  9
+t(%s 1
+b(%  1
+t(&p 2
+b(&  2
+t((; 1
+t((c 2
+b((  3
+t()  2
+t()) 2
+t(), 1
+t(); 4
+t()[ 1
+b()  10
+t(1) 1
+t(10 2
+b(1  3
+t(63 1
+b(6  1
+t(72 1
+b(7  1
+t(80 1
+t(87 1
+b(8  2
+t(9  1
+t(98 1
+b(9  2
+t(;b 1
+t(;f 1
+t(;h 2
+t(;p 1
+t(;t 1
+b(;  6
+t(=  1
+b(=  1
+t(a  2
+t(a) 1
+t(ac 2
+t(al 2
+t(an 11
+t(as 2
+t(at 2
+t(ax 1
+b(a  23
+t(b) 1
+t(ba 1
+t(be 1
+t(bo 1
+t(bu 8
+b(b  12
+t(c) 1
+t(ca 2
+t(ch 5
+t(co 2
+b(c  10
+t(da 3
+b(d  3
+t(ei 1
+t(ep 1
+t(es 4
+t(ex 4
+b(e  10
+t(fo 3
+t(fs 3
+b(f  6
+t(gc 1
+b(g  1
+t(he 2
+t(hi 1
+t(ho 1
+t(hr 1
+t(ht 5
+b(h  10
+t(i  7
+t(i. 1
+t(if 2
+t(in 9
+t(io 2
+t(it 1
+b(i  22
+t(ju 4
+b(j  4
+t(ke 1
+t(kn 1
+b(k  2
+t(la 1
+t(le 1
+t(li 1
+t(lo 1
+b(l  4
+t(ma 3
+t(me 1
+t(mi 1
+t(mo 2
+b(m  7
+t(ne 1
+t(no 3
+t(nt 1
+b(n  5
+t(on 3
+t(or 12
+b(o  15
+t(pa 1
+t(pc 1
+t(pd 1
+t(pe 1
+t(pr 3
+t(pu 1
+b(p  8
+t(ra 3
+t(re 5
+b(r  8
+t(s) 1
+t(sc 1
+t(se 3
+t(sg 1
+t(si 1
+t(sp 1
+t(ss 1
+t(su 2
+t(sy 1
+b(s  12
+t(th 16
+t(ti 2
+t(tl 1
+t(to 2
+t(tr 1
+t(ty 1
+b(t  23
+t(un 3
+t(ur 1
+t(us 3
+b(u  7
+t(we 1
+t(wh 11
+t(wi 7
+t(wo 1
+b(w  20
+t(x, 1
+b(x  1
+t(yo 2
+b(y  2
+m(   256
+t)   8
+t) " 2
+t) # 1
+t) % 1
+t) ' 1
+t) ( 4
+t) - 1
+t) / 1
+t) 4 1
+t) [ 9
+t) a 13
+t) b 4
+t) c 6
+t) d 1
+t) e 1
+t) f 3
+t) g 2
+t) h 3
+t) i 14
+t) l 1
+t) o 11
+t) p 2
+t) r 4
+t) s 3
+t) t 15
+t) w 11
+t) y 2
+b)   125
+t))  6
+t))) 8
+t)); 3
+b))  17
+t),  37
+b),  37
+t).  46
+b).  46
+t)/  2
+b)/  2
+t);  28
+b);  28
+t)[0 1
+b)[  1
+t)da 1
+b)d  1
+t)km 1
+b)k  1
+m)   258
+t* 1 1
+t* c 2
+t* l 1
+t* r 1
+t* s 1
+b*   6
+t*)k 1
+b*)  1
+t**  1
+b**  1
+t*/  3
+b*/  3
+t*ar 1
+b*a  1
+t*be 1
+b*b  1
+t*va 1
+b*v  1
+m*   14
+t,   3
+t, " 244
+t, & 1
+t, ' 89
+t, ( 1
+t, * 1
+t, 0 1
+t, 1 13
+t, 2 8
+t, 3 5
+t, 4 2
+t, 5 6
+t, 7 1
+t, 8 3
+t, = 1
+t, a 4487
+t, b 1866
+t, c 548
+t, d 539
+t, e 557
+t, f 607
+t, g 296
+t, h 939
+t, i 3149
+t, j 188
+t, k 83
+t, l 621
+t, m 802
+t, n 665
+t, o 955
+t, p 464
+t, q 17
+t, r 351
+t, s 1350
+t, t 3394
+t, u 223
+t, v 80
+t, w 1897
+t, x 2
+t, y 1253
+t, z 8
+b,   25720
+t,"  127
+b,"  127
+t,'  17
+b,'  17
+t,00 45
+b,0  45
+t,10 1
+b,1  1
+t,50 1
+b,5  1
+t,90 1
+t,99 1
+b,9  2
+m,   25913
+t- ' 1
+t- 6 1
+t- a 142
+t- b 46
+t- c 16
+t- d 19
+t- e 16
+t- f 30
+t- g 8
+t- h 35
+t- i 136
+t- j 9
+t- k 7
+t- l 18
+t- m 29
+t- n 46
+t- o 46
+t- p 12
+t- r 8
+t- s 48
+t- t 208
+t- u 9
+t- v 5
+t- w 74
+t- y 38
+b-   1007
+t-"  1
+b-"  1
+t-## 1
+b-#  1
+t-,  4
+b-,  4
+t--  3
+t--; 1
+t--t 1
+b--  5
+t-.n 2
+t-.o 1
+t-.r 1
+b-.  4
+t-13 2
+t-15 2
+t-19 1
+t-1; 2
+b-1  7
+t-2, 1
+t-22 1
+t-23 1
+b-2  3
+t-32 1
+t-34 1
+t-35 1
+b-3  3
+t-40 1
+b-4  1
+t-50 1
+t-5e 1
+b-5  2
+t-70 1
+b-7  1
+t-8  1
+t-8) 1
+b-8  2
+t-90 1
+b-9  1
+t-;  1
+b-;  1
+t-a  2
+t-a( 1
+t-a- 4
+t-ab 4
+t-ac 5
+t-ad 3
+t-af 3
+t-ag 6
+t-ai 8
+t-al 11
+t-am 4
+t-an 13
+t-ap 4
+t-ar 6
+t-as 4
+t-at 2
+t-au 1
+t-aw 5
+t-ax 1
+b-a  87
+t-b- 5
+t-ba 11
+t-be 21
+t-bi 5
+t-bl 10
+t-bo 23
+t-br 9
+t-bu 5
+t-by 13
+b-b  102
+t-c- 2
+t-ca 16
+t-ce 13
+t-ch 9
+t-ci 1
+t-cl 10
+t-co 42
+t-cr 8
+t-cu 6
+t-cy 2
+b-c  109
+t-d- 1
+t-da 10
+t-de 22
+t-di 12
+t-do 14
+t-dr 4
+t-du 1
+t-dw 1
+b-d  65
+t-e  2
+t-e! 1
+t-e- 5
+t-ea 8
+t-ed 5
+t-ef 2
+t-ei 4
+t-em 7
+t-en 15
+t-es 1
+t-eu 1
+t-ev 1
+t-ex 9
+t-ey 12
+t-ez 2
+b-e  75
+t-fa 15
+t-fe 6
+t-fi 29
+t-fl 7
+t-fo 33
+t-fr 11
+t-fs 1
+t-fu 4
+t-fw 2
+b-f  108
+t-g- 2
+t-ga 5
+t-ge 6
+t-gi 3
+t-gl 1
+t-go 8
+t-gr 17
+t-gu 2
+t-gy 5
+b-g  49
+t-h- 1
+t-ha 14
+t-he 17
+t-hi 8
+t-ho 19
+t-ht 2
+t-hu 5
+b-h  66
+t-i' 1
+t-i- 4
+t-ic 1
+t-if 1
+t-il 1
+t-im 1
+t-in 34
+t-ir 2
+t-is 6
+t-it 4
+b-i  55
+t-j- 1
+t-ja 3
+t-je 2
+t-jo 2
+t-ju 2
+b-j  10
+t-ka 2
+t-ke 7
+t-ki 6
+t-kn 10
+t-ku 1
+b-k  26
+t-la 8
+t-le 13
+t-li 27
+t-lo 32
+t-lu 1
+b-l  81
+t-m- 5
+t-ma 24
+t-me 5
+t-mi 16
+t-mm 1
+t-mo 17
+t-my 3
+b-m  71
+t-na 7
+t-ne 4
+t-ni 5
+t-no 12
+t-nu 1
+b-n  29
+t-o  1
+t-o, 1
+t-o- 4
+t-ob 2
+t-oc 1
+t-of 19
+t-oi 2
+t-ol 7
+t-om 3
+t-on 7
+t-op 5
+t-or 7
+t-ou 9
+t-ov 2
+b-o  70
+t-p- 1
+t-p. 2
+t-pa 17
+t-pe 4
+t-ph 3
+t-pi 5
+t-pl 7
+t-po 22
+t-pr 14
+t-pu 2
+b-p  77
+t-qu 5
+b-q  5
+t-r- 8
+t-ra 11
+t-re 13
+t-ri 11
+t-ro 14
+t-rp 1
+t-ru 2
+b-r  60
+t-sa 13
+t-sc 8
+t-se 24
+t-sh 16
+t-si 15
+t-sl 4
+t-sm 3
+t-sn 1
+t-so 10
+t-sp 12
+t-st 29
+t-su 5
+t-sw 1
+t-sy 1
+b-s  142
+t-t- 2
+t-ta 19
+t-te 12
+t-th 21
+t-ti 22
+t-to 25
+t-tr 8
+t-tu 3
+t-tw 10
+t-ty 7
+b-t  129
+t-u- 2
+t-un 2
+t-up 28
+t-us 2
+b-u  34
+t-va 4
+t-vi 2
+t-vo 3
+b-v  9
+t-w- 3
+t-wa 31
+t-we 4
+t-wh 8
+t-wi 12
+t-wo 8
+t-wr 2
+b-w  68
+t-x  1
+t-x- 5
+b-x  6
+t-y, 1
+t-y- 5
+t-ya 1
+t-ye 9
+t-yo 3
+b-y  19
+m-   2595
+t.   7780
+t. " 110
+t. # 1
+t. ' 72
+t. ( 4
+t. - 26
+t. . 1
+t. 0 1
+t. 1 8
+t. 2 5
+t. 3 1
+t. 5 2
+t. 7 2
+t. 9 1
+t. [ 5
+t. a 2136
+t. b 1352
+t. c 258
+t. d 370
+t. e 353
+t. f 407
+t. g 216
+t. h 904
+t. i 4235
+t. j 129
+t. k 63
+t. l 343
+t. m 514
+t. n 623
+t. o 524
+t. p 289
+t. q 21
+t. r 179
+t. s 1101
+t. t 3123
+t. u 116
+t. v 39
+t. w 1492
+t. x 2
+t. y 1234
+t. z 7
+b.   28050
+t."  353
+b."  353
+t.'  38
+b.'  38
+t.)  7
+b.)  7
+t.,  7
+b.,  7
+t..  777
+t.." 4
+t..' 1
+t... 790
+t../ 4
+t..a 2
+t..i 1
+t..k 1
+t..o 1
+t..t 1
+b..  1582
+t./  5
+b./  5
+t.00 1
+b.0  1
+t.1  1
+t.11 1
+t.12 1
+b.1  3
+t.2  1
+t.25 2
+b.2  3
+t.3  1
+b.3  1
+t.5  2
+t.5% 1
+t.50 1
+b.5  4
+t.6  1
+b.6  1
+t.7% 1
+t.75 2
+t.79 1
+b.7  4
+t.8  2
+t.8% 1
+b.8  3
+t.9  2
+t.9% 1
+t.95 1
+t.99 1
+b.9  5
+t.\n 3
+b.\  3
+t.]  1
+b.]  1
+t.a. 3
+t.ac 2
+t.an 2
+t.ap 1
+t.aw 2
+b.a  10
+t.b) 1
+t.b. 1
+b.b  2
+t.c. 6
+t.co 2
+t.cu 1
+b.c  9
+t.d. 2
+b.d  2
+t.e. 5
+t.er 1
+t.ex 3
+b.e  9
+t.fo 1
+b.f  1
+t.ge 2
+b.g  2
+t.h. 2
+b.h  2
+t.i  1
+t.i. 4
+b.i  5
+t.ke 1
+b.k  1
+t.l. 3
+t.le 1
+b.l  4
+t.m. 2
+b.m  2
+t.na 2
+t.ne 1
+b.n  3
+t.o. 2
+t.op 1
+t.or 1
+b.o  4
+t.py 1
+b.p  1
+t.r. 2
+t.re 5
+b.r  7
+t.s. 9
+t.se 1
+t.st 1
+b.s  11
+t.t. 1
+t.th 1
+t.to 1
+b.t  3
+t.ur 3
+b.u  3
+t.v. 2
+b.v  2
+t.wa 3
+t.wr 1
+b.w  4
+m.   30158
+t/   574
+t/ " 10
+t/ ' 8
+t/ ( 1
+t/ - 19
+t/ a 141
+t/ b 70
+t/ c 28
+t/ d 76
+t/ e 27
+t/ f 24
+t/ g 18
+t/ h 104
+t/ i 358
+t/ j 15
+t/ k 5
+t/ l 37
+t/ m 40
+t/ n 71
+t/ o 76
+t/ p 21
+t/ q 2
+t/ r 15
+t/ s 70
+t/ t 218
+t/ u 7
+t/ v 4
+t/ w 270
+t/ y 136
+b/   2445
+t/!  7
+b/!  7
+t/"  103
+t/", 1
+b/"  104
+t/'  9
+b/'  9
+t/)  1
+t/), 3
+b/)  4
+t/*  3
+t/** 1
+b/*  4
+t/.. 3
+b/.  3
+t//" 1
+t/// 1
+b//  2
+t/10 1
+b/1  1
+t/7! 1
+b/7  1
+t/]. 1
+b/]  1
+t/an 1
+b/a  1
+t/br 1
+b/b  1
+t/ca 1
+t/co 1
+b/c  2
+t/he 2
+t/ht 1
+b/h  3
+t/mi 4
+b/m  4
+t/or 5
+b/o  5
+t/pm 2
+t/pr 1
+b/p  3
+t/se 1
+b/s  1
+t/ye 1
+b/y  1
+m/   2602
+t0 ( 1
+t0 * 1
+t0 , 1
+t0 a 11
+t0 b 7
+t0 c 6
+t0 d 15
+t0 e 5
+t0 f 2
+t0 g 2
+t0 h 4
+t0 i 3
+t0 k 7
+t0 l 2
+t0 m 29
+t0 n 2
+t0 o 3
+t0 p 23
+t0 r 6
+t0 s 13
+t0 t 15
+t0 u 2
+t0 v 2
+t0 w 6
+t0 y 35
+b0   203
+t0%  9
+t0%. 1
+b0%  10
+t0'l 1
+t0's 2
+b0'  3
+t0)  1
+t0)) 1
+t0), 1
+t0); 1
+b0)  4
+t0,  13
+t0,0 21
+b0,  34
+t0-1 2
+t0-5 1
+t0-m 2
+b0-  5
+t0.  8
+t0." 1
+t0.2 1
+t0.3 1
+t0.5 1
+t0.7 2
+b0.  14
+t0/  3
+b0/  3
+t00  91
+t00% 1
+t00' 2
+t00) 2
+t00, 11
+t00- 1
+t00. 5
+t00/ 2
+t000 53
+t001 4
+t002 1
+t005 1
+t006 1
+t007 1
+t009 1
+t00s 1
+t00t 3
+b00  181
+t01  1
+t01" 1
+t01- 1
+t01. 3
+t010 1
+t011 1
+t012 1
+t01s 2
+b01  11
+t022 1
+t023 1
+t024 3
+b02  5
+t030 2
+b03  2
+t04. 1
+t048 1
+b04  2
+t05  1
+b05  1
+t06  2
+t06, 2
+t06. 1
+b06  5
+t07, 2
+b07  2
+t08  1
+t08. 1
+b08  2
+t09, 2
+t09. 1
+b09  3
+t0;  1
+b0;  1
+t0]  1
+b0]  1
+t0k  1
+b0k  1
+t0mm 1
+b0m  1
+t0s  12
+t0s, 10
+t0s. 4
+b0s  26
+t0th 9
+b0t  9
+m0   529
+t1 2 1
+t1 9 1
+t1 = 2
+t1 a 2
+t1 d 1
+t1 f 2
+t1 i 1
+t1 l 2
+t1 n 1
+t1 o 4
+t1 p 2
+t1 s 3
+t1 t 4
+t1 y 4
+b1   30
+t1"  1
+b1"  1
+t1%  2
+t1%, 1
+t1%. 1
+b1%  4
+t1); 1
+b1)  1
+t1,  8
+t1,0 8
+t1,5 1
+t1,9 1
+b1,  18
+t1-p 1
+b1-  1
+t1.  11
+t1.2 1
+t1.5 2
+t1.7 1
+t1.b 1
+b1.  16
+t1/1 1
+b1/  1
+t10  19
+t10, 5
+t10- 1
+t10. 4
+t100 16
+t101 5
+t102 3
+t103 1
+t104 1
+t106 1
+t109 1
+b10  57
+t11  7
+t11, 3
+t11. 1
+t110 4
+t112 2
+t118 3
+t119 1
+t11; 1
+t11t 2
+b11  24
+t12  8
+t12- 2
+t12. 1
+t120 4
+t121 1
+t125 2
+t126 1
+t12; 1
+t12t 2
+b12  22
+t13  3
+t13, 1
+t13. 1
+t133 1
+t134 2
+t137 1
+t138 1
+t13t 2
+b13  12
+t14  4
+t140 2
+b14  6
+t15  7
+t15, 1
+t150 7
+t155 1
+t157 1
+t158 2
+b15  19
+t16  4
+t16- 1
+t16. 2
+t160 2
+t16t 1
+b16  10
+t17  3
+t17, 2
+t17. 2
+t171 2
+t174 3
+t177 3
+t178 1
+t179 1
+t17t 1
+b17  18
+t18  6
+t18, 1
+t180 5
+t183 3
+t186 1
+t187 4
+t188 1
+t189 3
+t18t 1
+b18  25
+t19  3
+t190 4
+t191 2
+t192 4
+t193 10
+t194 4
+t195 9
+t196 15
+t197 7
+t198 12
+t199 11
+t19t 4
+b19  85
+t1;  5
+t1;0 1
+t1;7 1
+b1;  7
+t1st 9
+b1s  9
+t1th 2
+b1t  2
+t1up 1
+b1u  1
+m1   369
+t2 a 2
+t2 b 2
+t2 d 5
+t2 f 2
+t2 i 4
+t2 n 1
+t2 p 1
+t2 s 6
+t2 y 2
+b2   25
+t2!  1
+b2!  1
+t2%  2
+b2%  2
+t2)  1
+b2)  1
+t2,  8
+t2," 1
+t2,0 3
+t2,1 1
+b2,  13
+t2-b 3
+t2-f 1
+t2-s 1
+t2-y 1
+b2-  6
+t2.  12
+t2.. 1
+t2.0 1
+t2.r 1
+t2.u 1
+b2.  16
+t2/  1
+b2/  1
+t20  19
+t20, 1
+t20. 1
+t200 21
+t201 1
+t202 1
+t203 1
+t206 1
+t20t 4
+b20  50
+t21  3
+t211 1
+t212 1
+t216 1
+t21; 1
+t21s 4
+b21  11
+t22  3
+t22, 1
+t22. 1
+t220 1
+t221 1
+t225 2
+t22n 2
+b22  11
+t23  1
+t23- 1
+t23. 2
+t231 2
+t239 1
+t23r 1
+b23  8
+t24  4
+t24) 2
+t24. 2
+t24/ 1
+t240 1
+t24; 1
+b24  11
+t25  13
+t25- 2
+t25. 1
+t250 1
+b25  17
+t26  3
+t26, 2
+t263 1
+t268 1
+b26  7
+t27  2
+t27t 2
+b27  4
+t28  1
+t28. 1
+t280 1
+b28  3
+t2;  2
+t2;2 1
+b2;  3
+t2=2 1
+b2=  1
+t2nd 3
+b2n  3
+t2th 2
+b2t  2
+m2   196
+t3   1
+t3 a 4
+t3 b 1
+t3 g 1
+t3 h 1
+t3 i 1
+t3 k 1
+t3 s 1
+t3 t 1
+t3 y 3
+b3   15
+t3%  2
+b3%  2
+t3,  4
+t3,0 2
+b3,  6
+t3-8 1
+t3-y 1
+b3-  2
+t3.  8
+t3.9 1
+b3.  9
+t30  12
+t30, 3
+t30. 1
+t300 8
+t304 1
+t308 2
+t30s 2
+t30t 1
+b30  30
+t313 1
+t315 1
+t317 1
+t319 1
+b31  4
+t32  1
+t32% 1
+t32) 1
+t32- 1
+t32. 2
+t324 1
+b32  7
+t33  2
+t33. 2
+b33  4
+t34  1
+t34- 1
+t34. 1
+t344 1
+t348 1
+b34  5
+t35  2
+t35% 1
+t35. 1
+t350 3
+t35t 1
+b35  8
+t36% 1
+t36, 1
+t36. 1
+t360 3
+t365 2
+b36  8
+t37  3
+t37. 1
+t37b 1
+b37  5
+t38  1
+t38, 1
+t385 1
+b38  3
+t39  1
+t39. 1
+b39  2
+t3;  1
+b3;  1
+t3d  1
+b3d  1
+t3rd 5
+b3r  5
+t3s  1
+b3s  1
+t3th 2
+b3t  2
+m3   120
+t4 a 2
+t4 c 1
+t4 h 3
+t4 i 2
+t4 l 1
+t4 m 2
+t4 p 4
+t4 s 1
+t4 t 1
+t4 w 1
+t4 y 4
+b4   22
+t4%  1
+b4%  1
+t4)  1
+t4); 1
+b4)  2
+t4,  1
+b4,  1
+t4-3 1
+t4-b 1
+b4-  2
+t4.  5
+t4.5 1
+t4.8 1
+b4.  7
+t4/7 1
+b4/  1
+t40  8
+t40% 1
+t40, 5
+t400 5
+t40m 1
+t40s 1
+b40  21
+t41, 1
+b41  1
+t42  1
+t42! 1
+t42. 1
+t42/ 1
+b42  4
+t43, 2
+t433 1
+b43  3
+t44  2
+b44  2
+t45  2
+t45, 1
+t451 1
+t45s 1
+b45  5
+t460 1
+t462 1
+b46  2
+t48! 1
+t486 1
+b48  2
+t49  1
+t499 1
+t49t 1
+b49  3
+t4;  1
+t4;0 1
+b4;  2
+t4th 1
+b4t  1
+m4   82
+t5   1
+t5 3 1
+t5 = 1
+t5 a 4
+t5 b 1
+t5 d 2
+t5 f 1
+t5 h 1
+t5 i 2
+t5 m 5
+t5 o 1
+t5 p 5
+t5 t 5
+t5 w 3
+t5 y 9
+b5   42
+t5%  5
+b5%  5
+t5)  1
+b5)  1
+t5,  5
+t5,0 5
+b5,  10
+t5-3 1
+t5-m 1
+t5-p 2
+t5-y 1
+b5-  5
+t5.  8
+b5.  8
+t50  19
+t50% 1
+t50, 4
+t50- 3
+t50. 1
+t500 7
+t50k 1
+t50s 3
+t50t 1
+b50  40
+t51  1
+t51, 1
+b51  2
+t52- 1
+b52  1
+t54  2
+b54  2
+t55  3
+t55- 1
+b55  4
+t57e 1
+b57  1
+t58, 2
+t58. 1
+t589 1
+b58  4
+t59. 1
+b59  1
+t5b. 1
+b5b  1
+t5e- 1
+b5e  1
+t5s, 1
+b5s  1
+t5th 3
+b5t  3
+m5   132
+t6 a 4
+t6 b 3
+t6 c 1
+t6 e 1
+t6 j 1
+t6 l 1
+t6 m 2
+t6 s 1
+t6 t 3
+t6 w 2
+b6   19
+t6%  1
+b6%  1
+t6,  10
+t6,0 2
+b6,  12
+t6-y 1
+b6-  1
+t6.  4
+t6.6 1
+b6.  5
+t60  7
+t60% 1
+t600 5
+t609 1
+t60s 5
+b60  19
+t61  1
+t61, 1
+t61. 1
+t613 1
+b61  4
+t62  1
+t62, 1
+t623 1
+b62  3
+t63, 1
+t63. 1
+t631 1
+b63  3
+t64  1
+t64- 1
+b64  2
+t65  2
+t65. 1
+b65  3
+t66, 4
+t666 1
+b66  5
+t68  1
+t68, 1
+t680 1
+t688 1
+b68  4
+t69  2
+t69, 1
+t693 1
+b69  4
+t6th 1
+b6t  1
+m6   86
+t7 a 1
+t7 f 1
+t7 h 2
+t7 k 1
+t7 l 1
+t7 m 1
+t7 n 1
+t7 o 1
+t7 t 1
+t7 y 2
+b7   12
+t7!  1
+b7!  1
+t7%) 1
+b7%  1
+t7,  5
+t7,0 3
+b7,  8
+t7.  7
+t7.2 1
+t7.7 1
+b7.  9
+t70  6
+t70% 1
+t70' 1
+t70. 1
+t70s 2
+b70  11
+t71  1
+t710 1
+t713 1
+t715 1
+b71  4
+t72  1
+t72, 5
+t725 1
+b72  7
+t73  1
+b73  1
+t74% 1
+t742 2
+t743 1
+b74  4
+t75  4
+t75% 3
+t75, 2
+b75  9
+t76  1
+t769 1
+b76  2
+t77  1
+t77, 1
+t77. 1
+t770 1
+t776 1
+b77  5
+t78  2
+t78, 1
+t78- 1
+t78t 1
+b78  5
+t79  1
+t79, 1
+t79. 2
+t790 1
+t797 1
+b79  6
+t7;0 1
+t7;3 1
+b7;  2
+t7b  1
+b7b  1
+t7e3 1
+b7e  1
+t7th 4
+b7t  4
+m7   93
+t8 9 1
+t8 a 3
+t8 b 2
+t8 c 1
+t8 d 1
+t8 e 1
+t8 h 2
+t8 k 2
+t8 m 3
+t8 n 1
+t8 p 2
+t8 r 1
+t8 t 1
+t8 y 1
+b8   22
+t8!  1
+b8!  1
+t8%) 1
+b8%  1
+t8). 1
+b8)  1
+t8,  7
+t8,0 1
+b8,  8
+t8-f 1
+t8-i 1
+t8-r 1
+b8-  3
+t8.  3
+t8." 1
+t8.8 2
+b8.  6
+t80  7
+t80% 1
+t80, 1
+t80/ 1
+t800 6
+t80s 9
+b80  25
+t81  1
+t81% 1
+t81s 1
+b81  3
+t82, 1
+b82  1
+t83  3
+t83% 1
+t838 1
+b83  5
+t85  3
+t85- 1
+t85. 1
+b85  5
+t861 1
+t862 1
+b86  2
+t87  1
+t87. 3
+t871 1
+t873 1
+t875 1
+t879 2
+b87  9
+t88  2
+t88. 2
+t881 1
+t888 1
+b88  6
+t89  1
+t890 1
+t895 1
+t896 1
+b89  4
+t8th 2
+b8t  2
+m8   104
+t9 1 1
+t9 7 1
+t9 8 1
+t9 b 2
+t9 f 1
+t9 l 2
+t9 m 2
+t9 n 1
+t9 p 4
+t9 t 3
+t9 w 2
+t9 y 1
+b9   21
+t9%) 1
+b9%  1
+t9,  7
+t9,9 1
+b9,  8
+t9.  4
+t9.9 4
+b9.  8
+t90  9
+t90% 4
+t90, 3
+t90. 1
+t900 11
+t906 1
+t90s 3
+b90  32
+t911 5
+t916 1
+t917 1
+t919 1
+b91  8
+t92% 1
+t92. 1
+t922 1
+t923 1
+t924 1
+t926 1
+t92n 1
+b92  7
+t93% 1
+t930 3
+t931 1
+t933 1
+t934 1
+t936 2
+t937 1
+t938 1
+t939 1
+b93  12
+t941 1
+t942 1
+t945 2
+b94  4
+t95. 2
+t950 3
+t951 1
+t954 1
+t955 2
+t958 1
+t959 1
+b95  11
+t96, 1
+t960 6
+t961 1
+t962 1
+t963 1
+t966 3
+t969 3
+b96  16
+t97  1
+t970 3
+t972 2
+t976 1
+t977 1
+t979 1
+b97  9
+t98  1
+t98. 1
+t980 7
+t982 1
+t985 3
+t987 1
+b98  14
+t99  6
+t99, 2
+t99. 3
+t990 6
+t992 1
+t997 1
+t998 1
+t999 6
+b99  26
+t9;3 1
+b9;  1
+t9s, 1
+b9s  1
+t9th 5
+b9t  5
+m9   184
+t;   2
+t; " 109
+t; ' 10
+t; ( 1
+t; * 1
+t; / 1
+t; 0 1
+t; 1 5
+t; 2 2
+t; 5 1
+t; 6 1
+t; 9 1
+t; [ 4
+t; ] 8
+t; a 239
+t; b 99
+t; c 27
+t; d 22
+t; e 28
+t; f 47
+t; g 11
+t; h 81
+t; i 246
+t; j 8
+t; k 4
+t; l 17
+t; m 35
+t; n 51
+t; o 58
+t; p 21
+t; q 5
+t; r 15
+t; s 79
+t; t 324
+t; u 4
+t; v 3
+t; w 154
+t; y 73
+t; z 3
+b;   1801
+t;"  2
+b;"  2
+t;00 1
+t;06 1
+t;07 1
+b;0  3
+t;20 1
+b;2  1
+t;30 2
+b;3  2
+t;7. 1
+b;7  1
+t;\n 2
+b;\  2
+t;bo 1
+b;b  1
+t;co 2
+b;c  2
+t;fo 1
+t;fu 1
+b;f  2
+t;he 1
+t;ht 1
+b;h  2
+t;pa 1
+t;pr 1
+b;p  2
+t;ti 1
+b;t  1
+m;   1822
+t= ( 3
+t= - 2
+t= 0 2
+t= 1 4
+t= 2 1
+t= 4 1
+t= [ 2
+t= a 2
+t= b 1
+t= f 1
+t= m 1
+t= n 6
+t= o 1
+t= s 3
+t= u 2
+t= x 1
+t= y 1
+t= z 1
+b=   35
+t='h 1
+b='  1
+t=1  2
+b=1  2
+t=2. 1
+b=2  1
+t==  3
+t==' 1
+b==  4
+m=   43
+t[ c 1
+t[ i 2
+t[ l 3
+t[ p 1
+t[ s 2
+b[   9
+t[0] 1
+b[0  1
+t[1  1
+b[1  1
+t[]  1
+b[]  1
+t[ba 1
+t[be 2
+b[b  3
+t[di 1
+b[d  1
+t[fr 1
+b[f  1
+t[lo 1
+b[l  1
+t[ma 1
+b[m  1
+t[po 1
+b[p  1
+t[qu 1
+b[q  1
+t[sa 1
+t[si 1
+t[st 1
+b[s  3
+t[v  1
+b[v  1
+t[wi 1
+b[w  1
+m[   26
+t\n" 3
+t\n1 1
+t\n2 1
+t\n3 1
+t\nm 1
+t\nt 2
+b\n  9
+m\   9
+t]   3
+t] a 3
+t] c 3
+t] d 1
+t] h 2
+t] i 2
+t] m 1
+t] r 2
+t] t 2
+t] w 2
+t] y 1
+b]   22
+t].  3
+b].  3
+m]   25
+ta   1
+ta " 14
+ta ' 4
+ta ( 5
+ta * 1
+ta - 8
+ta 1 7
+ta 2 6
+ta 3 2
+ta 5 2
+ta 9 1
+ta = 3
+ta a 108
+ta b 837
+ta c 912
+ta d 635
+ta e 19
+ta f 704
+ta g 613
+ta h 543
+ta i 82
+ta j 74
+ta k 141
+ta l 911
+ta m 984
+ta n 333
+ta o 98
+ta p 894
+ta q 51
+ta r 456
+ta s 1363
+ta t 687
+ta u 45
+ta v 236
+ta w 615
+ta x 1
+ta y 63
+ta z 4
+ba   11463
+ta!  22
+ta!" 2
+ba!  24
+ta"  3
+ba"  3
+ta'  5
+ta'a 6
+ta'i 1
+ta's 39
+ba'  51
+ta(s 1
+ba(  1
+ta)  4
+ta). 2
+ta); 2
+ba)  8
+ta,  209
+ta," 1
+ba,  210
+ta-b 3
+ta-c 3
+ta-f 1
+ta-g 3
+ta-h 2
+ta-l 6
+ta-n 1
+ta-p 3
+ta-r 2
+ta-s 6
+ta-t 3
+ta-v 1
+ta-w 2
+ba-  36
+ta.  208
+ta." 5
+ta.. 12
+ta.l 1
+ta.m 2
+ba.  228
+ta/  20
+ta/! 1
+ta/" 2
+ba/  23
+ta;  18
+ba;  18
+taa. 1
+taac 3
+taag 1
+taal 1
+taan 3
+taar 3
+taas 2
+baa  14
+tab  31
+tab! 1
+tab, 3
+tab. 2
+taba 41
+tabb 65
+tabc 3
+tabd 5
+tabe 30
+tabh 2
+tabi 226
+tabj 2
+tabl 958
+tabn 7
+tabo 1171
+tabr 17
+tabs 140
+tabu 29
+taby 134
+bab  2867
+tac  8
+tac" 1
+tac' 1
+tac, 2
+tac. 6
+taca 40
+tacb 3
+tacc 315
+tacd 1
+tace 1214
+tach 830
+taci 124
+tack 1102
+tacl 58
+taco 26
+tacq 26
+tacr 166
+tacs 6
+tact 1169
+tacu 34
+tacy 49
+bac  5181
+tad  1949
+tad! 12
+tad" 1
+tad' 6
+tad( 3
+tad) 1
+tad, 189
+tad- 11
+tad. 217
+tad/ 22
+tad; 5
+tada 51
+tadc 5
+tadd 127
+tade 805
+tadf 12
+tadg 3
+tadh 2
+tadi 283
+tadj 15
+tadl 70
+tadm 65
+tadn 79
+tado 155
+tadp 3
+tadq 1
+tadr 10
+tads 111
+tadt 4
+tadu 50
+tadv 177
+tadw 7
+tady 226
+bad  4677
+tae  8
+tae" 1
+tae, 2
+tae. 2
+taea 2
+taec 1
+taed 1
+tael 12
+taen 2
+taeo 2
+taer 10
+taes 9
+taev 1
+bae  53
+taf  11
+taf' 1
+taf, 3
+taf- 1
+taf. 1
+tafa 3
+tafe 111
+taff 118
+tafg 2
+tafi 9
+tafl 4
+tafo 3
+tafr 116
+taft 420
+baf  803
+tag  35
+tag! 1
+tag, 5
+tag- 2
+tag. 8
+taga 568
+tage 942
+tagg 79
+tagh 7
+tagi 349
+tagl 14
+tagm 15
+tagn 52
+tago 161
+tagp 1
+tagr 89
+tags 19
+tagt 2
+tagu 39
+tagw 2
+bag  2390
+tah  33
+tah! 12
+tah' 1
+tah, 60
+tah- 1
+tah. 26
+tah/ 5
+tah; 1
+taha 11
+tahe 75
+tahh 2
+tahm 1
+tahn 2
+taho 6
+bah  236
+tai  8
+tai, 3
+tai. 1
+tai; 1
+taia 2
+taic 4
+taid 555
+taif 1
+taig 72
+taii 3
+tail 415
+taim 71
+tain 2184
+tair 453
+tais 94
+tait 348
+taiv 9
+taiy 3
+taiz 2
+bai  4229
+taj  1
+taj" 1
+taja 6
+taje 21
+tajo 46
+baj  75
+tak  232
+tak! 2
+tak, 30
+tak- 1
+tak. 30
+tak/ 2
+tak; 3
+taka 8
+takd 3
+take 2132
+takf 18
+takh 1
+taki 325
+takl 1
+takn 18
+tako 3
+takp 1
+taks 42
+takt 3
+taku 7
+takv 1
+taky 3
+bak  2866
+tal  2104
+tal! 7
+tal" 5
+tal' 5
+tal) 1
+tal, 162
+tal- 12
+tal. 195
+tal/ 20
+tal; 20
+tala 153
+talb 17
+talc 47
+tald 17
+tale 268
+talf 126
+talg 13
+talh 1
+tali 795
+talk 558
+tall 5100
+talm 193
+taln 3
+talo 391
+talp 19
+talr 145
+tals 420
+talt 246
+talu 130
+talv 18
+talw 540
+taly 48
+talz 1
+bal  11780
+tam  717
+tam! 9
+tam' 4
+tam( 1
+tam) 1
+tam, 80
+tam- 4
+tam. 115
+tam/ 22
+tam; 4
+tama 172
+tamb 110
+tame 1524
+tami 289
+taml 5
+tamm 66
+tamn 43
+tamo 176
+tamp 186
+tamr 2
+tams 193
+tamt 15
+tamu 13
+tamw 4
+tamy 9
+bam  3764
+tan  5124
+tan! 13
+tan" 11
+tan' 608
+tan) 1
+tan, 311
+tan- 11
+tan. 246
+tan/ 32
+tan; 14
+tan] 1
+tana 222
+tanb 3
+tanc 923
+tand 13772
+tane 283
+tanf 2
+tang 1142
+tanh 4
+tani 502
+tanj 6
+tank 249
+tanl 8
+tanm 4
+tann 446
+tano 341
+tanq 20
+tans 701
+tant 1975
+tanu 38
+tanv 6
+tanw 4
+tanx 32
+tany 1660
+tanz 4
+ban  28719
+tao. 1
+taoh 1
+taor 16
+taos 17
+taot 7
+bao  42
+tap  95
+tap! 3
+tap' 2
+tap, 21
+tap- 2
+tap. 17
+tap/ 2
+tap; 3
+tapa 171
+tape 314
+tapf 1
+taph 67
+tapi 81
+tapk 4
+tapl 8
+tapn 1
+tapo 103
+tapp 1097
+tapr 16
+taps 190
+tapt 79
+tapu 3
+tapy 4
+bap  2284
+taq  2
+taqu 11
+baq  13
+tar  1303
+tar! 12
+tar' 11
+tar) 2
+tar, 230
+tar- 23
+tar. 233
+tar/ 28
+tar; 12
+tara 329
+tarb 85
+tarc 176
+tard 1181
+tare 3600
+tarf 21
+targ 222
+tarh 1
+tari 501
+tarj 1
+tark 537
+tarl 254
+tarm 367
+tarn 380
+taro 403
+tarp 64
+tarq 2
+tarr 471
+tars 880
+tart 1801
+taru 6
+tarv 64
+tarw 4
+tarx 1
+tary 347
+tarz 2
+bar  13554
+tas  5680
+tas! 5
+tas) 2
+tas, 88
+tas- 1
+tas. 83
+tas/ 6
+tas4 1
+tas; 8
+tasa 46
+tasc 42
+tasd 2
+tase 498
+tasg 1
+tash 300
+tasi 277
+task 330
+tasl 24
+tasm 18
+tasn 108
+taso 255
+tasp 74
+tasq 2
+tass 742
+tast 1323
+tasu 133
+tasy 124
+tasz 1
+bas  10174
+tat  9710
+tat! 27
+tat" 3
+tat' 745
+tat, 228
+tat- 17
+tat. 272
+tat/ 75
+tat; 12
+tat] 1
+tata 98
+tatb 4
+tatc 328
+tate 2520
+tatf 10
+tath 1006
+tati 2051
+tatl 27
+tatm 30
+tatn 21
+tato 206
+tatp 3
+tatr 76
+tats 106
+tatt 748
+tatu 382
+taty 6
+tatz 4
+bat  18716
+tau  10
+tau' 4
+tau, 4
+taub 1
+tauc 13
+taud 59
+tauf 2
+taug 265
+tauk 2
+taul 68
+taum 13
+taun 68
+taup 1
+taur 44
+taus 1157
+taut 307
+taux 1
+bau  2019
+tav  1
+tav' 2
+tav- 1
+tava 79
+tave 3270
+tavi 295
+tavl 3
+tavo 145
+tavp 1
+tavv 2
+tavy 40
+bav  3839
+taw  225
+taw! 2
+taw" 2
+taw, 20
+taw. 31
+taw; 6
+tawa 502
+tawb 2
+tawd 1
+tawe 27
+tawf 22
+tawh 2
+tawi 23
+tawk 12
+tawl 31
+tawm 1
+tawn 79
+tawo 6
+tawp 2
+tawr 3
+taws 68
+tawy 22
+baw  1089
+tax  23
+tax" 1
+tax) 1
+tax, 7
+tax- 2
+tax. 8
+tax3 1
+tax6 1
+taxa 1
+taxe 20
+taxf 1
+taxi 43
+taxl 1
+taxo 4
+taxp 1
+taxw 1
+taxy 27
+bax  143
+tay  2653
+tay! 20
+tay" 2
+tay' 28
+tay) 1
+tay, 503
+tay- 7
+tay. 560
+tay/ 64
+tay; 31
+taya 11
+tayb 253
+tayc 3
+tayd 3
+taye 163
+tayf 2
+tayg 3
+tayh 2
+tayi 202
+tayl 6
+taym 4
+tayn 6
+tayo 33
+tayp 1
+tayr 1
+tays 991
+tayt 7
+tayw 3
+bay  5563
+taz  1
+taz. 1
+taza 6
+tazb 4
+taze 62
+tazg 1
+tazi 86
+tazk 2
+tazm 1
+tazo 6
+tazt 6
+tazy 72
+tazz 12
+baz  260
+ma   137415
+tb a 39
+tb b 8
+tb c 7
+tb d 9
+tb e 4
+tb f 15
+tb g 2
+tb h 6
+tb i 34
+tb l 2
+tb m 9
+tb n 2
+tb o 16
+tb p 2
+tb q 1
+tb r 4
+tb s 12
+tb t 33
+tb u 1
+tb v 2
+tb w 20
+tb y 14
+bb   242
+tb!  6
+tb!" 1
+bb!  7
+tb's 6
+bb'  6
+tb)  2
+bb)  2
+tb,  52
+bb,  52
+tb-  3
+tb-b 7
+tb-c 1
+tb-e 4
+tb-l 2
+tb-o 5
+tb-s 2
+bb-  24
+tb.  63
+tb." 2
+tb.c 3
+bb.  68
+tb/  2
+tb/" 2
+bb/  4
+tb2. 2
+bb2  2
+tb;  4
+bb;  4
+tba  5
+tba, 2
+tba. 1
+tbab 254
+tbac 650
+tbad 236
+tbae 1
+tbaf 5
+tbag 67
+tbai 7
+tbaj 2
+tbak 17
+tbal 158
+tbam 8
+tban 211
+tbap 3
+tbar 192
+tbas 156
+tbat 173
+tbau 6
+tbay 19
+bba  2173
+tbb  2
+tbb' 1
+tbba 9
+tbbc 1
+tbbe 36
+tbbi 67
+tbbl 43
+tbbo 9
+tbbr 6
+tbby 14
+bbb  188
+tbc  3
+tbc. 1
+tbco 4
+tbcs 2
+tbcu 1
+bbc  11
+tbda 1
+tbdi 6
+tbdo 2
+tbdu 6
+bbd  15
+tbe  3102
+tbe! 5
+tbe" 1
+tbe' 1
+tbe( 1
+tbe* 1
+tbe, 64
+tbe. 142
+tbe/ 27
+tbe; 8
+tbea 487
+tbeb 1
+tbec 1200
+tbed 174
+tbee 761
+tbef 402
+tbeg 261
+tbeh 195
+tbei 440
+tbek 4
+tbel 591
+tbem 2
+tben 130
+tber 719
+tbes 357
+tbet 586
+tbev 1
+tbew 16
+tbey 102
+bbe  9781
+tbha 3
+tbho 1
+bbh  4
+tbi  10
+tbi, 2
+tbi- 7
+tbi. 3
+tbia 21
+tbib 6
+tbic 26
+tbid 26
+tbie 31
+tbif 3
+tbig 236
+tbik 8
+tbil 316
+tbim 1
+tbin 117
+tbio 28
+tbir 144
+tbis 20
+tbit 296
+tbiu 1
+tbiv 3
+tbiz 10
+bbi  1315
+tbje 135
+tbju 2
+bbj  137
+tbla 263
+tble 1698
+tbli 257
+tblo 237
+tblu 135
+tbly 240
+bbl  2830
+tbm  2
+tbma 9
+tbme 2
+tbmi 7
+tbmw 2
+bbm  22
+tbne 3
+tbno 7
+bbn  10
+tbo  14
+tbo' 1
+tbo, 1
+tbo. 4
+tbo; 1
+tboa 139
+tbob 19
+tboc 1
+tbod 531
+tboe 3
+tbog 9
+tboh 4
+tboi 23
+tboj 1
+tbol 66
+tbom 27
+tbon 103
+tboo 277
+tbop 1
+tbor 307
+tbos 29
+tbot 263
+tbou 1165
+tbov 82
+tbow 66
+tbox 63
+tboy 212
+tboz 1
+bbo  3413
+tbpa 1
+tbpm 1
+bbp  2
+tbra 346
+tbre 380
+tbri 455
+tbro 365
+tbru 44
+bbr  1590
+tbs  52
+tbs, 24
+tbs. 12
+tbs/ 2
+tbs; 1
+tbsc 17
+tbsd 1
+tbse 99
+tbsi 3
+tbsk 1
+tbso 71
+tbst 64
+tbsu 17
+bbs  364
+tbt  32
+tbt, 9
+tbt. 10
+tbta 11
+tbte 8
+tbtf 2
+tbti 3
+tbtl 27
+tbto 1
+tbtr 6
+tbts 13
+tbtu 1
+bbt  123
+tbub 15
+tbuc 24
+tbud 27
+tbue 4
+tbuf 13
+tbug 23
+tbui 195
+tbul 72
+tbum 29
+tbun 40
+tbuo 1
+tbuq 1
+tbur 236
+tbus 176
+tbut 2972
+tbux 1
+tbuy 77
+tbuz 5
+bbu  3911
+tbve 1
+tbvi 33
+bbv  34
+tbwa 6
+tbwe 1
+tbwi 1
+bbw  8
+tby  1205
+tby! 2
+tby' 2
+tby, 67
+tby- 5
+tby. 44
+tby/ 3
+tby; 3
+tbya 2
+tbye 43
+tbyg 5
+tbyl 4
+tbyp 3
+tbyr 6
+tbys 17
+tbyt 2
+tbyz 1
+bby  1414
+mb   27756
+tc ( 3
+tc - 5
+tc a 80
+tc b 27
+tc c 58
+tc d 29
+tc e 30
+tc f 27
+tc g 10
+tc h 12
+tc i 50
+tc j 3
+tc k 2
+tc l 23
+tc m 35
+tc n 8
+tc o 39
+tc p 43
+tc q 2
+tc r 24
+tc s 57
+tc t 69
+tc u 16
+tc v 8
+tc w 29
+tc y 4
+tc z 1
+bc   694
+tc!  9
+bc!  9
+tc"  2
+tc". 2
+bc"  4
+tc'. 1
+tc'd 1
+tc'm 1
+tc's 7
+bc'  10
+tc(s 1
+bc(  1
+tc)  1
+tc), 1
+bc)  2
+tc,  87
+tc," 4
+bc,  91
+tc-b 1
+tc-c 3
+tc-d 1
+tc-i 2
+tc-l 1
+tc-p 1
+tc-s 1
+bc-  10
+tc.  114
+tc., 1
+tc.. 3
+bc.  118
+tc/  3
+bc/  3
+tc;  3
+bc;  3
+tca  42
+tca! 1
+tca' 4
+tca, 12
+tca- 1
+tca. 16
+tca/ 1
+tca; 1
+tcaa 2
+tcab 59
+tcac 8
+tcad 51
+tcae 6
+tcaf 16
+tcag 24
+tcai 6
+tcak 19
+tcal 1041
+tcam 344
+tcan 2649
+tcap 256
+tcar 737
+tcas 283
+tcat 492
+tcau 1149
+tcav 28
+tcaw 1
+tcay 8
+bca  7257
+tcbe 3
+bcb  3
+tcc  1
+tcca 38
+tcce 216
+tcch 4
+tcci 33
+tccl 1
+tcco 128
+tccr 1
+tccu 126
+bcc  548
+tcdo 1
+tcdu 1
+bcd  2
+tce  2547
+tce! 26
+tce" 2
+tce' 7
+tce) 5
+tce, 498
+tce- 9
+tce. 568
+tce/ 30
+tce; 50
+tce\ 1
+tcea 101
+tceb 7
+tcec 1
+tced 272
+tcee 52
+tcef 29
+tcei 117
+tcek 1
+tcel 145
+tcem 44
+tcen 429
+tceo 2
+tcep 272
+tcer 302
+tces 847
+tcet 10
+tceu 1
+tcew 2
+tcex 5
+tcey 1
+bce  6383
+tcf  1
+tcfl 3
+bcf  4
+tcge 4
+tcgi 1
+tcgo 1
+tcgu 3
+bcg  9
+tch  2239
+tch! 4
+tch' 8
+tch) 1
+tch, 126
+tch- 9
+tch. 116
+tch/ 6
+tch; 11
+tcha 1108
+tchb 6
+tchc 3
+tche 751
+tchf 5
+tchi 762
+tchl 15
+tchm 17
+tchn 64
+tcho 505
+tchp 2
+tchr 61
+tchs 4
+tcht 7
+tchu 49
+tchw 3
+tchy 14
+bch  5896
+tci- 4
+tci. 2
+tcia 377
+tcib 9
+tcic 7
+tcid 170
+tcie 380
+tcif 41
+tcig 10
+tcil 47
+tcim 7
+tcin 182
+tcio 182
+tcip 98
+tcir 75
+tcis 143
+tcit 256
+tciu 1
+tciv 47
+tciz 7
+bci  2045
+tcj! 1
+bcj  1
+tck  1102
+tck! 17
+tck" 1
+tck' 2
+tck) 1
+tck, 161
+tck- 18
+tck. 172
+tck/ 12
+tck; 5
+tcka 14
+tckb 10
+tckd 1
+tcke 406
+tckf 2
+tckg 7
+tckh 1
+tcki 134
+tckj 1
+tckl 116
+tckm 3
+tckn 22
+tcko 10
+tckp 6
+tckr 3
+tcks 207
+tckt 4
+tcku 4
+tckw 23
+tcky 54
+bck  2519
+tcla 242
+tcle 452
+tcli 146
+tclo 451
+tclu 151
+tcly 2
+bcl  1444
+tcma 1
+tcmu 2
+bcm  3
+tcni 6
+bcn  6
+tco  18
+tco' 3
+tco, 12
+tco- 4
+tco. 5
+tco/ 1
+tcoa 68
+tcob 9
+tcoc 31
+tcod 52
+tcoe 8
+tcof 36
+tcog 55
+tcoh 17
+tcoi 17
+tcok 11
+tcol 422
+tcom 2377
+tcon 1882
+tcoo 126
+tcop 86
+tcor 388
+tcos 80
+tcot 22
+tcou 1469
+tcov 192
+tcow 52
+tcox 1
+tcoy 4
+tcoz 2
+bco  7450
+tcp  1
+tcpu 2
+tcpy 1
+bcp  4
+tcqu 27
+bcq  27
+tcra 280
+tcre 656
+tcri 304
+tcro 281
+tcru 134
+tcry 137
+bcr  1792
+tcs  78
+tcs! 2
+tcs' 2
+tcs, 24
+tcs. 28
+tcs/ 1
+tcst 7
+bcs  142
+tct  755
+tct! 3
+tct" 1
+tct' 4
+tct) 1
+tct, 109
+tct- 2
+tct. 86
+tct/ 3
+tct; 13
+tcta 84
+tcte 292
+tctf 2
+tcti 1017
+tctl 160
+tctn 2
+tcto 218
+tctr 70
+tcts 187
+tctu 309
+bct  3318
+tcu. 1
+tcua 1
+tcub 28
+tcud 4
+tcue 23
+tcuf 2
+tcui 19
+tcul 336
+tcum 62
+tcun 10
+tcuo 4
+tcup 76
+tcur 300
+tcus 144
+tcut 118
+tcuu 4
+tcuz 2
+bcu  1134
+tcvp 1
+bcv  1
+tcy  122
+tcy! 2
+tcy" 1
+tcy' 1
+tcy, 23
+tcy. 37
+tcy/ 3
+tcy1 1
+tcy; 9
+tcya 2
+tcyb 4
+tcyc 40
+tcyl 1
+tcyn 10
+tcyr 1
+tcyt 7
+bcy  264
+tcza 2
+tcze 1
+bcz  3
+mc   41200
+td   3
+td " 55
+td $ 1
+td & 1
+td ' 11
+td ( 12
+td * 1
+td , 1
+td - 90
+td . 3
+td 1 16
+td 2 12
+td 3 2
+td 4 4
+td 5 2
+td 6 3
+td 8 3
+td 9 1
+td = 5
+td [ 1
+td a 2962
+td b 1882
+td c 865
+td d 892
+td e 695
+td f 1163
+td g 466
+td h 1449
+td i 3277
+td j 163
+td k 184
+td l 859
+td m 1512
+td n 884
+td o 1901
+td p 737
+td q 52
+td r 586
+td s 1910
+td t 5852
+td u 482
+td v 140
+td w 1841
+td x 4
+td y 1197
+td z 12
+bd   32194
+td!  103
+td!" 6
+td!' 1
+td!. 1
+bd!  111
+td"  12
+td", 2
+td". 3
+td"/ 3
+td"; 1
+bd"  21
+td&d 1
+bd&  1
+td'  1
+td'/ 1
+td'a 5
+td'n 1
+td'r 2
+td's 102
+td'v 32
+td'y 1
+bd'  145
+td(( 1
+td() 1
+td(1 1
+td(b 1
+td(h 1
+bd(  5
+td)  3
+td). 1
+bd)  4
+td,  2166
+td," 7
+td,' 1
+bd,  2174
+td-- 1
+td-1 1
+td-4 1
+td-a 7
+td-b 15
+td-c 6
+td-d 1
+td-e 5
+td-f 7
+td-g 2
+td-h 5
+td-i 5
+td-k 2
+td-l 13
+td-m 5
+td-n 6
+td-o 6
+td-p 6
+td-r 1
+td-s 11
+td-t 7
+td-u 9
+td-w 6
+bd-  128
+td.  2277
+td." 28
+td.' 1
+td.) 1
+td.. 53
+td.a 1
+td.r 2
+bd.  2363
+td/  160
+td/" 5
+td/' 1
+td/o 4
+bd/  170
+td;  122
+td;" 2
+bd;  124
+td\n 2
+bd\  2
+td]  1
+bd]  1
+tda  41
+tda! 1
+tda' 2
+tda, 6
+tda- 1
+tda. 13
+tda; 4
+tdab 21
+tdac 7
+tdad 61
+tdae 1
+tdaf 6
+tdag 6
+tdah 4
+tdai 51
+tdak 4
+tdal 52
+tdam 118
+tdan 283
+tdap 7
+tdaq 2
+tdar 444
+tdas 15
+tdat 128
+tdau 38
+tdav 15
+tdaw 31
+tday 1206
+tdaz 6
+bda  2574
+tdba 6
+tdbe 1
+tdbi 2
+tdbo 12
+tdbr 1
+tdby 27
+bdb  49
+tdc  1
+tdc' 1
+tdca 8
+tdch 8
+tdcl 2
+tdcr 2
+tdcu 2
+bdc  24
+tdd  33
+tdd! 1
+tdd, 2
+tdd. 1
+tdda 14
+tdde 218
+tddh 2
+tddi 68
+tddl 103
+tddn 1
+tddo 9
+tddr 11
+tdds 11
+tddu 1
+tddy 43
+bdd  518
+tde  1165
+tde! 11
+tde' 2
+tde) 1
+tde, 126
+tde- 15
+tde. 191
+tde/ 13
+tde; 10
+tdea 767
+tdeb 37
+tdec 311
+tded 542
+tdee 300
+tdef 232
+tdeg 40
+tdeh 4
+tdei 4
+tdej 2
+tdek 10
+tdel 172
+tdem 146
+tden 659
+tdeo 37
+tdep 178
+tdeq 11
+tder 1742
+tdes 886
+tdet 158
+tdeu 1
+tdev 182
+tdew 20
+tdex 8
+tdey 1
+tdez 7
+bde  7991
+tdfa 9
+tdfi 1
+tdfl 2
+tdfo 2
+tdfr 2
+tdfu 18
+bdf  34
+tdge 281
+tdgi 5
+tdgm 22
+tdgr 1
+tdgy 1
+bdg  310
+tdha 2
+tdhe 3
+tdhi 5
+tdho 27
+bdh  37
+tdi  19
+tdi' 1
+tdi- 1
+tdi. 2
+tdi; 1
+tdia 183
+tdib 39
+tdic 226
+tdid 735
+tdie 471
+tdif 405
+tdig 74
+tdil 32
+tdim 87
+tdin 910
+tdio 99
+tdip 8
+tdir 160
+tdis 757
+tdit 151
+tdiu 20
+tdiv 125
+tdix 1
+tdiz 12
+bdi  4519
+tdja 1
+tdje 2
+tdji 1
+tdju 12
+bdj  16
+tdka 5
+tdke 2
+tdki 1
+bdk  8
+tdla 4
+tdle 259
+tdli 35
+tdlo 12
+tdlu 3
+tdly 165
+bdl  478
+tdma 13
+tdme 4
+tdmi 63
+tdmo 8
+tdmu 1
+tdmv 1
+tdmz 1
+bdm  91
+tdn  8
+tdn' 547
+tdna 8
+tdne 98
+tdni 10
+bdn  671
+tdo  1334
+tdo! 5
+tdo" 1
+tdo' 2
+tdo, 97
+tdo- 2
+tdo. 147
+tdo/ 33
+tdo; 7
+tdoa 5
+tdob 1
+tdoc 78
+tdod 9
+tdoe 481
+tdog 89
+tdoi 189
+tdoj 1
+tdol 103
+tdom 242
+tdon 1696
+tdoo 202
+tdop 13
+tdor 69
+tdos 21
+tdot 21
+tdou 120
+tdov 9
+tdow 841
+tdox 10
+tdoy 4
+tdoz 19
+bdo  5851
+tdp  1
+tdpa 2
+tdpe 2
+tdph 3
+tdpo 4
+tdpr 1
+bdp  13
+tdqu 1
+bdq  1
+tdr  3
+tdr' 1
+tdr. 11
+tdra 220
+tdre 761
+tdri 288
+tdro 147
+tdru 75
+tdry 38
+bdr  1544
+tds  1424
+tds! 13
+tds" 1
+tds' 6
+tds, 262
+tds- 1
+tds. 257
+tds/ 16
+tds; 20
+tdsa 1
+tdsc 15
+tdse 7
+tdsh 37
+tdsi 4
+tdsl 4
+tdsm 2
+tdso 11
+tdsp 1
+tdst 18
+tdsu 1
+tdsy 1
+bds  2102
+tdt, 2
+tdt. 1
+tdte 4
+tdth 6
+tdti 3
+tdtw 1
+bdt  17
+tdu  3
+tdua 74
+tdub 4
+tduc 266
+tdud 14
+tdue 27
+tduf 2
+tdug 2
+tduh 1
+tdui 5
+tduk 11
+tdul 74
+tdum 56
+tdun 7
+tduo 4
+tdup 6
+tdur 110
+tdus 83
+tdut 32
+tduv 2
+bdu  783
+tdva 71
+tdvd 1
+tdve 66
+tdvi 40
+tdvo 15
+bdv  193
+tdwa 20
+tdwe 20
+tdwi 24
+tdwo 10
+tdwr 2
+tdwy 1
+bdw  77
+tdy  668
+tdy! 9
+tdy" 1
+tdy' 43
+tdy, 85
+tdy- 1
+tdy. 86
+tdy/ 9
+tdy; 4
+tdye 2
+tdyg 1
+tdyi 84
+tdyl 1
+tdyn 9
+tdyr 1
+tdys 6
+bdy  1010
+md   66354
+te   24
+te " 67
+te # 1
+te $ 4
+te & 3
+te ' 47
+te ( 28
+te * 1
+te - 175
+te 1 50
+te 2 17
+te 3 14
+te 4 3
+te 5 6
+te 6 4
+te 7 4
+te 8 1
+te 9 5
+te = 1
+te a 6991
+te b 3084
+te c 3384
+te d 2770
+te e 1884
+te f 3122
+te g 1911
+te h 2821
+te i 5107
+te j 335
+te k 532
+te l 2292
+te m 3633
+te n 1727
+te o 4377
+te p 2697
+te q 168
+te r 1846
+te s 5555
+te t 9123
+te u 1074
+te v 482
+te w 5881
+te x 6
+te y 1913
+te z 18
+be   73188
+te!  284
+te!" 23
+te!' 3
+te!) 1
+be!  311
+te"  38
+te"! 2
+te", 6
+te". 10
+te"/ 2
+te"; 1
+be"  59
+te## 1
+be#  1
+te'  5
+te', 2
+te'. 5
+te'd 108
+te'e 3
+te'l 162
+te'r 312
+te's 1034
+te'v 111
+be'  1742
+te(& 2
+te() 1
+te(d 1
+te(o 1
+be(  5
+te)  18
+te)) 2
+te), 5
+te). 8
+te)/ 1
+te); 4
+te)d 1
+be)  39
+te*  1
+be*  1
+te,  4722
+te," 33
+te,' 1
+be,  4756
+te-  2
+te-- 1
+te-3 1
+te-a 16
+te-b 19
+te-c 17
+te-d 11
+te-e 14
+te-f 17
+te-g 5
+te-h 7
+te-i 7
+te-j 4
+te-k 8
+te-l 11
+te-m 16
+te-n 3
+te-o 10
+te-p 5
+te-r 6
+te-s 19
+te-t 24
+te-u 3
+te-w 7
+be-  233
+te.  5528
+te." 84
+te.' 6
+te., 1
+te.. 146
+te.g 1
+te.l 2
+be.  5768
+te/  524
+te/! 3
+te/" 22
+te/' 1
+te/b 1
+be/  551
+te30 1
+be3  1
+te;  312
+be;  312
+te\n 1
+be\  1
+tea  181
+tea! 4
+tea' 3
+tea, 38
+tea- 4
+tea. 46
+tea/ 2
+teab 20
+teac 667
+tead 1315
+teaf 19
+teag 36
+teah 82
+teak 457
+teal 1314
+team 579
+tean 803
+teap 121
+tear 3057
+teas 1145
+teat 1754
+teau 215
+teav 429
+teaw 6
+teaz 1
+bea  12298
+teb  18
+teb, 3
+teb- 2
+teba 50
+tebb 4
+tebe 47
+tebi 7
+tebl 10
+tebo 127
+tebp 1
+tebr 33
+tebs 6
+tebt 17
+tebu 16
+teby 10
+beb  351
+tec  5
+tec. 1
+teca 954
+tecc 6
+tece 320
+tech 136
+teci 477
+teck 157
+tecl 36
+teco 690
+tecr 148
+tecs 11
+tect 1428
+tecu 133
+tecv 1
+tecy 7
+tecz 1
+bec  4511
+ted  8425
+ted! 41
+ted" 10
+ted) 2
+ted, 731
+ted- 14
+ted. 831
+ted/ 50
+ted; 49
+teda 65
+tedb 6
+tedc 3
+tedd 42
+tede 123
+tedg 162
+tedi 325
+tedk 1
+tedl 40
+tedm 1
+tedn 9
+tedo 103
+tedr 19
+teds 177
+tedt 4
+tedu 95
+tedv 1
+tedw 4
+tedy 49
+bed  11382
+tee  1119
+tee! 7
+tee" 1
+tee' 5
+tee, 192
+tee- 27
+tee. 138
+tee/ 34
+tee; 7
+teea 1
+teeb 11
+teec 34
+teed 968
+teef 6
+teeh 1
+teei 55
+teek 202
+teel 835
+teem 370
+teen 1414
+teep 777
+teer 149
+tees 193
+teet 489
+teev 11
+teew 4
+teey 2
+teez 60
+bee  7112
+tef  79
+tef' 2
+tef) 1
+tef, 18
+tef. 9
+tef; 1
+tefa 16
+tefc 1
+tefe 182
+teff 160
+tefi 163
+tefl 77
+tefo 452
+tefr 21
+tefs 19
+teft 219
+tefu 196
+tefy 10
+bef  1626
+teg  18
+teg! 1
+teg, 2
+teg- 1
+teg. 2
+tega 215
+tege 89
+tegg 48
+tegi 210
+tegl 10
+tegm 5
+tegn 5
+tego 34
+tegr 86
+tegs 26
+tegu 63
+tegy 12
+beg  827
+teh  2
+teh, 1
+teh. 2
+teh/ 3
+teha 55
+tehe 48
+tehi 146
+teho 86
+tehr 4
+tehu 1
+tehy 3
+beh  351
+tei  3
+tei, 2
+tei. 2
+teia 5
+teid 9
+teig 193
+teij 2
+teil 32
+teim 2
+tein 554
+teir 936
+teis 14
+teit 163
+teiv 95
+teiz 13
+bei  2025
+teje 22
+teji 2
+tejo 7
+teju 16
+bej  47
+tek  87
+tek" 1
+tek' 2
+tek, 14
+tek. 22
+tek/ 2
+teka 11
+tekd 1
+teke 18
+tekh 1
+teki 19
+tekn 6
+teks 53
+teku 9
+teky 1
+bek  247
+tel  700
+tel! 8
+tel' 7
+tel, 74
+tel- 8
+tel. 68
+tel/ 9
+tel; 2
+tela 186
+telb 5
+telc 46
+teld 215
+tele 455
+telf 925
+telg 1
+telh 1
+teli 888
+telk 4
+tell 1891
+telm 21
+telo 233
+telp 234
+telr 6
+tels 426
+telt 239
+telu 31
+telv 249
+telw 1
+tely 709
+bel  7642
+tem  939
+tem! 11
+tem" 1
+tem' 6
+tem, 164
+tem- 1
+tem. 287
+tem/ 18
+tem; 13
+tema 250
+temb 477
+teme 838
+temi 196
+teml 1
+temm 5
+temn 20
+temo 435
+temp 339
+tems 336
+temt 2
+temu 4
+temy 71
+bem  4414
+ten  5895
+ten! 18
+ten" 5
+ten' 177
+ten( 2
+ten) 6
+ten, 394
+ten- 20
+ten. 323
+ten/ 32
+ten; 34
+tena 131
+tenb 9
+tenc 1092
+tend 1562
+tene 835
+tenf 11
+teng 302
+tenh 15
+teni 278
+tenj 76
+tenk 1
+tenl 106
+tenm 2
+tenn 61
+teno 325
+tenq 1
+tenr 23
+tens 687
+tent 3905
+tenu 46
+tenv 57
+tenw 3
+teny 23
+tenz 6
+ben  16463
+teo  17
+teo, 7
+teo- 2
+teo. 8
+teo/ 2
+teo; 10
+teob 1
+teoc 1
+teod 2
+teof 6
+teog 11
+teoi 2
+teol 24
+teom 5
+teon 335
+teop 1056
+teor 89
+teos 9
+teot 4
+teou 59
+teov 4
+beo  1654
+tep  520
+tep! 1
+tep' 1
+tep, 46
+tep- 4
+tep. 54
+tep/ 3
+tep; 5
+tep] 2
+tepa 155
+tepe 200
+tepf 1
+teph 45
+tepi 91
+tepl 67
+tepn 1
+tepo 48
+tepp 30
+tepr 87
+teps 84
+tept 374
+tepu 19
+tepw 3
+tepy 11
+bep  1852
+teq  4
+teq) 1
+teqi 1
+tequ 278
+beq  284
+ter  8285
+ter! 64
+ter" 12
+ter' 141
+ter( 2
+ter) 8
+ter, 1017
+ter- 62
+ter. 1188
+ter/ 70
+ter; 99
+ter] 1
+tera 683
+terb 65
+terc 221
+terd 85
+tere 5512
+terf 377
+terg 166
+terh 136
+teri 984
+terj 3
+terk 18
+terl 97
+term 286
+tern 442
+tero 251
+terp 95
+terq 1
+terr 321
+ters 2567
+tert 499
+teru 12
+terv 344
+terw 90
+tery 1957
+terz 3
+ber  26164
+tes  5327
+tes! 42
+tes" 7
+tes' 11
+tes) 16
+tes, 1087
+tes- 1
+tes. 1107
+tes/ 49
+tes; 91
+tesa 12
+tesb 1
+tesc 180
+tesd 13
+tese 821
+tesh 100
+tesi 391
+tesk 27
+tesl 8
+tesm 17
+tesn 205
+teso 77
+tesp 319
+tesq 8
+tess 2371
+test 2058
+tesu 90
+tesy 3
+bes  14439
+tet  2292
+tet! 8
+tet" 3
+tet' 106
+tet( 3
+tet) 1
+tet, 166
+tet- 10
+tet. 207
+tet/ 19
+tet; 16
+teta 133
+tetb 4
+tetc 52
+tetd 2
+tete 468
+tetf 7
+teth 1114
+teti 507
+tetl 37
+tetm 2
+tetn 21
+teto 48
+tetp 3
+tetr 88
+tets 346
+tett 760
+tetu 119
+tetw 247
+tety 128
+tetz 4
+bet  6921
+teu  2
+teuc 5
+teud 9
+teug 1
+teuk 4
+teul 1
+teum 22
+teun 5
+teup 8
+teur 64
+teus 20
+teut 12
+teuv 2
+teux 1
+beu  156
+tev  1
+tev, 1
+tev- 1
+tev. 1
+teva 83
+teve 4862
+tevf 1
+tevi 355
+tevk 2
+tevo 137
+tevs 3
+tevu 1
+tevy 5
+bev  5453
+tew  789
+tew! 2
+tew' 1
+tew, 41
+tew- 2
+tew. 49
+tew/ 4
+tew; 6
+tewa 57
+tewb 10
+tewc 1
+tewd 1
+tewe 67
+tewf 2
+tewh 90
+tewi 41
+tewl 2
+tewm 2
+tewn 4
+tewo 19
+tewp 2
+tewr 21
+tews 109
+tewt 9
+tewy 6
+bew  1337
+tex  40
+tex' 1
+tex, 9
+tex- 3
+tex. 3
+texa 198
+texc 253
+texe 57
+texf 1
+texh 27
+texi 264
+texl 1
+texo 11
+texp 536
+texq 5
+text 328
+texu 12
+texx 1
+texy 2
+bex  1752
+tey  2193
+tey! 8
+tey' 414
+tey) 1
+tey, 117
+tey- 7
+tey. 77
+tey/ 16
+tey; 7
+tey] 1
+teya 7
+teyb 41
+teye 387
+teyh 3
+teyi 4
+teym 2
+teyn 2
+teyo 93
+teyp 1
+teys 51
+teyw 2
+bey  3434
+tez  1
+tez, 3
+tez- 2
+tez. 1
+teze 53
+tezh 1
+tezi 7
+tezo 2
+tezv 4
+tezy 1
+tezz 1
+bez  76
+me   219786
+tf " 26
+tf $ 1
+tf ' 10
+tf ( 6
+tf - 12
+tf 1 15
+tf 2 5
+tf 3 1
+tf 5 2
+tf 6 1
+tf 7 3
+tf 9 2
+tf = 1
+tf a 1228
+tf b 304
+tf c 460
+tf d 293
+tf e 269
+tf f 280
+tf g 204
+tf h 589
+tf i 925
+tf j 42
+tf k 41
+tf l 339
+tf m 667
+tf n 181
+tf o 451
+tf p 398
+tf q 21
+tf r 198
+tf s 640
+tf t 3210
+tf u 184
+tf v 90
+tf w 479
+tf x 2
+tf y 1050
+tf z 5
+bf   12635
+tf!  13
+bf!  13
+tf"  7
+tf"; 1
+bf"  8
+tf'] 1
+tf's 7
+bf'  8
+tf(f 2
+tf(t 1
+bf(  3
+tf)  2
+tf); 1
+bf)  3
+tf,  216
+tf," 1
+bf,  217
+tf-a 18
+tf-b 3
+tf-c 15
+tf-d 10
+tf-e 6
+tf-f 4
+tf-h 5
+tf-i 3
+tf-j 2
+tf-l 3
+tf-m 3
+tf-o 2
+tf-p 5
+tf-r 4
+tf-s 9
+tf-t 7
+tf-w 5
+bf-  104
+tf.  257
+tf." 3
+tf.' 1
+tf.. 2
+tf.u 2
+bf.  265
+tf/  17
+tf/" 1
+tf/' 1
+bf/  19
+tf;  13
+bf;  13
+tfa  2
+tfa, 1
+tfab 16
+tfac 666
+tfad 53
+tfae 6
+tfai 281
+tfak 21
+tfal 278
+tfam 178
+tfan 94
+tfar 311
+tfas 185
+tfat 283
+tfau 38
+tfav 50
+tfaw 3
+tfax 2
+tfay 3
+tfaz 4
+bfa  2475
+tfbi 10
+bfb  10
+tfc  1
+tfca 1
+tfcc 1
+tfco 1
+bfc  4
+tfd  1
+tfd. 1
+tfdi 2
+bfd  4
+tfe  743
+tfe! 9
+tfe" 4
+tfe' 19
+tfe, 207
+tfe- 13
+tfe. 239
+tfe/ 13
+tfe; 10
+tfea 315
+tfeb 11
+tfec 314
+tfed 27
+tfee 914
+tfeg 3
+tfei 10
+tfel 280
+tfem 13
+tfen 79
+tfer 666
+tfes 93
+tfet 56
+tfeu 4
+tfev 17
+tfew 184
+tfey 4
+bfe  4247
+tff  302
+tff! 4
+tff' 1
+tff, 29
+tff- 7
+tff. 58
+tff/ 2
+tff; 1
+tffa 19
+tffe 709
+tffi 209
+tffl 20
+tffo 64
+tffr 2
+tffs 23
+tffu 6
+tffy 8
+bff  1464
+tfga 1
+tfgh 2
+bfg  3
+tfi  1
+tfi. 1
+tfia 23
+tfib 15
+tfic 394
+tfid 48
+tfie 210
+tfif 69
+tfig 273
+tfil 179
+tfim 1
+tfin 1037
+tfir 703
+tfis 110
+tfit 143
+tfiv 103
+tfix 70
+tfiz 4
+bfi  3384
+tfla 222
+tfle 175
+tfli 107
+tflo 245
+tflu 72
+tfly 111
+bfl  932
+tfma 2
+bfm  2
+tfn, 1
+tfnk 2
+bfn  3
+tfo  2
+tfoa 4
+tfoc 48
+tfod 2
+tfoe 6
+tfog 11
+tfoi 2
+tfol 213
+tfon 23
+tfoo 258
+tfor 4970
+tfos 5
+tfou 416
+tfox 7
+bfo  5967
+tfr' 1
+tfra 247
+tfre 389
+tfri 507
+tfro 1489
+tfru 55
+tfry 10
+bfr  2698
+tfs  23
+tfs! 1
+tfs" 2
+tfs, 8
+tfs. 9
+tfsm 5
+tfsp 4
+tfst 4
+bfs  56
+tft  284
+tft! 1
+tft" 1
+tft, 30
+tft- 3
+tft. 42
+tft/ 1
+tft; 1
+tfte 604
+tfth 15
+tfti 25
+tftk 1
+tftl 10
+tftn 3
+tfto 4
+tftp 1
+tfts 21
+tftw 11
+tfty 32
+bft  1090
+tfu  1
+tfu. 1
+tfu; 1
+tfud 2
+tfue 14
+tfug 7
+tfuj 2
+tful 779
+tfum 8
+tfun 205
+tfur 90
+tfus 99
+tfut 165
+tfuz 6
+bfu  1380
+tfwa 5
+tfwe 2
+tfwi 1
+tfwo 1
+bfw  9
+tfy  54
+tfy, 3
+tfy- 1
+tfy. 3
+tfyi 33
+bfy  94
+mf   37110
+tg   1
+tg " 22
+tg ' 16
+tg ( 10
+tg - 36
+tg 1 3
+tg 3 1
+tg 7 1
+tg 9 1
+tg [ 1
+tg a 1572
+tg b 404
+tg c 328
+tg d 259
+tg e 279
+tg f 551
+tg g 125
+tg h 447
+tg i 1119
+tg j 32
+tg k 26
+tg l 268
+tg m 487
+tg n 133
+tg o 877
+tg p 247
+tg q 29
+tg r 157
+tg s 548
+tg t 2658
+tg u 243
+tg v 44
+tg w 647
+tg y 363
+tg z 4
+bg   11939
+tg!  62
+tg!" 6
+tg!/ 1
+bg!  69
+tg"  5
+bg"  5
+tg'l 1
+tg's 48
+bg'  49
+tg)  1
+tg), 2
+bg)  3
+tg,  965
+tg," 7
+tg,' 1
+bg,  973
+tg-a 3
+tg-b 2
+tg-c 1
+tg-d 4
+tg-e 8
+tg-f 3
+tg-g 5
+tg-i 1
+tg-l 1
+tg-n 6
+tg-p 2
+tg-r 6
+tg-s 5
+tg-t 4
+tg-u 3
+tg-w 6
+tg-y 1
+bg-  61
+tg.  1156
+tg." 17
+tg.. 34
+tg.e 1
+tg.i 2
+tg.r 1
+tg.w 2
+bg.  1213
+tg/  96
+tg/! 1
+tg/" 6
+bg/  103
+tg;  87
+bg;  87
+tg]  1
+bg]  1
+tga  14
+tga! 1
+tga, 4
+tga. 3
+tgaa 1
+tgab 5
+tgac 6
+tgad 2
+tgae 1
+tgaf 1
+tgag 20
+tgah 2
+tgai 585
+tgal 100
+tgam 160
+tgan 215
+tgap 9
+tgar 169
+tgas 41
+tgat 160
+tgau 6
+tgav 99
+tgaw 2
+tgax 1
+tgay 8
+tgaz 50
+bga  1665
+tgb  1
+tgb. 2
+tgbi 2
+tgbo 2
+tgbu 2
+bgb  9
+tgcs 1
+bgc  1
+tgde 1
+tgdo 21
+tgdp 1
+bgd  23
+tge  1062
+tge! 11
+tge" 3
+tge' 3
+tge( 1
+tge) 1
+tge, 192
+tge- 11
+tge. 197
+tge/ 17
+tge; 13
+tgea 27
+tgeb 3
+tged 313
+tgee 23
+tgef 2
+tgeh 8
+tgei 2
+tgel 73
+tgem 46
+tgen 530
+tgeo 62
+tger 702
+tges 321
+tget 1450
+tgew 2
+bge  5075
+tgfe 1
+tgfi 3
+tgfo 1
+tgfu 13
+bgf  18
+tgg  5
+tgg, 1
+tgg. 1
+tgga 3
+tgge 162
+tggi 45
+tggl 71
+tggm 1
+tggo 3
+tggr 18
+tggs 19
+tggu 2
+tggy 11
+bgg  342
+tgh  1016
+tgh! 5
+tgh) 2
+tgh, 89
+tgh- 22
+tgh. 123
+tgh/ 3
+tgh; 10
+tgha 17
+tghb 32
+tghe 113
+tghh 1
+tghi 25
+tghk 1
+tghl 30
+tghn 2
+tgho 66
+tghp 2
+tghs 19
+tght 3276
+tghw 12
+tghy 1
+bgh  4867
+tgi  2
+tgi' 1
+tgi, 3
+tgi- 1
+tgia 42
+tgib 7
+tgic 192
+tgid 8
+tgie 29
+tgif 57
+tgig 8
+tgil 37
+tgim 11
+tgin 683
+tgio 74
+tgir 152
+tgis 36
+tgit 30
+tgiv 566
+tgiz 13
+bgi  1952
+tgja 1
+bgj  1
+tgko 3
+bgk  3
+tgla 152
+tgle 277
+tgli 116
+tglo 124
+tglu 6
+tgly 89
+bgl  764
+tgm  5
+tgm. 2
+tgma 19
+tgme 37
+tgmi 2
+tgml 2
+tgmy 1
+bgm  68
+tgn  62
+tgn! 1
+tgn' 1
+tgn, 6
+tgn. 9
+tgn/ 1
+tgn; 2
+tgna 47
+tgne 79
+tgni 133
+tgnm 6
+tgno 62
+tgns 26
+tgnt 1
+bgn  436
+tgo  619
+tgo! 5
+tgo' 1
+tgo, 80
+tgo- 6
+tgo. 107
+tgo/ 13
+tgo; 3
+tgoa 58
+tgob 13
+tgod 248
+tgoe 122
+tgog 3
+tgoi 480
+tgok 1
+tgol 103
+tgom 2
+tgon 510
+tgoo 693
+tgor 44
+tgos 8
+tgot 738
+tgou 4
+tgov 60
+tgow 3
+bgo  3924
+tgpi 2
+tgps 1
+bgp  3
+tgra 517
+tgre 891
+tgri 130
+tgro 426
+tgru 20
+tgry 60
+bgr  2044
+tgs  960
+tgs! 2
+tgs" 1
+tgs' 2
+tgs) 4
+tgs, 159
+tgs. 176
+tgs/ 11
+tgs; 8
+tgsa 1
+tgsh 1
+tgsi 1
+tgsp 1
+tgst 16
+bgs  1343
+tgta 1
+tgte 1
+tgth 100
+tgti 3
+tgto 17
+tgtz 1
+bgt  123
+tgu  1
+tgua 120
+tgub 1
+tgue 202
+tgui 158
+tgul 60
+tgum 33
+tgun 92
+tguo 2
+tgup 2
+tgur 92
+tgus 33
+tgut 9
+tguy 171
+tguz 1
+bgu  977
+tgwa 6
+tgwb 1
+tgwe 1
+tgwh 1
+tgwi 1
+tgwo 2
+tgwy 1
+bgw  13
+tgxi 3
+bgx  3
+tgy  81
+tgy' 3
+tgy, 26
+tgy- 2
+tgy. 29
+tgy/ 1
+tgy; 2
+tgym 6
+tgyn 1
+tgyo 5
+tgyp 8
+bgy  164
+tgza 1
+tgzh 1
+bgz  2
+mg   38323
+th   1
+th " 6
+th ' 7
+th ( 8
+th , 1
+th - 20
+th 1 3
+th 2 1
+th 4 2
+th 9 1
+th ; 1
+th = 3
+th a 1021
+th b 184
+th c 217
+th d 152
+th e 161
+th f 209
+th g 80
+th h 330
+th i 695
+th j 32
+th k 30
+th l 187
+th m 430
+th n 127
+th o 569
+th p 175
+th q 5
+th r 114
+th s 342
+th t 1519
+th u 69
+th v 39
+th w 367
+th x 1
+th y 344
+th z 4
+bh   7457
+th!  55
+th!" 2
+bh!  57
+th"  2
+bh"  2
+th'  1
+th'd 2
+th's 18
+bh'  21
+th() 1
+bh(  1
+th)  2
+th). 3
+th); 1
+bh)  6
+th,  769
+th," 2
+th,' 2
+bh,  773
+th-2 1
+th-a 3
+th-b 1
+th-c 7
+th-d 3
+th-f 8
+th-g 3
+th-h 8
+th-i 1
+th-l 7
+th-m 2
+th-n 2
+th-p 7
+th-q 2
+th-s 6
+th-t 7
+th-w 2
+bh-  70
+th.  594
+th." 8
+th.. 29
+th.a 1
+th.i 2
+th.v 1
+bh.  635
+th/  53
+th/" 3
+th/c 1
+bh/  57
+th;  48
+bh;  48
+tha  11
+tha! 7
+tha, 4
+tha- 1
+tha. 4
+thaa 1
+thab 77
+thac 37
+thad 1234
+thae 14
+thaf 6
+thag 11
+thah 7
+thai 142
+thak 63
+thal 362
+tham 143
+than 2033
+thao 24
+thap 808
+thar 765
+thas 820
+that 8997
+thau 51
+thav 2549
+thaw 15
+thay 3
+thaz 7
+bha  18196
+thba 4
+thbe 3
+thbi 2
+thbl 1
+thbo 36
+thbr 1
+thbu 1
+bhb  48
+thca 1
+thco 2
+thcr 1
+bhc  4
+thda 15
+thdr 4
+bhd  19
+the  23198
+the" 1
+the' 406
+the) 3
+the, 25
+the- 9
+the. 35
+the/ 6
+thea 1452
+thec 81
+thed 464
+thee 157
+thef 13
+theg 3
+theh 1
+thei 933
+thek 1
+thel 514
+them 1230
+then 2686
+theo 74
+thep 9
+theq 1
+ther 6737
+thes 803
+thet 161
+theu 15
+thev 8
+thew 32
+thex 6
+they 2403
+bhe  41467
+thfr 1
+thfu 21
+bhf  22
+thgr 2
+bhg  2
+thh! 1
+thh, 1
+thh. 1
+thha 1
+thhe 2
+bhh  6
+thi  7
+thi' 1
+thi, 11
+thi- 1
+thi. 3
+thia 14
+thib 12
+thic 776
+thid 127
+thie 118
+thif 27
+thig 260
+thih 1
+thij 3
+thik 6
+thil 692
+thim 944
+thin 4961
+thio 31
+thip 238
+thir 143
+this 3878
+thit 240
+thiv 14
+thiz 6
+bhi  12514
+thka 1
+thke 1
+bhk  2
+thla 4
+thle 29
+thli 6
+thlo 11
+thly 44
+bhl  94
+thm  13
+thm, 1
+thm. 2
+thm/ 1
+thma 16
+thme 42
+thmi 5
+thmm 6
+thms 6
+bhm  92
+thn  15
+thn' 1
+thn- 1
+thne 19
+thni 35
+thnn 11
+thno 32
+thnp 3
+thns 5
+thnu 3
+bhn  125
+tho  1128
+tho! 2
+tho' 77
+tho, 19
+tho- 1
+tho. 6
+tho/ 5
+thoa 8
+thob 28
+thoc 31
+thod 39
+thoe 61
+thof 5
+thog 22
+thoi 99
+thok 18
+thol 632
+thom 356
+thon 224
+thoo 378
+thop 353
+thor 380
+thos 696
+thot 168
+thou 2022
+thov 23
+thow 1301
+thoz 1
+bho  8083
+thp, 1
+thpa 1
+thpe 3
+thpi 2
+thpl 2
+thpr 2
+bhp  11
+thqu 10
+bhq  10
+thr  1
+thr, 1
+thra 25
+thre 267
+thri 125
+thro 658
+thru 13
+thry 1
+bhr  1091
+ths  107
+ths' 2
+ths) 1
+ths, 23
+ths. 17
+ths/ 2
+ths; 1
+thsa 3
+thsc 1
+thse 1
+thsk 1
+thst 5
+bhs  164
+tht  1861
+tht! 13
+tht" 2
+tht' 14
+tht, 335
+tht- 9
+tht. 351
+tht/ 54
+tht; 18
+thta 3
+thtb 1
+thtc 1
+thte 180
+thtf 15
+thth 6
+thti 52
+thtl 33
+thtm 36
+thtn 29
+thto 1
+thtr 1
+thts 234
+thtt 9
+thtu 6
+thty 38
+bht  3302
+thua 1
+thub 5
+thuc 13
+thud 10
+thue 2
+thuf 3
+thug 40
+thuh 18
+thuk 1
+thul 5
+thum 451
+thun 250
+thup 4
+thur 175
+thus 83
+thut 45
+thuu 1
+bhu  1107
+thwa 24
+thwe 5
+thwh 5
+thwo 5
+bhw  39
+thy  488
+thy! 3
+thy" 2
+thy' 3
+thy, 52
+thy. 43
+thy/ 19
+thy; 5
+thya 1
+thyb 3
+thyd 14
+thye 1
+thyg 1
+thyi 1
+thyl 7
+thym 14
+thyn 2
+thyp 36
+thyr 9
+thys 87
+thyt 25
+thyy 1
+bhy  817
+thz  1
+thz, 1
+bhz  2
+mh   96344
+ti   28
+ti " 1
+ti ( 1
+ti - 1
+ti . 1
+ti a 650
+ti b 186
+ti c 927
+ti d 958
+ti e 77
+ti f 324
+ti g 388
+ti h 904
+ti i 36
+ti j 130
+ti k 479
+ti l 391
+ti m 350
+ti n 199
+ti o 72
+ti p 120
+ti q 4
+ti r 226
+ti s 726
+ti t 569
+ti u 73
+ti v 8
+ti w 1504
+ti y 5
+bi   9338
+ti!  2
+bi!  2
+ti"  3
+ti". 2
+bi"  5
+ti'd 196
+ti'l 415
+ti'm 1290
+ti's 11
+ti'v 483
+bi'  2395
+ti,  64
+ti," 1
+bi,  65
+ti-# 1
+ti-7 1
+ti-a 5
+ti-b 1
+ti-c 4
+ti-d 1
+ti-f 2
+ti-g 3
+ti-h 1
+ti-i 2
+ti-l 3
+ti-m 1
+ti-n 1
+ti-o 5
+ti-r 3
+ti-s 3
+ti-w 8
+bi-  45
+ti.  51
+ti." 1
+ti.. 14
+ti.e 5
+bi.  71
+ti/  12
+ti/. 2
+bi/  14
+ti6  2
+bi6  2
+ti;  6
+bi;  6
+tia  103
+tia! 1
+tia" 1
+tia' 7
+tia) 1
+tia, 41
+tia. 34
+tia/ 3
+tiab 50
+tiac 5
+tiad 4
+tiae 1
+tiag 34
+tiah 1
+tial 507
+tiam 21
+tian 329
+tiap 7
+tiar 72
+tias 28
+tiat 212
+bia  1462
+tib  4
+tib, 1
+tib- 2
+tib2 2
+tiba 10
+tibb 17
+tibe 123
+tibi 100
+tibl 458
+tibm 2
+tibo 1
+tibr 49
+tibs 2
+tibu 48
+tiby 1
+bib  820
+tic  665
+tic! 9
+tic" 2
+tic' 7
+tic) 1
+tic, 78
+tic- 4
+tic. 95
+tic/ 3
+tic; 3
+tica 898
+ticc 2
+tice 924
+tich 791
+tici 286
+tick 595
+ticl 33
+ticn 6
+tico 39
+ticr 34
+tics 119
+tict 311
+ticu 183
+ticy 25
+ticz 1
+bic  5114
+tid  1015
+tid! 6
+tid' 2
+tid, 159
+tid- 17
+tid. 126
+tid/ 14
+tid; 14
+tida 58
+tidd 142
+tide 1630
+tidg 48
+tidi 143
+tidl 37
+tidn 293
+tido 36
+tids 130
+tidt 4
+tidu 53
+tidw 6
+tidy 4
+bid  3937
+tie  227
+tie! 4
+tie" 1
+tie' 5
+tie, 86
+tie- 1
+tie. 101
+tie/ 13
+tie; 4
+tiec 106
+tied 471
+tiee 3
+tief 125
+tieg 6
+tiek 10
+tiel 141
+tiem 2
+tien 967
+tier 191
+ties 1177
+tiet 214
+tieu 10
+tiev 402
+tiew 78
+bie  4345
+tif  1905
+tif" 5
+tif, 16
+tif- 1
+tif/ 1
+tifa 4
+tife 1248
+tiff 420
+tifi 268
+tifl 15
+tifn 2
+tifo 40
+tifr 5
+tifs 1
+tift 229
+tifu 154
+tify 59
+bif  4373
+tig  187
+tig, 16
+tig- 2
+tig. 14
+tig/ 1
+tiga 66
+tige 119
+tigf 1
+tigg 90
+tigh 2872
+tigi 114
+tigl 7
+tigm 11
+tign 311
+tigo 18
+tigr 21
+tigs 14
+tigu 94
+tigy 4
+tigz 1
+big  3963
+tiha 1
+tihe 1
+tihi 11
+tihk 1
+tiho 1
+bih  15
+tii  2
+tii, 4
+tii. 2
+tiia 1
+tiii 1
+bii  10
+tija 5
+tiji 1
+tiju 1
+bij  7
+tik, 1
+tika 1
+tike 1868
+tiki 16
+tikk 1
+tiko 1
+tiks 1
+tiky 1
+bik  1890
+til  519
+til! 5
+til" 1
+til' 7
+til, 54
+til- 2
+til. 70
+til/ 14
+til; 4
+tila 95
+tilb 9
+tilc 1
+tild 440
+tile 809
+tilf 4
+tilg 4
+tilh 5
+tili 492
+tilk 38
+till 2990
+tilm 30
+tilo 75
+tilr 8
+tils 96
+tilt 129
+tilu 48
+tilv 41
+tilw 6
+tily 241
+bil  6237
+tim  566
+tim! 15
+tim" 1
+tim) 1
+tim, 134
+tim. 163
+tim/ 6
+tim; 9
+tima 413
+timb 68
+time 1842
+timi 217
+timl 9
+timm 179
+timn 4
+timo 21
+timp 693
+timr 3
+tims 185
+timu 40
+timw 1
+timy 6
+bim  4576
+tin  7377
+tin! 21
+tin" 3
+tin' 374
+tin, 298
+tin- 20
+tin. 466
+tin/ 22
+tin; 20
+tina 587
+tinb 20
+tinc 636
+tind 1970
+tine 1669
+tinf 253
+ting 14324
+tinh 48
+tini 454
+tinj 59
+tink 1178
+tinl 46
+tinm 14
+tinn 213
+tino 60
+tinp 14
+tinq 10
+tins 1087
+tint 1885
+tinu 228
+tinv 247
+tinw 7
+tinx 1
+tiny 104
+bin  33715
+tio  42
+tio! 2
+tio, 11
+tio. 5
+tio; 1
+tioa 5
+tioc 14
+tiod 37
+tioe 4
+tiof 1
+tiog 3
+tioh 1
+tiol 92
+tiom 7
+tion 3966
+tiop 3
+tior 136
+tios 29
+tiot 32
+tiou 455
+tiov 1
+tiow 6
+tiox 7
+bio  4860
+tip  161
+tip! 3
+tip' 7
+tip, 34
+tip- 5
+tip. 32
+tip/ 3
+tip; 4
+tipa 38
+tipb 1
+tipe 54
+tiph 13
+tipi 17
+tipl 73
+tipm 13
+tipo 5
+tipp 110
+tipr 4
+tips 121
+tipt 32
+tipu 13
+tipw 3
+bip  746
+tiq  4
+tiq, 2
+tiqu 68
+biq  74
+tir  1088
+tir! 7
+tir" 2
+tir' 1
+tir) 2
+tir, 76
+tir- 10
+tir. 74
+tir/ 4
+tir; 2
+tira 99
+tirb 4
+tirc 84
+tird 174
+tire 808
+tirf 2
+tirg 10
+tiri 134
+tirk 8
+tirl 176
+tirm 55
+tirn 3
+tiro 69
+tirp 9
+tirq 2
+tirr 98
+tirs 524
+tirt 199
+tiru 20
+tirv 3
+tirw 3
+tiry 39
+bir  3789
+tis  8811
+tis! 15
+tis' 9
+tis( 1
+tis, 218
+tis- 3
+tis. 215
+tis/ 33
+tis; 44
+tisa 148
+tisb 4
+tisc 212
+tisd 46
+tise 659
+tisf 63
+tisg 34
+tish 687
+tisi 321
+tisk 57
+tisl 59
+tism 113
+tisn 163
+tiso 160
+tisp 128
+tisq 2
+tisr 9
+tiss 323
+tist 1472
+tisu 29
+tisv 2
+tisy 12
+bis  14052
+tit  5066
+tit! 49
+tit" 2
+tit' 1535
+tit( 2
+tit) 7
+tit, 410
+tit- 8
+tit. 735
+tit/ 91
+tit; 37
+tita 297
+titc 94
+tite 903
+titf 6
+tith 3174
+titi 908
+titl 31
+titm 8
+titn 42
+tito 58
+titr 15
+tits 746
+titt 765
+titu 148
+titv 1
+tity 1092
+titz 9
+bit  16239
+tiu  1
+tiu; 1
+tium 80
+tiur 1
+tius 43
+biu  126
+tiv  3
+tiv, 2
+tiva 99
+tive 2557
+tivi 560
+tivo 30
+tivs 1
+tivu 1
+tivy 2
+biv  3255
+tiwa 1
+tiwi 3
+tiwo 1
+biw  5
+tix  98
+tix! 1
+tix) 1
+tix, 5
+tix- 9
+tix. 5
+tix/ 3
+tixa 4
+tixe 41
+tixi 12
+tixo 3
+tixp 1
+tixt 44
+bix  227
+tiya 4
+tiyu 2
+biy  6
+tiz  5
+tiz, 1
+tiz. 2
+tiza 109
+tize 419
+tizi 35
+tizm 1
+tizn 1
+tizo 31
+tizu 1
+tizz 34
+biz  639
+mi   126425
+tj m 1
+bj   1
+tj!  1
+bj!  1
+tj". 1
+bj"  1
+tj-i 1
+bj-  1
+tja  20
+tja/ 1
+tjab 4
+tjac 30
+tjad 3
+tjag 3
+tjah 5
+tjai 18
+tjak 1
+tjal 3
+tjam 43
+tjan 22
+tjap 12
+tjar 14
+tjas 5
+tjav 5
+tjaw 6
+tjay 8
+tjaz 5
+bja  208
+tjea 17
+tjeb 1
+tjec 199
+tjed 18
+tjef 4
+tjek 1
+tjel 4
+tjen 7
+tjeo 4
+tjer 25
+tjes 37
+tjet 13
+tjew 18
+tjez 1
+bje  349
+tjhe 1
+bjh  1
+tji  5
+tji, 1
+tjia 2
+tjib 1
+tjid 2
+tjig 1
+tjil 1
+tjim 20
+tjin 6
+tjir 1
+tjis 1
+tjiv 1
+bji  42
+tjo  2
+tjo! 2
+tjo' 1
+tjo, 3
+tjoa 1
+tjob 134
+tjoc 4
+tjoe 29
+tjoh 34
+tjoi 53
+tjoj 2
+tjok 33
+tjol 8
+tjon 17
+tjoo 1
+tjor 49
+tjos 9
+tjou 51
+tjoy 120
+bjo  553
+tjr. 2
+bjr  2
+tjua 1
+tjub 2
+tjud 85
+tjug 5
+tjui 19
+tjuk 4
+tjul 13
+tjum 57
+tjun 35
+tjup 6
+tjur 44
+tjus 1426
+tjut 2
+tjuv 1
+bju  1700
+mj   2859
+tk " 1
+tk ' 9
+tk ( 2
+tk * 1
+tk - 10
+tk 3 1
+tk a 703
+tk b 97
+tk c 72
+tk d 69
+tk e 33
+tk f 130
+tk g 21
+tk h 141
+tk i 463
+tk j 14
+tk k 9
+tk l 88
+tk m 106
+tk n 24
+tk o 448
+tk p 73
+tk q 5
+tk r 46
+tk s 151
+tk t 700
+tk u 86
+tk v 10
+tk w 199
+tk y 199
+tk z 1
+bk   3912
+tk!  29
+tk!" 2
+bk!  31
+tk"  3
+tk") 1
+tk". 1
+bk"  5
+tk's 10
+bk'  10
+tk() 1
+tk(k 1
+bk(  2
+tk)  2
+bk)  2
+tk,  483
+tk," 2
+bk,  485
+tk-a 3
+tk-b 1
+tk-e 1
+tk-f 1
+tk-h 1
+tk-i 3
+tk-k 1
+tk-l 2
+tk-p 1
+tk-q 2
+tk-s 6
+tk-t 2
+tk-u 4
+tk-w 2
+bk-  30
+tk.  436
+tk." 7
+tk.' 2
+tk.. 14
+bk.  459
+tk/  37
+tk/" 4
+bk/  41
+tk;  26
+bk;  26
+tk== 1
+bk=  1
+tka  13
+tka! 2
+tka' 1
+tka, 3
+tka- 2
+tka. 4
+tka; 1
+tkab 27
+tkac 1
+tkag 16
+tkai 3
+tkak 3
+tkal 6
+tkam 2
+tkan 17
+tkap 1
+tkar 20
+tkas 7
+tkat 14
+tkaw 2
+tkay 76
+tkaz 5
+bka  226
+tkba 4
+tkbi 3
+tkbo 7
+tkbr 2
+bkb  16
+tkda 1
+tkdo 4
+bkd  5
+tke  3188
+tke! 12
+tke' 1
+tke, 142
+tke- 12
+tke. 126
+tke/ 15
+tke; 9
+tkea 1
+tkeb 4
+tked 554
+tkee 366
+tkef 1
+tkeh 3
+tkel 71
+tkem 4
+tken 289
+tkeo 1
+tkep 42
+tkeq 1
+tker 208
+tkes 449
+tket 198
+tkeu 3
+tkev 2
+tkew 7
+tkey 156
+bke  5865
+tkfa 18
+tkfi 2
+tkfo 1
+tkfu 2
+bkf  23
+tkga 1
+tkgb 3
+tkgr 5
+tkgu 1
+bkg  10
+tkh- 1
+tkha 4
+tkho 6
+tkhz 1
+bkh  12
+tki  3
+tki, 3
+tki- 2
+tki. 2
+tki; 2
+tkia 1
+tkib 1
+tkic 30
+tkid 187
+tkie 49
+tkik 1
+tkil 265
+tkim 3
+tkin 1662
+tkip 12
+tkir 10
+tkis 66
+tkit 34
+tkiw 3
+bki  2336
+tkja 1
+bkj  1
+tkka 1
+tkki 1
+bkk  2
+tkla 8
+tkle 81
+tkli 20
+tklo 2
+tklu 4
+tkly 63
+bkl  178
+tkma 5
+tkme 4
+bkm  9
+tkna 4
+tkne 388
+tkni 68
+tkno 2156
+tknu 7
+bkn  2623
+tko  1
+tko, 2
+tkob 3
+tkok 4
+tkom 3
+tkon 15
+tkoo 3
+tkor 5
+tkos 1
+tkot 3
+tkou 3
+tkov 6
+bko  49
+tkpa 4
+tkph 3
+tkpo 3
+bkp  10
+tkra 4
+tkre 1
+tkri 6
+tkro 6
+tkrp 1
+tkru 4
+tkry 9
+bkr  31
+tks  519
+tks! 9
+tks" 2
+tks' 1
+tks, 90
+tks. 102
+tks/ 7
+tks; 5
+tksg 3
+tksh 9
+tksi 1
+tksl 2
+tksm 3
+tkso 3
+tksp 1
+tkst 7
+bks  764
+tkta 3
+tkth 2
+tkti 1
+tkto 5
+bkt  11
+tku  9
+tku- 1
+tku. 2
+tkud 1
+tkul 19
+tkum 3
+tkun 4
+tkup 7
+tkur 2
+tkuz 7
+bku  55
+tkva 1
+bkv  1
+tkwa 29
+tkwe 2
+tkwo 4
+tkwy 1
+bkw  36
+tky  139
+tky! 2
+tky" 1
+tky' 1
+tky) 1
+tky, 59
+tky- 2
+tky. 56
+tky/ 5
+tky; 3
+tkya 2
+tkyd 2
+tkyl 5
+tkyn 1
+tkyo 2
+tkyp 1
+tkyr 3
+tkys 2
+tkyw 5
+bky  292
+mk   17559
+tl " 7
+tl $ 1
+tl & 1
+tl ' 5
+tl ( 8
+tl - 31
+tl 1 5
+tl 2 1
+tl 3 1
+tl 9 2
+tl a 885
+tl b 787
+tl c 460
+tl d 384
+tl e 229
+tl f 383
+tl g 237
+tl h 452
+tl i 678
+tl j 57
+tl k 119
+tl l 380
+tl m 506
+tl n 361
+tl o 692
+tl p 342
+tl q 13
+tl r 334
+tl s 702
+tl t 1695
+tl u 103
+tl v 38
+tl w 512
+tl y 456
+tl z 2
+bl   10869
+tl!  53
+tl!! 1
+tl!" 2
+tl!' 1
+bl!  57
+tl"  13
+tl", 1
+tl". 2
+bl"  16
+tl'  9
+tl', 1
+tl's 30
+bl'  40
+tl)  5
+tl), 1
+tl). 4
+bl)  10
+tl,  1024
+tl," 1
+bl,  1025
+tl-a 8
+tl-b 10
+tl-c 6
+tl-d 5
+tl-e 1
+tl-f 4
+tl-g 1
+tl-i 2
+tl-k 5
+tl-l 2
+tl-m 3
+tl-o 4
+tl-p 6
+tl-r 5
+tl-s 3
+tl-t 10
+tl-w 4
+bl-  79
+tl.  853
+tl." 9
+tl.' 2
+tl.. 28
+tl.a 2
+tl.d 2
+bl.  896
+tl/  70
+tl/" 4
+tl/p 1
+bl/  75
+tl;  58
+bl;  58
+tl]  2
+bl]  2
+tla  62
+tla! 3
+tla" 1
+tla' 2
+tla, 9
+tla. 10
+tla/ 2
+tla; 3
+tlaa 1
+tlab 89
+tlac 640
+tlad 172
+tlaf 1
+tlag 78
+tlah 9
+tlai 202
+tlak 34
+tlal 1
+tlam 184
+tlan 739
+tlap 54
+tlaq 1
+tlar 456
+tlas 538
+tlat 592
+tlau 172
+tlav 55
+tlaw 187
+tlax 51
+tlay 438
+tlaz 31
+bla  4817
+tlb  4
+tlba 6
+tlbe 8
+tlbi 6
+tlbo 18
+tlbs 1
+tlbu 9
+blb  52
+tlca 8
+tlch 12
+tlci 1
+tlco 64
+tlcp 1
+tlcu 20
+blc  106
+tld  3523
+tld! 9
+tld" 3
+tld' 71
+tld, 274
+tld- 18
+tld. 281
+tld/ 16
+tld; 12
+tlda 13
+tldb 3
+tldc 2
+tlde 201
+tldf 3
+tldh 23
+tldi 141
+tldl 14
+tldm 1
+tldn 247
+tldo 15
+tldr 117
+tlds 121
+tldt 2
+tldw 3
+bld  5113
+tle  3739
+tle! 22
+tle" 8
+tle' 42
+tle) 5
+tle, 452
+tle- 35
+tle. 483
+tle/ 36
+tle; 35
+tlea 1327
+tleb 26
+tlec 258
+tled 802
+tlee 231
+tlef 224
+tleg 158
+tleh 4
+tlei 13
+tlek 2
+tlel 24
+tlem 334
+tlen 444
+tleo 27
+tlep 39
+tleq 1
+tler 199
+tles 1239
+tlet 805
+tleu 13
+tlev 155
+tlew 11
+tlex 65
+tley 60
+ble  11318
+tlf  620
+tlf! 5
+tlf" 2
+tlf' 4
+tlf) 2
+tlf, 132
+tlf- 83
+tlf. 156
+tlf/ 15
+tlf; 10
+tlfa 7
+tlfc 1
+tlfe 5
+tlfg 1
+tlfi 45
+tlfl 2
+tlfm 2
+tlfo 2
+tlfr 11
+tlft 2
+tlfu 6
+tlfw 5
+blf  1118
+tlga 5
+tlge 11
+tlgi 8
+tlgo 5
+tlgr 3
+blg  32
+tlha 2
+tlhi 1
+tlho 5
+blh  8
+tli  11
+tli, 4
+tli. 4
+tli/ 1
+tlia 160
+tlib 116
+tlic 329
+tlid 86
+tlie 745
+tlif 1227
+tlig 597
+tlih 1
+tlik 1816
+tlil 17
+tlim 185
+tlin 1410
+tlio 169
+tlip 107
+tliq 24
+tlir 1
+tlis 418
+tlit 1209
+tliu 16
+tliv 1011
+tlix 4
+tliy 2
+tliz 262
+bli  9932
+tlk  304
+tlk, 22
+tlk- 2
+tlk. 22
+tlk; 1
+tlka 3
+tlkb 5
+tlke 75
+tlki 153
+tlkl 3
+tlko 1
+tlks 59
+tlkw 2
+tlky 6
+blk  658
+tll  6691
+tll! 23
+tll" 3
+tll' 11
+tll) 6
+tll, 576
+tll- 50
+tll. 369
+tll/ 20
+tll; 20
+tll] 1
+tlla 211
+tllb 10
+tllc 1
+tlle 762
+tllf 5
+tlli 689
+tllm 8
+tlln 13
+tllo 485
+tllp 6
+tllr 2
+tlls 335
+tllu 97
+tllw 5
+tlly 1380
+bll  11779
+tlm  51
+tlm' 2
+tlm, 7
+tlm. 8
+tlm/ 1
+tlma 8
+tlme 27
+tlmi 16
+tlml 5
+tlmn 1
+tlmo 122
+tlms 18
+blm  266
+tln  4
+tln. 1
+tln/ 1
+tlne 40
+tlnu 3
+bln  49
+tlo  18
+tlo! 5
+tlo' 5
+tlo, 28
+tlo- 3
+tlo. 15
+tlo/ 4
+tloa 83
+tlob 39
+tloc 200
+tlod 44
+tloe 1
+tlof 7
+tlog 211
+tloi 14
+tlok 10
+tlol 2
+tlom 10
+tlon 1119
+tloo 1067
+tlop 87
+tloq 6
+tlor 277
+tlos 779
+tlot 320
+tlou 231
+tlov 1034
+tlow 846
+tloy 43
+blo  6508
+tlp  139
+tlp" 1
+tlp, 9
+tlp. 15
+tlp; 2
+tlpa 6
+tlpe 25
+tlpf 5
+tlph 26
+tlpi 18
+tlpl 9
+tlpo 4
+tlpr 2
+tlps 22
+tlpt 2
+blp  285
+tlre 102
+tlri 36
+tlro 13
+tlru 4
+tlry 7
+blr  162
+tls  649
+tls! 10
+tls" 1
+tls' 3
+tls) 2
+tls, 138
+tls- 1
+tls. 171
+tls/ 11
+tls; 11
+tlsa 3
+tlse 293
+tlsh 4
+tlsi 11
+tlso 177
+tlsp 2
+tlst 6
+tlsy 1
+bls  1494
+tlt  407
+tlt! 1
+tlt, 24
+tlt- 3
+tlt. 43
+tlt/ 2
+tlt; 2
+tlta 22
+tltd 1
+tlte 80
+tlth 131
+tlti 121
+tlto 11
+tltr 12
+tlts 46
+tltu 62
+tlty 80
+tltz 7
+blt  1055
+tlu! 1
+tlu. 1
+tlua 24
+tlub 35
+tluc 99
+tlud 79
+tlue 259
+tluf 8
+tlug 16
+tlui 6
+tluj 4
+tluk 15
+tlul 10
+tlum 87
+tlun 62
+tluo 5
+tlup 2
+tlur 78
+tlus 134
+tlut 178
+tluv 2
+tlux 18
+blu  1123
+tlv' 1
+tlva 16
+tlve 388
+tlvi 27
+tlvo 1
+blv  433
+tlwa 550
+tlwi 3
+tlwo 3
+blw  556
+tly  4473
+tly! 6
+tly" 3
+tly' 7
+tly) 5
+tly, 444
+tly- 14
+tly. 260
+tly/ 17
+tly; 19
+tlyb 2
+tlyd 1
+tlye 6
+tlyg 1
+tlyi 72
+tlyl 1
+tlym 7
+tlyn 7
+tlyp 6
+tlyr 11
+tlys 20
+tlyt 10
+tlyw 3
+tlyz 15
+bly  5410
+tlzh 2
+blz  2
+ml   75403
+tm   2
+tm " 10
+tm $ 1
+tm ' 3
+tm ( 6
+tm - 32
+tm 1 4
+tm 2 3
+tm 3 1
+tm 5 2
+tm 7 1
+tm = 5
+tm [ 1
+tm a 769
+tm b 196
+tm c 125
+tm d 145
+tm e 78
+tm f 208
+tm g 231
+tm h 208
+tm i 416
+tm j 55
+tm k 26
+tm l 114
+tm m 162
+tm n 311
+tm o 424
+tm p 118
+tm q 9
+tm r 101
+tm s 381
+tm t 1087
+tm u 74
+tm v 19
+tm w 333
+tm x 1
+tm y 85
+bm   5747
+tm!  47
+tm!' 1
+tm!/ 1
+bm!  49
+tm"  2
+tm", 1
+tm"/ 1
+tm"; 1
+bm"  5
+tm'  1
+tm'. 1
+tm'/ 1
+tm'd 1
+tm'l 2
+tm'r 1
+tm's 17
+bm'  24
+tm(% 1
+tm() 1
+tm(s 1
+bm(  3
+tm)  3
+tm), 1
+bm)  4
+tm,  604
+bm,  604
+tm-1 2
+tm-2 1
+tm-9 1
+tm-b 4
+tm-c 1
+tm-d 1
+tm-e 1
+tm-f 3
+tm-h 1
+tm-i 4
+tm-m 7
+tm-r 1
+tm-s 2
+tm-t 2
+tm-u 1
+bm-  32
+tm.  759
+tm." 7
+tm.) 1
+tm.. 30
+tm.c 2
+tm.e 1
+tm.n 1
+tm.r 1
+bm.  802
+tm/  57
+tm/! 1
+tm/" 8
+tm/p 2
+bm/  68
+tm16 1
+bm1  1
+tm;  34
+bm;  34
+tm]  1
+bm]  1
+tma  59
+tma' 8
+tma, 17
+tma- 1
+tma. 18
+tma/ 3
+tma; 1
+tmab 3
+tmac 151
+tmad 525
+tmae 5
+tmaf 2
+tmag 416
+tmah 6
+tmai 196
+tmaj 63
+tmak 1098
+tmal 367
+tmam 27
+tman 2148
+tmap 20
+tmar 500
+tmas 254
+tmat 705
+tmau 2
+tmav 2
+tmaw 2
+tmax 22
+tmay 686
+tmaz 52
+bma  7359
+tmb  55
+tmb! 1
+tmb, 14
+tmb. 18
+tmb/ 1
+tmb; 3
+tmba 34
+tmbd 1
+tmbe 594
+tmbi 88
+tmbl 134
+tmbn 2
+tmbo 54
+tmbr 37
+tmbs 27
+tmbu 26
+tmby 2
+bmb  1091
+tmc  1
+tmc, 1
+tmc. 1
+tmcd 1
+tmcf 3
+tmcg 9
+tmch 3
+tmcm 3
+tmcq 1
+bmc  23
+tmdi 1
+tmdr 1
+bmd  2
+tme  4903
+tme! 52
+tme" 5
+tme' 6
+tme) 3
+tme, 769
+tme- 5
+tme. 1014
+tme/ 112
+tme; 37
+tmea 694
+tmeb 97
+tmec 26
+tmed 472
+tmee 134
+tmef 3
+tmeg 7
+tmeh 50
+tmel 190
+tmem 568
+tmen 1582
+tmeo 313
+tmep 5
+tmer 565
+tmes 966
+tmet 1144
+tmev 2
+tmew 89
+tmex 22
+tmey 6
+tmez 1
+bme  13842
+tmfo 99
+tmfr 1
+tmfu 3
+bmf  103
+tmgo 1
+bmg  1
+tmh. 1
+tmho 2
+bmh  3
+tmi  1
+tmi' 1
+tmi, 1
+tmi- 4
+tmi. 2
+tmi6 2
+tmia 5
+tmic 159
+tmid 130
+tmie 63
+tmif 1
+tmig 298
+tmik 11
+tmil 589
+tmim 5
+tmin 1338
+tmio 4
+tmip 1
+tmir 91
+tmis 569
+tmit 232
+tmiu 2
+tmix 22
+tmiy 1
+tmiz 11
+bmi  3543
+tml  2
+tml" 1
+tml, 1
+tmle 19
+tmlk 1
+tmlp 2
+tmly 18
+bml  44
+tmm  3
+tmm' 1
+tmm, 1
+tmm. 3
+tmm/ 2
+tmma 94
+tmme 237
+tmmi 81
+tmml 1
+tmmm 4
+tmmo 141
+tmms 2
+tmmu 100
+tmmy 40
+bmm  710
+tmn  38
+tmn, 9
+tmn. 3
+tmn; 1
+tmna 12
+tmnd 1
+tmne 23
+tmni 15
+tmnl 2
+tmno 1
+tmns 2
+tmny 1
+bmn  108
+tmo  6
+tmo, 1
+tmo. 2
+tmo; 1
+tmoa 4
+tmob 21
+tmoc 24
+tmod 95
+tmog 8
+tmoh 1
+tmoi 15
+tmoj 1
+tmok 41
+tmol 36
+tmom 317
+tmon 713
+tmoo 153
+tmop 2
+tmor 1679
+tmos 622
+tmot 281
+tmou 284
+tmov 356
+tmow 6
+tmoy 1
+tmoz 10
+bmo  4680
+tmp  87
+tmp! 2
+tmp" 1
+tmp, 18
+tmp- 4
+tmp. 16
+tmp/ 1
+tmp3 2
+tmpa 232
+tmpb 4
+tmpd 1
+tmpe 211
+tmpf 1
+tmpg 1
+tmph 29
+tmpi 99
+tmpk 13
+tmpl 554
+tmpo 322
+tmpr 127
+tmps 30
+tmpt 171
+tmpu 112
+tmpy 2
+bmp  2040
+tmr  2
+tmr. 97
+tmra 3
+tmre 1
+tmri 1
+tmro 4
+tmrs 8
+bmr  116
+tms  510
+tms! 5
+tms' 2
+tms) 1
+tms, 111
+tms- 1
+tms. 102
+tms; 3
+tmsc 1
+tmsd 5
+tmse 248
+tmsh 2
+tmsi 5
+tmsk 1
+tmsm 1
+tmso 4
+tmst 30
+tmsu 1
+tmsv 1
+tmsy 3
+bms  1037
+tmt  13
+tmt. 1
+tmta 1
+tmte 1
+tmth 10
+tmto 2
+tmtr 2
+tmtv 1
+bmt  31
+tmuc 475
+tmud 11
+tmue 1
+tmuf 1
+tmug 13
+tmui 1
+tmul 89
+tmum 25
+tmun 98
+tmup 1
+tmur 75
+tmus 635
+tmut 31
+tmuz 1
+bmu  1457
+tmv, 1
+tmvp 1
+bmv  2
+tmw, 1
+tmw. 1
+tmwi 1
+tmwo 5
+bmw  8
+tmy  3036
+tmy! 9
+tmy' 6
+tmy, 30
+tmy- 3
+tmy. 34
+tmy/ 1
+tmy; 3
+tmya 4
+tmyl 1
+tmyn 1
+tmyr 4
+tmys 302
+tmyt 21
+bmy  3455
+tmz! 1
+bmz  1
+mm   47030
+tn   37
+tn " 23
+tn ' 17
+tn ( 14
+tn - 63
+tn 0 4
+tn 1 40
+tn 2 7
+tn 3 4
+tn 4 4
+tn 5 2
+tn 6 2
+tn 7 3
+tn 8 7
+tn 9 3
+tn a 3235
+tn b 903
+tn c 672
+tn d 591
+tn e 746
+tn f 802
+tn g 352
+tn h 1037
+tn i 2127
+tn j 92
+tn k 126
+tn l 561
+tn m 1133
+tn n 285
+tn o 1572
+tn p 541
+tn q 20
+tn r 367
+tn s 1201
+tn t 6039
+tn u 312
+tn v 85
+tn w 1325
+tn x 2
+tn y 1223
+tn z 8
+bn   25587
+tn!  120
+tn!" 2
+tn!/ 1
+bn!  123
+tn"  25
+tn"! 1
+tn", 3
+tn". 1
+tn"o 1
+tn"t 1
+bn"  32
+tn'  212
+tn'! 4
+tn', 30
+tn'. 17
+tn'/ 2
+tn'd 2
+tn'r 1
+tn's 185
+tn't 3363
+tn'y 2
+bn'  3818
+tn(" 3
+tn(d 1
+tn(p 1
+tn(r 1
+bn(  6
+tn)  8
+tn), 3
+tn). 5
+bn)  16
+tn,  1976
+tn," 7
+tn,' 4
+bn,  1987
+tn-, 3
+tn-a 4
+tn-b 7
+tn-c 7
+tn-d 4
+tn-e 5
+tn-f 6
+tn-g 1
+tn-h 6
+tn-i 1
+tn-j 1
+tn-k 2
+tn-l 7
+tn-m 7
+tn-n 1
+tn-o 2
+tn-p 4
+tn-r 1
+tn-s 12
+tn-t 4
+tn-u 9
+tn-v 1
+tn-w 5
+tn-y 4
+bn-  104
+tn.  2148
+tn." 30
+tn.' 2
+tn.. 59
+tn.c 1
+tn.l 1
+bn.  2241
+tn/  156
+tn/" 6
+tn/c 1
+bn/  163
+tn1. 1
+bn1  1
+tn2. 1
+bn2  1
+tn3. 1
+bn3  1
+tn;  133
+bn;  133
+tn]  1
+bn]  1
+tna  438
+tna! 1
+tna' 8
+tna, 20
+tna- 1
+tna. 26
+tna/ 2
+tna; 1
+tnab 94
+tnac 29
+tnad 50
+tnae 4
+tnaf 2
+tnag 99
+tnah 11
+tnai 40
+tnak 31
+tnal 610
+tnam 345
+tnan 110
+tnap 38
+tnar 147
+tnas 37
+tnat 659
+tnau 16
+tnav 23
+tnaw 7
+tnax 1
+tnay 3
+tnaz 4
+bna  2857
+tnba 6
+tnbe 29
+tnbi 1
+tnbl 1
+tnbo 26
+tnbr 3
+tnbu 7
+bnb  73
+tnc  2
+tnc, 1
+tnca 29
+tnce 2387
+tncf 1
+tnch 213
+tnci 233
+tncl 114
+tnco 151
+tncr 83
+tnct 115
+tncu 12
+tncy 101
+bnc  3442
+tnd  14946
+tnd! 19
+tnd" 2
+tnd' 30
+tnd( 2
+tnd) 1
+tnd, 517
+tnd- 32
+tnd. 573
+tnd/ 48
+tnd; 30
+tnd\ 2
+tnd] 1
+tnda 181
+tndb 2
+tndc 7
+tndd 1
+tnde 1419
+tndf 16
+tndh 7
+tndi 567
+tndk 2
+tndl 129
+tndm 17
+tndn 21
+tndo 213
+tndp 7
+tndr 163
+tnds 886
+tndt 1
+tndu 87
+tndw 19
+tndy 23
+bnd  19971
+tne  3143
+tne! 41
+tne" 5
+tne' 108
+tne) 2
+tne, 392
+tne- 26
+tne. 520
+tne/ 39
+tne; 28
+tnea 220
+tneb 1
+tnec 164
+tned 899
+tnee 596
+tnef 39
+tneg 48
+tneh 2
+tnei 87
+tnel 130
+tnem 131
+tnen 66
+tneo 42
+tnep 4
+tneq 13
+tner 584
+tnes 1254
+tnet 240
+tneu 26
+tnev 1043
+tnew 670
+tnex 192
+tney 251
+bne  11006
+tnfa 28
+tnfc 1
+tnfe 57
+tnfi 144
+tnfl 74
+tnfo 108
+tnfr 20
+tnfu 85
+bnf  517
+tng  11606
+tng! 63
+tng" 5
+tng' 43
+tng) 3
+tng, 932
+tng- 48
+tng. 1151
+tng/ 99
+tng; 87
+tng] 1
+tnga 30
+tngb 5
+tngd 21
+tnge 1251
+tngf 17
+tngg 1
+tngh 6
+tngi 224
+tngj 1
+tngk 3
+tngl 320
+tngm 1
+tngn 3
+tngo 23
+tngp 1
+tngr 89
+tngs 1192
+tngt 121
+tngu 158
+tngw 2
+tngx 3
+tngy 6
+tngz 1
+bng  17517
+tnh, 1
+tnha 66
+tnhe 23
+tnhi 2
+tnho 5
+tnhu 4
+bnh  101
+tni  10
+tni- 3
+tni. 1
+tnia 74
+tnib 5
+tnic 313
+tnid 5
+tnie 89
+tnif 121
+tnig 536
+tnih 11
+tnik 1
+tnil 6
+tnim 108
+tnin 1083
+tnio 119
+tnip 21
+tniq 32
+tnir 9
+tnis 239
+tnit 382
+tniu 50
+tniv 172
+tnix 5
+tniz 97
+bni  3492
+tnja 22
+tnje 7
+tnji 4
+tnjo 76
+tnju 51
+bnj  160
+tnk  953
+tnk! 2
+tnk" 1
+tnk, 60
+tnk. 50
+tnk/ 7
+tnk; 2
+tnka 12
+tnke 81
+tnkf 2
+tnkh 1
+tnki 227
+tnkl 32
+tnkm 4
+tnkn 29
+tnko 2
+tnkr 4
+tnks 96
+tnky 12
+bnk  1577
+tnla 3
+tnle 75
+tnli 77
+tnlo 8
+tnly 1047
+bnl  1210
+tnma 6
+tnme 104
+tnmi 3
+tnmo 4
+tnmy 1
+bnm  118
+tnn  8
+tnn! 1
+tnn' 2
+tnn, 3
+tnn. 1
+tnna 424
+tnne 256
+tnnh 1
+tnni 215
+tnno 257
+tnns 2
+tnnu 7
+tnny 128
+bnn  1305
+tno  1382
+tno! 21
+tno' 2
+tno) 1
+tno, 110
+tno- 5
+tno. 38
+tno/ 4
+tno; 1
+tnoa 3
+tnob 137
+tnoc 59
+tnod 10
+tnoe 2
+tnog 3
+tnoi 44
+tnok 1
+tnol 35
+tnom 96
+tnon 156
+tnoo 42
+tnop 13
+tnor 335
+tnos 50
+tnot 3608
+tnou 302
+tnov 26
+tnow 3128
+tnox 1
+tnoy 14
+tnoz 3
+bno  9632
+tnpa 1
+tnpe 3
+tnph 1
+tnpi 1
+tnpl 13
+tnpo 9
+tnpr 14
+tnpu 12
+bnp  54
+tnqu 64
+bnq  64
+tnra 4
+tnre 31
+tnri 19
+tnro 6
+tnru 2
+tnry 13
+bnr  75
+tns  1511
+tns! 20
+tns" 3
+tns' 5
+tns) 4
+tns, 307
+tns- 2
+tns. 302
+tns/ 17
+tns; 25
+tnsa 74
+tnsc 104
+tnsd 1
+tnse 461
+tnsf 54
+tnsg 4
+tnsh 82
+tnsi 582
+tnsk 1
+tnsl 15
+tnsm 10
+tnsn 2
+tnso 52
+tnsp 66
+tnss 2
+tnst 669
+tnsu 101
+tnsv 1
+tnsw 137
+tnsy 3
+bns  4617
+tnt  2889
+tnt! 14
+tnt" 7
+tnt' 18
+tnt( 1
+tnt) 4
+tnt, 348
+tnt- 12
+tnt. 372
+tnt/ 29
+tnt; 32
+tnta 485
+tntd 1
+tnte 1230
+tntf 2
+tnth 136
+tnti 1134
+tntk 1
+tntl 293
+tntm 21
+tntn 1
+tnto 852
+tntr 465
+tnts 644
+tntt 1
+tntu 178
+tntw 2
+tnty 112
+bnt  9284
+tnu  3
+tnua 21
+tnub 3
+tnuc 32
+tnud 2
+tnue 96
+tnuf 14
+tnug 2
+tnui 28
+tnuk 1
+tnul 9
+tnum 162
+tnun 15
+tnuo 9
+tnur 21
+tnus 26
+tnut 161
+tnuu 2
+tnux 1
+tnuz 1
+bnu  609
+tnva 33
+tnvc 1
+tnve 205
+tnvi 146
+tnvo 55
+tnvu 1
+tnvy 9
+bnv  450
+tnwa 22
+tnwe 5
+tnwh 4
+tnwi 12
+tnwo 3
+tnwr 1
+tnwy 2
+bnw  49
+tnx  1
+tnxi 32
+tnxs 2
+bnx  35
+tny  1164
+tny! 1
+tny' 7
+tny, 66
+tny- 2
+tny. 67
+tny/ 13
+tny; 22
+tnya 3
+tnyb 50
+tnyh 2
+tnyi 5
+tnyl 4
+tnym 70
+tnyn 1
+tnyo 147
+tnyt 304
+tnyw 89
+tnyx 1
+bny  2018
+tnz  1
+tnza 2
+tnze 4
+tnzi 2
+tnzy 3
+bnz  12
+mn   124459
+to   1
+to " 6
+to $ 1
+to ' 4
+to ( 4
+to - 23
+to 1 8
+to 2 2
+to 3 1
+to 5 2
+to 6 3
+to 7 1
+to 9 6
+to a 1148
+to b 1572
+to c 827
+to d 1032
+to e 430
+to f 725
+to g 718
+to h 933
+to i 930
+to j 81
+to k 430
+to l 833
+to m 1491
+to n 354
+to o 612
+to p 670
+to q 42
+to r 579
+to s 1647
+to t 2522
+to u 185
+to v 60
+to w 949
+to y 699
+to z 4
+bo   19535
+to!  49
+to!! 1
+to!" 2
+to!' 4
+bo!  56
+to"  3
+bo"  3
+to'  5
+to'. 1
+to'c 6
+to'd 8
+to'e 6
+to'l 6
+to'r 5
+to's 74
+to't 2
+to'v 7
+bo'  120
+to), 1
+bo)  1
+to,  598
+to," 3
+to,' 1
+bo,  602
+to-a 5
+to-b 3
+to-c 10
+to-d 11
+to-e 1
+to-f 4
+to-g 2
+to-h 7
+to-i 2
+to-j 1
+to-k 1
+to-l 1
+to-m 5
+to-o 6
+to-p 5
+to-r 6
+to-s 6
+to-t 2
+to-w 3
+to-y 1
+bo-  82
+to.  522
+to." 7
+to.' 1
+to.. 21
+to.\ 1
+to.p 1
+to.s 1
+to.t 1
+bo.  555
+to/  69
+to/" 4
+to/a 1
+bo/  74
+to;  36
+bo;  36
+toa  2
+toa! 1
+toa, 2
+toa. 1
+toab 3
+toac 56
+toad 158
+toaf 6
+toag 1
+toah 4
+toak 22
+toal 59
+toam 16
+toan 16
+toap 4
+toar 137
+toas 40
+toat 112
+toax 6
+boa  646
+tob  78
+tob! 4
+tob' 3
+tob, 20
+tob- 3
+tob. 26
+tob/ 3
+toba 149
+tobb 65
+tobe 50
+tobi 46
+tobj 77
+tobl 235
+tobn 1
+tobo 118
+tobr 2
+tobs 139
+tobt 13
+tobu 5
+tobv 33
+tobw 1
+toby 15
+bob  1086
+toc  2
+toc( 1
+toc, 5
+toca 112
+tocc 99
+toce 182
+toch 18
+toci 176
+tock 434
+tocl 7
+toco 33
+tocr 40
+tocs 2
+toct 55
+tocu 59
+tocy 2
+boc  1227
+tod  867
+tod! 13
+tod" 2
+tod' 12
+tod, 123
+tod- 21
+tod. 151
+tod/ 9
+tod; 4
+toda 184
+todb 27
+todc 3
+todd 55
+tode 172
+todf 3
+todg 19
+todh 1
+todi 98
+todk 5
+todl 27
+todm 4
+todn 12
+todo 30
+todp 2
+todr 2
+tods 136
+todt 2
+todu 154
+todv 1
+todw 1
+tody 518
+bod  2658
+toe  24
+toe' 2
+toe, 3
+toe- 1
+toe. 8
+toe; 3
+toec 1
+toed 4
+toef 1
+toel 7
+toem 13
+toen 4
+toer 10
+toes 674
+toet 45
+toeu 2
+toev 36
+toex 3
+toey 7
+boe  848
+tof  9710
+tof! 4
+tof( 3
+tof, 17
+tof- 10
+tof. 39
+tof/ 1
+tof; 1
+tofa 7
+tofe 42
+toff 472
+tofi 35
+tofl 1
+tofo 12
+tofs 7
+toft 219
+tofu 2
+tofy 2
+bof  10584
+tog  53
+tog! 4
+tog' 2
+tog, 12
+tog- 3
+tog. 18
+toga 47
+togd 1
+toge 225
+togg 9
+togh 2
+togi 118
+togl 7
+togm 6
+togn 52
+togo 8
+togr 132
+togs 42
+togu 9
+togw 7
+togy 66
+bog  823
+toh  67
+toh! 10
+toh, 146
+toh. 12
+toh/ 2
+toha 4
+tohe 3
+tohi 5
+tohn 36
+toho 15
+tohs 1
+tohy 3
+boh  304
+toi  2
+toia 3
+toib 2
+toic 209
+toid 94
+toil 86
+toin 1016
+toir 3
+tois 97
+toit 11
+boi  1523
+toja 1
+toje 30
+toji 1
+tojo 3
+boj  35
+tok  594
+tok! 5
+tok" 2
+tok' 1
+tok) 1
+tok, 79
+tok- 2
+tok. 50
+tok/ 6
+tok; 3
+toka 80
+tokb 1
+toke 406
+tokh 1
+toki 206
+tokl 4
+toko 4
+toks 168
+toku 4
+toky 12
+bok  1629
+tol  244
+tol! 6
+tol" 1
+tol' 9
+tol, 62
+tol- 2
+tol. 76
+tol/ 3
+tol; 4
+tola 78
+tolb 4
+tolc 6
+told 1081
+tole 518
+tolf 25
+tolg 6
+tolh 1
+toli 235
+tolk 47
+toll 501
+tolm 13
+toln 9
+tolo 285
+tolp 12
+tolr 1
+tols 74
+tolt 27
+tolu 172
+tolv 121
+tolw 2
+toly 35
+tolz 1
+bol  3661
+tom  1694
+tom! 6
+tom' 6
+tom( 1
+tom, 121
+tom- 5
+tom. 102
+tom/ 13
+tom; 4
+toma 220
+tomb 98
+tome 4136
+tomf 99
+tomg 1
+tomi 362
+toml 7
+tomm 352
+tomn 13
+tomo 114
+tomp 628
+tomr 3
+toms 63
+tomt 1
+tomy 25
+bom  8074
+ton  5034
+ton! 41
+ton" 8
+ton' 1623
+ton) 7
+ton, 710
+ton- 30
+ton. 820
+ton/ 55
+ton; 45
+tona 400
+tonb 1
+tonc 504
+tond 682
+tone 3893
+tonf 173
+tong 1460
+toni 235
+tonj 12
+tonk 42
+tonl 942
+tonm 33
+tonn 374
+tono 137
+tonp 3
+tonq 31
+tonr 2
+tons 1771
+tont 669
+tonu 21
+tonv 135
+tonw 8
+tony 91
+tonz 2
+bon  19994
+too  409
+too! 4
+too" 1
+too, 43
+too- 3
+too. 69
+too/ 5
+too; 1
+toob 11
+tooc 4
+tood 1137
+tooe 2
+toof 58
+toog 10
+tooh 12
+tooi 3
+took 1221
+tool 354
+toom 292
+toon 336
+toop 37
+toor 303
+toos 158
+toot 209
+toov 8
+tooz 6
+boo  4696
+top  226
+top! 9
+top' 1
+top, 22
+top- 6
+top. 44
+top/ 2
+top; 3
+topa 24
+topc 1
+tope 710
+toph 118
+topi 113
+topk 1
+topl 1057
+topm 19
+topo 55
+topp 270
+topr 24
+tops 83
+topt 50
+topu 57
+topy 28
+bop  2923
+toqu 6
+boq  6
+tor  5441
+tor! 10
+tor" 2
+tor' 18
+tor( 1
+tor, 190
+tor- 5
+tor. 218
+tor/ 37
+tor; 11
+tora 240
+torb 39
+torc 192
+tord 894
+tore 2004
+torf 9
+torg 358
+torh 7
+tori 481
+tork 594
+torl 1012
+torm 503
+torn 446
+toro 67
+torp 60
+torq 3
+torr 422
+tors 470
+tort 1119
+toru 17
+torv 1
+torw 73
+tory 591
+bor  15535
+tos  59
+tos! 4
+tos" 1
+tos, 17
+tos- 1
+tos. 18
+tosa 19
+tosb 4
+tosc 18
+tose 1520
+tosh 13
+tosi 270
+tosk 1
+tosm 19
+toso 73
+tosp 47
+tosq 3
+tosr 1
+toss 539
+tost 952
+tosu 13
+tosy 15
+bos  3607
+tot  3378
+tot! 9
+tot' 3
+tot, 100
+tot- 10
+tot. 140
+tot/ 17
+tot; 5
+tota 110
+totb 5
+totc 6
+tote 339
+totf 1
+totg 1
+toth 2125
+toti 285
+totl 14
+totn 2
+toto 76
+totp 4
+totr 5
+tots 119
+tott 284
+totw 4
+toty 23
+bot  7065
+tou  8483
+tou! 41
+tou" 6
+tou' 1452
+tou) 1
+tou, 430
+tou- 1
+tou. 582
+tou/ 100
+tou; 18
+toua 1
+toub 184
+touc 132
+toud 150
+toue 5
+touf 5
+toug 1684
+toui 9
+toul 2577
+toum 2
+toun 1777
+toup 109
+tour 4655
+tous 1232
+tout 2968
+touv 7
+toux 3
+bou  26614
+tov  10
+tov' 1
+tov, 3
+tov. 3
+tova 27
+tove 2350
+tovh 2
+tovi 216
+tovo 3
+tovs 2
+tovu 1
+tovy 3
+bov  2621
+tow  3537
+tow! 28
+tow" 2
+tow' 23
+tow) 1
+tow, 552
+tow- 20
+tow. 437
+tow/ 48
+tow; 15
+towa 120
+towb 7
+towd 50
+towe 755
+towf 14
+towg 1
+towh 23
+towi 229
+towl 171
+towm 3
+town 1526
+towo 1
+towr 1
+tows 411
+towt 20
+towy 5
+bow  8000
+tox  49
+tox! 1
+tox' 1
+tox, 8
+tox- 1
+tox. 15
+tox/ 2
+toxc 1
+toxe 11
+toxf 1
+toxi 29
+toxy 13
+box  132
+toy  216
+toy! 8
+toy" 1
+toy' 6
+toy, 37
+toy- 1
+toy. 32
+toy/ 3
+toy; 1
+toya 35
+toyb 1
+toyc 4
+toye 54
+toyf 14
+toyh 1
+toyi 19
+toyl 4
+toym 10
+toyo 7
+toys 80
+boy  534
+toz  1
+toz, 2
+toz. 1
+toza 3
+toze 41
+tozi 1
+tozl 1
+tozo 4
+tozp 1
+tozy 6
+tozz 11
+boz  72
+mo   145961
+tp " 1
+tp ' 3
+tp - 10
+tp 1 3
+tp 9 1
+tp a 340
+tp b 84
+tp c 41
+tp d 26
+tp e 37
+tp f 89
+tp g 19
+tp h 80
+tp i 259
+tp j 11
+tp k 7
+tp l 36
+tp m 104
+tp n 15
+tp o 260
+tp p 34
+tp q 4
+tp r 44
+tp s 84
+tp t 410
+tp u 46
+tp v 2
+tp w 144
+tp y 111
+bp   2305
+tp!  38
+tp!" 2
+bp!  40
+tp"  6
+tp", 1
+tp"/ 1
+bp"  8
+tp'/ 1
+tp's 12
+bp'  13
+tp(p 1
+bp(  1
+tp)  2
+tp). 1
+tp)/ 1
+bp)  4
+tp,  280
+tp," 2
+bp,  282
+tp-a 2
+tp-b 1
+tp-e 1
+tp-f 3
+tp-g 1
+tp-h 1
+tp-k 2
+tp-m 1
+tp-n 2
+tp-o 2
+tp-p 5
+tp-r 2
+tp-s 1
+tp-t 4
+tp-u 1
+tp-w 1
+bp-  30
+tp.  326
+tp." 3
+tp.) 1
+tp.. 3
+bp.  333
+tp/  21
+tp/" 1
+bp/  22
+tp3. 1
+tp3s 1
+bp3  2
+tp;  21
+bp;  21
+tp]  1
+tp]. 2
+bp]  3
+tpa  11
+tpa! 1
+tpa' 2
+tpa) 1
+tpa- 7
+tpa. 4
+tpa/ 1
+tpa; 1
+tpab 45
+tpac 286
+tpad 18
+tpae 1
+tpag 64
+tpai 370
+tpaj 4
+tpak 2
+tpal 69
+tpam 8
+tpan 221
+tpap 110
+tpaq 1
+tpar 969
+tpas 456
+tpat 309
+tpau 32
+tpav 7
+tpaw 15
+tpax 3
+tpay 97
+tpaz 2
+bpa  3117
+tpbe 8
+tpbo 5
+tpbr 1
+tpbs 1
+bpb  15
+tpc  1
+tpc, 2
+tpc. 1
+tpca 6
+tpci 4
+tpco 2
+bpc  16
+tpda 2
+tpdc 2
+tpde 1
+bpd  5
+tpe  358
+tpe! 2
+tpe" 4
+tpe' 1
+tpe) 1
+tpe, 49
+tpe- 2
+tpe. 61
+tpe/ 5
+tpe; 7
+tpea 491
+tpeb 2
+tpec 511
+tped 299
+tpee 125
+tpef 14
+tpeg 6
+tpei 3
+tpej 1
+tpek 4
+tpel 87
+tpem 2
+tpen 880
+tpeo 1045
+tpep 8
+tper 1777
+tpes 104
+tpet 159
+tpev 1
+tpew 17
+bpe  6026
+tpfa 1
+tpfi 1
+tpfr 1
+tpfu 5
+bpf  8
+tpgr 3
+bpg  3
+tph  25
+tph! 2
+tph, 6
+tph. 4
+tpha 58
+tphe 159
+tphi 105
+tphl 3
+tpho 134
+tphr 24
+tphs 13
+tphu 4
+tphy 117
+bph  654
+tpi  4
+tpi' 1
+tpi, 2
+tpia 25
+tpic 223
+tpid 136
+tpie 176
+tpif 1
+tpig 40
+tpik 5
+tpil 99
+tpin 500
+tpio 30
+tpip 18
+tpir 217
+tpis 36
+tpit 149
+tpiu 2
+tpiv 1
+tpix 3
+tpiz 16
+bpi  1684
+tpka 3
+tpke 1
+tpki 17
+bpk  21
+tpla 1227
+tple 1716
+tpli 175
+tplo 112
+tplu 62
+tply 167
+bpl  3459
+tpm  6
+tpm, 1
+tpm. 1
+tpme 32
+tpms 1
+bpm  41
+tpne 7
+tpno 5
+bpn  12
+tpo  6
+tpo, 1
+tpo- 1
+tpoa 2
+tpoc 63
+tpod 8
+tpoe 56
+tpoh 3
+tpoi 311
+tpok 46
+tpol 163
+tpom 1
+tpon 407
+tpoo 139
+tpop 89
+tpor 455
+tpos 746
+tpot 127
+tpou 70
+tpov 17
+tpow 382
+bpo  3093
+tpp. 1
+tppa 38
+tppe 696
+tppi 212
+tppl 106
+tppo 284
+tppr 161
+tpps 2
+tppu 2
+tppy 196
+bpp  1698
+tpr- 1
+tpra 159
+tpre 1123
+tpri 566
+tprm 2
+tpro 1436
+tpru 11
+tpry 3
+bpr  3301
+tps  385
+tps! 2
+tps) 1
+tps, 76
+tps- 1
+tps. 46
+tps/ 8
+tps; 3
+tpsa 2
+tpse 48
+tpsh 3
+tpsi 18
+tpso 6
+tpst 11
+tpsu 3
+tpsy 43
+bps  656
+tpt  255
+tpt( 1
+tpt, 8
+tpt- 1
+tpt. 11
+tpt/ 3
+tpt; 1
+tpta 43
+tptc 2
+tpte 55
+tpth 23
+tpti 216
+tptl 1
+tpto 14
+tptr 2
+tpts 31
+tptu 36
+tpty 65
+bpt  768
+tpu  1
+tpu, 1
+tpub 61
+tpuc 2
+tpud 11
+tpue 1
+tpuf 22
+tpuk 2
+tpul 179
+tpum 22
+tpun 79
+tpup 14
+tpur 214
+tpus 48
+tput 392
+tpuz 15
+bpu  1064
+tpwa 9
+tpwi 1
+tpwm 1
+tpwo 2
+tpwr 3
+bpw  16
+tpy  151
+tpy! 1
+tpy" 2
+tpy( 1
+tpy, 29
+tpy- 2
+tpy. 52
+tpy/ 5
+tpy; 2
+tpyf 1
+tpyg 2
+tpyi 7
+tpyr 14
+tpyt 2
+tpyw 3
+bpy  274
+mp   28995
+tq = 1
+tq e 3
+tq g 2
+tq o 2
+tq t 2
+bq   10
+tq)  1
+bq)  1
+tq,  2
+bq,  2
+tq-w 2
+bq-  2
+tqin 1
+tqix 1
+bqi  2
+tqre 1
+bqr  1
+tqsa 1
+bqs  1
+tqua 252
+tque 417
+tqui 527
+tquo 42
+bqu  1238
+tqwe 17
+tqwi 2
+bqw  19
+mq   1276
+tr   4
+tr " 20
+tr $ 5
+tr ' 20
+tr ( 15
+tr - 65
+tr 1 22
+tr 2 7
+tr 3 7
+tr 4 10
+tr 5 1
+tr 6 2
+tr 7 3
+tr 8 1
+tr 9 2
+tr a 1975
+tr b 876
+tr c 781
+tr d 649
+tr e 618
+tr f 866
+tr g 378
+tr h 1088
+tr i 1128
+tr j 102
+tr k 202
+tr l 745
+tr m 1029
+tr n 390
+tr o 1226
+tr p 748
+tr q 39
+tr r 377
+tr s 1343
+tr t 2934
+tr u 152
+tr v 121
+tr w 1233
+tr x 1
+tr y 577
+tr z 4
+br   19766
+tr!  88
+tr!" 5
+tr!' 1
+tr!/ 1
+br!  95
+tr"  10
+tr") 2
+tr", 2
+tr". 3
+br"  17
+tr'  1
+tr'd 1
+tr'i 1
+tr's 172
+br'  175
+tr(" 1
+tr() 1
+tr(s 1
+br(  3
+tr)  4
+tr), 3
+tr). 3
+tr); 2
+br)  12
+tr,  1540
+tr," 16
+br,  1556
+tr-  3
+tr-, 1
+tr-a 2
+tr-b 6
+tr-c 11
+tr-d 4
+tr-e 8
+tr-f 7
+tr-g 3
+tr-h 3
+tr-i 4
+tr-j 1
+tr-l 6
+tr-m 4
+tr-n 3
+tr-o 10
+tr-p 9
+tr-r 11
+tr-s 9
+tr-t 7
+tr-u 2
+tr-v 3
+tr-w 3
+br-  120
+tr.  1782
+tr." 23
+tr.' 2
+tr., 1
+tr.. 44
+tr./ 1
+tr.] 1
+tr.a 3
+tr.o 2
+tr.r 1
+br.  1860
+tr/  135
+tr/! 1
+tr/" 3
+tr/] 1
+tr/m 4
+tr/o 1
+br/  145
+tr;  127
+br;  127
+tr]  1
+br]  1
+tra  77
+tra' 2
+tra) 1
+tra, 19
+tra- 1
+tra. 9
+tra/ 1
+tra; 1
+trab 187
+trac 610
+trad 214
+trae 1
+traf 35
+trag 299
+trah 7
+trai 748
+traj 4
+trak 24
+tral 468
+tram 179
+tran 828
+trao 17
+trap 205
+trar 122
+tras 182
+trat 885
+trau 28
+trav 214
+traw 113
+trax 2
+tray 130
+traz 78
+bra  5691
+trb  21
+trb' 1
+trb, 3
+trb. 1
+trba 53
+trbe 27
+trbi 46
+trbl 8
+trbo 38
+trbr 4
+trbs 12
+trbu 2
+trby 9
+brb  225
+trc  2
+trc- 1
+trc. 2
+trca 35
+trce 309
+trch 187
+trci 64
+trcl 23
+trco 30
+trcr 4
+trcs 1
+trct 9
+trcu 58
+trcy 27
+brc  752
+trd  893
+trd! 9
+trd" 2
+trd' 16
+trd, 153
+trd- 11
+trd. 149
+trd/ 11
+trd; 8
+trda 64
+trdb 11
+trde 365
+trdi 135
+trdl 51
+trdm 1
+trdn 5
+trdo 39
+trdr 5
+trds 479
+trdu 9
+trdv 1
+trdw 8
+trdy 14
+brd  2439
+tre  9872
+tre! 42
+tre" 6
+tre' 509
+tre( 1
+tre) 4
+tre, 605
+tre- 19
+tre. 808
+tre/ 75
+tre; 36
+trea 3621
+treb 60
+trec 623
+tred 1385
+tree 1107
+tref 324
+treg 195
+treh 54
+trei 60
+trej 42
+trek 8
+trel 453
+trem 668
+tren 915
+treo 21
+trep 274
+treq 112
+trer 54
+tres 1736
+tret 573
+treu 11
+trev 398
+trew 141
+trex 3
+trey 27
+trez 3
+bre  24845
+trf  4
+trf, 2
+trf- 2
+trf. 1
+trfa 59
+trfe 175
+trfi 7
+trfl 24
+trfo 45
+trfr 1
+trfs 1
+trfu 137
+brf  458
+trg  5
+trg' 3
+trg, 1
+trg. 2
+trg/ 2
+trga 84
+trge 461
+trgi 89
+trgl 5
+trgo 65
+trgr 25
+trgs 3
+trgu 32
+trgy 50
+brg  827
+trha 127
+trhe 10
+trhi 1
+trho 12
+trhy 33
+brh  183
+tri  7
+tri' 1
+tri- 4
+tri. 3
+tria 270
+trib 210
+tric 522
+trid 239
+trie 1288
+trif 161
+trig 900
+trih 1
+trij 1
+trik 39
+tril 125
+trim 186
+trin 1268
+trio 305
+trip 141
+triq 1
+tris 477
+trit 667
+triu 27
+triv 362
+trix 9
+triz 85
+bri  7299
+trju 4
+brj  4
+trk  463
+trk! 4
+trk' 4
+trk( 1
+trk, 94
+trk- 5
+trk. 84
+trk/ 10
+trk; 7
+trka 13
+trke 158
+trkf 1
+trkh 2
+trki 106
+trkl 13
+trkm 1
+trkn 98
+trks 110
+trkw 2
+trky 5
+brk  1181
+trl  65
+trl! 4
+trl" 2
+trl) 2
+trl, 15
+trl. 14
+trl/ 4
+trla 16
+trlb 1
+trlc 1
+trld 995
+trle 41
+trlf 9
+trli 69
+trll 3
+trlo 20
+trlp 2
+trls 64
+trlu 3
+trlw 2
+trly 238
+brl  1570
+trm  251
+trm! 3
+trm" 1
+trm' 2
+trm) 1
+trm, 42
+trm- 7
+trm. 42
+trm/ 2
+trm; 1
+trm] 1
+trma 219
+trmc 3
+trme 125
+trmf 3
+trmh 2
+trmi 183
+trml 10
+trmn 1
+trmo 76
+trmp 1
+trmr 1
+trms 173
+trmt 11
+trmu 24
+trmw 1
+trmy 42
+brm  1228
+trn  598
+trn! 3
+trn" 1
+trn' 5
+trn( 2
+trn, 49
+trn- 5
+trn. 65
+trn/ 4
+trn; 3
+trna 128
+trnb 2
+trne 462
+trnf 5
+trnh 1
+trni 364
+trnm 48
+trnn 2
+trno 31
+trnp 1
+trns 123
+trnt 11
+trnw 1
+trny 6
+brn  1920
+tro  41
+tro! 2
+tro, 22
+tro- 6
+tro. 26
+tro; 3
+troa 210
+trob 346
+troc 255
+trod 203
+troe 26
+trof 91
+trog 130
+troh 6
+troi 32
+troj 30
+trok 112
+trol 292
+trom 1550
+tron 683
+troo 342
+trop 303
+tror 170
+tros 299
+trot 298
+trou 1602
+trov 187
+trow 643
+trox 19
+troy 102
+troz 15
+bro  8046
+trp  23
+trp" 1
+trp' 2
+trp, 3
+trp- 1
+trp. 2
+trpa 20
+trpe 42
+trph 23
+trpi 10
+trpl 25
+trpm 2
+trpn 3
+trpo 109
+trpr 104
+trps 11
+trpt 3
+trpw 1
+brp  385
+trqr 1
+trqs 1
+trqu 7
+brq  9
+trr  2
+trr! 1
+trr, 2
+trra 80
+trre 262
+trrh 1
+trri 386
+trro 380
+trrs 1
+trru 34
+trry 319
+brr  1468
+trs  1760
+trs! 25
+trs" 7
+trs' 15
+trs) 7
+trs, 443
+trs- 3
+trs. 497
+trs/ 37
+trs; 25
+trsa 50
+trsb 2
+trsc 4
+trsd 4
+trse 916
+trsf 1
+trsg 1
+trsh 68
+trsi 78
+trsk 2
+trsl 4
+trso 371
+trsp 21
+trst 867
+trsu 62
+trsw 3
+trsy 3
+brs  5276
+trt  1047
+trt! 3
+trt" 1
+trt' 7
+trt) 1
+trt, 156
+trt- 12
+trt. 191
+trt/ 20
+trt; 9
+trta 468
+trtb 12
+trtc 6
+trte 208
+trtf 2
+trth 558
+trti 338
+trtl 35
+trtm 25
+trtn 13
+trto 29
+trtp 1
+trtr 27
+trts 262
+trtu 193
+trtw 9
+trty 223
+trtz 7
+brt  3863
+tru  3
+tru, 2
+tru- 1
+trua 6
+trub 25
+truc 183
+trud 31
+true 267
+truf 10
+trug 82
+trui 90
+truk 1
+trul 246
+trum 90
+trun 357
+trup 46
+trur 12
+trus 286
+trut 252
+truv 1
+trux 1
+truz 1
+bru  1993
+trva 64
+trve 258
+trvi 163
+trvo 27
+trvy 2
+brv  514
+trwa 98
+trwe 8
+trwh 15
+trwi 39
+trwo 10
+brw  170
+trx  1
+brx  1
+try  2409
+try! 14
+try" 4
+try' 4
+try) 5
+try, 292
+try- 17
+try. 301
+try/ 26
+try; 16
+trya 4
+tryb 104
+tryd 22
+trye 7
+tryf 1
+tryg 2
+tryi 239
+tryl 5
+trym 4
+tryn 5
+tryo 210
+tryp 5
+trys 28
+tryt 391
+tryv 1
+tryw 40
+bry  4156
+trz  1
+trz, 1
+trze 2
+trzt 1
+brz  5
+mr   98385
+ts   4
+ts " 63
+ts # 1
+ts $ 2
+ts & 1
+ts ' 14
+ts ( 39
+ts - 157
+ts . 1
+ts 0 1
+ts 1 22
+ts 2 7
+ts 3 6
+ts 4 7
+ts 5 2
+ts 7 1
+ts 8 1
+ts 9 4
+ts = 4
+ts a 6064
+ts b 1496
+ts c 1311
+ts d 906
+ts e 706
+ts f 1420
+ts g 823
+ts h 1346
+ts i 3006
+ts j 288
+ts k 161
+ts l 1193
+ts m 1394
+ts n 1569
+ts o 3337
+ts p 911
+ts q 74
+ts r 661
+ts s 2051
+ts t 5499
+ts u 437
+ts v 199
+ts w 2516
+ts x 6
+ts y 824
+ts z 10
+bs   38545
+ts!  205
+ts!" 8
+ts!' 3
+ts!) 1
+ts!/ 2
+bs!  219
+ts"  26
+ts"! 2
+ts") 2
+ts", 1
+ts". 6
+ts"/ 1
+ts"; 2
+bs"  40
+ts'  61
+ts', 2
+ts'. 1
+ts'l 6
+ts's 6
+bs'  76
+ts() 1
+bs(  1
+ts)  28
+ts), 6
+ts). 6
+ts); 5
+bs)  45
+ts,  4049
+ts," 13
+ts,' 1
+bs,  4063
+ts-" 1
+ts-. 4
+ts-b 1
+ts-c 1
+ts-d 1
+ts-e 2
+ts-f 1
+ts-g 2
+ts-h 1
+ts-i 2
+ts-l 2
+ts-m 2
+ts-o 2
+ts-p 5
+ts-r 3
+ts-s 2
+bs-  32
+ts.  4043
+ts." 35
+ts.' 5
+ts.) 2
+ts., 1
+ts.. 107
+ts.\ 1
+ts.e 2
+ts.f 1
+ts.h 2
+ts.s 2
+ts.w 1
+bs.  4202
+ts/  277
+ts/" 8
+ts/' 3
+ts/) 1
+ts/h 1
+ts/y 1
+bs/  291
+ts40 1
+bs4  1
+ts;  336
+ts;\ 2
+bs;  338
+tsa  14
+tsa' 1
+tsa, 7
+tsa. 3
+tsa/ 3
+tsaa 3
+tsab 26
+tsac 86
+tsad 122
+tsaf 97
+tsag 86
+tsah 2
+tsai 435
+tsak 19
+tsal 129
+tsam 343
+tsan 336
+tsap 84
+tsar 106
+tsas 36
+tsat 164
+tsau 28
+tsav 141
+tsaw 146
+tsax 4
+tsay 827
+bsa  3248
+tsba 25
+tsbe 5
+tsbi 1
+tsbo 3
+tsbu 2
+tsby 2
+bsb  38
+tsc  1
+tsc. 1
+tsca 260
+tsce 117
+tsch 209
+tsci 288
+tscl 28
+tsco 232
+tscp 1
+tscr 210
+tscu 55
+tscy 1
+bsc  1403
+tsd  1
+tsda 30
+tsde 3
+tsdi 4
+tsdo 35
+bsd  73
+tse  3839
+tse! 33
+tse" 5
+tse' 38
+tse) 6
+tse, 383
+tse- 9
+tse. 401
+tse/ 32
+tse; 16
+tsea 341
+tseb 34
+tsec 378
+tsed 865
+tsee 1616
+tsef 31
+tseg 3
+tseh 13
+tsei 22
+tsek 2
+tsel 1329
+tsem 56
+tsen 669
+tsep 78
+tseq 50
+tser 553
+tses 588
+tset 273
+tseu 15
+tsev 142
+tsew 22
+tsex 11
+tsey 9
+bse  11862
+tsfa 17
+tsfe 11
+tsfi 26
+tsfo 50
+tsfu 31
+tsfy 15
+bsf  150
+tsga 2
+tsgi 4
+tsgm 2
+tsgr 14
+tsgu 26
+bsg  48
+tsh  526
+tsh! 11
+tsh' 1
+tsh) 1
+tsh, 57
+tsh- 11
+tsh. 75
+tsh/ 2
+tsh; 3
+tsha 613
+tshb 7
+tshc 1
+tshe 1132
+tshf 3
+tshh 1
+tshi 548
+tshl 7
+tshm 35
+tshn 12
+tsho 1094
+tshp 3
+tshr 64
+tshs 1
+tsht 3
+tshu 54
+tshy 12
+bsh  4277
+tsi  1
+tsi. 3
+tsia 61
+tsib 344
+tsic 322
+tsid 703
+tsie 68
+tsif 15
+tsig 290
+tsih 1
+tsil 227
+tsim 248
+tsin 1006
+tsio 614
+tsip 19
+tsir 128
+tsis 224
+tsit 529
+tsiu 5
+tsiv 96
+tsix 110
+tsiz 54
+bsi  5068
+tsju 1
+bsj  1
+tsk  171
+tsk! 1
+tsk' 1
+tsk, 22
+tsk. 25
+tsk/ 2
+tsk; 5
+tska 8
+tske 137
+tski 198
+tsko 1
+tskr 2
+tsks 28
+tskt 4
+tsku 20
+tsky 196
+bsk  821
+tsl) 1
+tsl, 1
+tsl. 1
+tsla 124
+tsle 216
+tsli 144
+tslo 140
+tslu 14
+tsly 135
+bsl  776
+tsm  49
+tsm! 1
+tsm" 1
+tsm' 1
+tsm( 1
+tsm, 23
+tsm- 3
+tsm. 24
+tsm/ 2
+tsm; 2
+tsma 293
+tsme 84
+tsmh 1
+tsmi 180
+tsmo 81
+tsms 8
+tsmu 7
+bsm  761
+tsn  5
+tsn' 467
+tsna 50
+tsne 85
+tsni 6
+tsno 61
+tsnu 2
+bsn  676
+tso  1792
+tso! 2
+tso, 89
+tso- 10
+tso. 34
+tso/ 2
+tso; 2
+tsoa 25
+tsob 17
+tsoc 171
+tsod 22
+tsoe 12
+tsof 66
+tsoi 18
+tsol 284
+tsom 2325
+tson 1021
+tsoo 140
+tsop 66
+tsor 296
+tsot 6
+tsou 460
+tsov 6
+tsow 7
+tsoy 2
+tsoz 3
+bso  6878
+tsp  19
+tsp" 1
+tsp, 1
+tsp. 2
+tspa 309
+tspb 4
+tspe 887
+tsph 35
+tspi 295
+tspl 47
+tspo 291
+tspr 115
+tsps 4
+tspu 21
+tspy 3
+bsp  2034
+tsqu 78
+bsq  78
+tsra 1
+tsre 6
+tsro 12
+tsru 3
+bsr  22
+tss  1558
+tss! 17
+tss" 5
+tss' 4
+tss) 2
+tss, 266
+tss- 12
+tss. 300
+tss/ 26
+tss; 16
+tssa 169
+tssb 2
+tssc 1
+tsse 518
+tssf 31
+tssg 2
+tssh 6
+tssi 775
+tssk 1
+tssl 32
+tssm 14
+tssn 21
+tsso 109
+tssp 7
+tssr 11
+tsss 8
+tsst 2
+tssu 119
+tssw 1
+tssy 14
+bss  4049
+tst  4920
+tst! 17
+tst" 3
+tst' 14
+tst( 1
+tst, 328
+tst- 23
+tst. 339
+tst/ 16
+tst; 14
+tsta 2213
+tstb 1
+tstc 5
+tstd 1
+tste 1521
+tstf 6
+tsth 14
+tsti 1296
+tstl 138
+tstm 37
+tstn 4
+tsto 1117
+tstr 1371
+tsts 289
+tstu 401
+tstw 10
+tsty 105
+bst  14204
+tsu. 1
+tsua 143
+tsub 181
+tsuc 448
+tsud 109
+tsue 63
+tsuf 145
+tsug 49
+tsui 77
+tsul 101
+tsum 177
+tsun 309
+tsup 272
+tsur 695
+tsus 87
+tsut 9
+tsuv 1
+tsuz 2
+bsu  2869
+tsve 1
+tsvi 3
+bsv  4
+tsw  1
+tswa 58
+tswe 312
+tswi 100
+tswo 57
+tswu 3
+bsw  531
+tsxs 1
+bsx  1
+tsy  128
+tsy! 4
+tsy" 1
+tsy, 30
+tsy- 3
+tsy. 32
+tsy/ 4
+tsy; 2
+tsyc 39
+tsyd 1
+tsyg 1
+tsyl 11
+tsym 56
+tsyn 24
+tsyp 3
+tsyr 4
+tsys 115
+bsy  458
+tszk 1
+bsz  1
+ms   108184
+tt   25
+tt " 26
+tt $ 3
+tt & 1
+tt ' 29
+tt ( 6
+tt * 1
+tt - 92
+tt 0 2
+tt 1 11
+tt 2 15
+tt 3 9
+tt 4 4
+tt 5 5
+tt 6 3
+tt 7 5
+tt 8 2
+tt 9 5
+tt ; 1
+tt = 2
+tt a 3807
+tt b 1574
+tt c 1291
+tt d 1194
+tt e 851
+tt f 1385
+tt g 790
+tt h 1877
+tt i 4779
+tt j 193
+tt k 542
+tt l 1108
+tt m 2012
+tt n 844
+tt o 3053
+tt p 901
+tt q 54
+tt r 717
+tt s 2255
+tt t 6523
+tt u 539
+tt v 130
+tt w 3298
+tt x 1
+tt y 1815
+tt z 15
+bt   41795
+tt!  147
+tt!! 2
+tt!" 8
+tt!) 1
+tt!/ 1
+bt!  159
+tt"  17
+tt"! 1
+tt", 1
+tt". 3
+tt"; 1
+bt"  23
+tt'  2
+tt', 1
+tt'd 18
+tt'l 37
+tt'n 1
+tt'r 1
+tt's 2382
+tt'v 6
+bt'  2448
+tt() 3
+tt(1 2
+tt(s 2
+tt(t 1
+tt(u 1
+bt(  9
+tt)  8
+tt)) 1
+tt), 1
+tt). 5
+bt)  15
+tt,  2442
+tt," 10
+tt,' 1
+bt,  2453
+tt-  2
+tt-a 8
+tt-b 7
+tt-c 5
+tt-d 5
+tt-e 6
+tt-f 4
+tt-g 9
+tt-h 9
+tt-i 8
+tt-k 3
+tt-l 9
+tt-m 4
+tt-o 10
+tt-p 3
+tt-q 1
+tt-r 3
+tt-s 9
+tt-t 15
+tt-w 1
+tt-y 3
+bt-  124
+tt.  2912
+tt." 39
+tt.' 9
+tt.) 1
+tt., 1
+tt.. 77
+tt.\ 1
+tt.a 1
+tt.b 1
+tt.c 2
+tt.g 1
+tt.s 1
+tt.t 1
+tt.v 1
+tt.w 1
+bt.  3049
+tt/  329
+tt/" 17
+tt/' 3
+tt/) 3
+tt/h 1
+tt/s 1
+bt/  354
+tt1  1
+bt1  1
+tt;  169
+bt;  169
+tt]  1
+bt]  1
+tta  169
+tta' 6
+tta) 3
+tta, 11
+tta- 2
+tta. 10
+tta; 3
+ttab 275
+ttac 178
+ttad 8
+ttaf 6
+ttag 115
+ttai 497
+ttaj 1
+ttak 880
+ttal 799
+ttam 28
+ttan 1077
+ttap 52
+ttaq 1
+ttar 719
+ttas 141
+ttat 510
+ttau 61
+ttav 6
+ttaw 7
+ttax 32
+ttay 169
+bta  5766
+ttba 9
+ttbe 9
+ttbi 3
+ttbo 7
+ttbr 7
+ttbu 1
+btb  36
+ttc. 2
+ttca 12
+ttch 493
+ttcl 1
+ttco 13
+ttcr 1
+ttcu 4
+ttcy 2
+btc  528
+ttda 4
+ttdo 11
+btd  15
+tte  1574
+tte! 11
+tte" 4
+tte' 8
+tte( 1
+tte) 1
+tte, 164
+tte- 13
+tte. 201
+tte/ 18
+tte; 15
+ttea 424
+tteb 8
+ttec 187
+tted 1656
+ttee 203
+ttef 22
+tteg 37
+tteh 1
+ttei 23
+ttel 927
+ttem 316
+tten 1240
+tteo 19
+ttep 132
+tter 3699
+ttes 619
+ttet 6
+tteu 10
+ttev 110
+ttew 10
+ttex 46
+bte  11705
+ttfa 2
+ttfe 1
+ttfi 7
+ttfo 12
+ttfu 36
+btf  58
+ttge 1
+ttgo 1
+ttgr 2
+ttgu 1
+btg  5
+tth  3548
+tth! 10
+tth" 2
+tth' 11
+tth( 1
+tth) 2
+tth, 255
+tth- 24
+tth. 265
+tth/ 19
+tth; 23
+ttha 7395
+tthb 3
+tthd 19
+tthe 30735
+tthf 14
+tthh 2
+tthi 6699
+tthl 39
+tthm 31
+tthn 8
+ttho 1831
+tthp 3
+tthq 10
+tthr 932
+tths 125
+ttht 4
+tthu 89
+tthw 24
+tthy 97
+bth  52220
+tti  4
+tti! 2
+tti, 4
+tti- 8
+tti. 5
+ttia 144
+ttib 31
+ttic 883
+ttid 36
+ttie 329
+ttif 230
+ttig 76
+ttil 761
+ttim 1836
+ttin 1815
+ttio 2994
+ttip 43
+ttiq 12
+ttir 222
+ttis 218
+ttit 212
+ttiu 2
+ttiv 516
+ttiw 1
+ttiz 24
+bti  10408
+ttk( 1
+ttke 1
+btk  2
+ttla 11
+ttle 937
+ttli 42
+ttlo 6
+ttls 2
+ttly 497
+btl  1495
+ttm  1
+ttma 62
+ttme 75
+ttml 3
+ttmo 20
+btm  161
+ttn' 2
+ttna 13
+ttne 100
+ttni 23
+ttno 1
+ttnu 1
+btn  140
+tto  12313
+tto! 2
+tto" 1
+tto' 3
+tto, 46
+tto- 15
+tto. 72
+tto/ 2
+tto; 3
+ttoa 13
+ttob 15
+ttoc 53
+ttod 172
+ttoe 27
+ttof 1
+ttog 233
+ttoi 20
+ttok 8
+ttol 243
+ttom 300
+tton 368
+ttoo 760
+ttop 318
+ttor 1030
+ttos 29
+ttot 63
+ttou 167
+ttov 2
+ttow 233
+ttox 4
+ttoy 17
+ttoz 3
+bto  16536
+ttp  3
+ttp) 3
+ttp- 2
+ttp. 2
+ttph 1
+ttpl 1
+ttpo 2
+ttpr 6
+ttps 2
+ttpu 4
+btp  26
+ttra 1220
+ttre 636
+ttri 577
+ttrl 1
+ttro 697
+ttrs 2
+ttru 889
+ttry 526
+btr  4548
+tts  2213
+tts! 22
+tts" 4
+tts' 11
+tts) 2
+tts, 324
+tts- 1
+tts. 319
+tts/ 20
+tts; 31
+ttsb 1
+ttsc 2
+ttse 119
+ttsh 2
+ttsi 95
+ttsk 7
+ttsm 7
+ttso 11
+ttss 1
+ttst 17
+ttsu 2
+ttsy 7
+bts  3218
+ttt  11
+ttt, 3
+ttt- 1
+ttt. 7
+ttta 199
+ttte 1238
+ttth 5
+ttti 337
+tttl 667
+ttto 75
+tttp 9
+tttr 34
+ttts 6
+tttu 3
+ttty 116
+btt  2711
+ttu  3
+ttua 325
+ttub 28
+ttuc 31
+ttud 173
+ttue 39
+ttuf 85
+ttug 10
+ttui 13
+ttuk 1
+ttul 13
+ttum 67
+ttun 169
+ttuo 16
+ttup 93
+ttur 1351
+ttus 32
+ttut 36
+btu  2485
+ttv  19
+ttv, 3
+ttv. 5
+ttv/ 1
+ttvs 1
+btv  29
+ttwa 26
+ttwe 325
+ttwi 101
+ttwo 458
+ttwr 1
+ttwu 1
+btw  912
+tty  1294
+tty! 22
+tty" 11
+tty' 17
+tty) 2
+tty, 300
+tty- 74
+tty. 289
+tty/ 29
+tty; 19
+ttyc 1
+ttyd 1
+ttyi 3
+ttyl 42
+ttym 1
+ttyn 1
+ttyp 145
+ttyr 41
+ttys 2
+ttyu 1
+ttyx 1
+bty  2296
+ttz  9
+ttz' 1
+ttz, 2
+ttz- 1
+ttz. 2
+ttze 9
+ttzg 2
+ttzm 3
+ttzs 3
+ttzu 1
+btz  33
+mt   165933
+tu   15
+tu " 3
+tu ' 6
+tu - 11
+tu a 837
+tu b 203
+tu c 955
+tu d 577
+tu e 127
+tu f 295
+tu g 304
+tu h 566
+tu i 169
+tu j 79
+tu k 576
+tu l 348
+tu m 387
+tu n 221
+tu o 127
+tu p 166
+tu q 6
+tu r 195
+tu s 683
+tu t 651
+tu u 77
+tu v 6
+tu w 921
+tu y 11
+bu   8522
+tu!  37
+tu!" 4
+tu!/ 1
+bu!  42
+tu"  4
+tu"! 1
+tu", 2
+bu"  7
+tu'd 86
+tu'l 209
+tu'r 916
+tu's 4
+tu'v 241
+bu'  1456
+tu). 1
+bu)  1
+tu,  432
+tu," 4
+tu,' 1
+bu,  437
+tu-2 1
+tu-g 2
+tu-i 2
+tu-k 1
+bu-  6
+tu.  552
+tu." 3
+tu.' 1
+tu.. 32
+tu.s 7
+bu.  595
+tu/  100
+bu/  100
+tu2  3
+bu2  3
+tu32 1
+bu3  1
+tu;  20
+bu;  20
+tua  2
+tua. 1
+tuaa 1
+tuab 20
+tuac 8
+tuad 12
+tuag 64
+tuai 11
+tuak 13
+tual 582
+tuam 1
+tuan 40
+tuar 113
+tuas 1
+tuat 99
+tuav 1
+tuaw 1
+tuay 2
+bua  972
+tub  22
+tub! 1
+tub' 1
+tub, 7
+tub- 7
+tub. 10
+tub; 1
+tuba 12
+tubb 35
+tubc 5
+tubd 9
+tube 36
+tubi 13
+tubj 58
+tubl 187
+tubm 18
+tubo 5
+tubr 3
+tubs 35
+tubt 93
+tubu 8
+tubv 1
+tubw 5
+tuby 3
+bub  575
+tuca 47
+tucc 125
+tuce 112
+tuch 904
+tuci 36
+tuck 229
+tucl 26
+tuco 3
+tucr 2
+tuct 231
+tucu 2
+tucy 8
+buc  1725
+tud  66
+tud! 1
+tud' 2
+tud, 18
+tud- 2
+tud. 21
+tud; 2
+tuda 4
+tudd 147
+tude 215
+tudg 78
+tudi 101
+tudl 5
+tudo 7
+tudr 1
+tuds 44
+tudu 2
+tudw 1
+tudy 61
+bud  778
+tue  437
+tue! 5
+tue" 1
+tue' 2
+tue) 3
+tue, 70
+tue- 4
+tue. 96
+tue/ 13
+tue; 5
+tuea 3
+tueb 10
+tued 55
+tuee 46
+tuei 5
+tuel 67
+tuen 121
+tuer 35
+tues 434
+tuet 9
+tuez 1
+bue  1422
+tufa 13
+tuff 293
+tufl 4
+tufo 1
+tufr 2
+buf  313
+tug  28
+tug' 1
+tug, 4
+tug- 2
+tug. 12
+tug/ 1
+tuga 21
+tuge 36
+tugg 115
+tugh 1929
+tugi 1
+tugl 25
+tugm 4
+tugn 1
+tugo 1
+tugs 28
+tugu 19
+bug  2228
+tuh  1
+tuh! 2
+tuh, 31
+tuh. 6
+tuh/ 17
+tuhe 1
+buh  58
+tui  1
+tui, 1
+tui- 1
+tuia 1
+tuic 124
+tuid 55
+tuie 72
+tuig 3
+tuij 1
+tuil 243
+tuin 85
+tuio 2
+tuip 14
+tuir 112
+tuis 101
+tuit 312
+tuiv 16
+tuix 1
+tuiz 3
+bui  1148
+tuja 4
+tuji 2
+buj  6
+tuk  2
+tuk, 1
+tuk- 1
+tuka 3
+tuke 33
+tuki 1
+tukk 1
+tuko 4
+buk  46
+tul  522
+tul! 4
+tul" 2
+tul' 1
+tul, 76
+tul- 5
+tul. 94
+tul/ 5
+tul; 8
+tula 309
+tulb 6
+tulc 4
+tuld 2365
+tule 216
+tulf 24
+tulg 8
+tuli 46
+tulk 10
+tull 383
+tulm 1
+tuln 24
+tulo 39
+tulp 10
+tuls 69
+tult 411
+tulu 5
+tuly 80
+bul  4727
+tum  140
+tum! 4
+tum" 1
+tum' 1
+tum) 1
+tum, 26
+tum- 5
+tum. 47
+tum; 1
+tuma 405
+tumb 306
+tumd 2
+tume 126
+tumf 1
+tumi 48
+tumm 88
+tumn 19
+tumo 20
+tump 166
+tums 45
+tumu 14
+bum  1466
+tun  332
+tun! 9
+tun' 5
+tun( 2
+tun) 1
+tun, 67
+tun- 8
+tun. 85
+tun/ 5
+tun; 4
+tuna 96
+tunb 36
+tunc 275
+tund 1975
+tune 116
+tunf 72
+tung 285
+tunh 30
+tuni 478
+tunj 7
+tunk 104
+tunl 102
+tunm 7
+tunn 198
+tuno 6
+tunp 30
+tunq 2
+tunr 49
+tuns 176
+tunt 815
+tunu 13
+tunv 4
+tunw 24
+tunx 2
+bun  5420
+tuo  1
+tuo! 1
+tuo, 2
+tuo. 2
+tuoi 2
+tuor 13
+tuos 2
+tuot 26
+tuou 33
+tuoy 1
+buo  83
+tup  1028
+tup! 22
+tup" 4
+tup) 1
+tup, 125
+tup- 4
+tup. 143
+tup/ 11
+tup; 4
+tup] 1
+tupa 9
+tupb 5
+tupc 7
+tupd 2
+tupe 99
+tupg 2
+tuph 12
+tupi 114
+tupk 3
+tupl 49
+tupo 175
+tupp 191
+tupr 23
+tups 55
+tupt 42
+tupu 1
+tupw 6
+tupy 11
+bup  2149
+tuqu 1
+buq  1
+tur  3638
+tur! 1
+tur" 1
+tur' 1
+tur, 40
+tur- 9
+tur. 33
+tur/ 2
+tur; 3
+tura 276
+turb 32
+turc 79
+turd 100
+ture 1357
+turf 49
+turg 71
+turi 288
+turk 24
+turl 30
+turm 15
+turn 648
+turo 51
+turp 154
+turq 1
+turr 156
+turs 824
+turt 245
+turu 3
+turv 102
+tury 87
+bur  8320
+tus  1204
+tus! 19
+tus" 4
+tus' 1
+tus, 216
+tus- 2
+tus. 260
+tus/ 24
+tus; 28
+tusa 151
+tusb 24
+tusc 33
+tusd 1
+tuse 1920
+tush 164
+tusi 414
+tusk 14
+tusl 103
+tusn 43
+tuso 5
+tusp 44
+tuss 39
+tust 2254
+tusu 104
+tusy 37
+bus  7108
+tut  5426
+tut! 10
+tut' 1
+tut( 1
+tut) 1
+tut, 157
+tut- 8
+tut. 161
+tut/ 17
+tut; 7
+tuta 44
+tutb 4
+tutc 34
+tutd 10
+tute 401
+tutf 5
+tutg 4
+tuth 416
+tuti 333
+tutl 20
+tutm 2
+tutn 2
+tuto 44
+tutp 5
+tutr 37
+tuts 162
+tutt 144
+tutu 170
+tutw 11
+tuty 91
+but  7728
+tuuk 1
+tuum 6
+buu  7
+tuv  1
+tuva 1
+tuve 11
+tuvi 2
+tuvr 1
+buv  16
+tuwy 1
+buw  1
+tux  7
+tux, 3
+tuxe 2
+tuxo 1
+tuxu 13
+bux  26
+tuy  136
+tuy! 2
+tuy" 1
+tuy' 9
+tuy, 9
+tuy. 14
+tuy/ 2
+tuye 4
+tuyi 13
+tuys 58
+buy  248
+tuz  3
+tuza 6
+tuzc 3
+tuze 1
+tuzz 31
+buz  44
+mu   57805
+tv - 1
+tv a 10
+tv b 1
+tv c 1
+tv d 1
+tv f 3
+tv i 6
+tv l 1
+tv m 2
+tv o 2
+tv p 1
+tv s 4
+tv t 3
+tv w 1
+tv y 1
+bv   38
+tv'n 2
+tv'r 1
+tv's 1
+bv'  4
+tv,  10
+bv,  10
+tv-8 1
+tv-m 1
+tv-s 1
+bv-  3
+tv.  13
+tv., 1
+bv.  14
+tv/  1
+bv/  1
+tv;  3
+bv;  3
+tva  12
+tva, 2
+tva. 1
+tva; 1
+tvab 18
+tvac 30
+tvad 25
+tvag 34
+tvai 62
+tvaj 1
+tval 237
+tvam 12
+tvan 191
+tvap 4
+tvar 94
+tvas 81
+tvat 124
+tvau 11
+bva  940
+tvbe 1
+bvb  1
+tvc  1
+tvc, 1
+bvc  2
+tvds 1
+bvd  1
+tve  6064
+tve! 14
+tve" 7
+tve' 9
+tve( 1
+tve, 273
+tve- 7
+tve. 373
+tve/ 38
+tve; 15
+tvea 38
+tvec 9
+tved 518
+tvee 7
+tvef 1
+tveg 15
+tveh 9
+tvei 16
+tvel 355
+tvem 58
+tven 1488
+tver 5318
+tves 867
+tvet 20
+tvew 8
+tvex 5
+tvey 24
+bve  15557
+tvfn 1
+bvf  1
+tvhg 2
+bvh  2
+tvi  4
+tvi; 2
+tvia 45
+tvib 9
+tvic 249
+tvid 194
+tvie 164
+tvif 3
+tvig 24
+tvii 1
+tvik 1
+tvil 275
+tvin 735
+tvio 179
+tvip 4
+tvir 101
+tvis 200
+tvit 149
+tviv 101
+tviz 1
+bvi  2441
+tvka 2
+bvk  2
+tvla 1
+tvlo 3
+bvl  4
+tvo, 1
+tvoc 30
+tvod 6
+tvog 3
+tvoi 176
+tvok 2
+tvol 191
+tvom 4
+tvon 8
+tvoo 1
+tvor 114
+tvos 2
+tvot 54
+tvou 63
+tvow 12
+tvox 5
+tvoy 11
+bvo  683
+tvp( 1
+tvpe 1
+tvpo 1
+bvp  3
+tvra 1
+tvre 1
+bvr  2
+tvs  2
+tvsk 5
+bvs  7
+tvul 25
+bvu  25
+tvva 1
+tvvy 2
+bvv  3
+tvy  45
+tvy! 1
+tvy, 7
+tvy- 1
+tvy. 5
+tvy/ 2
+tvyd 2
+bvy  63
+mv   19810
+tw " 3
+tw - 15
+tw 1 1
+tw 6 1
+tw 7 1
+tw 9 1
+tw a 284
+tw b 89
+tw c 155
+tw d 131
+tw e 75
+tw f 85
+tw g 33
+tw h 262
+tw i 527
+tw j 28
+tw k 16
+tw l 76
+tw m 291
+tw n 53
+tw o 193
+tw p 83
+tw q 9
+tw r 44
+tw s 188
+tw t 928
+tw u 67
+tw v 15
+tw w 583
+tw y 315
+bw   4552
+tw!  32
+bw!  32
+tw"  4
+bw"  4
+tw'd 2
+tw'n 2
+tw's 20
+bw'  24
+tw); 1
+bw)  1
+tw,  610
+tw," 2
+tw,' 2
+bw,  614
+tw-  1
+tw-b 1
+tw-c 3
+tw-e 3
+tw-f 2
+tw-h 3
+tw-i 1
+tw-k 1
+tw-l 2
+tw-m 1
+tw-s 1
+tw-t 2
+tw-w 3
+tw-y 1
+bw-  25
+tw.  495
+tw." 11
+tw.' 1
+tw.. 12
+tw.c 1
+bw.  520
+tw/  52
+bw/  52
+tw;  27
+bw;  27
+twa  2
+twa, 2
+twa. 4
+twaa 1
+twab 6
+twac 2
+twad 7
+twaf 1
+twag 21
+twai 276
+twak 145
+twal 423
+twam 16
+twan 1123
+twap 3
+twar 758
+twas 2773
+twat 407
+twau 2
+twav 78
+twax 4
+tway 1878
+bwa  7932
+twb  1
+twba 8
+twbb 1
+twbo 11
+bwb  21
+twco 1
+bwc  1
+twd  14
+twd" 1
+twd, 8
+twd- 1
+twd. 6
+twde 10
+twdi 4
+twdl 2
+twdo 2
+twdr 1
+twds 4
+bwd  53
+twe  2561
+twe' 566
+twe, 8
+twe. 4
+twe/ 4
+twea 370
+tweb 27
+twed 159
+twee 444
+tweh 1
+twei 86
+twel 676
+twen 216
+twep 11
+twer 1636
+twes 72
+twet 15
+twev 86
+bwe  6942
+twfa 7
+twfe 2
+twfl 4
+twfo 1
+twfu 24
+bwf  38
+twgl 1
+bwg  1
+twha 2283
+twhe 2737
+twhi 1172
+twho 1575
+twhy 475
+bwh  8242
+twi  1
+twi' 1
+twi- 1
+twi. 1
+twib 1
+twic 64
+twid 69
+twie 20
+twif 79
+twig 7
+twil 1659
+twim 39
+twin 789
+twip 15
+twir 30
+twis 355
+twit 3012
+twiv 6
+twix 1
+twiz 18
+bwi  6168
+twk  2
+twk. 3
+twki 1
+twkr 1
+twkw 5
+twky 1
+bwk  13
+twl  18
+twl, 4
+twl. 2
+twl] 1
+twla 1
+twle 102
+twli 18
+twls 6
+twlt 3
+twly 49
+bwl  204
+twm  1
+twma 3
+twme 3
+bwm  7
+twn  1077
+twn! 16
+twn' 2
+twn) 1
+twn, 138
+twn- 9
+twn. 219
+twn/ 11
+twn; 10
+twnb 2
+twnc 2
+twnd 2
+twne 38
+twnh 1
+twni 22
+twnl 4
+twnm 2
+twnp 3
+twnr 1
+twns 33
+twnt 12
+twnw 2
+twny 2
+bwn  1609
+two  368
+two, 22
+two- 18
+two. 9
+two/ 3
+two; 3
+twob 4
+twoc 1
+twoe 7
+twog 2
+twok 30
+twol 24
+twom 133
+twon 466
+twoo 92
+twop 1
+twor 2366
+twou 1092
+twov 3
+twow 9
+twoz 1
+bwo  4654
+twpa 2
+twpm 1
+twpo 2
+bwp  5
+twra 21
+twre 27
+twri 281
+twro 253
+twry 1
+bwr  583
+tws  400
+tws! 3
+tws) 1
+tws, 61
+tws. 69
+tws/ 8
+tws; 7
+twsc 1
+twse 9
+twsg 1
+twsh 5
+twsi 2
+twsk 2
+twso 2
+twsp 13
+twsr 1
+twsu 1
+twsw 1
+twsy 1
+bws  588
+twt  1
+twte 1
+twth 19
+twti 1
+twto 7
+bwt  29
+twun 3
+twut 1
+twuw 1
+twuz 3
+bwu  8
+twy  9
+twy, 3
+twyc 2
+twye 22
+twyj 1
+twym 1
+twyn 2
+twyv 1
+twyw 1
+bwy  42
+mw   42991
+tx ( 1
+tx , 1
+tx - 5
+tx = 4
+tx a 26
+tx b 6
+tx c 7
+tx d 6
+tx e 5
+tx f 9
+tx g 1
+tx h 5
+tx i 24
+tx j 2
+tx k 1
+tx l 6
+tx m 14
+tx n 2
+tx o 22
+tx p 13
+tx r 8
+tx s 12
+tx t 23
+tx u 3
+tx v 1
+tx w 10
+tx y 20
+bx   237
+tx!  2
+bx!  2
+tx"  1
+bx"  1
+tx's 2
+bx'  2
+tx)  1
+tx), 1
+bx)  2
+tx,  33
+tx," 1
+bx,  34
+tx-a 1
+tx-b 1
+tx-c 1
+tx-e 1
+tx-f 3
+tx-h 2
+tx-l 1
+tx-p 2
+tx-r 3
+tx-s 2
+tx-v 1
+tx-w 2
+tx-x 6
+bx-  26
+tx.  31
+bx.  31
+tx/  4
+tx/" 1
+bx/  5
+tx3  1
+bx3  1
+tx6  1
+bx6  1
+txab 2
+txac 103
+txag 10
+txal 1
+txam 71
+txan 4
+txas 7
+txat 6
+bxa  204
+txca 3
+txce 154
+txch 21
+txci 39
+txcl 17
+txco 1
+txcr 3
+txcu 16
+bxc  254
+txe  2
+txe- 1
+txe. 2
+txec 19
+txed 43
+txel 3
+txem 3
+txen 2
+txer 36
+txes 26
+bxe  137
+txfo 3
+bxf  3
+txha 18
+txhi 9
+txho 1
+bxh  28
+txi  6
+txi, 1
+txia 2
+txib 10
+txic 28
+txid 8
+txie 24
+txil 7
+txim 24
+txin 22
+txio 19
+txir 2
+txis 211
+txit 17
+txiv 3
+bxi  384
+txle 2
+bxl  2
+txod 1
+txom 1
+txon 6
+txop 2
+txor 3
+txot 7
+bxo  20
+txpa 18
+txpe 318
+txpi 10
+txpl 133
+txpo 25
+txpr 34
+bxp  538
+txqu 5
+bxq  5
+txsu 2
+txsw 1
+bxs  3
+txt  147
+txt! 1
+txt, 16
+txt- 1
+txt. 13
+txt/ 2
+txtb 2
+txte 52
+txth 6
+txti 20
+txto 1
+txtr 83
+txts 5
+txtu 5
+txty 18
+bxt  372
+txua 2
+txub 1
+txul 1
+txur 13
+txus 8
+bxu  25
+txwe 1
+bxw  1
+txxo 1
+bxx  1
+txy  15
+txy, 7
+txy. 9
+txyg 11
+txyl 1
+bxy  43
+mx   2362
+ty   1
+ty " 35
+ty $ 2
+ty ' 16
+ty ( 16
+ty - 78
+ty 1 23
+ty 2 8
+ty 3 1
+ty 4 2
+ty 5 2
+ty 7 2
+ty 8 4
+ty 9 1
+ty = 1
+ty [ 2
+ty a 1968
+ty b 958
+ty c 939
+ty d 991
+ty e 511
+ty f 1035
+ty g 464
+ty h 1003
+ty i 1361
+ty j 107
+ty k 177
+ty l 845
+ty m 952
+ty n 504
+ty o 1374
+ty p 666
+ty q 33
+ty r 432
+ty s 1372
+ty t 2730
+ty u 202
+ty v 105
+ty w 1437
+ty x 1
+ty y 383
+ty z 5
+by   20749
+ty!  113
+ty!" 4
+by!  117
+ty"  24
+ty") 1
+ty", 1
+ty". 4
+by"  30
+ty'  2
+ty', 1
+ty'. 3
+ty'a 5
+ty'd 34
+ty'k 3
+ty'l 64
+ty'r 273
+ty's 133
+ty'v 41
+by'  559
+ty(t 1
+by(  1
+ty)  7
+ty), 5
+ty). 2
+ty); 2
+by)  16
+ty,  2194
+ty," 8
+ty,' 2
+by,  2204
+ty-- 1
+ty-a 2
+ty-b 3
+ty-c 7
+ty-d 3
+ty-e 7
+ty-f 26
+ty-g 7
+ty-h 4
+ty-j 1
+ty-l 2
+ty-m 6
+ty-n 4
+ty-o 6
+ty-p 5
+ty-s 25
+ty-t 28
+ty-u 2
+ty-v 1
+ty-w 6
+ty-y 5
+by-  151
+ty.  1960
+ty." 24
+ty.' 4
+ty.) 1
+ty.. 57
+by.  2046
+ty/  215
+ty/" 6
+ty/. 1
+ty// 1
+by/  223
+ty12 1
+by1  1
+ty;  152
+by;  152
+ty]  1
+by]  1
+tya  15
+tya' 1
+tya, 4
+tya. 5
+tya/ 4
+tyac 1
+tyag 10
+tyah 1
+tyak 5
+tyal 26
+tyam 2
+tyan 28
+tyap 1
+tyar 39
+tyas 2
+tyat 1
+tyaw 5
+tyay 1
+tyaz 1
+bya  152
+tyba 1
+tybe 256
+tybo 197
+tybr 4
+byb  458
+tyce 4
+tych 42
+tyck 2
+tycl 40
+tyco 1
+byc  89
+tyda 22
+tydd 2
+tydi 3
+tydn 1
+tydo 1
+tydr 17
+byd  46
+tye  62
+tye! 2
+tye, 21
+tye- 3
+tye. 28
+tye/ 6
+tye; 3
+tyea 597
+tyeb 7
+tyec 1
+tyed 127
+tyee 13
+tyeg 1
+tyel 55
+tyen 14
+tyep 4
+tyer 126
+tyes 433
+tyet 200
+tyew 2
+bye  1705
+tyff 1
+tyfi 1
+tyfo 1
+tyfr 9
+tyfu 6
+byf  18
+tyga 1
+tyge 11
+tygl 2
+tygm 1
+tygo 11
+tygr 2
+tygu 2
+byg  30
+tyhe 2
+tyho 6
+byh  8
+tyie 13
+tyik 1
+tyin 680
+tyis 2
+byi  696
+tyji 1
+byj  1
+tyk. 1
+byk  1
+tyl  3
+tyl. 2
+tyla 1
+tyle 50
+tyli 9
+tyll 6
+tylo 11
+tylu 5
+tylv 4
+tyly 2
+byl  93
+tym  2
+tym, 2
+tym/ 1
+tyma 4
+tymb 31
+tyme 29
+tymi 2
+tymm 6
+tymn 5
+tymo 68
+tymp 25
+tyms 2
+bym  177
+tyn  6
+tyn, 1
+tyn. 2
+tyna 14
+tync 10
+tynd 4
+tyne 10
+tyng 4
+tyni 10
+tynm 1
+tyno 3
+tynt 8
+byn  73
+tyo  7
+tyo! 3
+tyo, 3
+tyo- 1
+tyo. 2
+tyod 3
+tyof 4
+tyog 17
+tyok 2
+tyol 1
+tyon 443
+tyor 42
+tyos 2
+tyot 11
+tyou 14012
+tyow 1
+byo  14554
+typa 2
+type 106
+typh 8
+typi 47
+typn 5
+typo 20
+typr 2
+typs 6
+typt 12
+typy 1
+byp  209
+tyr  2
+tyr' 1
+tyra 28
+tyre 2
+tyri 23
+tyrn 1
+tyro 26
+tyru 12
+byr  95
+tys  959
+tys! 3
+tys" 1
+tys' 2
+tys, 100
+tys. 85
+tys/ 11
+tys; 10
+tysa 2
+tysc 2
+tyse 235
+tysf 1
+tysi 101
+tysm 4
+tyso 1
+tyss 21
+tyst 219
+tysu 2
+bys  1759
+tyte 17
+tyth 728
+tyti 15
+tyto 8
+tytu 1
+byt  769
+tyu  1
+tyue 2
+tyuh 1
+tyui 1
+tyul 1
+tyup 2
+byu  8
+tyva 1
+tyve 1
+byv  2
+tywa 67
+tywh 71
+tywi 2
+tywo 4
+tywr 2
+byw  146
+tyx  2
+byx  2
+tyyk 1
+tyyy 1
+byy  2
+tyza 1
+tyze 10
+tyzi 5
+byz  16
+my   47359
+tz a 5
+tz b 1
+tz c 1
+tz f 2
+tz g 1
+tz h 2
+tz i 6
+tz o 1
+tz p 3
+tz r 1
+tz t 3
+tz w 2
+tz y 2
+bz   30
+tz!  1
+bz!  1
+tz"  2
+bz"  2
+tz's 1
+bz'  1
+tz,  10
+bz,  10
+tz-e 1
+tz-v 2
+bz-  3
+tz.  7
+tz." 1
+tz., 1
+bz.  9
+tza  12
+tza! 1
+tza' 1
+tza, 4
+tza. 2
+tza; 1
+tzaa 1
+tzab 5
+tzac 1
+tzag 2
+tzak 2
+tzal 1
+tzan 9
+tzap 2
+tzar 58
+tzas 4
+tzat 62
+tzaw 2
+tzaz 3
+bza  173
+tzbe 4
+bzb  4
+tzco 3
+bzc  3
+tze  249
+tze! 1
+tze# 1
+tze' 1
+tze, 33
+tze- 1
+tze. 24
+tze/ 5
+tze; 1
+tzea 11
+tzeb 1
+tzed 173
+tzee 3
+tzef 2
+tzek 2
+tzel 8
+tzem 2
+tzen 55
+tzeo 3
+tzep 2
+tzer 30
+tzes 33
+tzet 4
+tzeu 3
+bze  648
+tzge 2
+tzgo 1
+bzg  3
+tzha 1
+tzhe 1
+tzhn 1
+tzho 3
+tzhs 1
+tzhu 1
+bzh  8
+tzi  5
+tzi, 1
+tzid 1
+tzie 6
+tzif 1
+tzig 2
+tzil 7
+tzin 119
+tzio 1
+tzip 4
+tzir 3
+tzis 2
+bzi  152
+tzka 3
+bzk  3
+tzle 24
+tzli 4
+tzly 3
+bzl  31
+tzma 4
+tzmo 1
+bzm  5
+tzni 1
+bzn  1
+tzo  2
+tzo. 1
+tzoa 3
+tzod 1
+tzol 2
+tzom 4
+tzon 50
+tzoo 6
+tzop 2
+tzor 8
+tzos 1
+bzo  80
+tzpi 1
+bzp  1
+tzsc 3
+bzs  3
+tzt  1
+tzte 6
+bzt  7
+tzu  1
+tzuk 3
+tzur 1
+bzu  5
+tzvo 4
+bzv  4
+tzwa 2
+bzw  2
+tzy  60
+tzy! 3
+tzy, 14
+tzy. 14
+tzy/ 1
+tzy; 4
+tzyg 3
+tzym 2
+bzy  101
+tzz  6
+tzz" 1
+tzza 28
+tzzi 4
+tzzl 30
+tzzo 2
+tzzw 2
+tzzy 16
+bzz  89
+mz   1379
