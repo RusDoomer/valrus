@@ -127,7 +127,10 @@ struct keyboard_layout
 {
     char matrix[ROW][COL];
     double score;
-    long unsigned int layout_total;
+    long unsigned int mon_total;
+    long unsigned int big_total;
+    long unsigned int ski_total;
+    long unsigned int tri_total;
     struct patterns *stats;
 };
 
@@ -221,7 +224,7 @@ int same_row(int row0, int row1)
 
 int same_hand(int col0, int col1)
 {
-    return (col0 <= LEFT_HAND && col1 <= LEFT_HAND) || (col0 >= RIGHT_HAND && col1 >= RIGHT_HAND);
+    return hand(col0) == hand(col1);
 }
 
 int adjacent_fingers(int col0, int col1)
@@ -422,6 +425,7 @@ void read_layout(char *name)
 //sft, bsft, lst, hrt, frt, red, onehands, rolls, sft by finger
 void analyze_trigram(int row0, int col0, int row1, int col1, int row2, int col2,  long unsigned int value)
 {
+    current->tri_total += value;
     //sft
     if(same_finger(col0, col1) && same_finger(col1, col2) && !same_row(row0, row1) && !same_row(row1, row2))
     {
@@ -594,6 +598,7 @@ void analyze_trigram(int row0, int col0, int row1, int col1, int row2, int col2,
 //sfs, bsfs,  lss, hrs, frs, sfs by finger
 void analyze_skipgram(int row0, int col0, int row2, int col2, long unsigned int value)
 {
+    current->ski_total += value;
     //sfs
     if(same_finger(col0, col2) && !same_row(row0, row2))
     {
@@ -658,6 +663,7 @@ void analyze_skipgram(int row0, int col0, int row2, int col2, long unsigned int 
 //sfb, bsfb, lsb, hrb, frb, alt, sfb by finger
 void analyze_bigram(int row0, int col0, int row1, int col1, long unsigned int value)
 {
+    current->big_total += value;
     //sfb
     if(same_finger(col0, col1) && !same_row(row0, row1))
     {
@@ -722,7 +728,7 @@ void analyze_bigram(int row0, int col0, int row1, int col1, long unsigned int va
 //hand, row, and finger usage
 void analyze_monogram(int row, int col, long unsigned int value)
 {
-    current->layout_total += value;
+    current->mon_total += value;
     //hand usage
     if (hand(col) == 'l')
     {
@@ -850,110 +856,110 @@ void print_layout()
     puts("");
     puts("USAGE:");
     //puts("");
-    printf("Left Hand: %06.3f%% | ", (double)current->stats->lhu/current->layout_total*100);
-    printf("Right Hand: %06.3f%%\n", (double)current->stats->rhu/current->layout_total*100);
+    printf("Left Hand: %06.3f%% | ", (double)current->stats->lhu/current->mon_total*100);
+    printf("Right Hand: %06.3f%%\n", (double)current->stats->rhu/current->mon_total*100);
     //puts("");
-    printf("Top Row: %06.3f%% | ",   (double)current->stats->tru/current->layout_total*100);
-    printf("Home Row %06.3f%% | ",   (double)current->stats->hru/current->layout_total*100);
-    printf("Bottom Row: %06.3f%%\n", (double)current->stats->bru/current->layout_total*100);
+    printf("Top Row: %06.3f%% | ",   (double)current->stats->tru/current->mon_total*100);
+    printf("Home Row %06.3f%% | ",   (double)current->stats->hru/current->mon_total*100);
+    printf("Bottom Row: %06.3f%%\n", (double)current->stats->bru/current->mon_total*100);
     //puts("");
     printf("Left : ");
-    printf("Pinky: %06.3f%% | ",  (double)current->stats->lpu/current->layout_total*100);
-    printf("Ring: %06.3f%% | ",   (double)current->stats->lru/current->layout_total*100);
-    printf("Middle: %06.3f%% | ", (double)current->stats->lmu/current->layout_total*100);
-    printf("Index: %06.3f%% | ",  (double)current->stats->liu/current->layout_total*100);
-    printf("Stretch: %06.3f%%\n", (double)current->stats->lsu/current->layout_total*100);
+    printf("Pinky: %06.3f%% | ",  (double)current->stats->lpu/current->mon_total*100);
+    printf("Ring: %06.3f%% | ",   (double)current->stats->lru/current->mon_total*100);
+    printf("Middle: %06.3f%% | ", (double)current->stats->lmu/current->mon_total*100);
+    printf("Index: %06.3f%% | ",  (double)current->stats->liu/current->mon_total*100);
+    printf("Stretch: %06.3f%%\n", (double)current->stats->lsu/current->mon_total*100);
     printf("Right: ");
-    printf("Pinky: %06.3f%% | ",  (double)current->stats->rpu/current->layout_total*100);
-    printf("Ring: %06.3f%% | ",   (double)current->stats->rru/current->layout_total*100);
-    printf("Middle: %06.3f%% | ", (double)current->stats->rmu/current->layout_total*100);
-    printf("Index: %06.3f%% | ",  (double)current->stats->riu/current->layout_total*100);
-    printf("Stretch: %06.3f%%\n", (double)current->stats->rsu/current->layout_total*100);
+    printf("Pinky: %06.3f%% | ",  (double)current->stats->rpu/current->mon_total*100);
+    printf("Ring: %06.3f%% | ",   (double)current->stats->rru/current->mon_total*100);
+    printf("Middle: %06.3f%% | ", (double)current->stats->rmu/current->mon_total*100);
+    printf("Index: %06.3f%% | ",  (double)current->stats->riu/current->mon_total*100);
+    printf("Stretch: %06.3f%%\n", (double)current->stats->rsu/current->mon_total*100);
     puts("");
-    printf("SFB: %06.3f%% | ",  (double)current->stats->sfb /current->layout_total*100);
-    printf("Bad: %06.3f%%\n",   (double)current->stats->bsfb/current->layout_total*100);
+    printf("SFB: %06.3f%% | ",  (double)current->stats->sfb /current->big_total*100);
+    printf("Bad: %06.3f%%\n",   (double)current->stats->bsfb/current->big_total*100);
     printf("Left : ");
-    printf("Pinky: %06.3f%% | ",  (double)current->stats->lpb /current->layout_total*100);
-    printf("Ring: %06.3f%% | ",   (double)current->stats->lrb /current->layout_total*100);
-    printf("Middle: %06.3f%% | ", (double)current->stats->lmb /current->layout_total*100);
-    printf("Index: %06.3f%% | ",  (double)current->stats->lib /current->layout_total*100);
-    printf("Stretch: %06.3f%%\n", (double)current->stats->lssb/current->layout_total*100);
+    printf("Pinky: %06.3f%% | ",  (double)current->stats->lpb /current->big_total*100);
+    printf("Ring: %06.3f%% | ",   (double)current->stats->lrb /current->big_total*100);
+    printf("Middle: %06.3f%% | ", (double)current->stats->lmb /current->big_total*100);
+    printf("Index: %06.3f%% | ",  (double)current->stats->lib /current->big_total*100);
+    printf("Stretch: %06.3f%%\n", (double)current->stats->lssb/current->big_total*100);
     printf("Right: ");
-    printf("Pinky: %06.3f%% | ",  (double)current->stats->rpb /current->layout_total*100);
-    printf("Ring: %06.3f%% | ",   (double)current->stats->rrb /current->layout_total*100);
-    printf("Middle: %06.3f%% | ", (double)current->stats->rmb /current->layout_total*100);
-    printf("Index: %06.3f%% | ",  (double)current->stats->rib /current->layout_total*100);
-    printf("Stretch: %06.3f%%\n", (double)current->stats->rssb/current->layout_total*100);
+    printf("Pinky: %06.3f%% | ",  (double)current->stats->rpb /current->big_total*100);
+    printf("Ring: %06.3f%% | ",   (double)current->stats->rrb /current->big_total*100);
+    printf("Middle: %06.3f%% | ", (double)current->stats->rmb /current->big_total*100);
+    printf("Index: %06.3f%% | ",  (double)current->stats->rib /current->big_total*100);
+    printf("Stretch: %06.3f%%\n", (double)current->stats->rssb/current->big_total*100);
     puts("");
-    printf("SFS: %06.3f%% | ", (double)current->stats->sfs /current->layout_total*100);
-    printf("Bad: %06.3f%%\n",  (double)current->stats->bsfs/current->layout_total*100);
+    printf("SFS: %06.3f%% | ", (double)current->stats->sfs /current->ski_total*100);
+    printf("Bad: %06.3f%%\n",  (double)current->stats->bsfs/current->ski_total*100);
     printf("Left : ");
-    printf("Pinky: %06.3f%% | ",  (double)current->stats->lps /current->layout_total*100);
-    printf("Ring: %06.3f%% | ",   (double)current->stats->lrs /current->layout_total*100);
-    printf("Middle: %06.3f%% | ", (double)current->stats->lms /current->layout_total*100);
-    printf("Index: %06.3f%% | ",  (double)current->stats->lis /current->layout_total*100);
-    printf("Stretch: %06.3f%%\n", (double)current->stats->lsss/current->layout_total*100);
+    printf("Pinky: %06.3f%% | ",  (double)current->stats->lps /current->ski_total*100);
+    printf("Ring: %06.3f%% | ",   (double)current->stats->lrs /current->ski_total*100);
+    printf("Middle: %06.3f%% | ", (double)current->stats->lms /current->ski_total*100);
+    printf("Index: %06.3f%% | ",  (double)current->stats->lis /current->ski_total*100);
+    printf("Stretch: %06.3f%%\n", (double)current->stats->lsss/current->ski_total*100);
     printf("Right: ");
-    printf("Pinky: %06.3f%% | ",  (double)current->stats->rps /current->layout_total*100);
-    printf("Ring: %06.3f%% | ",   (double)current->stats->rrs /current->layout_total*100);
-    printf("Middle: %06.3f%% | ", (double)current->stats->rms /current->layout_total*100);
-    printf("Index: %06.3f%% | ",  (double)current->stats->ris /current->layout_total*100);
-    printf("Stretch: %06.3f%%\n", (double)current->stats->rsss/current->layout_total*100);
+    printf("Pinky: %06.3f%% | ",  (double)current->stats->rps /current->ski_total*100);
+    printf("Ring: %06.3f%% | ",   (double)current->stats->rrs /current->ski_total*100);
+    printf("Middle: %06.3f%% | ", (double)current->stats->rms /current->ski_total*100);
+    printf("Index: %06.3f%% | ",  (double)current->stats->ris /current->ski_total*100);
+    printf("Stretch: %06.3f%%\n", (double)current->stats->rsss/current->ski_total*100);
     puts("");
-    printf("SFT: %06.3f%% | ", (double)current->stats->sft /current->layout_total*100);
-    printf("Bad: %06.3f%%\n",  (double)current->stats->bsft/current->layout_total*100);
+    printf("SFT: %06.3f%% | ", (double)current->stats->sft /current->tri_total*100);
+    printf("Bad: %06.3f%%\n",  (double)current->stats->bsft/current->tri_total*100);
     printf("Left : ");
-    printf("Pinky: %06.3f%% | ",  (double)current->stats->lpt /current->layout_total*100);
-    printf("Ring: %06.3f%% | ",   (double)current->stats->lrt /current->layout_total*100);
-    printf("Middle: %06.3f%% | ", (double)current->stats->lmt /current->layout_total*100);
-    printf("Index: %06.3f%% | ",  (double)current->stats->lit /current->layout_total*100);
-    printf("Stretch: %06.3f%%\n", (double)current->stats->lsst/current->layout_total*100);
+    printf("Pinky: %06.3f%% | ",  (double)current->stats->lpt /current->tri_total*100);
+    printf("Ring: %06.3f%% | ",   (double)current->stats->lrt /current->tri_total*100);
+    printf("Middle: %06.3f%% | ", (double)current->stats->lmt /current->tri_total*100);
+    printf("Index: %06.3f%% | ",  (double)current->stats->lit /current->tri_total*100);
+    printf("Stretch: %06.3f%%\n", (double)current->stats->lsst/current->tri_total*100);
     printf("Right: ");
-    printf("Pinky: %06.3f%% | ",  (double)current->stats->rpt /current->layout_total*100);
-    printf("Ring: %06.3f%% | ",   (double)current->stats->rrt /current->layout_total*100);
-    printf("Middle: %06.3f%% | ", (double)current->stats->rmt /current->layout_total*100);
-    printf("Index: %06.3f%% | ",  (double)current->stats->rit /current->layout_total*100);
-    printf("Stretch: %06.3f%%\n", (double)current->stats->rsst/current->layout_total*100);
+    printf("Pinky: %06.3f%% | ",  (double)current->stats->rpt /current->tri_total*100);
+    printf("Ring: %06.3f%% | ",   (double)current->stats->rrt /current->tri_total*100);
+    printf("Middle: %06.3f%% | ", (double)current->stats->rmt /current->tri_total*100);
+    printf("Index: %06.3f%% | ",  (double)current->stats->rit /current->tri_total*100);
+    printf("Stretch: %06.3f%%\n", (double)current->stats->rsst/current->tri_total*100);
     puts("");
-    printf("LSB: %06.3f%% | ", (double)current->stats->lsb/current->layout_total*100);
-    printf("LSS: %06.3f%% | ", (double)current->stats->lss/current->layout_total*100);
-    printf("LST: %06.3f%%\n",  (double)current->stats->lst/current->layout_total*100);
-    printf("HRB: %06.3f%% | ", (double)current->stats->hrb/current->layout_total*100);
-    printf("HRS: %06.3f%% | ", (double)current->stats->hrs/current->layout_total*100);
-    printf("HRT: %06.3f%%\n",  (double)current->stats->hrt/current->layout_total*100);
-    printf("FRB: %06.3f%% | ", (double)current->stats->frb/current->layout_total*100);
-    printf("FRS: %06.3f%% | ", (double)current->stats->frs/current->layout_total*100);
-    printf("FRT: %06.3f%%\n",  (double)current->stats->frt/current->layout_total*100);
+    printf("LSB: %06.3f%% | ", (double)current->stats->lsb/current->big_total*100);
+    printf("LSS: %06.3f%% | ", (double)current->stats->lss/current->ski_total*100);
+    printf("LST: %06.3f%%\n",  (double)current->stats->lst/current->tri_total*100);
+    printf("HRB: %06.3f%% | ", (double)current->stats->hrb/current->big_total*100);
+    printf("HRS: %06.3f%% | ", (double)current->stats->hrs/current->ski_total*100);
+    printf("HRT: %06.3f%%\n",  (double)current->stats->hrt/current->tri_total*100);
+    printf("FRB: %06.3f%% | ", (double)current->stats->frb/current->big_total*100);
+    printf("FRS: %06.3f%% | ", (double)current->stats->frs/current->ski_total*100);
+    printf("FRT: %06.3f%%\n",  (double)current->stats->frt/current->tri_total*100);
     puts("");
-    printf("Alt: %06.3f%%\n",  (double)current->stats->alt/current->layout_total*100);
-    printf("Red: %06.3f%% | ", (double)current->stats->red/current->layout_total*100);
-    printf("Bad: %06.3f%%\n",  (double)current->stats->brd/current->layout_total*100);
+    printf("Alt: %06.3f%%\n",  (double)current->stats->alt/current->tri_total*100);
+    printf("Red: %06.3f%% | ", (double)current->stats->red/current->tri_total*100);
+    printf("Bad: %06.3f%%\n",  (double)current->stats->brd/current->tri_total*100);
     puts("");
-    printf("One : %06.3f%% | ", (double)current->stats->one /current->layout_total*100);
-    printf("In: %06.3f%% | ",   (double)current->stats->oni /current->layout_total*100);
-    printf("Out: %06.3f%%\n",   (double)current->stats->ono /current->layout_total*100);
-    printf("SRON: %06.3f%% | ", (double)current->stats->sron/current->layout_total*100);
-    printf("In: %06.3f%% | ",   (double)current->stats->soi /current->layout_total*100);
-    printf("Out: %06.3f%%\n",   (double)current->stats->soo /current->layout_total*100);
-    printf("AFON: %06.3f%% | ", (double)current->stats->afon/current->layout_total*100);
-    printf("In: %06.3f%% | ",   (double)current->stats->aoi /current->layout_total*100);
-    printf("Out: %06.3f%%\n",   (double)current->stats->aoo /current->layout_total*100);
-    printf("SAON: %06.3f%% | ", (double)current->stats->saon/current->layout_total*100);
-    printf("In: %06.3f%% | ",   (double)current->stats->saoi/current->layout_total*100);
-    printf("Out: %06.3f%%\n",   (double)current->stats->saoo/current->layout_total*100);
+    printf("One : %06.3f%% | ", (double)current->stats->one /current->tri_total*100);
+    printf("In: %06.3f%% | ",   (double)current->stats->oni /current->tri_total*100);
+    printf("Out: %06.3f%%\n",   (double)current->stats->ono /current->tri_total*100);
+    printf("SRON: %06.3f%% | ", (double)current->stats->sron/current->tri_total*100);
+    printf("In: %06.3f%% | ",   (double)current->stats->soi /current->tri_total*100);
+    printf("Out: %06.3f%%\n",   (double)current->stats->soo /current->tri_total*100);
+    printf("AFON: %06.3f%% | ", (double)current->stats->afon/current->tri_total*100);
+    printf("In: %06.3f%% | ",   (double)current->stats->aoi /current->tri_total*100);
+    printf("Out: %06.3f%%\n",   (double)current->stats->aoo /current->tri_total*100);
+    printf("SAON: %06.3f%% | ", (double)current->stats->saon/current->tri_total*100);
+    printf("In: %06.3f%% | ",   (double)current->stats->saoi/current->tri_total*100);
+    printf("Out: %06.3f%%\n",   (double)current->stats->saoo/current->tri_total*100);
     puts("");
-    printf("Rol: %06.3f%% | ", (double)current->stats->rol /current->layout_total*100);
-    printf("In: %06.3f%% | ",  (double)current->stats->irl /current->layout_total*100);
-    printf("Out: %06.3f%%\n",  (double)current->stats->orl /current->layout_total*100);
-    printf("SRR: %06.3f%% | ", (double)current->stats->srr /current->layout_total*100);
-    printf("In: %06.3f%% | ",  (double)current->stats->sri /current->layout_total*100);
-    printf("Out: %06.3f%%\n",  (double)current->stats->sro /current->layout_total*100);
-    printf("AFR: %06.3f%% | ", (double)current->stats->afr /current->layout_total*100);
-    printf("In: %06.3f%% | ",  (double)current->stats->afi /current->layout_total*100);
-    printf("Out: %06.3f%%\n",  (double)current->stats->afo /current->layout_total*100);
-    printf("SAR: %06.3f%% | ", (double)current->stats->sar /current->layout_total*100);
-    printf("In: %06.3f%% | ",  (double)current->stats->sai /current->layout_total*100);
-    printf("Out: %06.3f%%\n",  (double)current->stats->sao /current->layout_total*100);
+    printf("Rol: %06.3f%% | ", (double)current->stats->rol /current->tri_total*100);
+    printf("In: %06.3f%% | ",  (double)current->stats->irl /current->tri_total*100);
+    printf("Out: %06.3f%%\n",  (double)current->stats->orl /current->tri_total*100);
+    printf("SRR: %06.3f%% | ", (double)current->stats->srr /current->tri_total*100);
+    printf("In: %06.3f%% | ",  (double)current->stats->sri /current->tri_total*100);
+    printf("Out: %06.3f%%\n",  (double)current->stats->sro /current->tri_total*100);
+    printf("AFR: %06.3f%% | ", (double)current->stats->afr /current->tri_total*100);
+    printf("In: %06.3f%% | ",  (double)current->stats->afi /current->tri_total*100);
+    printf("Out: %06.3f%%\n",  (double)current->stats->afo /current->tri_total*100);
+    printf("SAR: %06.3f%% | ", (double)current->stats->sar /current->tri_total*100);
+    printf("In: %06.3f%% | ",  (double)current->stats->sai /current->tri_total*100);
+    printf("Out: %06.3f%%\n",  (double)current->stats->sao /current->tri_total*100);
 }
 
 int main(int argc, char **argv)
