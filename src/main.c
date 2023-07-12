@@ -1,6 +1,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
+#include <dirent.h>
 
 #define ROW 3
 #define COL 10
@@ -12,6 +13,26 @@ static long unsigned int monogram[128];
 static long unsigned int bigram[128][128];
 static long unsigned int trigram[128][128][128];
 long unsigned int total;
+
+char* corpus;
+int corpus_malloc;
+char* layout;
+int layout_malloc;
+char* weight;
+int weights_malloc;
+char mode;
+int generation_quantity;
+char output;
+
+struct ranking
+{
+    char *name;
+    double score;
+    struct ranking *next;
+};
+
+struct ranking *head;
+struct ranking *ptr;
 
 struct patterns
 {
@@ -136,6 +157,40 @@ struct keyboard_layout
 
 struct keyboard_layout *current;
 struct keyboard_layout *max;
+
+struct stat_weights
+{
+    int pins[3][10];
+    double sfb, sfs, sft, bsfb, bsfs, bsft, lsb, lss, lst, hrb, hrs, hrt,
+    frb, frs, frt, alt, red, brd, one, oni, ono, sron, soi, soo, afon, aoi, aoo,
+    saon, saoi, saoo, rol, irl, orl, srr, sri, sro, afr, afi, afo,
+    sar, sai, sao, lhu, rhu, tru, hru, bru, lpu, lru, lmu, liu, lsu,
+    rsu, riu, rmu, rru, rpu, lpb, lrb, lmb, lib, lssb, rssb, rib, rmb, rrb, rpb,
+    lps, lrs, lms, lis, lsss, rsss, ris, rms, rrs, rps,
+    lpt, lrt, lmt, lit, lsst, rsst, rit, rmt, rrt, rpt;
+    double hand_balance;
+};
+
+struct stat_weights *weights;
+
+void error_out()
+{
+    printf("Freeing, and exiting.\n");
+    if(current != NULL)
+    {
+        free(current->stats);
+        free(current);
+    }
+    if(max != NULL)
+    {
+        free(max->stats);
+        free(max);
+    }
+    if(corpus_malloc){free(corpus);}
+    if(layout_malloc){free(layout);}
+    if(weights_malloc){free(weight);}
+    exit(1);
+}
 
 //lower case all letters, and symbols that are within the "alpha" area, leave the rest alone, also trim non-ascii stuff
 char convert_char(char c)
@@ -394,9 +449,8 @@ void read_corpus(char *name)
 
 void read_layout(char *name)
 {
-    printf("Reading layout...\n");
     //find layout file
-    FILE *data;
+    FILE * data;
     char *layout = (char*)malloc(strlen("./layouts/") + strlen(name) + 1);
     strcpy(layout, "./layouts/");
     strcat(layout, name);
@@ -411,9 +465,9 @@ void read_layout(char *name)
     current = calloc(1, sizeof(struct keyboard_layout));
     current->stats = calloc(1, sizeof(struct patterns));
     //read layout
-    for (int  i = 0; i < 3; i++)
+    for (int  i = 0; i < ROW; i++)
     {
-        for (int j = 0; j < 10; j++)
+        for (int j = 0; j < COL; j++)
         {
             fscanf(data, " %c", &current->matrix[i][j]);
         }
@@ -789,7 +843,6 @@ void analyze_monogram(int row, int col, long unsigned int value)
 
 void analyze_layout()
 {
-    printf("Analyzing layout...\n");
     //first key
     for (int r1 = 0; r1 < ROW; r1++)
     {
@@ -826,24 +879,225 @@ void analyze_layout()
     }
 }
 
-void read_weights()
+void read_weights(char *name)
 {
     printf("Reading weights...\n");
-    return;
+    char temp;
+    FILE * data;
+    char *weight = (char*)malloc(strlen("./weights/") + strlen(name) + 1);
+    strcpy(weight, "./weights/");
+    strcat(weight, name);
+    data = fopen(weight, "r");
+    if (data == NULL)
+    {
+        free(weight);
+        printf("No such weights were fount!\n");
+        return;
+    }
+    weights = calloc(1, sizeof(struct stat_weights));
+    for (int i = 0; i < ROW; i++)
+    {
+        for (int j = 0; j < COL; j++)
+        {
+            fscanf(data, " %c", &temp);
+            if (temp == '.')
+            {
+                weights->pins[i][j] = 0;
+            }
+            else
+            {
+                weights->pins[i][j] = 1;
+            }
+        }
+    }
+    fscanf(data, " %*[^0-9.-]%lf", &weights->sfb);
+    fscanf(data, " %*[^0-9.-]%lf", &weights->sfs);
+    fscanf(data, " %*[^0-9.-]%lf", &weights->sft);
+    fscanf(data, " %*[^0-9.-]%lf", &weights->bsfb);
+    fscanf(data, " %*[^0-9.-]%lf", &weights->bsfs);
+    fscanf(data, " %*[^0-9.-]%lf", &weights->bsft);
+    fscanf(data, " %*[^0-9.-]%lf", &weights->lsb);
+    fscanf(data, " %*[^0-9.-]%lf", &weights->lss);
+    fscanf(data, " %*[^0-9.-]%lf", &weights->lst);
+    fscanf(data, " %*[^0-9.-]%lf", &weights->hrb);
+    fscanf(data, " %*[^0-9.-]%lf", &weights->hrs);
+    fscanf(data, " %*[^0-9.-]%lf", &weights->hrt);
+    fscanf(data, " %*[^0-9.-]%lf", &weights->frb);
+    fscanf(data, " %*[^0-9.-]%lf", &weights->frs);
+    fscanf(data, " %*[^0-9.-]%lf", &weights->frt);
+    fscanf(data, " %*[^0-9.-]%lf", &weights->alt);
+    fscanf(data, " %*[^0-9.-]%lf", &weights->red);
+    fscanf(data, " %*[^0-9.-]%lf", &weights->brd);
+    fscanf(data, " %*[^0-9.-]%lf", &weights->one);
+    fscanf(data, " %*[^0-9.-]%lf", &weights->oni);
+    fscanf(data, " %*[^0-9.-]%lf", &weights->ono);
+    fscanf(data, " %*[^0-9.-]%lf", &weights->sron);
+    fscanf(data, " %*[^0-9.-]%lf", &weights->soi);
+    fscanf(data, " %*[^0-9.-]%lf", &weights->soo);
+    fscanf(data, " %*[^0-9.-]%lf", &weights->afon);
+    fscanf(data, " %*[^0-9.-]%lf", &weights->aoi);
+    fscanf(data, " %*[^0-9.-]%lf", &weights->aoo);
+    fscanf(data, " %*[^0-9.-]%lf", &weights->saon);
+    fscanf(data, " %*[^0-9.-]%lf", &weights->saoi);
+    fscanf(data, " %*[^0-9.-]%lf", &weights->saoo);
+    fscanf(data, " %*[^0-9.-]%lf", &weights->rol);
+    fscanf(data, " %*[^0-9.-]%lf", &weights->irl);
+    fscanf(data, " %*[^0-9.-]%lf", &weights->orl);
+    fscanf(data, " %*[^0-9.-]%lf", &weights->srr);
+    fscanf(data, " %*[^0-9.-]%lf", &weights->sri);
+    fscanf(data, " %*[^0-9.-]%lf", &weights->sro);
+    fscanf(data, " %*[^0-9.-]%lf", &weights->afr);
+    fscanf(data, " %*[^0-9.-]%lf", &weights->afi);
+    fscanf(data, " %*[^0-9.-]%lf", &weights->afo);
+    fscanf(data, " %*[^0-9.-]%lf", &weights->sar);
+    fscanf(data, " %*[^0-9.-]%lf", &weights->sai);
+    fscanf(data, " %*[^0-9.-]%lf", &weights->sao);
+    fscanf(data, " %*[^0-9.-]%lf", &weights->hand_balance);
+    fscanf(data, " %*[^0-9.-]%lf", &weights->lhu);
+    fscanf(data, " %*[^0-9.-]%lf", &weights->rhu);
+    fscanf(data, " %*[^0-9.-]%lf", &weights->lpu);
+    fscanf(data, " %*[^0-9.-]%lf", &weights->lru);
+    fscanf(data, " %*[^0-9.-]%lf", &weights->lmu);
+    fscanf(data, " %*[^0-9.-]%lf", &weights->liu);
+    fscanf(data, " %*[^0-9.-]%lf", &weights->lsu);
+    fscanf(data, " %*[^0-9.-]%lf", &weights->rsu);
+    fscanf(data, " %*[^0-9.-]%lf", &weights->riu);
+    fscanf(data, " %*[^0-9.-]%lf", &weights->rmu);
+    fscanf(data, " %*[^0-9.-]%lf", &weights->rru);
+    fscanf(data, " %*[^0-9.-]%lf", &weights->rpu);
+    fscanf(data, " %*[^0-9.-]%lf", &weights->lpb);
+    fscanf(data, " %*[^0-9.-]%lf", &weights->lrb);
+    fscanf(data, " %*[^0-9.-]%lf", &weights->lib);
+    fscanf(data, " %*[^0-9.-]%lf", &weights->lssb);
+    fscanf(data, " %*[^0-9.-]%lf", &weights->rssb);
+    fscanf(data, " %*[^0-9.-]%lf", &weights->rib);
+    fscanf(data, " %*[^0-9.-]%lf", &weights->rmb);
+    fscanf(data, " %*[^0-9.-]%lf", &weights->rrb);
+    fscanf(data, " %*[^0-9.-]%lf", &weights->rpb);
+    fscanf(data, " %*[^0-9.-]%lf", &weights->lps);
+    fscanf(data, " %*[^0-9.-]%lf", &weights->lrs);
+    fscanf(data, " %*[^0-9.-]%lf", &weights->lms);
+    fscanf(data, " %*[^0-9.-]%lf", &weights->lis);
+    fscanf(data, " %*[^0-9.-]%lf", &weights->lsss);
+    fscanf(data, " %*[^0-9.-]%lf", &weights->rsss);
+    fscanf(data, " %*[^0-9.-]%lf", &weights->ris);
+    fscanf(data, " %*[^0-9.-]%lf", &weights->rms);
+    fscanf(data, " %*[^0-9.-]%lf", &weights->rrs);
+    fscanf(data, " %*[^0-9.-]%lf", &weights->rps);
+    fscanf(data, " %*[^0-9.-]%lf", &weights->lpt);
+    fscanf(data, " %*[^0-9.-]%lf", &weights->lrt);
+    fscanf(data, " %*[^0-9.-]%lf", &weights->lmt);
+    fscanf(data, " %*[^0-9.-]%lf", &weights->lit);
+    fscanf(data, " %*[^0-9.-]%lf", &weights->lsst);
+    fscanf(data, " %*[^0-9.-]%lf", &weights->rsst);
+    fscanf(data, " %*[^0-9.-]%lf", &weights->rit);
+    fscanf(data, " %*[^0-9.-]%lf", &weights->rmt);
+    fscanf(data, " %*[^0-9.-]%lf", &weights->rrt);
+    fscanf(data, " %*[^0-9.-]%lf", &weights->rpt);
+    free(weight);
+    fclose(data);
 }
 
 void get_score()
 {
-    printf("Calculating score...\n");
-
-    puts("");
-    printf("Score : %f\n", current->score);
-    puts("");
-    return;
+    current->score += ((double)current->stats->sfb /current->big_total*100) * weights->sfb;
+    current->score += ((double)current->stats->sfs /current->ski_total*100) * weights->sfs;
+    current->score += ((double)current->stats->sft /current->tri_total*100) * weights->sft;
+    current->score += ((double)current->stats->bsfb/current->big_total*100) * weights->bsfb;
+    current->score += ((double)current->stats->bsfs/current->ski_total*100) * weights->bsfs;
+    current->score += ((double)current->stats->bsft/current->tri_total*100) * weights->bsft;
+    current->score += ((double)current->stats->lsb /current->big_total*100) * weights->lsb;
+    current->score += ((double)current->stats->lss /current->ski_total*100) * weights->lss;
+    current->score += ((double)current->stats->lst /current->tri_total*100) * weights->lst;
+    current->score += ((double)current->stats->hrb /current->big_total*100) * weights->hrb;
+    current->score += ((double)current->stats->hrs /current->ski_total*100) * weights->hrs;
+    current->score += ((double)current->stats->hrt /current->tri_total*100) * weights->hrt;
+    current->score += ((double)current->stats->frb /current->big_total*100) * weights->frb;
+    current->score += ((double)current->stats->frs /current->ski_total*100) * weights->frs;
+    current->score += ((double)current->stats->frt /current->tri_total*100) * weights->frt;
+    current->score += ((double)current->stats->alt /current->tri_total*100) * weights->alt;
+    current->score += ((double)current->stats->red /current->tri_total*100) * weights->red;
+    current->score += ((double)current->stats->brd /current->tri_total*100) * weights->brd;
+    current->score += ((double)current->stats->one /current->tri_total*100) * weights->one;
+    current->score += ((double)current->stats->oni /current->tri_total*100) * weights->oni;
+    current->score += ((double)current->stats->ono /current->tri_total*100) * weights->ono;
+    current->score += ((double)current->stats->sron/current->tri_total*100) * weights->sron;
+    current->score += ((double)current->stats->soi /current->tri_total*100) * weights->soi;
+    current->score += ((double)current->stats->soo /current->tri_total*100) * weights->soo;
+    current->score += ((double)current->stats->afon/current->tri_total*100) * weights->afon;
+    current->score += ((double)current->stats->aoi /current->tri_total*100) * weights->aoi;
+    current->score += ((double)current->stats->aoo /current->tri_total*100) * weights->aoo;
+    current->score += ((double)current->stats->saon/current->tri_total*100) * weights->saon;
+    current->score += ((double)current->stats->saoi/current->tri_total*100) * weights->saoi;
+    current->score += ((double)current->stats->saoo/current->tri_total*100) * weights->saoo;
+    current->score += ((double)current->stats->rol /current->tri_total*100) * weights->rol;
+    current->score += ((double)current->stats->irl /current->tri_total*100) * weights->irl;
+    current->score += ((double)current->stats->orl /current->tri_total*100) * weights->orl;
+    current->score += ((double)current->stats->srr /current->tri_total*100) * weights->srr;
+    current->score += ((double)current->stats->sri /current->tri_total*100) * weights->sri;
+    current->score += ((double)current->stats->sro /current->tri_total*100) * weights->sro;
+    current->score += ((double)current->stats->afr /current->tri_total*100) * weights->afr;
+    current->score += ((double)current->stats->afi /current->tri_total*100) * weights->afi;
+    current->score += ((double)current->stats->afo /current->tri_total*100) * weights->afo;
+    current->score += ((double)current->stats->sar /current->tri_total*100) * weights->sar;
+    current->score += ((double)current->stats->sai /current->tri_total*100) * weights->sai;
+    current->score += ((double)current->stats->sao /current->tri_total*100) * weights->sao;
+    if (current->stats->lhu > current->stats->rhu)
+    {
+        current->score += ((double)current->stats->lhu - current->stats->rhu /current->mon_total*100) * weights->hand_balance;
+    }
+    else
+    {
+        //current->score += ((double)current->stats->rhu - current->stats->lhu /current->mon_total*100) * weights->hand_balance;
+    }
+    current->score += ((double)current->stats->lhu /current->mon_total*100) * weights->lhu;
+    current->score += ((double)current->stats->rhu /current->mon_total*100) * weights->rhu;
+    current->score += ((double)current->stats->lpu /current->mon_total*100) * weights->lpu;
+    current->score += ((double)current->stats->lru /current->mon_total*100) * weights->lru;
+    current->score += ((double)current->stats->lmu /current->mon_total*100) * weights->lmu;
+    current->score += ((double)current->stats->liu /current->mon_total*100) * weights->liu;
+    current->score += ((double)current->stats->lsu /current->mon_total*100) * weights->lsu;
+    current->score += ((double)current->stats->rsu /current->mon_total*100) * weights->rsu;
+    current->score += ((double)current->stats->riu /current->mon_total*100) * weights->riu;
+    current->score += ((double)current->stats->rmu /current->mon_total*100) * weights->rmu;
+    current->score += ((double)current->stats->rru /current->mon_total*100) * weights->rru;
+    current->score += ((double)current->stats->rpu /current->mon_total*100) * weights->rpu;
+    current->score += ((double)current->stats->lpb /current->big_total*100) * weights->lpb;
+    current->score += ((double)current->stats->lrb /current->big_total*100) * weights->lrb;
+    current->score += ((double)current->stats->lmb /current->big_total*100) * weights->lmb;
+    current->score += ((double)current->stats->lib /current->big_total*100) * weights->lib;
+    current->score += ((double)current->stats->lssb/current->big_total*100) * weights->lssb;
+    current->score += ((double)current->stats->rssb/current->big_total*100) * weights->rssb;
+    current->score += ((double)current->stats->rib /current->big_total*100) * weights->rib;
+    current->score += ((double)current->stats->rmb /current->big_total*100) * weights->rmb;
+    current->score += ((double)current->stats->rrb /current->big_total*100) * weights->rrb;
+    current->score += ((double)current->stats->rpb /current->big_total*100) * weights->rpb;
+    current->score += ((double)current->stats->lps /current->ski_total*100) * weights->lps;
+    current->score += ((double)current->stats->lrs /current->ski_total*100) * weights->lrs;
+    current->score += ((double)current->stats->lms /current->ski_total*100) * weights->lms;
+    current->score += ((double)current->stats->lis /current->ski_total*100) * weights->lis;
+    current->score += ((double)current->stats->lsss/current->ski_total*100) * weights->lsss;
+    current->score += ((double)current->stats->rsss/current->ski_total*100) * weights->rsss;
+    current->score += ((double)current->stats->ris /current->ski_total*100) * weights->ris;
+    current->score += ((double)current->stats->rms /current->ski_total*100) * weights->rms;
+    current->score += ((double)current->stats->rrs /current->ski_total*100) * weights->rrs;
+    current->score += ((double)current->stats->rps /current->ski_total*100) * weights->rps;
+    current->score += ((double)current->stats->lpt /current->tri_total*100) * weights->lpt;
+    current->score += ((double)current->stats->lrt /current->tri_total*100) * weights->lrt;
+    current->score += ((double)current->stats->lmt /current->tri_total*100) * weights->lmt;
+    current->score += ((double)current->stats->lit /current->tri_total*100) * weights->lit;
+    current->score += ((double)current->stats->lsst/current->tri_total*100) * weights->lsst;
+    current->score += ((double)current->stats->rsst/current->tri_total*100) * weights->rsst;
+    current->score += ((double)current->stats->rit /current->tri_total*100) * weights->rit;
+    current->score += ((double)current->stats->rmt /current->tri_total*100) * weights->rmt;
+    current->score += ((double)current->stats->rrt /current->tri_total*100) * weights->rrt;
+    current->score += ((double)current->stats->rpt /current->tri_total*100) * weights->rpt;
 }
 
 void print_layout()
 {
+    printf("Score : %f\n", current->score);
+    puts("");
     for (int i = 0; i < ROW; i++)
     {
         for (int j = 0; j < COL; j++)
@@ -962,17 +1216,140 @@ void print_layout()
     printf("Out: %06.3f%%\n",  (double)current->stats->sao /current->tri_total*100);
 }
 
+void short_print()
+{
+    for (int i = 0; i < ROW; i++)
+    {
+        for (int j = 0; j < COL; j++)
+        {
+            if (j == RIGHT_HAND) {printf(" ");}
+            printf("%c ", current->matrix[i][j]);
+        }
+        puts("");
+    }
+    puts("");
+    printf("Left Hand: %06.3f%% | ", (double)current->stats->lhu/current->mon_total*100);
+    printf("Right Hand: %06.3f%%\n", (double)current->stats->rhu/current->mon_total*100);
+    puts("");
+    printf("SFB: %06.3f%% | ",  (double)current->stats->sfb /current->big_total*100);
+    printf("Bad: %06.3f%%\n",   (double)current->stats->bsfb/current->big_total*100);
+    printf("SFS: %06.3f%% | ", (double)current->stats->sfs /current->ski_total*100);
+    printf("Bad: %06.3f%%\n",  (double)current->stats->bsfs/current->ski_total*100);
+    puts("");
+    printf("LSB: %06.3f%% | ", (double)current->stats->lsb/current->big_total*100);
+    printf("FRB: %06.3f%%\n", (double)current->stats->frb/current->big_total*100);
+    printf("Alt: %06.3f%% | ",  (double)current->stats->alt/current->tri_total*100);
+    printf("Red: %06.3f%% | ", (double)current->stats->red/current->tri_total*100);
+    printf("Bad: %06.3f%%\n",  (double)current->stats->brd/current->tri_total*100);
+    printf("One: %06.3f%% | ", (double)current->stats->one /current->tri_total*100);
+    printf("In : %06.3f%% | ",   (double)current->stats->oni /current->tri_total*100);
+    printf("Out: %06.3f%%\n",   (double)current->stats->ono /current->tri_total*100);
+    puts("");
+    printf("Rol: %06.3f%% | ", (double)current->stats->rol /current->tri_total*100);
+    printf("In : %06.3f%% | ",  (double)current->stats->irl /current->tri_total*100);
+    printf("Out: %06.3f%%\n",  (double)current->stats->orl /current->tri_total*100);
+    printf("SRR: %06.3f%% | ", (double)current->stats->srr /current->tri_total*100);
+    printf("In : %06.3f%% | ",  (double)current->stats->sri /current->tri_total*100);
+    printf("Out: %06.3f%%\n",  (double)current->stats->sro /current->tri_total*100);
+    printf("AFR: %06.3f%% | ", (double)current->stats->afr /current->tri_total*100);
+    printf("In : %06.3f%% | ",  (double)current->stats->afi /current->tri_total*100);
+    printf("Out: %06.3f%%\n",  (double)current->stats->afo /current->tri_total*100);
+    printf("SAR: %06.3f%% | ", (double)current->stats->sar /current->tri_total*100);
+    printf("In : %06.3f%% | ",  (double)current->stats->sai /current->tri_total*100);
+    printf("Out: %06.3f%%\n",  (double)current->stats->sao /current->tri_total*100);
+}
+
+void print_rankings()
+{
+    ptr = head;
+    while (ptr != NULL)
+    {
+        printf("%s -> %lf\n", ptr->name, ptr->score);
+        ptr = ptr->next;
+    }
+}
+
+void rank_layouts()
+{
+    DIR *dir;
+    struct dirent *entry;
+    dir = opendir("./layouts");
+    if (dir == NULL)
+    {
+        printf("No layouts?\n");
+        return;
+    }
+
+    while ((entry = readdir(dir)) != NULL)
+    {
+        if (entry->d_type == DT_REG)
+        {
+            read_layout(entry->d_name);
+            analyze_layout();
+            get_score();
+            struct ranking *node = malloc(sizeof(struct ranking));
+            node->name = (char*)malloc(strlen(entry->d_name) + 1);
+            strcpy(node->name, entry->d_name);
+            node->score = current->score;
+            node->next = NULL;
+            if (head == NULL)
+            {
+                head = node;
+            }
+            else if (head->score < node->score)
+            {
+                node->next = head;
+                head = node;
+            }
+            else if (head->next == NULL)
+            {
+                head->next = node;
+            }
+            else
+            {
+                ptr = head;
+                while (ptr->next != NULL && ptr->next->score > node->score)
+                {
+                    ptr = ptr->next;
+                }
+                node->next = ptr->next;
+                ptr->next = node;
+            }
+            free(current->stats);
+            free(current);
+            current = NULL;
+        }
+    }
+
+    print_rankings();
+
+    ptr = head;
+    while (head != NULL && ptr != NULL)
+    {
+        ptr = head;
+        while (ptr->next != NULL)
+        {
+            ptr = ptr->next;
+        }
+        free(ptr->name);
+        free(ptr);
+        ptr = NULL;
+    }
+    closedir(dir);
+}
+
 int main(int argc, char **argv)
 {
     //set defaults
-    char* corpus = "monkeyracer";
-    int corpus_malloc = 0;
-    char* layout = "alphabetical";
-    int layout_malloc = 0;
-    char* weights = "default";
-    int weights_malloc = 0;
-    char mode = 'n';
-    int generation_quantity = 100;
+    corpus = "monkeyracer";
+    corpus_malloc = 0;
+    layout = "alphabetical";
+    layout_malloc = 0;
+    weight = "default";
+    weights_malloc = 0;
+    mode = 'a';
+    generation_quantity = 100;
+    output = 'l';
     //read arguments
     for (int i = 1; i < argc; i++)
     {
@@ -999,13 +1376,10 @@ int main(int argc, char **argv)
             	case 'w':
             		if (i + 1 < argc)
             		{
-                        weights = (char*)malloc(strlen(argv[i+1])+1);
-                        strcpy(weights, argv[i+1]);
+                        weight = (char*)malloc(strlen(argv[i+1])+1);
+                        strcpy(weight, argv[i+1]);
                         weights_malloc = 1;
             		}
-            		break;
-            	case 'a':
-            		mode = 'a';
             		break;
             	case 'g':
             		mode = 'g';
@@ -1013,32 +1387,47 @@ int main(int argc, char **argv)
             		{
             			generation_quantity = atoi(argv[i+1]);
             		}
+                    break;
+                case 'q':
+                    output = 'q';
+                    break;
+                case 'r':
+                    mode = 'r';
+                    break;
+                case 'e':
+                    error_out();
+                    break;
             }
         }
     }
     //print end results
     printf("corpus : %s\n", corpus);
     printf("layout : %s\n", layout);
-    printf("weights : %s\n", weights);
+    printf("weights : %s\n", weight);
     printf("mode : %c\n", mode);
     printf("generation quantity : %d\n\n", generation_quantity);
 
     //actually start doing stuff
     switch (mode)
     {
-        case 'n':
-            printf("No mode selected, exiting.\n");
-            break;
         case 'a':
             printf("Starting analysis...\n");
             read_corpus(corpus);
+            printf("Reading layout...\n");
             read_layout(layout);
+            printf("Analyzing layout...\n");
             analyze_layout();
-            //TODO
-            read_weights();
+            read_weights(weight);
+            printf("Calculating score...\n");
             get_score();
-            //
-            print_layout();
+            if (output == 'l') {print_layout();}
+            else {short_print();}
+            break;
+        case 'r':
+            printf("Ranking layouts in ./layouts/ ...\n");
+            read_corpus(corpus);
+            read_weights(weight);
+            rank_layouts();
             break;
         case 'g':
             printf("Starting generation...\n");
@@ -1059,5 +1448,5 @@ int main(int argc, char **argv)
     }
     if(corpus_malloc){free(corpus);}
     if(layout_malloc){free(layout);}
-    if(weights_malloc){free(weights);}
+    if(weights_malloc){free(weight);}
 }
