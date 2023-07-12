@@ -8,6 +8,6 @@
 
 -w <file>   weights
 
--a          analyzer mode
+-r          rank
 
 -g <numb>   generator mode, and quantity of layouts to generate and optimize
