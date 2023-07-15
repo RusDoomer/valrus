@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <dirent.h>
+#include <time.h>
 
 #define ROW 3
 #define COL 10
@@ -173,22 +174,33 @@ struct stat_weights
 
 struct stat_weights *weights;
 
-void error_out()
+void error_out(char *message)
 {
+    printf("Error: %s\n", message);
     printf("Freeing, and exiting.\n");
-    if(current != NULL)
+    if (current != NULL)
     {
         free(current->stats);
         free(current);
     }
-    if(max != NULL)
+    if (max != NULL)
     {
         free(max->stats);
         free(max);
     }
-    if(corpus_malloc){free(corpus);}
-    if(layout_malloc){free(layout);}
-    if(weights_malloc){free(weight);}
+    while (head != NULL)
+    {
+        ptr = head;
+        while (ptr != NULL && ptr->next != NULL)
+        {
+            ptr = ptr->next;
+        }
+        free(ptr->name);
+        free(ptr);
+    }
+    if (corpus_malloc) {free(corpus);}
+    if (layout_malloc) {free(layout);}
+    if (weights_malloc) {free(weight);}
     exit(1);
 }
 
@@ -364,9 +376,9 @@ void read_corpus(char *name)
         data = fopen(raw, "r");
         if (data == NULL)
         {
-            printf("Raw data does not exist, no longer my problem...\n");
             free(raw);
             free(ngram);
+            error_out("No such corpus was found.");
             return;
         }
         //read corpus from raw file and create ngram file
@@ -459,7 +471,7 @@ void read_layout(char *name)
     if (data == NULL)
     {
         free(layout);
-        printf("No such layout was fount!\n");
+        error_out("No such layout was found.");
         return;
     }
     current = calloc(1, sizeof(struct keyboard_layout));
@@ -866,13 +878,9 @@ void analyze_layout()
                     {
                         for (int c3 = 0; c3 < COL; c3++)
                         {
-                            //for only running skipgram analysis on trigrams possible with this layout
-                            //analyze_skipgram(r1, c1, r3, c3, trigram[key(r1, c1)][key(r2, c2)][key(r3, c3)]);
                             analyze_trigram(r1, c1, r2, c2, r3, c3, trigram[key(r1, c1)][key(r2, c2)][key(r3, c3)]);
                         }
                     }
-                    // run skipgram analysis with space as the in between keypress
-                    //analyze_skipgram(r1,c1, r2, c2, trigram[key(r1, c1)][' '][key(r2, c2)]);
                 }
             }
         }
@@ -891,7 +899,7 @@ void read_weights(char *name)
     if (data == NULL)
     {
         free(weight);
-        printf("No such weights were fount!\n");
+        error_out("No such weights were found.");
         return;
     }
     weights = calloc(1, sizeof(struct stat_weights));
@@ -967,6 +975,7 @@ void read_weights(char *name)
     fscanf(data, " %*[^0-9.-]%lf", &weights->rpu);
     fscanf(data, " %*[^0-9.-]%lf", &weights->lpb);
     fscanf(data, " %*[^0-9.-]%lf", &weights->lrb);
+    fscanf(data, " %*[^0-9.-]%lf", &weights->lmb);
     fscanf(data, " %*[^0-9.-]%lf", &weights->lib);
     fscanf(data, " %*[^0-9.-]%lf", &weights->lssb);
     fscanf(data, " %*[^0-9.-]%lf", &weights->rssb);
@@ -1044,11 +1053,11 @@ void get_score()
     current->score += ((double)current->stats->sao /current->tri_total*100) * weights->sao;
     if (current->stats->lhu > current->stats->rhu)
     {
-        current->score += ((double)current->stats->lhu - current->stats->rhu /current->mon_total*100) * weights->hand_balance;
+        current->score += ((double)current->stats->lhu - current->stats->rhu) /current->mon_total*100 * weights->hand_balance;
     }
     else
     {
-        //current->score += ((double)current->stats->rhu - current->stats->lhu /current->mon_total*100) * weights->hand_balance;
+        current->score += ((double)current->stats->rhu - current->stats->lhu) /current->mon_total*100 * weights->hand_balance;
     }
     current->score += ((double)current->stats->lhu /current->mon_total*100) * weights->lhu;
     current->score += ((double)current->stats->rhu /current->mon_total*100) * weights->rhu;
@@ -1276,7 +1285,7 @@ void rank_layouts()
     dir = opendir("./layouts");
     if (dir == NULL)
     {
-        printf("No layouts?\n");
+        error_out("No layouts found.");
         return;
     }
 
@@ -1338,12 +1347,181 @@ void rank_layouts()
     closedir(dir);
 }
 
+struct keyboard_layout* copy_layout(struct keyboard_layout *src)
+{
+    struct keyboard_layout *dest;
+    dest = calloc(1, sizeof(struct keyboard_layout));
+    dest->stats = calloc(1, sizeof(struct patterns));
+    for (int i = 0; i < ROW; i++)
+    {
+        for (int j = 0; j < COL; j++)
+        {
+            dest->matrix[i][j] = src->matrix[i][j];
+        }
+    }
+    dest->score = src->score;
+    dest->mon_total = src->mon_total;
+    dest->big_total = src->big_total;
+    dest->ski_total = src->ski_total;
+    dest->tri_total = src->tri_total;
+    dest->stats->sfb = src->stats->sfb;
+    dest->stats->sfs = src->stats->sfs;
+    dest->stats->sft = src->stats->sft;
+    dest->stats->bsfb = src->stats->bsfb;
+    dest->stats->bsfs = src->stats->bsfs;
+    dest->stats->bsft = src->stats->bsft;
+    dest->stats->lsb = src->stats->lsb;
+    dest->stats->lss = src->stats->lss;
+    dest->stats->lst = src->stats->lst;
+    dest->stats->hrb = src->stats->hrb;
+    dest->stats->hrs = src->stats->hrs;
+    dest->stats->hrt = src->stats->hrt;
+    dest->stats->frb = src->stats->frb;
+    dest->stats->frs = src->stats->frs;
+    dest->stats->frt = src->stats->frt;
+    dest->stats->alt = src->stats->alt;
+    dest->stats->red = src->stats->red;
+    dest->stats->brd = src->stats->brd;
+    dest->stats->one = src->stats->one;
+    dest->stats->oni = src->stats->oni;
+    dest->stats->ono = src->stats->ono;
+    dest->stats->sron = src->stats->sron;
+    dest->stats->soi = src->stats->soi;
+    dest->stats->soo = src->stats->soo;
+    dest->stats->afon = src->stats->afon;
+    dest->stats->aoi = src->stats->aoi;
+    dest->stats->aoo = src->stats->aoo;
+    dest->stats->saon = src->stats->saon;
+    dest->stats->saoi = src->stats->saoi;
+    dest->stats->saoo = src->stats->saoo;
+    dest->stats->rol = src->stats->rol;
+    dest->stats->irl = src->stats->irl;
+    dest->stats->orl = src->stats->orl;
+    dest->stats->srr = src->stats->srr;
+    dest->stats->sri = src->stats->sri;
+    dest->stats->sro = src->stats->sro;
+    dest->stats->afr = src->stats->afr;
+    dest->stats->afi = src->stats->afi;
+    dest->stats->afo = src->stats->afo;
+    dest->stats->sar = src->stats->sar;
+    dest->stats->sai = src->stats->sai;
+    dest->stats->sao = src->stats->sao;
+    dest->stats->lhu = src->stats->lhu;
+    dest->stats->rhu = src->stats->rhu;
+    dest->stats->tru = src->stats->tru;
+    dest->stats->hru = src->stats->hru;
+    dest->stats->bru = src->stats->bru;
+    dest->stats->lpu = src->stats->lpu;
+    dest->stats->lru = src->stats->lru;
+    dest->stats->lmu = src->stats->lmu;
+    dest->stats->liu = src->stats->liu;
+    dest->stats->lsu = src->stats->lsu;
+    dest->stats->rsu = src->stats->rsu;
+    dest->stats->riu = src->stats->riu;
+    dest->stats->rmu = src->stats->rmu;
+    dest->stats->rru = src->stats->rru;
+    dest->stats->rpu = src->stats->rpu;
+    dest->stats->lpb = src->stats->lpb;
+    dest->stats->lrb = src->stats->lrb;
+    dest->stats->lmb = src->stats->lmb;
+    dest->stats->lib = src->stats->lib;
+    dest->stats->lssb = src->stats->lssb;
+    dest->stats->rssb = src->stats->rssb;
+    dest->stats->rib = src->stats->rib;
+    dest->stats->rmb = src->stats->rmb;
+    dest->stats->rrb = src->stats->rrb;
+    dest->stats->rpb = src->stats->rpb;
+    dest->stats->lps = src->stats->lps;
+    dest->stats->lrs = src->stats->lrs;
+    dest->stats->lms = src->stats->lms;
+    dest->stats->lis = src->stats->lis;
+    dest->stats->lsss = src->stats->lsss;
+    dest->stats->rsss = src->stats->rsss;
+    dest->stats->ris = src->stats->ris;
+    dest->stats->rms = src->stats->rms;
+    dest->stats->rrs = src->stats->rrs;
+    dest->stats->rps = src->stats->rps;
+    dest->stats->lpt = src->stats->lpt;
+    dest->stats->lrt = src->stats->lrt;
+    dest->stats->lmt = src->stats->lmt;
+    dest->stats->lit = src->stats->lit;
+    dest->stats->lsst = src->stats->lsst;
+    dest->stats->rsst = src->stats->rsst;
+    dest->stats->rit = src->stats->rit;
+    dest->stats->rmt = src->stats->rmt;
+    dest->stats->rrt = src->stats->rrt;
+    dest->stats->rpt = src->stats->rpt;
+    return dest;
+}
+
+struct keyboard_layout* blank_layout(struct keyboard_layout *src)
+{
+    struct keyboard_layout *dest;
+    dest = calloc(1, sizeof(struct keyboard_layout));
+    dest->stats = calloc(1, sizeof(struct patterns));
+    for (int i = 0; i < ROW; i++)
+    {
+        for (int j = 0; j < COL; j++)
+        {
+            dest->matrix[i][j] = src->matrix[i][j];
+        }
+    }
+    return dest;
+}
+
+void generate()
+{
+    printf("Generating layouts...\n");
+    max = copy_layout(current);
+    srand(time(NULL));
+    int r1, c1, r2, c2;
+    char temp;
+    for (int i = generation_quantity; i > 0; i--)
+    {
+        printf("%d / %d\r", generation_quantity - i, generation_quantity);
+        free(current->stats);
+        free(current);
+        current = blank_layout(max);
+        for (int j = (i / (generation_quantity/30)) + 1; j > 0; j--)
+        {
+            r1 = rand() % 3;
+            c1 = rand() % 10;
+            r2 = rand() % 3;
+            c2 = rand() % 10;
+            while(weights->pins[r1][c1])
+            {
+                r1 = rand() % 3;
+                c1 = rand() % 10;
+            }
+            while( (r2 == r1 && c2 == c1) || weights->pins[r2][c2])
+            {
+                r2 = rand() % 3;
+                c2 = rand() % 10;
+            }
+            temp = current->matrix[r1][c1];
+            current->matrix[r1][c1] = current->matrix[r2][c2];
+            current->matrix[r2][c2] = temp;
+        }
+        analyze_layout();
+        get_score();
+        if (current->score >  max->score)
+        {
+            free(max->stats);
+            free(max);
+            max = copy_layout(current);
+        }
+    }
+    free(current->stats);
+    free(current);
+    current = copy_layout(max);
+}
+
 int main(int argc, char **argv)
 {
     //set defaults
-    corpus = "monkeyracer";
+    corpus = "shai";
     corpus_malloc = 0;
-    layout = "alphabetical";
+    layout = "hiyou";
     layout_malloc = 0;
     weight = "default";
     weights_malloc = 0;
@@ -1382,20 +1560,23 @@ int main(int argc, char **argv)
             		}
             		break;
             	case 'g':
+                    if (mode != 'a') {error_out("Too many mode arguments.");}
             		mode = 'g';
             		if (i + 1 < argc && argv[i+1][0] != '-')
             		{
             			generation_quantity = atoi(argv[i+1]);
             		}
+                    if (generation_quantity == 0) {error_out("Invalid generation quantity.");}
                     break;
                 case 'q':
                     output = 'q';
                     break;
                 case 'r':
+                    if (mode != 'a') {error_out("Too many mode arguments.");}
                     mode = 'r';
                     break;
                 case 'e':
-                    error_out();
+                    error_out("Test Error");
                     break;
             }
         }
@@ -1411,28 +1592,27 @@ int main(int argc, char **argv)
     switch (mode)
     {
         case 'a':
-            printf("Starting analysis...\n");
             read_corpus(corpus);
-            printf("Reading layout...\n");
             read_layout(layout);
-            printf("Analyzing layout...\n");
             analyze_layout();
             read_weights(weight);
-            printf("Calculating score...\n");
             get_score();
             if (output == 'l') {print_layout();}
             else {short_print();}
             break;
         case 'r':
-            printf("Ranking layouts in ./layouts/ ...\n");
             read_corpus(corpus);
             read_weights(weight);
             rank_layouts();
             break;
         case 'g':
-            printf("Starting generation...\n");
             read_corpus(corpus);
             read_layout(layout);
+            analyze_layout();
+            read_weights(weight);
+            get_score();
+            generate();
+            print_layout();
             break;
     }
 
