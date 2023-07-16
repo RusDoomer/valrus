@@ -13,7 +13,6 @@
 static long unsigned int monogram[128];
 static long unsigned int bigram[128][128];
 static long unsigned int trigram[128][128][128];
-long unsigned int total;
 
 char* corpus;
 int corpus_malloc;
@@ -25,6 +24,58 @@ char mode;
 int generation_quantity;
 char output;
 
+enum patterns
+{
+    SFB, SFS, SFT, BAD_SFB, BAD_SFS, BAD_SFT,
+    LSB, LSS, LST,
+    HRB, HRS, HRT, FRB, FRS, FRT,
+    ALT, RED, BAD_RED,
+    ONE, ONE_IN, ONE_OUT, SR_ONE, SR_ONE_IN, SR_ONE_OUT,
+    AF_ONE, AF_ONE_IN, AF_ONE_OUT, SRAF_ONE, SRAF_ONE_IN, SRAF_ONE_OUT,
+    ROL, ROL_IN, ROL_OUT, SR_ROL, SR_ROL_IN, SR_ROL_OUT,
+    AF_ROL, AF_ROL_IN, AF_ROL_OUT, SRAF_ROL, SRAF_ROL_IN, SRAF_ROL_OUT,
+    HAND_BALANCE, LHU, RHU, TRU, HRU, BRU,
+    LPU, LRU, LMU, LIU, LLU, RLU, RIU, RMU, RRU, RPU,
+    LPB, LRB, LMB, LIB, LLB, RLB, RIB, RMB, RRB, RPB,
+    LPS, LRS, LMS, LIS, LLS, RLS, RIS, RMS, RRS, RPS,
+    LPT, LRT, LMT, LIT, LLT, RLT, RIT, RMT, RRT, RPT,
+    END
+};
+
+char names[END][20] =
+{
+    "SFB", "SFS", "SFT", "BAD_SFB", "BAD_SFS", "BAD_SFT",
+    "LSB", "LSS", "LST",
+    "HRB", "HRS", "HRT", "FRB", "FRS", "FRT",
+    "ALT", "RED", "BAD_RED",
+    "ONE", "ONE_IN", "ONE_OUT", "SR_ONE", "SR_ONE_IN", "SR_ONE_OUT",
+    "AF_ONE", "AF_ONE_IN", "AF_ONE_OUT", "SRAF_ONE", "SRAF_ONE_IN", "SRAF_ONE_OUT",
+    "ROL", "ROL_IN", "ROL_OUT", "SR_ROL", "SR_ROL_IN", "SR_ROL_OUT",
+    "AF_ROL", "AF_ROL_IN", "AF_ROL_OUT", "SRAF_ROL", "SRAF_ROL_IN", "SRAF_ROL_OUT",
+    "HAND_BALANCE", "LHU", "RHU", "TRU", "HRU", "BRU",
+    "LPU", "LRU", "LMU", "LIU", "LLU", "RLU", "RIU", "RMU", "RRU", "RPU",
+    "LPB", "LRB", "LMB", "LIB", "LLB", "RLB", "RIB", "RMB", "RRB", "RPB",
+    "LPS", "LRS", "LMS", "LIS", "LLS", "RLS", "RIS", "RMS", "RRS", "RPS",
+    "LPT", "LRT", "LMT", "LIT", "LLT", "RLT", "RIT", "RMT", "RRT", "RPT"
+};
+
+char totals[END] =
+{
+    'b', 's', 't', 'b', 's', 't',
+    'b', 's', 't',
+    'b', 's', 't', 'b', 's', 't',
+    't', 't', 't',
+    't', 't', 't', 't', 't', 't',
+    't', 't', 't', 't', 't', 't',
+    't', 't', 't', 't', 't', 't',
+    't', 't', 't', 't', 't', 't',
+    'm', 'm', 'm', 'm', 'm', 'm',
+    'm', 'm', 'm', 'm', 'm', 'm', 'm', 'm', 'm', 'm',
+    'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b',
+    's', 's', 's', 's', 's', 's', 's', 's', 's', 's',
+    't', 't', 't', 't', 't', 't', 't', 't', 't', 't'
+};
+
 struct ranking
 {
     char *name;
@@ -35,116 +86,6 @@ struct ranking
 struct ranking *head;
 struct ranking *ptr;
 
-struct patterns
-{
-    long unsigned int sfb; //same finger bigram
-    long unsigned int sfs; //same finger skipgram
-    long unsigned int sft; //same finger trigram
-
-    long unsigned int bsfb;//bad same finger bigram
-    long unsigned int bsfs;//bad same finger skipgram
-    long unsigned int bsft;//bad same finger trigram
-
-    long unsigned int lsb; //lateral stretch bigram
-    long unsigned int lss; //lateral stretch skipgram
-    long unsigned int lst; //lateral stretch trigram
-
-    long unsigned int hrb; //half russor bigram
-    long unsigned int hrs; //half russor skipgram
-    long unsigned int hrt; //half russor trigram
-
-    long unsigned int frb; //full russor bigram
-    long unsigned int frs; //full russor skipgram
-    long unsigned int frt; //full russor trigram
-
-    long unsigned int alt; //alternation
-    long unsigned int red; //redirect
-    long unsigned int brd; //bad redirect
-
-    long unsigned int one; //onehand
-    long unsigned int oni; //onehand in
-    long unsigned int ono; //onehand out
-    long unsigned int sron;//same row onehand
-    long unsigned int soi; //same row onehand in
-    long unsigned int soo; //same row onehand out
-    long unsigned int afon;//adjacent finger onehand
-    long unsigned int aoi; //adjacent finger onehand in
-    long unsigned int aoo; //adjacent finger onehand out
-    long unsigned int saon;//same row adjacent finger onehand
-    long unsigned int saoi;//same row adjacent finger onehand in
-    long unsigned int saoo;//same row adjacent finger onehand out
-
-    long unsigned int rol; //roll
-    long unsigned int irl; //inroll
-    long unsigned int orl; //outroll
-    long unsigned int srr; //same row roll
-    long unsigned int sri; //same row inroll
-    long unsigned int sro; //same row outroll
-    long unsigned int afr; //adjacent finger roll
-    long unsigned int afi; //adjacent finger inroll
-    long unsigned int afo; //adjacent finger outroll
-    long unsigned int sar; //same row adjacent finger roll
-    long unsigned int sai; //same row adjacent finger inroll
-    long unsigned int sao; //same row adjacent finger outroll
-
-    long unsigned int lhu; //left  hand usage
-    long unsigned int rhu; //right hand usage
-
-    long unsigned int tru; //top    row usage
-    long unsigned int hru; //home   row usage
-    long unsigned int bru; //bottom row usage
-
-    long unsigned int lpu; //left  pinky    usage
-    long unsigned int lru; //left  ring     usage
-    long unsigned int lmu; //left  middle   usage
-    long unsigned int liu; //left  index    usage
-    long unsigned int lsu; //left  stretch  usage
-
-    long unsigned int rsu; //right stretch  usage
-    long unsigned int riu; //right index    usage
-    long unsigned int rmu; //right middle   usage
-    long unsigned int rru; //right ring     usage
-    long unsigned int rpu; //right pinky    usage
-
-
-    long unsigned int lpb; //left pinky     sfb
-    long unsigned int lmb; //left ring      sfb
-    long unsigned int lrb; //left middle    sfb
-    long unsigned int lib; //left index     sfb
-    long unsigned int lssb;//left stretch   sfb
-
-    long unsigned int rssb;//right stretch  sfb
-    long unsigned int rib; //right index    sfb
-    long unsigned int rmb; //right middle   sfb
-    long unsigned int rrb; //right ring     sfb
-    long unsigned int rpb; //right pinky    sfb
-
-
-    long unsigned int lps; //left pinky     sfs
-    long unsigned int lrs; //left ring      sfs
-    long unsigned int lms; //left middle    sfs
-    long unsigned int lis; //left index     sfs
-    long unsigned int lsss;//left stretch   sfs
-
-    long unsigned int rsss;//right stretch  sfs
-    long unsigned int ris; //right index    sfs
-    long unsigned int rms; //right middle   sfs
-    long unsigned int rrs; //right ring     sfs
-    long unsigned int rps; //right pinky    sfs
-
-    long unsigned int lpt; //left pinky    sft
-    long unsigned int lrt; //left ring     sft
-    long unsigned int lmt; //left middle   sft
-    long unsigned int lit; //left index    sft
-    long unsigned int lsst;//left stretch  sft
-
-    long unsigned int rsst;//right stretch  sft
-    long unsigned int rit; //right index    sft
-    long unsigned int rmt; //right middle   sft
-    long unsigned int rrt; //right ring     sft
-    long unsigned int rpt; //right pinky    sft
-};
-
 struct keyboard_layout
 {
     char matrix[ROW][COL];
@@ -153,7 +94,7 @@ struct keyboard_layout
     long unsigned int big_total;
     long unsigned int ski_total;
     long unsigned int tri_total;
-    struct patterns *stats;
+    long unsigned int stats[END];
 };
 
 struct keyboard_layout *current;
@@ -162,14 +103,7 @@ struct keyboard_layout *max;
 struct stat_weights
 {
     int pins[3][10];
-    double sfb, sfs, sft, bsfb, bsfs, bsft, lsb, lss, lst, hrb, hrs, hrt,
-    frb, frs, frt, alt, red, brd, one, oni, ono, sron, soi, soo, afon, aoi, aoo,
-    saon, saoi, saoo, rol, irl, orl, srr, sri, sro, afr, afi, afo,
-    sar, sai, sao, lhu, rhu, tru, hru, bru, lpu, lru, lmu, liu, lsu,
-    rsu, riu, rmu, rru, rpu, lpb, lrb, lmb, lib, lssb, rssb, rib, rmb, rrb, rpb,
-    lps, lrs, lms, lis, lsss, rsss, ris, rms, rrs, rps,
-    lpt, lrt, lmt, lit, lsst, rsst, rit, rmt, rrt, rpt;
-    double hand_balance;
+    double multiplier[END];
 };
 
 struct stat_weights *weights;
@@ -180,12 +114,10 @@ void error_out(char *message)
     printf("Freeing, and exiting.\n");
     if (current != NULL)
     {
-        free(current->stats);
         free(current);
     }
     if (max != NULL)
     {
-        free(max->stats);
         free(max);
     }
     while (head != NULL)
@@ -392,12 +324,14 @@ void read_corpus(char *name)
             monogram[a]++;
             monogram[b]++;
             bigram[a][b]++;
-            total = 2;
+        }
+        else
+        {
+            error_out("Corpus not long enough.");
         }
         while ((c = fgetc(data)) != EOF)
         {
             c = convert_char(c);
-            total++;
             monogram[c]++;
             bigram[b][c]++;
             trigram[a][b][c]++;
@@ -434,7 +368,6 @@ void read_corpus(char *name)
                 case 'm':
                     a = fgetc(data);
                     fscanf(data, "%lu", &monogram[a]);
-                    total += monogram[a];
                     fgetc(data);
                     break;
                 case 'b':
@@ -475,7 +408,6 @@ void read_layout(char *name)
         return;
     }
     current = calloc(1, sizeof(struct keyboard_layout));
-    current->stats = calloc(1, sizeof(struct patterns));
     //read layout
     for (int  i = 0; i < ROW; i++)
     {
@@ -495,66 +427,66 @@ void analyze_trigram(int row0, int col0, int row1, int col1, int row2, int col2,
     //sft
     if(same_finger(col0, col1) && same_finger(col1, col2) && !same_row(row0, row1) && !same_row(row1, row2))
     {
-        current->stats->sft += value;
+        current->stats[SFT] += value;
         //bad sft
         if (distance(row0, row1) == 2 || distance(row1, row2) == 2)
         {
-            current->stats->bsft += value;
+            current->stats[BAD_SFT] += value;
         }
         //sft by finger
         switch(col0)
         {
             case 0:
-                current->stats->lpt += value;
+                current->stats[LPT] += value;
                 break;
             case 1:
-                current->stats->lrt += value;
+                current->stats[LRT] += value;
                 break;
             case 2:
-                current->stats->lmt += value;
+                current->stats[LMT] += value;
                 break;
             case 4:
-                current->stats->lsst += value;
+                current->stats[LLT] += value;
             case 3:
-                current->stats->lit += value;
+                current->stats[LIT] += value;
                 break;
             case 5:
-                current->stats->rsst += value;
+                current->stats[RLT] += value;
             case 6:
-                current->stats->rit += value;
+                current->stats[RIT] += value;
                 break;
             case 7:
-                current->stats->rmt += value;
+                current->stats[RMT] += value;
                 break;
             case 8:
-                current->stats->rrt += value;
+                current->stats[RRT] += value;
                 break;
             case 9:
-                current->stats->rpt += value;
+                current->stats[RPT] += value;
                 break;
         }
     }
     //lst
     if (is_lsb(col0, col1) && is_lsb(col1, col2))
     {
-        current->stats->lst += value;
+        current->stats[LST] += value;
     }
     //russors -- needs fixing
     if (is_russor(col0, col1) && is_russor(col1, col2))
     {
         if (distance(col0, col1) == 1 && distance(col1, col2) == 1)
         {
-            current->stats->hrt += value;
+            current->stats[HRT] += value;
         }
         if (distance(col0, col1) == 2 && distance(col1, col2) == 2)
         {
-            current->stats->frt += value;
+            current->stats[FRT] += value;
         }
     }
     //alt
     if (same_hand(col0, col2) && !same_hand(col0, col1))
     {
-        current->stats->alt += value;
+        current->stats[ALT] += value;
     }
 
     //redirects and onehands -- needs fixing, redirects account for sfs (but not repeats)
@@ -563,44 +495,44 @@ void analyze_trigram(int row0, int col0, int row1, int col1, int row2, int col2,
         //one
         if (is_one(col0, col1, col2))
         {
-            current->stats->one += value;
+            current->stats[ONE] += value;
             //in
             if (is_one_in(col0, col1, col2))
             {
-                current->stats->oni += value;
+                current->stats[ONE_IN] += value;
                 if (same_row(row0, row1) && same_row(row1, row2))
                 {
-                    current->stats->sron += value;
-                    current->stats->soi  += value;
+                    current->stats[SR_ONE] += value;
+                    current->stats[SR_ONE_IN]  += value;
                 }
                 if (adjacent_fingers(col0, col1) && adjacent_fingers(col1, col2))
                 {
-                    current->stats->afon += value;
-                    current->stats->aoi += value;
+                    current->stats[AF_ONE] += value;
+                    current->stats[AF_ONE_IN] += value;
                     if (same_row(row0, row1) && same_row(row1, row2))
                     {
-                        current->stats->saon += value;
-                        current->stats->saoi  += value;
+                        current->stats[SRAF_ONE] += value;
+                        current->stats[SRAF_ONE_IN]  += value;
                     }
                 }
             }
             //out
             else
             {
-                current->stats->ono += value;
+                current->stats[ONE_OUT] += value;
                 if (same_row(row0, row1) && same_row(row1, row2))
                 {
-                    current->stats->sron += value;
-                    current->stats->soo  += value;
+                    current->stats[SR_ONE] += value;
+                    current->stats[SR_ONE_OUT]  += value;
                 }
                 if (adjacent_fingers(col0, col1) && adjacent_fingers(col1, col2))
                 {
-                    current->stats->afon += value;
-                    current->stats->aoi += value;
+                    current->stats[AF_ONE] += value;
+                    current->stats[AF_ONE_OUT] += value;
                     if (same_row(row0, row1) && same_row(row1, row2))
                     {
-                        current->stats->saon += value;
-                        current->stats->saoo  += value;
+                        current->stats[SRAF_ONE] += value;
+                        current->stats[SRAF_ONE_OUT]  += value;
                     }
                 }
             }
@@ -608,10 +540,10 @@ void analyze_trigram(int row0, int col0, int row1, int col1, int row2, int col2,
         //redirects
         else
         {
-            current->stats->red += value;
+            current->stats[RED] += value;
             if (is_bad_red(col0, col1, col2))
             {
-                current->stats->brd += value;
+                current->stats[BAD_RED] += value;
             }
         }
     }
@@ -619,42 +551,42 @@ void analyze_trigram(int row0, int col0, int row1, int col1, int row2, int col2,
     //rolls
     if (is_roll(col0, col1, col2))
     {
-        current->stats->rol += value;
+        current->stats[ROL] += value;
         if(is_roll_in(col0, col1, col2))
         {
-            current->stats->irl += value;
+            current->stats[ROL_IN] += value;
             if ((same_hand(col0, col1) && same_row(row0, row1)) || (same_hand(col1, col2) && same_row(col1, col2)))
             {
-                current->stats->srr += value;
-                current->stats->sri += value;
+                current->stats[SR_ROL] += value;
+                current->stats[SR_ROL_IN] += value;
             }
             if ((same_hand(col0, col1) && adjacent_fingers(row0, row1)) || (same_hand(col1, col2) && adjacent_fingers(col1, col2)))
             {
-                current->stats->afr += value;
-                current->stats->afi += value;
+                current->stats[AF_ROL] += value;
+                current->stats[AF_ROL_IN] += value;
                 if ((same_hand(col0, col1) && same_row(row0, row1)) || (same_hand(col1, col2) && same_row(row1, row2)))
                 {
-                    current->stats->sar += value;
-                    current->stats->sai += value;
+                    current->stats[SRAF_ROL] += value;
+                    current->stats[SRAF_ROL_IN] += value;
                 }
             }
         }
         else
         {
-            current->stats->orl += value;
+            current->stats[ROL_OUT] += value;
             if ((same_hand(col0, col1) && same_row(row0, row1)) || (same_hand(col1, col2) && same_row(col1, col2)))
             {
-                current->stats->srr += value;
-                current->stats->sro += value;
+                current->stats[SR_ROL] += value;
+                current->stats[SR_ROL_OUT] += value;
             }
             if ((same_hand(col0, col1) && adjacent_fingers(row0, row1)) || (same_hand(col1, col2) && adjacent_fingers(col1, col2)))
             {
-                current->stats->afr += value;
-                current->stats->afo += value;
+                current->stats[AF_ROL] += value;
+                current->stats[AF_ROL_OUT] += value;
                 if ((same_hand(col0, col1) && same_row(row0, row1)) || (same_hand(col1, col2) && same_row(row1, row2)))
                 {
-                    current->stats->sar += value;
-                    current->stats->sao += value;
+                    current->stats[SRAF_ROL] += value;
+                    current->stats[SRAF_ROL_OUT] += value;
                 }
             }
         }
@@ -668,60 +600,60 @@ void analyze_skipgram(int row0, int col0, int row2, int col2, long unsigned int 
     //sfs
     if(same_finger(col0, col2) && !same_row(row0, row2))
     {
-        current->stats->sfs += value;
+        current->stats[SFS] += value;
         //bad sfs
         if (distance(row0, row2) == 2)
         {
-            current->stats->bsfs += value;
+            current->stats[BAD_SFS] += value;
         }
         //sfs by finger
         switch(col0)
         {
             case 0:
-                current->stats->lps += value;
+                current->stats[LPS] += value;
                 break;
             case 1:
-                current->stats->lrs += value;
+                current->stats[LRS] += value;
                 break;
             case 2:
-                current->stats->lms += value;
+                current->stats[LMS] += value;
                 break;
             case 4:
-                current->stats->lsss += value;
+                current->stats[LLS] += value;
             case 3:
-                current->stats->lis += value;
+                current->stats[LIS] += value;
                 break;
             case 5:
-                current->stats->rsss += value;
+                current->stats[RLS] += value;
             case 6:
-                current->stats->ris += value;
+                current->stats[RIS] += value;
                 break;
             case 7:
-                current->stats->rms += value;
+                current->stats[RMS] += value;
                 break;
             case 8:
-                current->stats->rrs += value;
+                current->stats[RRS] += value;
                 break;
             case 9:
-                current->stats->rps += value;
+                current->stats[RPS] += value;
                 break;
         }
     }
     //lss
     if (is_lsb(col0, col2))
     {
-        current->stats->lss += value;
+        current->stats[LSS] += value;
     }
     //russors
     if (is_russor(col0, col2))
     {
         if (distance(row0, row2) == 1)
         {
-            current->stats->hrs += value;
+            current->stats[HRS] += value;
         }
         if (distance(row0, row2) == 2)
         {
-            current->stats->frs += value;
+            current->stats[FRS] += value;
         }
     }
 }
@@ -733,60 +665,60 @@ void analyze_bigram(int row0, int col0, int row1, int col1, long unsigned int va
     //sfb
     if(same_finger(col0, col1) && !same_row(row0, row1))
     {
-        current->stats->sfb += value;
+        current->stats[SFB] += value;
         //bad sfb
         if (distance(row0, row1) == 2)
         {
-            current->stats->bsfb += value;
+            current->stats[BAD_SFB] += value;
         }
         //sfb by finger
         switch(col0)
         {
             case 0:
-                current->stats->lpb += value;
+                current->stats[LPB] += value;
                 break;
             case 1:
-                current->stats->lrb += value;
+                current->stats[LRB] += value;
                 break;
             case 2:
-                current->stats->lmb += value;
+                current->stats[LMB] += value;
                 break;
             case 4:
-                current->stats->lssb += value;
+                current->stats[LLB] += value;
             case 3:
-                current->stats->lib += value;
+                current->stats[LIB] += value;
                 break;
             case 5:
-                current->stats->rssb += value;
+                current->stats[RLB] += value;
             case 6:
-                current->stats->rib += value;
+                current->stats[RIB] += value;
                 break;
             case 7:
-                current->stats->rmb += value;
+                current->stats[RMB] += value;
                 break;
             case 8:
-                current->stats->rrb += value;
+                current->stats[RRB] += value;
                 break;
             case 9:
-                current->stats->rpb += value;
+                current->stats[RPB] += value;
                 break;
         }
     }
     //lsb
     if (is_lsb(col0, col1))
     {
-        current->stats->lsb += value;
+        current->stats[LSB] += value;
     }
     //russors
     if (is_russor(col0, col1))
     {
         if (distance(row0, row1) == 1)
         {
-            current->stats->hrb += value;
+            current->stats[HRB] += value;
         }
         if (distance(row0, row1) == 2)
         {
-            current->stats->frb += value;
+            current->stats[FRB] += value;
         }
     }
 }
@@ -798,57 +730,57 @@ void analyze_monogram(int row, int col, long unsigned int value)
     //hand usage
     if (hand(col) == 'l')
     {
-        current->stats->lhu += value;
+        current->stats[LHU] += value;
     }
     else
     {
-        current->stats->rhu += value;
+        current->stats[RHU] += value;
     }
     //row usage
     if (row == 0)
     {
-        current->stats->tru += value;
+        current->stats[TRU] += value;
     }
     else if (row == 1)
     {
-        current->stats->hru += value;
+        current->stats[HRU] += value;
     }
     else
     {
-        current->stats->bru += value;
+        current->stats[BRU] += value;
     }
     //finger usage
     switch(col)
     {
         case 0:
-            current->stats->lpu += value;
+            current->stats[LPU] += value;
             break;
         case 1:
-            current->stats->lru += value;
+            current->stats[LRU] += value;
             break;
         case 2:
-            current->stats->lmu += value;
+            current->stats[LMU] += value;
             break;
         //FOR STRETCH FINGERS IT COUNTS FOR BOTH STRETCH AND INDEX USAGE
         case 4:
-            current->stats->lsu += value;
+            current->stats[LLU] += value;
         case 3:
-            current->stats->liu += value;
+            current->stats[LIU] += value;
             break;
         //SAME HERE
         case 5:
-            current->stats->rsu += value;
+            current->stats[RLU] += value;
         case 6:
-            current->stats->riu += value;
+            current->stats[RIU] += value;
             break;
         case 7:
-            current->stats->rmu += value;
+            current->stats[RMU] += value;
             break;
         case 8:
-            current->stats->rru += value;
+            current->stats[RRU] += value;
             break;
         case 9:
-            current->stats->rpu += value;
+            current->stats[RPU] += value;
             break;
     }
 }
@@ -885,6 +817,14 @@ void analyze_layout()
             }
         }
     }
+    if (current->stats[RHU] > current->stats[LHU])
+    {
+        current->stats[HAND_BALANCE] = current->stats[RHU] - current->stats[LHU];
+    }
+    else
+    {
+        current->stats[HAND_BALANCE] = current->stats[LHU] - current->stats[RHU];
+    }
 }
 
 void read_weights(char *name)
@@ -918,189 +858,50 @@ void read_weights(char *name)
             }
         }
     }
-    fscanf(data, " %*[^0-9.-]%lf", &weights->sfb);
-    fscanf(data, " %*[^0-9.-]%lf", &weights->sfs);
-    fscanf(data, " %*[^0-9.-]%lf", &weights->sft);
-    fscanf(data, " %*[^0-9.-]%lf", &weights->bsfb);
-    fscanf(data, " %*[^0-9.-]%lf", &weights->bsfs);
-    fscanf(data, " %*[^0-9.-]%lf", &weights->bsft);
-    fscanf(data, " %*[^0-9.-]%lf", &weights->lsb);
-    fscanf(data, " %*[^0-9.-]%lf", &weights->lss);
-    fscanf(data, " %*[^0-9.-]%lf", &weights->lst);
-    fscanf(data, " %*[^0-9.-]%lf", &weights->hrb);
-    fscanf(data, " %*[^0-9.-]%lf", &weights->hrs);
-    fscanf(data, " %*[^0-9.-]%lf", &weights->hrt);
-    fscanf(data, " %*[^0-9.-]%lf", &weights->frb);
-    fscanf(data, " %*[^0-9.-]%lf", &weights->frs);
-    fscanf(data, " %*[^0-9.-]%lf", &weights->frt);
-    fscanf(data, " %*[^0-9.-]%lf", &weights->alt);
-    fscanf(data, " %*[^0-9.-]%lf", &weights->red);
-    fscanf(data, " %*[^0-9.-]%lf", &weights->brd);
-    fscanf(data, " %*[^0-9.-]%lf", &weights->one);
-    fscanf(data, " %*[^0-9.-]%lf", &weights->oni);
-    fscanf(data, " %*[^0-9.-]%lf", &weights->ono);
-    fscanf(data, " %*[^0-9.-]%lf", &weights->sron);
-    fscanf(data, " %*[^0-9.-]%lf", &weights->soi);
-    fscanf(data, " %*[^0-9.-]%lf", &weights->soo);
-    fscanf(data, " %*[^0-9.-]%lf", &weights->afon);
-    fscanf(data, " %*[^0-9.-]%lf", &weights->aoi);
-    fscanf(data, " %*[^0-9.-]%lf", &weights->aoo);
-    fscanf(data, " %*[^0-9.-]%lf", &weights->saon);
-    fscanf(data, " %*[^0-9.-]%lf", &weights->saoi);
-    fscanf(data, " %*[^0-9.-]%lf", &weights->saoo);
-    fscanf(data, " %*[^0-9.-]%lf", &weights->rol);
-    fscanf(data, " %*[^0-9.-]%lf", &weights->irl);
-    fscanf(data, " %*[^0-9.-]%lf", &weights->orl);
-    fscanf(data, " %*[^0-9.-]%lf", &weights->srr);
-    fscanf(data, " %*[^0-9.-]%lf", &weights->sri);
-    fscanf(data, " %*[^0-9.-]%lf", &weights->sro);
-    fscanf(data, " %*[^0-9.-]%lf", &weights->afr);
-    fscanf(data, " %*[^0-9.-]%lf", &weights->afi);
-    fscanf(data, " %*[^0-9.-]%lf", &weights->afo);
-    fscanf(data, " %*[^0-9.-]%lf", &weights->sar);
-    fscanf(data, " %*[^0-9.-]%lf", &weights->sai);
-    fscanf(data, " %*[^0-9.-]%lf", &weights->sao);
-    fscanf(data, " %*[^0-9.-]%lf", &weights->hand_balance);
-    fscanf(data, " %*[^0-9.-]%lf", &weights->lhu);
-    fscanf(data, " %*[^0-9.-]%lf", &weights->rhu);
-    fscanf(data, " %*[^0-9.-]%lf", &weights->lpu);
-    fscanf(data, " %*[^0-9.-]%lf", &weights->lru);
-    fscanf(data, " %*[^0-9.-]%lf", &weights->lmu);
-    fscanf(data, " %*[^0-9.-]%lf", &weights->liu);
-    fscanf(data, " %*[^0-9.-]%lf", &weights->lsu);
-    fscanf(data, " %*[^0-9.-]%lf", &weights->rsu);
-    fscanf(data, " %*[^0-9.-]%lf", &weights->riu);
-    fscanf(data, " %*[^0-9.-]%lf", &weights->rmu);
-    fscanf(data, " %*[^0-9.-]%lf", &weights->rru);
-    fscanf(data, " %*[^0-9.-]%lf", &weights->rpu);
-    fscanf(data, " %*[^0-9.-]%lf", &weights->lpb);
-    fscanf(data, " %*[^0-9.-]%lf", &weights->lrb);
-    fscanf(data, " %*[^0-9.-]%lf", &weights->lmb);
-    fscanf(data, " %*[^0-9.-]%lf", &weights->lib);
-    fscanf(data, " %*[^0-9.-]%lf", &weights->lssb);
-    fscanf(data, " %*[^0-9.-]%lf", &weights->rssb);
-    fscanf(data, " %*[^0-9.-]%lf", &weights->rib);
-    fscanf(data, " %*[^0-9.-]%lf", &weights->rmb);
-    fscanf(data, " %*[^0-9.-]%lf", &weights->rrb);
-    fscanf(data, " %*[^0-9.-]%lf", &weights->rpb);
-    fscanf(data, " %*[^0-9.-]%lf", &weights->lps);
-    fscanf(data, " %*[^0-9.-]%lf", &weights->lrs);
-    fscanf(data, " %*[^0-9.-]%lf", &weights->lms);
-    fscanf(data, " %*[^0-9.-]%lf", &weights->lis);
-    fscanf(data, " %*[^0-9.-]%lf", &weights->lsss);
-    fscanf(data, " %*[^0-9.-]%lf", &weights->rsss);
-    fscanf(data, " %*[^0-9.-]%lf", &weights->ris);
-    fscanf(data, " %*[^0-9.-]%lf", &weights->rms);
-    fscanf(data, " %*[^0-9.-]%lf", &weights->rrs);
-    fscanf(data, " %*[^0-9.-]%lf", &weights->rps);
-    fscanf(data, " %*[^0-9.-]%lf", &weights->lpt);
-    fscanf(data, " %*[^0-9.-]%lf", &weights->lrt);
-    fscanf(data, " %*[^0-9.-]%lf", &weights->lmt);
-    fscanf(data, " %*[^0-9.-]%lf", &weights->lit);
-    fscanf(data, " %*[^0-9.-]%lf", &weights->lsst);
-    fscanf(data, " %*[^0-9.-]%lf", &weights->rsst);
-    fscanf(data, " %*[^0-9.-]%lf", &weights->rit);
-    fscanf(data, " %*[^0-9.-]%lf", &weights->rmt);
-    fscanf(data, " %*[^0-9.-]%lf", &weights->rrt);
-    fscanf(data, " %*[^0-9.-]%lf", &weights->rpt);
+    for(enum patterns i = SFB; i < END; i++)
+    {
+        fscanf(data, " %*[^0-9.-]%lf", &weights->multiplier[i]);
+    }
     free(weight);
     fclose(data);
 }
 
+long unsigned int total(enum patterns stat)
+{
+    switch(totals[stat])
+    {
+        case('m'):
+            return current->mon_total;
+            break;
+        case('b'):
+            return current->big_total;
+            break;
+        case('s'):
+            return current->ski_total;
+            break;
+        default:
+            return current->tri_total;
+            break;
+    }
+}
+
 void get_score()
 {
-    current->score += ((double)current->stats->sfb /current->big_total*100) * weights->sfb;
-    current->score += ((double)current->stats->sfs /current->ski_total*100) * weights->sfs;
-    current->score += ((double)current->stats->sft /current->tri_total*100) * weights->sft;
-    current->score += ((double)current->stats->bsfb/current->big_total*100) * weights->bsfb;
-    current->score += ((double)current->stats->bsfs/current->ski_total*100) * weights->bsfs;
-    current->score += ((double)current->stats->bsft/current->tri_total*100) * weights->bsft;
-    current->score += ((double)current->stats->lsb /current->big_total*100) * weights->lsb;
-    current->score += ((double)current->stats->lss /current->ski_total*100) * weights->lss;
-    current->score += ((double)current->stats->lst /current->tri_total*100) * weights->lst;
-    current->score += ((double)current->stats->hrb /current->big_total*100) * weights->hrb;
-    current->score += ((double)current->stats->hrs /current->ski_total*100) * weights->hrs;
-    current->score += ((double)current->stats->hrt /current->tri_total*100) * weights->hrt;
-    current->score += ((double)current->stats->frb /current->big_total*100) * weights->frb;
-    current->score += ((double)current->stats->frs /current->ski_total*100) * weights->frs;
-    current->score += ((double)current->stats->frt /current->tri_total*100) * weights->frt;
-    current->score += ((double)current->stats->alt /current->tri_total*100) * weights->alt;
-    current->score += ((double)current->stats->red /current->tri_total*100) * weights->red;
-    current->score += ((double)current->stats->brd /current->tri_total*100) * weights->brd;
-    current->score += ((double)current->stats->one /current->tri_total*100) * weights->one;
-    current->score += ((double)current->stats->oni /current->tri_total*100) * weights->oni;
-    current->score += ((double)current->stats->ono /current->tri_total*100) * weights->ono;
-    current->score += ((double)current->stats->sron/current->tri_total*100) * weights->sron;
-    current->score += ((double)current->stats->soi /current->tri_total*100) * weights->soi;
-    current->score += ((double)current->stats->soo /current->tri_total*100) * weights->soo;
-    current->score += ((double)current->stats->afon/current->tri_total*100) * weights->afon;
-    current->score += ((double)current->stats->aoi /current->tri_total*100) * weights->aoi;
-    current->score += ((double)current->stats->aoo /current->tri_total*100) * weights->aoo;
-    current->score += ((double)current->stats->saon/current->tri_total*100) * weights->saon;
-    current->score += ((double)current->stats->saoi/current->tri_total*100) * weights->saoi;
-    current->score += ((double)current->stats->saoo/current->tri_total*100) * weights->saoo;
-    current->score += ((double)current->stats->rol /current->tri_total*100) * weights->rol;
-    current->score += ((double)current->stats->irl /current->tri_total*100) * weights->irl;
-    current->score += ((double)current->stats->orl /current->tri_total*100) * weights->orl;
-    current->score += ((double)current->stats->srr /current->tri_total*100) * weights->srr;
-    current->score += ((double)current->stats->sri /current->tri_total*100) * weights->sri;
-    current->score += ((double)current->stats->sro /current->tri_total*100) * weights->sro;
-    current->score += ((double)current->stats->afr /current->tri_total*100) * weights->afr;
-    current->score += ((double)current->stats->afi /current->tri_total*100) * weights->afi;
-    current->score += ((double)current->stats->afo /current->tri_total*100) * weights->afo;
-    current->score += ((double)current->stats->sar /current->tri_total*100) * weights->sar;
-    current->score += ((double)current->stats->sai /current->tri_total*100) * weights->sai;
-    current->score += ((double)current->stats->sao /current->tri_total*100) * weights->sao;
-    if (current->stats->lhu > current->stats->rhu)
+    for (enum patterns i = SFB; i < END; i++)
     {
-        current->score += ((double)current->stats->lhu - current->stats->rhu) /current->mon_total*100 * weights->hand_balance;
+        current->score += ((double)current->stats[i]/total(i)*100) * weights->multiplier[i];
     }
-    else
-    {
-        current->score += ((double)current->stats->rhu - current->stats->lhu) /current->mon_total*100 * weights->hand_balance;
-    }
-    current->score += ((double)current->stats->lhu /current->mon_total*100) * weights->lhu;
-    current->score += ((double)current->stats->rhu /current->mon_total*100) * weights->rhu;
-    current->score += ((double)current->stats->lpu /current->mon_total*100) * weights->lpu;
-    current->score += ((double)current->stats->lru /current->mon_total*100) * weights->lru;
-    current->score += ((double)current->stats->lmu /current->mon_total*100) * weights->lmu;
-    current->score += ((double)current->stats->liu /current->mon_total*100) * weights->liu;
-    current->score += ((double)current->stats->lsu /current->mon_total*100) * weights->lsu;
-    current->score += ((double)current->stats->rsu /current->mon_total*100) * weights->rsu;
-    current->score += ((double)current->stats->riu /current->mon_total*100) * weights->riu;
-    current->score += ((double)current->stats->rmu /current->mon_total*100) * weights->rmu;
-    current->score += ((double)current->stats->rru /current->mon_total*100) * weights->rru;
-    current->score += ((double)current->stats->rpu /current->mon_total*100) * weights->rpu;
-    current->score += ((double)current->stats->lpb /current->big_total*100) * weights->lpb;
-    current->score += ((double)current->stats->lrb /current->big_total*100) * weights->lrb;
-    current->score += ((double)current->stats->lmb /current->big_total*100) * weights->lmb;
-    current->score += ((double)current->stats->lib /current->big_total*100) * weights->lib;
-    current->score += ((double)current->stats->lssb/current->big_total*100) * weights->lssb;
-    current->score += ((double)current->stats->rssb/current->big_total*100) * weights->rssb;
-    current->score += ((double)current->stats->rib /current->big_total*100) * weights->rib;
-    current->score += ((double)current->stats->rmb /current->big_total*100) * weights->rmb;
-    current->score += ((double)current->stats->rrb /current->big_total*100) * weights->rrb;
-    current->score += ((double)current->stats->rpb /current->big_total*100) * weights->rpb;
-    current->score += ((double)current->stats->lps /current->ski_total*100) * weights->lps;
-    current->score += ((double)current->stats->lrs /current->ski_total*100) * weights->lrs;
-    current->score += ((double)current->stats->lms /current->ski_total*100) * weights->lms;
-    current->score += ((double)current->stats->lis /current->ski_total*100) * weights->lis;
-    current->score += ((double)current->stats->lsss/current->ski_total*100) * weights->lsss;
-    current->score += ((double)current->stats->rsss/current->ski_total*100) * weights->rsss;
-    current->score += ((double)current->stats->ris /current->ski_total*100) * weights->ris;
-    current->score += ((double)current->stats->rms /current->ski_total*100) * weights->rms;
-    current->score += ((double)current->stats->rrs /current->ski_total*100) * weights->rrs;
-    current->score += ((double)current->stats->rps /current->ski_total*100) * weights->rps;
-    current->score += ((double)current->stats->lpt /current->tri_total*100) * weights->lpt;
-    current->score += ((double)current->stats->lrt /current->tri_total*100) * weights->lrt;
-    current->score += ((double)current->stats->lmt /current->tri_total*100) * weights->lmt;
-    current->score += ((double)current->stats->lit /current->tri_total*100) * weights->lit;
-    current->score += ((double)current->stats->lsst/current->tri_total*100) * weights->lsst;
-    current->score += ((double)current->stats->rsst/current->tri_total*100) * weights->rsst;
-    current->score += ((double)current->stats->rit /current->tri_total*100) * weights->rit;
-    current->score += ((double)current->stats->rmt /current->tri_total*100) * weights->rmt;
-    current->score += ((double)current->stats->rrt /current->tri_total*100) * weights->rrt;
-    current->score += ((double)current->stats->rpt /current->tri_total*100) * weights->rpt;
+}
+
+int print_new_line(enum patterns stat)
+{
+    return stat == BAD_SFT || stat == LST || stat == FRT || stat == BAD_RED
+        || stat == ONE_OUT || stat == SR_ONE_OUT || stat == AF_ONE_OUT
+        || stat == SRAF_ONE_OUT || stat == ROL_OUT || stat == SR_ROL_OUT
+        || stat == AF_ROL_OUT || stat == SRAF_ROL_OUT || stat == LHU
+        || stat == BRU || stat == LLU || stat == RPU || stat == LLB
+        || stat == RPB || stat == LLS || stat == RPS || stat == LLT
+        || stat == RPT;
 }
 
 void print_layout()
@@ -1117,112 +918,11 @@ void print_layout()
         puts("");
     }
     puts("");
-    puts("USAGE:");
-    //puts("");
-    printf("Left Hand: %06.3f%% | ", (double)current->stats->lhu/current->mon_total*100);
-    printf("Right Hand: %06.3f%%\n", (double)current->stats->rhu/current->mon_total*100);
-    //puts("");
-    printf("Top Row: %06.3f%% | ",   (double)current->stats->tru/current->mon_total*100);
-    printf("Home Row %06.3f%% | ",   (double)current->stats->hru/current->mon_total*100);
-    printf("Bottom Row: %06.3f%%\n", (double)current->stats->bru/current->mon_total*100);
-    //puts("");
-    printf("Left : ");
-    printf("Pinky: %06.3f%% | ",  (double)current->stats->lpu/current->mon_total*100);
-    printf("Ring: %06.3f%% | ",   (double)current->stats->lru/current->mon_total*100);
-    printf("Middle: %06.3f%% | ", (double)current->stats->lmu/current->mon_total*100);
-    printf("Index: %06.3f%% | ",  (double)current->stats->liu/current->mon_total*100);
-    printf("Stretch: %06.3f%%\n", (double)current->stats->lsu/current->mon_total*100);
-    printf("Right: ");
-    printf("Pinky: %06.3f%% | ",  (double)current->stats->rpu/current->mon_total*100);
-    printf("Ring: %06.3f%% | ",   (double)current->stats->rru/current->mon_total*100);
-    printf("Middle: %06.3f%% | ", (double)current->stats->rmu/current->mon_total*100);
-    printf("Index: %06.3f%% | ",  (double)current->stats->riu/current->mon_total*100);
-    printf("Stretch: %06.3f%%\n", (double)current->stats->rsu/current->mon_total*100);
-    puts("");
-    printf("SFB: %06.3f%% | ",  (double)current->stats->sfb /current->big_total*100);
-    printf("Bad: %06.3f%%\n",   (double)current->stats->bsfb/current->big_total*100);
-    printf("Left : ");
-    printf("Pinky: %06.3f%% | ",  (double)current->stats->lpb /current->big_total*100);
-    printf("Ring: %06.3f%% | ",   (double)current->stats->lrb /current->big_total*100);
-    printf("Middle: %06.3f%% | ", (double)current->stats->lmb /current->big_total*100);
-    printf("Index: %06.3f%% | ",  (double)current->stats->lib /current->big_total*100);
-    printf("Stretch: %06.3f%%\n", (double)current->stats->lssb/current->big_total*100);
-    printf("Right: ");
-    printf("Pinky: %06.3f%% | ",  (double)current->stats->rpb /current->big_total*100);
-    printf("Ring: %06.3f%% | ",   (double)current->stats->rrb /current->big_total*100);
-    printf("Middle: %06.3f%% | ", (double)current->stats->rmb /current->big_total*100);
-    printf("Index: %06.3f%% | ",  (double)current->stats->rib /current->big_total*100);
-    printf("Stretch: %06.3f%%\n", (double)current->stats->rssb/current->big_total*100);
-    puts("");
-    printf("SFS: %06.3f%% | ", (double)current->stats->sfs /current->ski_total*100);
-    printf("Bad: %06.3f%%\n",  (double)current->stats->bsfs/current->ski_total*100);
-    printf("Left : ");
-    printf("Pinky: %06.3f%% | ",  (double)current->stats->lps /current->ski_total*100);
-    printf("Ring: %06.3f%% | ",   (double)current->stats->lrs /current->ski_total*100);
-    printf("Middle: %06.3f%% | ", (double)current->stats->lms /current->ski_total*100);
-    printf("Index: %06.3f%% | ",  (double)current->stats->lis /current->ski_total*100);
-    printf("Stretch: %06.3f%%\n", (double)current->stats->lsss/current->ski_total*100);
-    printf("Right: ");
-    printf("Pinky: %06.3f%% | ",  (double)current->stats->rps /current->ski_total*100);
-    printf("Ring: %06.3f%% | ",   (double)current->stats->rrs /current->ski_total*100);
-    printf("Middle: %06.3f%% | ", (double)current->stats->rms /current->ski_total*100);
-    printf("Index: %06.3f%% | ",  (double)current->stats->ris /current->ski_total*100);
-    printf("Stretch: %06.3f%%\n", (double)current->stats->rsss/current->ski_total*100);
-    puts("");
-    printf("SFT: %06.3f%% | ", (double)current->stats->sft /current->tri_total*100);
-    printf("Bad: %06.3f%%\n",  (double)current->stats->bsft/current->tri_total*100);
-    printf("Left : ");
-    printf("Pinky: %06.3f%% | ",  (double)current->stats->lpt /current->tri_total*100);
-    printf("Ring: %06.3f%% | ",   (double)current->stats->lrt /current->tri_total*100);
-    printf("Middle: %06.3f%% | ", (double)current->stats->lmt /current->tri_total*100);
-    printf("Index: %06.3f%% | ",  (double)current->stats->lit /current->tri_total*100);
-    printf("Stretch: %06.3f%%\n", (double)current->stats->lsst/current->tri_total*100);
-    printf("Right: ");
-    printf("Pinky: %06.3f%% | ",  (double)current->stats->rpt /current->tri_total*100);
-    printf("Ring: %06.3f%% | ",   (double)current->stats->rrt /current->tri_total*100);
-    printf("Middle: %06.3f%% | ", (double)current->stats->rmt /current->tri_total*100);
-    printf("Index: %06.3f%% | ",  (double)current->stats->rit /current->tri_total*100);
-    printf("Stretch: %06.3f%%\n", (double)current->stats->rsst/current->tri_total*100);
-    puts("");
-    printf("LSB: %06.3f%% | ", (double)current->stats->lsb/current->big_total*100);
-    printf("LSS: %06.3f%% | ", (double)current->stats->lss/current->ski_total*100);
-    printf("LST: %06.3f%%\n",  (double)current->stats->lst/current->tri_total*100);
-    printf("HRB: %06.3f%% | ", (double)current->stats->hrb/current->big_total*100);
-    printf("HRS: %06.3f%% | ", (double)current->stats->hrs/current->ski_total*100);
-    printf("HRT: %06.3f%%\n",  (double)current->stats->hrt/current->tri_total*100);
-    printf("FRB: %06.3f%% | ", (double)current->stats->frb/current->big_total*100);
-    printf("FRS: %06.3f%% | ", (double)current->stats->frs/current->ski_total*100);
-    printf("FRT: %06.3f%%\n",  (double)current->stats->frt/current->tri_total*100);
-    puts("");
-    printf("Alt: %06.3f%%\n",  (double)current->stats->alt/current->tri_total*100);
-    printf("Red: %06.3f%% | ", (double)current->stats->red/current->tri_total*100);
-    printf("Bad: %06.3f%%\n",  (double)current->stats->brd/current->tri_total*100);
-    puts("");
-    printf("One : %06.3f%% | ", (double)current->stats->one /current->tri_total*100);
-    printf("In: %06.3f%% | ",   (double)current->stats->oni /current->tri_total*100);
-    printf("Out: %06.3f%%\n",   (double)current->stats->ono /current->tri_total*100);
-    printf("SRON: %06.3f%% | ", (double)current->stats->sron/current->tri_total*100);
-    printf("In: %06.3f%% | ",   (double)current->stats->soi /current->tri_total*100);
-    printf("Out: %06.3f%%\n",   (double)current->stats->soo /current->tri_total*100);
-    printf("AFON: %06.3f%% | ", (double)current->stats->afon/current->tri_total*100);
-    printf("In: %06.3f%% | ",   (double)current->stats->aoi /current->tri_total*100);
-    printf("Out: %06.3f%%\n",   (double)current->stats->aoo /current->tri_total*100);
-    printf("SAON: %06.3f%% | ", (double)current->stats->saon/current->tri_total*100);
-    printf("In: %06.3f%% | ",   (double)current->stats->saoi/current->tri_total*100);
-    printf("Out: %06.3f%%\n",   (double)current->stats->saoo/current->tri_total*100);
-    puts("");
-    printf("Rol: %06.3f%% | ", (double)current->stats->rol /current->tri_total*100);
-    printf("In: %06.3f%% | ",  (double)current->stats->irl /current->tri_total*100);
-    printf("Out: %06.3f%%\n",  (double)current->stats->orl /current->tri_total*100);
-    printf("SRR: %06.3f%% | ", (double)current->stats->srr /current->tri_total*100);
-    printf("In: %06.3f%% | ",  (double)current->stats->sri /current->tri_total*100);
-    printf("Out: %06.3f%%\n",  (double)current->stats->sro /current->tri_total*100);
-    printf("AFR: %06.3f%% | ", (double)current->stats->afr /current->tri_total*100);
-    printf("In: %06.3f%% | ",  (double)current->stats->afi /current->tri_total*100);
-    printf("Out: %06.3f%%\n",  (double)current->stats->afo /current->tri_total*100);
-    printf("SAR: %06.3f%% | ", (double)current->stats->sar /current->tri_total*100);
-    printf("In: %06.3f%% | ",  (double)current->stats->sai /current->tri_total*100);
-    printf("Out: %06.3f%%\n",  (double)current->stats->sao /current->tri_total*100);
+    for (enum patterns i = SFB; i < END; i++)
+    {
+        printf("%s: %06.3f%% | ", names[i], (double)current->stats[i]/total(i) * 100);
+        if (print_new_line(i)) {puts("");}
+    }
 }
 
 void short_print()
@@ -1237,35 +937,12 @@ void short_print()
         puts("");
     }
     puts("");
-    printf("Left Hand: %06.3f%% | ", (double)current->stats->lhu/current->mon_total*100);
-    printf("Right Hand: %06.3f%%\n", (double)current->stats->rhu/current->mon_total*100);
-    puts("");
-    printf("SFB: %06.3f%% | ",  (double)current->stats->sfb /current->big_total*100);
-    printf("Bad: %06.3f%%\n",   (double)current->stats->bsfb/current->big_total*100);
-    printf("SFS: %06.3f%% | ", (double)current->stats->sfs /current->ski_total*100);
-    printf("Bad: %06.3f%%\n",  (double)current->stats->bsfs/current->ski_total*100);
-    puts("");
-    printf("LSB: %06.3f%% | ", (double)current->stats->lsb/current->big_total*100);
-    printf("FRB: %06.3f%%\n", (double)current->stats->frb/current->big_total*100);
-    printf("Alt: %06.3f%% | ",  (double)current->stats->alt/current->tri_total*100);
-    printf("Red: %06.3f%% | ", (double)current->stats->red/current->tri_total*100);
-    printf("Bad: %06.3f%%\n",  (double)current->stats->brd/current->tri_total*100);
-    printf("One: %06.3f%% | ", (double)current->stats->one /current->tri_total*100);
-    printf("In : %06.3f%% | ",   (double)current->stats->oni /current->tri_total*100);
-    printf("Out: %06.3f%%\n",   (double)current->stats->ono /current->tri_total*100);
-    puts("");
-    printf("Rol: %06.3f%% | ", (double)current->stats->rol /current->tri_total*100);
-    printf("In : %06.3f%% | ",  (double)current->stats->irl /current->tri_total*100);
-    printf("Out: %06.3f%%\n",  (double)current->stats->orl /current->tri_total*100);
-    printf("SRR: %06.3f%% | ", (double)current->stats->srr /current->tri_total*100);
-    printf("In : %06.3f%% | ",  (double)current->stats->sri /current->tri_total*100);
-    printf("Out: %06.3f%%\n",  (double)current->stats->sro /current->tri_total*100);
-    printf("AFR: %06.3f%% | ", (double)current->stats->afr /current->tri_total*100);
-    printf("In : %06.3f%% | ",  (double)current->stats->afi /current->tri_total*100);
-    printf("Out: %06.3f%%\n",  (double)current->stats->afo /current->tri_total*100);
-    printf("SAR: %06.3f%% | ", (double)current->stats->sar /current->tri_total*100);
-    printf("In : %06.3f%% | ",  (double)current->stats->sai /current->tri_total*100);
-    printf("Out: %06.3f%%\n",  (double)current->stats->sao /current->tri_total*100);
+    for (enum patterns i = SFB; i < LPB; i++)
+    {
+        if (i == SR_ONE) {i = ROL;}
+        printf("%s: %06.3f%% | ", names[i], (double)current->stats[i]/total(i) * 100);
+        if (print_new_line(i)) {puts("");}
+    }
 }
 
 void print_rankings()
@@ -1324,7 +1001,6 @@ void rank_layouts()
                 node->next = ptr->next;
                 ptr->next = node;
             }
-            free(current->stats);
             free(current);
             current = NULL;
         }
@@ -1351,7 +1027,6 @@ struct keyboard_layout* copy_layout(struct keyboard_layout *src)
 {
     struct keyboard_layout *dest;
     dest = calloc(1, sizeof(struct keyboard_layout));
-    dest->stats = calloc(1, sizeof(struct patterns));
     for (int i = 0; i < ROW; i++)
     {
         for (int j = 0; j < COL; j++)
@@ -1359,98 +1034,15 @@ struct keyboard_layout* copy_layout(struct keyboard_layout *src)
             dest->matrix[i][j] = src->matrix[i][j];
         }
     }
+    for (enum patterns i = SFB; i < END; i++)
+    {
+        dest->stats[i] = src->stats[i];
+    }
     dest->score = src->score;
     dest->mon_total = src->mon_total;
     dest->big_total = src->big_total;
     dest->ski_total = src->ski_total;
     dest->tri_total = src->tri_total;
-    dest->stats->sfb = src->stats->sfb;
-    dest->stats->sfs = src->stats->sfs;
-    dest->stats->sft = src->stats->sft;
-    dest->stats->bsfb = src->stats->bsfb;
-    dest->stats->bsfs = src->stats->bsfs;
-    dest->stats->bsft = src->stats->bsft;
-    dest->stats->lsb = src->stats->lsb;
-    dest->stats->lss = src->stats->lss;
-    dest->stats->lst = src->stats->lst;
-    dest->stats->hrb = src->stats->hrb;
-    dest->stats->hrs = src->stats->hrs;
-    dest->stats->hrt = src->stats->hrt;
-    dest->stats->frb = src->stats->frb;
-    dest->stats->frs = src->stats->frs;
-    dest->stats->frt = src->stats->frt;
-    dest->stats->alt = src->stats->alt;
-    dest->stats->red = src->stats->red;
-    dest->stats->brd = src->stats->brd;
-    dest->stats->one = src->stats->one;
-    dest->stats->oni = src->stats->oni;
-    dest->stats->ono = src->stats->ono;
-    dest->stats->sron = src->stats->sron;
-    dest->stats->soi = src->stats->soi;
-    dest->stats->soo = src->stats->soo;
-    dest->stats->afon = src->stats->afon;
-    dest->stats->aoi = src->stats->aoi;
-    dest->stats->aoo = src->stats->aoo;
-    dest->stats->saon = src->stats->saon;
-    dest->stats->saoi = src->stats->saoi;
-    dest->stats->saoo = src->stats->saoo;
-    dest->stats->rol = src->stats->rol;
-    dest->stats->irl = src->stats->irl;
-    dest->stats->orl = src->stats->orl;
-    dest->stats->srr = src->stats->srr;
-    dest->stats->sri = src->stats->sri;
-    dest->stats->sro = src->stats->sro;
-    dest->stats->afr = src->stats->afr;
-    dest->stats->afi = src->stats->afi;
-    dest->stats->afo = src->stats->afo;
-    dest->stats->sar = src->stats->sar;
-    dest->stats->sai = src->stats->sai;
-    dest->stats->sao = src->stats->sao;
-    dest->stats->lhu = src->stats->lhu;
-    dest->stats->rhu = src->stats->rhu;
-    dest->stats->tru = src->stats->tru;
-    dest->stats->hru = src->stats->hru;
-    dest->stats->bru = src->stats->bru;
-    dest->stats->lpu = src->stats->lpu;
-    dest->stats->lru = src->stats->lru;
-    dest->stats->lmu = src->stats->lmu;
-    dest->stats->liu = src->stats->liu;
-    dest->stats->lsu = src->stats->lsu;
-    dest->stats->rsu = src->stats->rsu;
-    dest->stats->riu = src->stats->riu;
-    dest->stats->rmu = src->stats->rmu;
-    dest->stats->rru = src->stats->rru;
-    dest->stats->rpu = src->stats->rpu;
-    dest->stats->lpb = src->stats->lpb;
-    dest->stats->lrb = src->stats->lrb;
-    dest->stats->lmb = src->stats->lmb;
-    dest->stats->lib = src->stats->lib;
-    dest->stats->lssb = src->stats->lssb;
-    dest->stats->rssb = src->stats->rssb;
-    dest->stats->rib = src->stats->rib;
-    dest->stats->rmb = src->stats->rmb;
-    dest->stats->rrb = src->stats->rrb;
-    dest->stats->rpb = src->stats->rpb;
-    dest->stats->lps = src->stats->lps;
-    dest->stats->lrs = src->stats->lrs;
-    dest->stats->lms = src->stats->lms;
-    dest->stats->lis = src->stats->lis;
-    dest->stats->lsss = src->stats->lsss;
-    dest->stats->rsss = src->stats->rsss;
-    dest->stats->ris = src->stats->ris;
-    dest->stats->rms = src->stats->rms;
-    dest->stats->rrs = src->stats->rrs;
-    dest->stats->rps = src->stats->rps;
-    dest->stats->lpt = src->stats->lpt;
-    dest->stats->lrt = src->stats->lrt;
-    dest->stats->lmt = src->stats->lmt;
-    dest->stats->lit = src->stats->lit;
-    dest->stats->lsst = src->stats->lsst;
-    dest->stats->rsst = src->stats->rsst;
-    dest->stats->rit = src->stats->rit;
-    dest->stats->rmt = src->stats->rmt;
-    dest->stats->rrt = src->stats->rrt;
-    dest->stats->rpt = src->stats->rpt;
     return dest;
 }
 
@@ -1458,7 +1050,6 @@ struct keyboard_layout* blank_layout(struct keyboard_layout *src)
 {
     struct keyboard_layout *dest;
     dest = calloc(1, sizeof(struct keyboard_layout));
-    dest->stats = calloc(1, sizeof(struct patterns));
     for (int i = 0; i < ROW; i++)
     {
         for (int j = 0; j < COL; j++)
@@ -1479,7 +1070,6 @@ void generate()
     for (int i = generation_quantity; i > 0; i--)
     {
         printf("%d / %d\r", generation_quantity - i, generation_quantity);
-        free(current->stats);
         free(current);
         current = blank_layout(max);
         for (int j = (i / (generation_quantity/30)) + 1; j > 0; j--)
@@ -1506,12 +1096,10 @@ void generate()
         get_score();
         if (current->score >  max->score)
         {
-            free(max->stats);
             free(max);
             max = copy_layout(current);
         }
     }
-    free(current->stats);
     free(current);
     current = copy_layout(max);
 }
@@ -1618,12 +1206,10 @@ int main(int argc, char **argv)
 
     if(current != NULL)
     {
-        free(current->stats);
         free(current);
     }
     if(max != NULL)
     {
-        free(max->stats);
         free(max);
     }
     if(corpus_malloc){free(corpus);}
