@@ -44,15 +44,15 @@ enum patterns
 
 char names[END][20] =
 {
-    "SFB", "SFS", "SFT", "BAD_SFB", "BAD_SFS", "BAD_SFT",
+    "SFB", "SFS", "SFT", "BAD SFB", "BAD SFS", "BAD SFT",
     "LSB", "LSS", "LST",
     "HRB", "HRS", "HRT", "FRB", "FRS", "FRT",
-    "ALT", "RED", "BAD_RED",
-    "ONE", "ONE_IN", "ONE_OUT", "SR_ONE", "SR_ONE_IN", "SR_ONE_OUT",
-    "AF_ONE", "AF_ONE_IN", "AF_ONE_OUT", "SRAF_ONE", "SRAF_ONE_IN", "SRAF_ONE_OUT",
-    "ROL", "ROL_IN", "ROL_OUT", "SR_ROL", "SR_ROL_IN", "SR_ROL_OUT",
-    "AF_ROL", "AF_ROL_IN", "AF_ROL_OUT", "SRAF_ROL", "SRAF_ROL_IN", "SRAF_ROL_OUT",
-    "HAND_BALANCE", "LHU", "RHU", "TRU", "HRU", "BRU",
+    "ALT", "RED", "BAD RED",
+    "ONE", "ONE IN", "ONE OUT", "SR ONE", "SR ONE IN", "SR ONE OUT",
+    "AF ONE", "AF ONE IN", "AF ONE OUT", "SRAF ONE", "SRAF ONE IN", "SRAF ONE OUT",
+    "ROL", "ROL IN", "ROL OUT", "SR ROL", "SR ROL IN", "SR ROL OUT",
+    "AF ROL", "AF ROL IN", "AF ROL OUT", "SRAF ROL", "SRAF ROL IN", "SRAF ROL OUT",
+    "HAND BALANCE", "LHU", "RHU", "TRU", "HRU", "BRU",
     "LPU", "LRU", "LMU", "LIU", "LLU", "RLU", "RIU", "RMU", "RRU", "RPU",
     "LPB", "LRB", "LMB", "LIB", "LLB", "RLB", "RIB", "RMB", "RRB", "RPB",
     "LPS", "LRS", "LMS", "LIS", "LLS", "RLS", "RIS", "RMS", "RRS", "RPS",
@@ -112,21 +112,12 @@ void error_out(char *message)
 {
     printf("Error: %s\n", message);
     printf("Freeing, and exiting.\n");
-    if (current != NULL)
-    {
-        free(current);
-    }
-    if (max != NULL)
-    {
-        free(max);
-    }
+    if (current != NULL) {free(current);}
+    if (max != NULL) {free(max);}
     while (head != NULL)
     {
         ptr = head;
-        while (ptr != NULL && ptr->next != NULL)
-        {
-            ptr = ptr->next;
-        }
+        while (ptr != NULL && ptr->next != NULL) {ptr = ptr->next;}
         free(ptr->name);
         free(ptr);
     }
@@ -175,14 +166,8 @@ char key(int row, int col)
 
 char hand(int col)
 {
-    if (col <= LEFT_HAND)
-    {
-        return 'l';
-    }
-    else
-    {
-        return 'r';
-    }
+    if (col <= LEFT_HAND) {return 'l';}
+    else {return 'r';}
 }
 
 int finger(int col)
@@ -234,14 +219,8 @@ int adjacent_fingers(int col0, int col1)
 int distance(int row0, int row1)
 {
     int dist = row0 - row1;
-    if (dist >= 0)
-    {
-        return dist;
-    }
-    else
-    {
-        return -dist;
-    }
+    if (dist >= 0) {return dist;}
+    else {return -dist;}
 }
 
 int is_lsb(int col0, int col1)
@@ -287,7 +266,6 @@ int is_roll_in(int col0, int col1, int col2)
 
 void read_corpus(char *name)
 {
-    printf("Reading corpus...\n");
     //define variables
     FILE *data;
     char *ngram, *raw;
@@ -325,10 +303,7 @@ void read_corpus(char *name)
             monogram[b]++;
             bigram[a][b]++;
         }
-        else
-        {
-            error_out("Corpus not long enough.");
-        }
+        else {error_out("Corpus not long enough.");}
         while ((c = fgetc(data)) != EOF)
         {
             c = convert_char(c);
@@ -602,10 +577,7 @@ void analyze_skipgram(int row0, int col0, int row2, int col2, long unsigned int 
     {
         current->stats[SFS] += value;
         //bad sfs
-        if (distance(row0, row2) == 2)
-        {
-            current->stats[BAD_SFS] += value;
-        }
+        if (distance(row0, row2) == 2) {current->stats[BAD_SFS] += value;}
         //sfs by finger
         switch(col0)
         {
@@ -640,21 +612,12 @@ void analyze_skipgram(int row0, int col0, int row2, int col2, long unsigned int 
         }
     }
     //lss
-    if (is_lsb(col0, col2))
-    {
-        current->stats[LSS] += value;
-    }
+    if (is_lsb(col0, col2)) {current->stats[LSS] += value;}
     //russors
     if (is_russor(col0, col2))
     {
-        if (distance(row0, row2) == 1)
-        {
-            current->stats[HRS] += value;
-        }
-        if (distance(row0, row2) == 2)
-        {
-            current->stats[FRS] += value;
-        }
+        if (distance(row0, row2) == 1) {current->stats[HRS] += value;}
+        if (distance(row0, row2) == 2) {current->stats[FRS] += value;}
     }
 }
 
@@ -667,10 +630,7 @@ void analyze_bigram(int row0, int col0, int row1, int col1, long unsigned int va
     {
         current->stats[SFB] += value;
         //bad sfb
-        if (distance(row0, row1) == 2)
-        {
-            current->stats[BAD_SFB] += value;
-        }
+        if (distance(row0, row1) == 2) {current->stats[BAD_SFB] += value;}
         //sfb by finger
         switch(col0)
         {
@@ -705,21 +665,12 @@ void analyze_bigram(int row0, int col0, int row1, int col1, long unsigned int va
         }
     }
     //lsb
-    if (is_lsb(col0, col1))
-    {
-        current->stats[LSB] += value;
-    }
+    if (is_lsb(col0, col1)) {current->stats[LSB] += value;}
     //russors
     if (is_russor(col0, col1))
     {
-        if (distance(row0, row1) == 1)
-        {
-            current->stats[HRB] += value;
-        }
-        if (distance(row0, row1) == 2)
-        {
-            current->stats[FRB] += value;
-        }
+        if (distance(row0, row1) == 1) {current->stats[HRB] += value;}
+        if (distance(row0, row1) == 2) {current->stats[FRB] += value;}
     }
 }
 
@@ -728,27 +679,12 @@ void analyze_monogram(int row, int col, long unsigned int value)
 {
     current->mon_total += value;
     //hand usage
-    if (hand(col) == 'l')
-    {
-        current->stats[LHU] += value;
-    }
-    else
-    {
-        current->stats[RHU] += value;
-    }
+    if (hand(col) == 'l') {current->stats[LHU] += value;}
+    else                  {current->stats[RHU] += value;}
     //row usage
-    if (row == 0)
-    {
-        current->stats[TRU] += value;
-    }
-    else if (row == 1)
-    {
-        current->stats[HRU] += value;
-    }
-    else
-    {
-        current->stats[BRU] += value;
-    }
+    if (row == 0)      {current->stats[TRU] += value;}
+    else if (row == 1) {current->stats[HRU] += value;}
+    else               {current->stats[BRU] += value;}
     //finger usage
     switch(col)
     {
@@ -829,7 +765,6 @@ void analyze_layout()
 
 void read_weights(char *name)
 {
-    printf("Reading weights...\n");
     char temp;
     FILE * data;
     char *weight = (char*)malloc(strlen("./weights/") + strlen(name) + 1);
@@ -848,14 +783,8 @@ void read_weights(char *name)
         for (int j = 0; j < COL; j++)
         {
             fscanf(data, " %c", &temp);
-            if (temp == '.')
-            {
-                weights->pins[i][j] = 0;
-            }
-            else
-            {
-                weights->pins[i][j] = 1;
-            }
+            if (temp == '.') {weights->pins[i][j] = 0;}
+            else {weights->pins[i][j] = 1;}
         }
     }
     for(enum patterns i = SFB; i < END; i++)
@@ -895,13 +824,11 @@ void get_score()
 
 int print_new_line(enum patterns stat)
 {
-    return stat == BAD_SFT || stat == LST || stat == FRT || stat == BAD_RED
-        || stat == ONE_OUT || stat == SR_ONE_OUT || stat == AF_ONE_OUT
-        || stat == SRAF_ONE_OUT || stat == ROL_OUT || stat == SR_ROL_OUT
-        || stat == AF_ROL_OUT || stat == SRAF_ROL_OUT || stat == LHU
-        || stat == BRU || stat == LLU || stat == RPU || stat == LLB
-        || stat == RPB || stat == LLS || stat == RPS || stat == LLT
-        || stat == RPT;
+    return stat == SFT || stat == BAD_SFT || stat == LST || stat == HRT
+        || stat == FRT || stat == BAD_RED || stat == ONE_OUT
+        || stat == SR_ONE_OUT || stat == AF_ONE_OUT || stat == SRAF_ONE_OUT
+        || stat == ROL_OUT || stat == SR_ROL_OUT || stat == AF_ROL_OUT
+        || stat == SRAF_ROL_OUT || stat == LHU || stat == BRU;
 }
 
 void print_layout()
@@ -918,11 +845,33 @@ void print_layout()
         puts("");
     }
     puts("");
-    for (enum patterns i = SFB; i < END; i++)
+    for (enum patterns i = SFB; i < LPU; i++)
     {
-        printf("%s: %06.3f%% | ", names[i], (double)current->stats[i]/total(i) * 100);
+        printf("%s: %06.3f%%", names[i], (double)current->stats[i]/total(i) * 100);
         if (print_new_line(i)) {puts("");}
+        else {printf(" | ");}
     }
+    printf("Finger Usage: \n[");
+    for (enum patterns i = LPU; i < LPB; i++)
+    {
+        printf("%05.2f, ", (double)current->stats[i]/total(i) * 100);
+    }
+    printf("]\nFinger Bigrams: \n[");
+    for (enum patterns i = LPB; i < LPS; i++)
+    {
+        printf("%05.2f, ", (double)current->stats[i]/total(i) * 100);
+    }
+    printf("]\nFinger Skipgrams: \n[");
+    for (enum patterns i = LPS; i < LPT; i++)
+    {
+        printf("%05.2f, ", (double)current->stats[i]/total(i) * 100);
+    }
+    printf("]\nFinger Trigrams: \n[");
+    for (enum patterns i = LPT; i < END; i++)
+    {
+        printf("%05.2f, ", (double)current->stats[i]/total(i) * 100);
+    }
+    printf("]\n");
 }
 
 void short_print()
@@ -940,8 +889,9 @@ void short_print()
     for (enum patterns i = SFB; i < LPB; i++)
     {
         if (i == SR_ONE) {i = ROL;}
-        printf("%s: %06.3f%% | ", names[i], (double)current->stats[i]/total(i) * 100);
+        printf("%s: %06.3f%%", names[i], (double)current->stats[i]/total(i) * 100);
         if (print_new_line(i)) {puts("");}
+        else {printf(" | ");}
     }
 }
 
@@ -978,26 +928,18 @@ void rank_layouts()
             strcpy(node->name, entry->d_name);
             node->score = current->score;
             node->next = NULL;
-            if (head == NULL)
-            {
-                head = node;
-            }
+            if (head == NULL) {head = node;}
             else if (head->score < node->score)
             {
                 node->next = head;
                 head = node;
             }
-            else if (head->next == NULL)
-            {
-                head->next = node;
-            }
+            else if (head->next == NULL) {head->next = node;}
             else
             {
                 ptr = head;
                 while (ptr->next != NULL && ptr->next->score > node->score)
-                {
-                    ptr = ptr->next;
-                }
+                    {ptr = ptr->next;}
                 node->next = ptr->next;
                 ptr->next = node;
             }
@@ -1012,10 +954,7 @@ void rank_layouts()
     while (head != NULL && ptr != NULL)
     {
         ptr = head;
-        while (ptr->next != NULL)
-        {
-            ptr = ptr->next;
-        }
+        while (ptr->next != NULL) {ptr = ptr->next;}
         free(ptr->name);
         free(ptr);
         ptr = NULL;
@@ -1169,12 +1108,6 @@ int main(int argc, char **argv)
             }
         }
     }
-    //print end results
-    printf("corpus : %s\n", corpus);
-    printf("layout : %s\n", layout);
-    printf("weights : %s\n", weight);
-    printf("mode : %c\n", mode);
-    printf("generation quantity : %d\n\n", generation_quantity);
 
     //actually start doing stuff
     switch (mode)
@@ -1204,14 +1137,8 @@ int main(int argc, char **argv)
             break;
     }
 
-    if(current != NULL)
-    {
-        free(current);
-    }
-    if(max != NULL)
-    {
-        free(max);
-    }
+    if(current != NULL) {free(current);}
+    if(max != NULL) {free(max);}
     if(corpus_malloc){free(corpus);}
     if(layout_malloc){free(layout);}
     if(weights_malloc){free(weight);}
