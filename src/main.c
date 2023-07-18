@@ -28,7 +28,8 @@ enum patterns
 {
     SFB, SFS, SFT, BAD_SFB, BAD_SFS, BAD_SFT,
     LSB, LSS, LST,
-    HRB, HRS, HRT, FRB, FRS, FRT,
+    HRB, HRS, HRT,
+    FRB, FRS, FRT,
     ALT, RED, BAD_RED,
     ONE, ONE_IN, ONE_OUT, SR_ONE, SR_ONE_IN, SR_ONE_OUT,
     AF_ONE, AF_ONE_IN, AF_ONE_OUT, SRAF_ONE, SRAF_ONE_IN, SRAF_ONE_OUT,
@@ -42,16 +43,17 @@ enum patterns
     END
 };
 
-char names[END][20] =
+char names[END][30] =
 {
-    "SFB", "SFS", "SFT", "BAD SFB", "BAD SFS", "BAD SFT",
+    "SFB", "SFS", "SFT", "BAD", "BAD", "BAD",
     "LSB", "LSS", "LST",
-    "HRB", "HRS", "HRT", "FRB", "FRS", "FRT",
-    "ALT", "RED", "BAD RED",
-    "ONE", "ONE IN", "ONE OUT", "SR ONE", "SR ONE IN", "SR ONE OUT",
-    "AF ONE", "AF ONE IN", "AF ONE OUT", "SRAF ONE", "SRAF ONE IN", "SRAF ONE OUT",
-    "ROL", "ROL IN", "ROL OUT", "SR ROL", "SR ROL IN", "SR ROL OUT",
-    "AF ROL", "AF ROL IN", "AF ROL OUT", "SRAF ROL", "SRAF ROL IN", "SRAF ROL OUT",
+    "HRB", "HRS", "HRT",
+    "FRB", "FRS", "FRT",
+    "ALT", "RED", "BAD",
+    "ONEH                         ", "IN", "OUT", "SAME ROW ONEH                ", "IN", "OUT",
+    "ADJACENT FINGER ONEH         ", "IN", "OUT", "SAME ROW ADJACENT FINGER ONEH", "IN", "OUT",
+    "ROLL                         ", "IN", "OUT", "SAME ROW ROLL                ", "IN", "OUT",
+    "ADJACENT FINGER ROLL         ", "IN", "OUT", "SAME ROW ADJACENT FINGER ROLL", "IN", "OUT",
     "HAND BALANCE", "LHU", "RHU", "TRU", "HRU", "BRU",
     "LPU", "LRU", "LMU", "LIU", "LLU", "RLU", "RIU", "RMU", "RRU", "RPU",
     "LPB", "LRB", "LMB", "LIB", "LLB", "RLB", "RIB", "RMB", "RRB", "RPB",
@@ -63,7 +65,8 @@ char totals[END] =
 {
     'b', 's', 't', 'b', 's', 't',
     'b', 's', 't',
-    'b', 's', 't', 'b', 's', 't',
+    'b', 's', 't',
+    'b', 's', 't',
     't', 't', 't',
     't', 't', 't', 't', 't', 't',
     't', 't', 't', 't', 't', 't',
@@ -127,9 +130,9 @@ void error_out(char *message)
     exit(1);
 }
 
-//lower case all letters, and symbols that are within the "alpha" area, leave the rest alone, also trim non-ascii stuff
 char convert_char(char c)
 {
+    //lower case all letters, and symbols that are within the "alpha" area
     switch(c)
     {
         case '{':
@@ -213,7 +216,9 @@ int same_hand(int col0, int col1)
 
 int adjacent_fingers(int col0, int col1)
 {
-    return (same_hand(col0, col1) && (finger(col0) - finger(col1) == 1 || finger(col0) - finger(col1) == -1) && (col0 - col1 == 1 || col0 - col1 == -1));
+    return (same_hand(col0, col1) && (finger(col0) - finger(col1) == 1
+        || finger(col0) - finger(col1) == -1)
+        && (col0 - col1 == 1 || col0 - col1 == -1));
 }
 
 int distance(int row0, int row1)
@@ -225,22 +230,27 @@ int distance(int row0, int row1)
 
 int is_lsb(int col0, int col1)
 {
-    return ((col0 == 2 && col1 == 4) || (col0 == 4 && col1 == 2) || (col0 == 5 && col1 == 7) || (col0 == 7 && col1 == 5));
+    return ((col0 == 2 && col1 == 4) || (col0 == 4 && col1 == 2)
+        || (col0 == 5 && col1 == 7) || (col0 == 7 && col1 == 5));
 }
 
 int is_russor(int col0, int col1)
 {
-    return (same_hand(col0, col1) && !same_finger(col0, col1) && (col0 == 1 || col0 == 2 || col0 == 7 || col0 == 8 || col1 == 1 || col1 == 2 || col1 == 7 || col1 == 8));
+    return (same_hand(col0, col1) && !same_finger(col0, col1)
+        && (col0 == 1 || col0 == 2 || col0 == 7 || col0 == 8 || col1 == 1
+        || col1 == 2 || col1 == 7 || col1 == 8));
 }
 
 int is_one(int col0, int col1, int col2)
 {
-    return (finger(col0) < finger(col1) && finger(col1) < finger(col2)) || (finger(col0) > finger(col1) && finger(col1) > finger(col2));
+    return (finger(col0) < finger(col1) && finger(col1) < finger(col2))
+        || (finger(col0) > finger(col1) && finger(col1) > finger(col2));
 }
 
 int is_one_in(int col0, int col1, int col2)
 {
-    return (hand(col0) == 'l' && col0 < col1) || (hand(col0) == 'r' && col0 > col1);
+    return (hand(col0) == 'l' && col0 < col1)
+        || (hand(col0) == 'r' && col0 > col1);
 }
 
 int is_bad_red(int col0, int col1, int col2)
@@ -262,6 +272,18 @@ int is_roll_in(int col0, int col1, int col2)
         || (same_hand(col0, col1) && hand(col1) == 'r' && col0 > col1)
         || (same_hand(col1, col2) && hand(col1) == 'l' && col1 < col2)
         || (same_hand(col1, col2) && hand(col1) == 'r' && col1 > col2);
+}
+
+int is_same_row_roll(int col0, int col1, int col2, int row0, int row1, int row2)
+{
+    return (same_hand(col0, col1) && same_row(row0, row1))
+        || (same_hand(col1, col2) && same_row(row1, row2));
+}
+
+int is_adjacent_finger_roll(int col0, int col1, int col2)
+{
+    return (same_hand(col0, col1) && adjacent_fingers(col0, col1))
+        || (same_hand(col1, col2) && adjacent_fingers(col1, col2));
 }
 
 void read_corpus(char *name)
@@ -400,7 +422,8 @@ void analyze_trigram(int row0, int col0, int row1, int col1, int row2, int col2,
 {
     current->tri_total += value;
     //sft
-    if(same_finger(col0, col1) && same_finger(col1, col2) && !same_row(row0, row1) && !same_row(row1, row2))
+    if(same_finger(col0, col1) && same_finger(col1, col2)
+        && !same_row(row0, row1) && !same_row(row1, row2))
     {
         current->stats[SFT] += value;
         //bad sft
@@ -464,21 +487,22 @@ void analyze_trigram(int row0, int col0, int row1, int col1, int row2, int col2,
         current->stats[ALT] += value;
     }
 
-    //redirects and onehands -- needs fixing, redirects account for sfs (but not repeats)
-    if (same_hand(col0, col1) && same_hand(col1, col2) && !same_finger(col0, col1) && !same_finger(col1, col2) && !same_finger(col0, col2))
+    //redirects and onehands
+    if (same_hand(col0, col1) && same_hand(col1, col2)
+        && !same_finger(col0, col1) && !same_finger(col1, col2)
+        && !same_finger(col0, col2))
     {
         //one
         if (is_one(col0, col1, col2))
         {
             current->stats[ONE] += value;
-            //in
             if (is_one_in(col0, col1, col2))
             {
                 current->stats[ONE_IN] += value;
                 if (same_row(row0, row1) && same_row(row1, row2))
                 {
                     current->stats[SR_ONE] += value;
-                    current->stats[SR_ONE_IN]  += value;
+                    current->stats[SR_ONE_IN] += value;
                 }
                 if (adjacent_fingers(col0, col1) && adjacent_fingers(col1, col2))
                 {
@@ -487,18 +511,17 @@ void analyze_trigram(int row0, int col0, int row1, int col1, int row2, int col2,
                     if (same_row(row0, row1) && same_row(row1, row2))
                     {
                         current->stats[SRAF_ONE] += value;
-                        current->stats[SRAF_ONE_IN]  += value;
+                        current->stats[SRAF_ONE_IN] += value;
                     }
                 }
             }
-            //out
             else
             {
                 current->stats[ONE_OUT] += value;
                 if (same_row(row0, row1) && same_row(row1, row2))
                 {
                     current->stats[SR_ONE] += value;
-                    current->stats[SR_ONE_OUT]  += value;
+                    current->stats[SR_ONE_OUT] += value;
                 }
                 if (adjacent_fingers(col0, col1) && adjacent_fingers(col1, col2))
                 {
@@ -507,7 +530,7 @@ void analyze_trigram(int row0, int col0, int row1, int col1, int row2, int col2,
                     if (same_row(row0, row1) && same_row(row1, row2))
                     {
                         current->stats[SRAF_ONE] += value;
-                        current->stats[SRAF_ONE_OUT]  += value;
+                        current->stats[SRAF_ONE_OUT] += value;
                     }
                 }
             }
@@ -530,16 +553,16 @@ void analyze_trigram(int row0, int col0, int row1, int col1, int row2, int col2,
         if(is_roll_in(col0, col1, col2))
         {
             current->stats[ROL_IN] += value;
-            if ((same_hand(col0, col1) && same_row(row0, row1)) || (same_hand(col1, col2) && same_row(col1, col2)))
+            if (is_same_row_roll(col0, col1, col2, row0, row1, row2))
             {
                 current->stats[SR_ROL] += value;
                 current->stats[SR_ROL_IN] += value;
             }
-            if ((same_hand(col0, col1) && adjacent_fingers(row0, row1)) || (same_hand(col1, col2) && adjacent_fingers(col1, col2)))
+            if (is_adjacent_finger_roll(col0, col1, col2))
             {
                 current->stats[AF_ROL] += value;
                 current->stats[AF_ROL_IN] += value;
-                if ((same_hand(col0, col1) && same_row(row0, row1)) || (same_hand(col1, col2) && same_row(row1, row2)))
+                if (is_same_row_roll(col0, col1, col2, row0, row1, row2))
                 {
                     current->stats[SRAF_ROL] += value;
                     current->stats[SRAF_ROL_IN] += value;
@@ -549,16 +572,16 @@ void analyze_trigram(int row0, int col0, int row1, int col1, int row2, int col2,
         else
         {
             current->stats[ROL_OUT] += value;
-            if ((same_hand(col0, col1) && same_row(row0, row1)) || (same_hand(col1, col2) && same_row(col1, col2)))
+            if (is_same_row_roll(col0, col1, col2, row0, row1, row2))
             {
                 current->stats[SR_ROL] += value;
                 current->stats[SR_ROL_OUT] += value;
             }
-            if ((same_hand(col0, col1) && adjacent_fingers(row0, row1)) || (same_hand(col1, col2) && adjacent_fingers(col1, col2)))
+            if (is_adjacent_finger_roll(col0, col1, col2))
             {
                 current->stats[AF_ROL] += value;
                 current->stats[AF_ROL_OUT] += value;
-                if ((same_hand(col0, col1) && same_row(row0, row1)) || (same_hand(col1, col2) && same_row(row1, row2)))
+                if (is_same_row_roll(col0, col1, col2, row0, row1, row2))
                 {
                     current->stats[SRAF_ROL] += value;
                     current->stats[SRAF_ROL_OUT] += value;
@@ -739,7 +762,7 @@ void analyze_layout()
                     //skipgrams with all possible trigrams, not just on this layout
                     for (int i = 0; i < 128; i++)
                     {
-                        analyze_skipgram(r1,c1, r2, c2, trigram[key(r1, c1)][i][key(r2, c2)]);
+                        analyze_skipgram(r1, c1, r2, c2, trigram[key(r1, c1)][i][key(r2, c2)]);
                     }
                     //third key
                     for (int r3 = 0; r3 < ROW; r3++)
@@ -828,7 +851,7 @@ int print_new_line(enum patterns stat)
         || stat == FRT || stat == BAD_RED || stat == ONE_OUT
         || stat == SR_ONE_OUT || stat == AF_ONE_OUT || stat == SRAF_ONE_OUT
         || stat == ROL_OUT || stat == SR_ROL_OUT || stat == AF_ROL_OUT
-        || stat == SRAF_ROL_OUT || stat == LHU || stat == BRU;
+        || stat == SRAF_ROL_OUT || stat == RHU || stat == BRU;
 }
 
 void print_layout()
@@ -886,13 +909,19 @@ void short_print()
         puts("");
     }
     puts("");
-    for (enum patterns i = SFB; i < LPB; i++)
+    for (enum patterns i = SFB; i < LPU; i++)
     {
         if (i == SR_ONE) {i = ROL;}
         printf("%s: %06.3f%%", names[i], (double)current->stats[i]/total(i) * 100);
         if (print_new_line(i)) {puts("");}
         else {printf(" | ");}
     }
+    printf("Finger Usage: \n[");
+    for (enum patterns i = LPU; i < LPB; i++)
+    {
+        printf("%05.2f, ", (double)current->stats[i]/total(i) * 100);
+    }
+    printf("]\n");
 }
 
 void print_rankings()
