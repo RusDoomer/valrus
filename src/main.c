@@ -50,10 +50,10 @@ char names[END][30] =
     "HRB", "HRS", "HRT",
     "FRB", "FRS", "FRT",
     "ALT", "RED", "BAD",
-    "ONEH                         ", "IN", "OUT", "SAME ROW ONEH                ", "IN", "OUT",
-    "ADJACENT FINGER ONEH         ", "IN", "OUT", "SAME ROW ADJACENT FINGER ONEH", "IN", "OUT",
-    "ROLL                         ", "IN", "OUT", "SAME ROW ROLL                ", "IN", "OUT",
-    "ADJACENT FINGER ROLL         ", "IN", "OUT", "SAME ROW ADJACENT FINGER ROLL", "IN", "OUT",
+    "ONE HAND                ", "IN", "OUT", "SAME ROW                ", "IN", "OUT",
+    "ADJACENT FINGER         ", "IN", "OUT", "SAME ROW ADJACENT FINGER", "IN", "OUT",
+    "ROLL                    ", "IN", "OUT", "SAME ROW                ", "IN", "OUT",
+    "ADJACENT FINGER         ", "IN", "OUT", "SAME ROW ADJACENT FINGER", "IN", "OUT",
     "HAND BALANCE", "LHU", "RHU", "TRU", "HRU", "BRU",
     "LPU", "LRU", "LMU", "LIU", "LLU", "RLU", "RIU", "RMU", "RRU", "RPU",
     "LPB", "LRB", "LMB", "LIB", "LLB", "RLB", "RIB", "RMB", "RRB", "RPB",
@@ -207,6 +207,11 @@ int same_finger(int col0, int col1)
 int same_row(int row0, int row1)
 {
     return row0 == row1;
+}
+
+int same_pos(int row0, int col0, int row1, int col1)
+{
+    return row0 == row1 && col0 == col1;
 }
 
 int same_hand(int col0, int col1)
@@ -420,10 +425,11 @@ void read_layout(char *name)
 //sft, bsft, lst, hrt, frt, red, onehands, rolls, sft by finger
 void analyze_trigram(int row0, int col0, int row1, int col1, int row2, int col2,  long unsigned int value)
 {
+    if (value == 0) {return;}
     current->tri_total += value;
     //sft
     if(same_finger(col0, col1) && same_finger(col1, col2)
-        && !same_row(row0, row1) && !same_row(row1, row2))
+        && !same_pos(row0, col0, row1, col1) && !same_pos(row1, col1, row2, col2))
     {
         current->stats[SFT] += value;
         //bad sft
@@ -594,9 +600,10 @@ void analyze_trigram(int row0, int col0, int row1, int col1, int row2, int col2,
 //sfs, bsfs,  lss, hrs, frs, sfs by finger
 void analyze_skipgram(int row0, int col0, int row2, int col2, long unsigned int value)
 {
+    if (value == 0) {return;}
     current->ski_total += value;
     //sfs
-    if(same_finger(col0, col2) && !same_row(row0, row2))
+    if(same_finger(col0, col2) && !same_pos(row0, col0, row2, col2))
     {
         current->stats[SFS] += value;
         //bad sfs
@@ -614,12 +621,10 @@ void analyze_skipgram(int row0, int col0, int row2, int col2, long unsigned int 
                 current->stats[LMS] += value;
                 break;
             case 4:
-                current->stats[LLS] += value;
             case 3:
                 current->stats[LIS] += value;
                 break;
             case 5:
-                current->stats[RLS] += value;
             case 6:
                 current->stats[RIS] += value;
                 break;
@@ -632,6 +637,14 @@ void analyze_skipgram(int row0, int col0, int row2, int col2, long unsigned int 
             case 9:
                 current->stats[RPS] += value;
                 break;
+        }
+        if (col0 == 4 || col2 == 4)
+        {
+            current->stats[LLS] += value;
+        }
+        if (col0 == 5 || col2 == 5)
+        {
+            current->stats[RLS] += value;
         }
     }
     //lss
@@ -647,9 +660,10 @@ void analyze_skipgram(int row0, int col0, int row2, int col2, long unsigned int 
 //sfb, bsfb, lsb, hrb, frb, alt, sfb by finger
 void analyze_bigram(int row0, int col0, int row1, int col1, long unsigned int value)
 {
+    //if (value == 0) {return;}
     current->big_total += value;
     //sfb
-    if(same_finger(col0, col1) && !same_row(row0, row1))
+    if(same_finger(col0, col1) && !same_pos(row0, col0, row1, col1))
     {
         current->stats[SFB] += value;
         //bad sfb
@@ -667,12 +681,10 @@ void analyze_bigram(int row0, int col0, int row1, int col1, long unsigned int va
                 current->stats[LMB] += value;
                 break;
             case 4:
-                current->stats[LLB] += value;
             case 3:
                 current->stats[LIB] += value;
                 break;
             case 5:
-                current->stats[RLB] += value;
             case 6:
                 current->stats[RIB] += value;
                 break;
@@ -685,6 +697,14 @@ void analyze_bigram(int row0, int col0, int row1, int col1, long unsigned int va
             case 9:
                 current->stats[RPB] += value;
                 break;
+        }
+        if (col0 == 4 || col1 == 4)
+        {
+            current->stats[LLB] += value;
+        }
+        if (col0 == 5 || col1 == 5)
+        {
+            current->stats[RLB] += value;
         }
     }
     //lsb
@@ -700,6 +720,7 @@ void analyze_bigram(int row0, int col0, int row1, int col1, long unsigned int va
 //hand, row, and finger usage
 void analyze_monogram(int row, int col, long unsigned int value)
 {
+    if (value == 0) {return;}
     current->mon_total += value;
     //hand usage
     if (hand(col) == 'l') {current->stats[LHU] += value;}
@@ -1040,7 +1061,7 @@ void generate()
         printf("%d / %d\r", generation_quantity - i, generation_quantity);
         free(current);
         current = blank_layout(max);
-        for (int j = (i / (generation_quantity/30)) + 1; j > 0; j--)
+        for (int j = (i / (generation_quantity/50)) + 1; j > 0; j--)
         {
             r1 = rand() % 3;
             c1 = rand() % 10;
@@ -1051,7 +1072,7 @@ void generate()
                 r1 = rand() % 3;
                 c1 = rand() % 10;
             }
-            while( (r2 == r1 && c2 == c1) || weights->pins[r2][c2])
+            while(same_pos(r1, c1, r2, c2) || weights->pins[r2][c2])
             {
                 r2 = rand() % 3;
                 c2 = rand() % 10;
@@ -1062,7 +1083,7 @@ void generate()
         }
         analyze_layout();
         get_score();
-        if (current->score >  max->score)
+        if (current->score > max->score)
         {
             free(max);
             max = copy_layout(current);
