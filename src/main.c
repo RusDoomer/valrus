@@ -1085,15 +1085,6 @@ void generate()
 {
     printf("Generating layouts...\n");
     srand(time(NULL));
-/*
-    max = blank_layout(current);
-    free(current);
-    current = blank_layout(max);
-    shuffle();
-    analyze_layout();
-    get_score();
-    free(max);
-    */
     max = copy_layout(current);
     int r1, c1, r2, c2;
     for (int i = generation_quantity; i > 0; i--)
