@@ -1,3 +1,9 @@
+/* TODO:
+ * get rid of global variables
+ * prepare for multithreading
+ * test where multithreading is worthwhile
+ */
+
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
@@ -6,7 +12,6 @@
 
 #define ROW 3
 #define COL 10
-
 #define LEFT_HAND 4
 #define RIGHT_HAND 5
 
@@ -221,8 +226,9 @@ int same_hand(int col0, int col1)
 
 int adjacent_fingers(int col0, int col1)
 {
-    return (same_hand(col0, col1) && (finger(col0) - finger(col1) == 1
-        || finger(col0) - finger(col1) == -1)
+    return (same_hand(col0, col1)
+        && (finger(col0) - finger(col1) == 1
+            || finger(col0) - finger(col1) == -1)
         && (col0 - col1 == 1 || col0 - col1 == -1));
 }
 
@@ -896,26 +902,26 @@ void print_layout()
         else {printf(" | ");}
     }
     printf("Finger Usage: \n[");
-    for (enum patterns i = LPU; i < LPB; i++)
+    for (enum patterns i = LPU; i < RPU; i++)
     {
         printf("%05.2f, ", (double)current->stats[i]/total(i) * 100);
     }
-    printf("]\nFinger Bigrams: \n[");
-    for (enum patterns i = LPB; i < LPS; i++)
+    printf("%05.2f]\nFinger Bigrams: \n[", (double)current->stats[RPU]/total(RPU) * 100);
+    for (enum patterns i = LPB; i < RPB; i++)
     {
         printf("%05.2f, ", (double)current->stats[i]/total(i) * 100);
     }
-    printf("]\nFinger Skipgrams: \n[");
-    for (enum patterns i = LPS; i < LPT; i++)
+    printf("%05.2f]\nFinger Skipgrams: \n[", (double)current->stats[RPB]/total(RPB) * 100);
+    for (enum patterns i = LPS; i < RPS; i++)
     {
         printf("%05.2f, ", (double)current->stats[i]/total(i) * 100);
     }
-    printf("]\nFinger Trigrams: \n[");
-    for (enum patterns i = LPT; i < END; i++)
+    printf("%05.2f]\nFinger Trigrams: \n[", (double)current->stats[RPS]/total(RPS) * 100);
+    for (enum patterns i = LPT; i < RPT; i++)
     {
         printf("%05.2f, ", (double)current->stats[i]/total(i) * 100);
     }
-    printf("]\n");
+    printf("%05.2f]\n", (double)current->stats[RPT]/total(RPT) * 100);
 }
 
 void short_print()
@@ -938,11 +944,11 @@ void short_print()
         else {printf(" | ");}
     }
     printf("Finger Usage: \n[");
-    for (enum patterns i = LPU; i < LPB; i++)
+    for (enum patterns i = LPU; i < RPU; i++)
     {
         printf("%05.2f, ", (double)current->stats[i]/total(i) * 100);
     }
-    printf("]\n");
+    printf("%05.2f]\n", (double)current->stats[RPU]/total(RPU) * 100);
 }
 
 void print_rankings()
@@ -1012,6 +1018,32 @@ void rank_layouts()
     closedir(dir);
 }
 
+void swap (int r1, int c1, int r2, int c2)
+{
+    char temp = current->matrix[r1][c1];
+    current->matrix[r1][c1] = current->matrix[r2][c2];
+    current->matrix[r2][c2] = temp;
+}
+
+void shuffle()
+{
+    srand(time(NULL));
+    for (int i = ROW - 1; i > 0; i--)
+    {
+        for (int j = COL - 1; j > 0; j--)
+        {
+            int r1 = i;
+            int c1 = j;
+            int r2 = rand() % (i + 1);
+            int c2 = rand() % (j + 1);
+            if (r1 != r2 || c1 != c2)
+            {
+                swap(r1, c1, r2, c2);
+            }
+        }
+    }
+}
+
 struct keyboard_layout* copy_layout(struct keyboard_layout *src)
 {
     struct keyboard_layout *dest;
@@ -1052,16 +1084,24 @@ struct keyboard_layout* blank_layout(struct keyboard_layout *src)
 void generate()
 {
     printf("Generating layouts...\n");
-    max = copy_layout(current);
     srand(time(NULL));
+/*
+    max = blank_layout(current);
+    free(current);
+    current = blank_layout(max);
+    shuffle();
+    analyze_layout();
+    get_score();
+    free(max);
+    */
+    max = copy_layout(current);
     int r1, c1, r2, c2;
-    char temp;
     for (int i = generation_quantity; i > 0; i--)
     {
         printf("%d / %d\r", generation_quantity - i, generation_quantity);
         free(current);
         current = blank_layout(max);
-        for (int j = (i / (generation_quantity/50)) + 1; j > 0; j--)
+        for (int j = (i / (generation_quantity/30)) + 1; j > 0; j--)
         {
             r1 = rand() % 3;
             c1 = rand() % 10;
@@ -1077,9 +1117,7 @@ void generate()
                 r2 = rand() % 3;
                 c2 = rand() % 10;
             }
-            temp = current->matrix[r1][c1];
-            current->matrix[r1][c1] = current->matrix[r2][c2];
-            current->matrix[r2][c2] = temp;
+            swap(r1, c1, r2, c2);
         }
         analyze_layout();
         get_score();
@@ -1143,7 +1181,7 @@ int main(int argc, char **argv)
             		{
             			generation_quantity = atoi(argv[i+1]);
             		}
-                    if (generation_quantity == 0) {error_out("Invalid generation quantity.");}
+                    if (generation_quantity < 50) {error_out("Invalid generation quantity.");}
                     break;
                 case 'q':
                     output = 'q';
