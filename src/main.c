@@ -239,6 +239,13 @@ int distance(int row0, int row1)
     else {return -dist;}
 }
 
+int not_stretch(int col0, int col1, int col2)
+{
+	return col0 != 4 && col0 != 5
+		&& col1 != 4 && col1 != 5
+		&& col2 != 4 && col2 != 5;
+}
+
 int is_lsb(int col0, int col1)
 {
     return ((col0 == 2 && col1 == 4) || (col0 == 4 && col1 == 2)
@@ -264,6 +271,17 @@ int is_one_in(int col0, int col1, int col2)
         || (hand(col0) == 'r' && col0 > col1);
 }
 
+int is_same_row_one(int row0, int row1, int row2, int col0, int col1, int col2)
+{
+    return same_row(row0, row1) && same_row(row1, row2)
+        && not_stretch(col0, col1, col2);
+}
+
+int is_adjacent_finger_one(int col0, int col1, int col2)
+{
+    return adjacent_fingers(col0, col1) && adjacent_fingers(col1, col2);
+}
+
 int is_bad_red(int col0, int col1, int col2)
 {
     return ((col0 == 0 || col0 == 1 || col0 == 2 || col0 == 7 || col0 == 8 || col0 == 9)
@@ -287,8 +305,11 @@ int is_roll_in(int col0, int col1, int col2)
 
 int is_same_row_roll(int col0, int col1, int col2, int row0, int row1, int row2)
 {
-    return (same_hand(col0, col1) && same_row(row0, row1))
-        || (same_hand(col1, col2) && same_row(row1, row2));
+    return col0 != 4 && col0 != 5
+    	&& col1 != 4 && col1 != 5
+    	&& col2 != 4 && col2 != 5
+   		&& ((same_hand(col0, col1) && same_row(row0, row1))
+        || (same_hand(col1, col2) && same_row(row1, row2)));
 }
 
 int is_adjacent_finger_roll(int col0, int col1, int col2)
@@ -507,45 +528,24 @@ void analyze_trigram(int row0, int col0, int row1, int col1, int row2, int col2,
         //one
         if (is_one(col0, col1, col2))
         {
-            current->stats[ONE] += value;
-            if (is_one_in(col0, col1, col2))
-            {
-                current->stats[ONE_IN] += value;
-                if (same_row(row0, row1) && same_row(row1, row2))
-                {
-                    current->stats[SR_ONE] += value;
-                    current->stats[SR_ONE_IN] += value;
-                }
-                if (adjacent_fingers(col0, col1) && adjacent_fingers(col1, col2))
-                {
-                    current->stats[AF_ONE] += value;
-                    current->stats[AF_ONE_IN] += value;
-                    if (same_row(row0, row1) && same_row(row1, row2))
-                    {
-                        current->stats[SRAF_ONE] += value;
-                        current->stats[SRAF_ONE_IN] += value;
-                    }
-                }
-            }
-            else
-            {
-                current->stats[ONE_OUT] += value;
-                if (same_row(row0, row1) && same_row(row1, row2))
-                {
-                    current->stats[SR_ONE] += value;
-                    current->stats[SR_ONE_OUT] += value;
-                }
-                if (adjacent_fingers(col0, col1) && adjacent_fingers(col1, col2))
-                {
-                    current->stats[AF_ONE] += value;
-                    current->stats[AF_ONE_OUT] += value;
-                    if (same_row(row0, row1) && same_row(row1, row2))
-                    {
-                        current->stats[SRAF_ONE] += value;
-                        current->stats[SRAF_ONE_OUT] += value;
-                    }
-                }
-            }
+            int one_in = is_one_in(col0, col1, col2);
+            int one_sr = is_same_row_one(row0, row1, row2, col0, col1, col2);
+            int one_af = is_adjacent_finger_one(col0, col1, col2);
+            current->stats[ONE]     += value;
+            current->stats[ONE_IN]  += value * one_in;
+            current->stats[ONE_OUT] += value * !one_in;
+
+            current->stats[SR_ONE]     += value * one_sr;
+            current->stats[SR_ONE_IN]  += value * one_sr * one_in;
+            current->stats[SR_ONE_OUT] += value * one_sr * !one_in;
+
+            current->stats[AF_ONE]     += value * one_af;
+            current->stats[AF_ONE_IN]  += value * one_af * one_in;
+            current->stats[AF_ONE_OUT] += value * one_af * !one_in;
+
+            current->stats[SRAF_ONE]     += value * one_sr * one_af;
+            current->stats[SRAF_ONE_IN]  += value * one_sr * one_af * one_in;
+            current->stats[SRAF_ONE_OUT] += value * one_sr * one_af * !one_in;
         }
         //redirects
         else
@@ -561,45 +561,25 @@ void analyze_trigram(int row0, int col0, int row1, int col1, int row2, int col2,
     //rolls
     if (is_roll(col0, col1, col2))
     {
-        current->stats[ROL] += value;
-        if(is_roll_in(col0, col1, col2))
-        {
-            current->stats[ROL_IN] += value;
-            if (is_same_row_roll(col0, col1, col2, row0, row1, row2))
-            {
-                current->stats[SR_ROL] += value;
-                current->stats[SR_ROL_IN] += value;
-            }
-            if (is_adjacent_finger_roll(col0, col1, col2))
-            {
-                current->stats[AF_ROL] += value;
-                current->stats[AF_ROL_IN] += value;
-                if (is_same_row_roll(col0, col1, col2, row0, row1, row2))
-                {
-                    current->stats[SRAF_ROL] += value;
-                    current->stats[SRAF_ROL_IN] += value;
-                }
-            }
-        }
-        else
-        {
-            current->stats[ROL_OUT] += value;
-            if (is_same_row_roll(col0, col1, col2, row0, row1, row2))
-            {
-                current->stats[SR_ROL] += value;
-                current->stats[SR_ROL_OUT] += value;
-            }
-            if (is_adjacent_finger_roll(col0, col1, col2))
-            {
-                current->stats[AF_ROL] += value;
-                current->stats[AF_ROL_OUT] += value;
-                if (is_same_row_roll(col0, col1, col2, row0, row1, row2))
-                {
-                    current->stats[SRAF_ROL] += value;
-                    current->stats[SRAF_ROL_OUT] += value;
-                }
-            }
-        }
+        int roll_in = is_roll_in(col0, col1, col2);
+        int roll_sr = is_same_row_roll(col0, col1, col2, row0, row1, row2);
+        int roll_af = is_adjacent_finger_roll(col0, col1, col2);
+
+        current->stats[ROL]     += value;
+        current->stats[ROL_IN]  += value * roll_in;
+        current->stats[ROL_OUT] += value * !roll_in;
+
+        current->stats[SR_ROL]     += value * roll_sr;
+        current->stats[SR_ROL_IN]  += value * roll_sr * roll_in;
+        current->stats[SR_ROL_OUT] += value * roll_sr * !roll_in;
+
+        current->stats[AF_ROL]     += value * roll_af;
+        current->stats[AF_ROL_IN]  += value * roll_af * roll_in;
+        current->stats[AF_ROL_OUT] += value * roll_af * !roll_in;
+
+        current->stats[SRAF_ROL]     += value * roll_sr * roll_af;
+        current->stats[SRAF_ROL_IN]  += value * roll_sr * roll_af * roll_in;
+        current->stats[SRAF_ROL_OUT] += value * roll_sr * roll_af * !roll_in;
     }
 }
 
