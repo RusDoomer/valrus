@@ -323,7 +323,7 @@ void read_corpus(char *name)
     //define variables
     FILE *data;
     char *ngram, *raw;
-    char a, b, c;
+    int a, b, c;
     //get full filename for ngram data of layout
     ngram = (char*)malloc(strlen("./corpora/ngram/") + strlen(name) + 1);
     strcpy(ngram, "./corpora/ngram/");
