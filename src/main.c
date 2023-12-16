@@ -268,7 +268,7 @@ int is_one(int col0, int col1, int col2)
 int is_one_in(int col0, int col1, int col2)
 {
     return (hand(col0) == 'l' && col0 < col1)
-        || (hand(col0) == 'r' && col0 > col1);
+        || (hand(col0) == 'r' && col1 > col2);
 }
 
 int is_same_row_one(int row0, int row1, int row2, int col0, int col1, int col2)
