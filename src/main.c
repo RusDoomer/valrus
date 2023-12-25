@@ -55,7 +55,7 @@ enum patterns
     END
 };
 
-// ngram pattern names
+// ngram pattern names as strings
 char names[END][30] =
 {
     "SFB", "SFS", "SFT", "BAD", "BAD", "BAD",
@@ -108,7 +108,7 @@ struct ranking
 struct ranking *head = NULL;
 struct ranking *ptr = NULL;
 
-//the layout, includes keys, score, totals for each type of ngram, and the stats
+//the layout, includes keys, score, totals for each type of ngram, and stats
 struct keyboard_layout
 {
     char matrix[ROW][COL];
@@ -143,6 +143,7 @@ void error_out(char *message)
     printf("Error: %s\n", message);
     printf("Freeing, and exiting.\n");
 
+    // free rank linked list if it was allocated to heap
     while (head != NULL)
     {
         ptr = head;
@@ -308,8 +309,7 @@ int is_lsb(int row0, int col0, int row1, int col1)
 
 /*
  * returns whether the key pair at row0, col0 and row1, col1 fit the adjacent
- * finger stat
- * this is defined as being on adjacent fingers, and not being an LSB
+ * finger stat, defined as being on adjacent fingers, and not being an LSB
  */
 int adjacent_finger_stat(int row0, int col0, int row1, int col1)
 {
@@ -322,7 +322,7 @@ int adjacent_finger_stat(int row0, int col0, int row1, int col1)
  * a russor is defined by two keys on different fingers on the same hand
  * with one key being on the ring or middle finger, when this is used later you
  * will need to define whether it is a full or half russor by the distance
- * between the keys
+ * between the keys, 2 for full, 1 for half
  */
 int is_russor(int row0, int col0, int row1, int col1)
 {
@@ -401,8 +401,8 @@ int is_bad_red(int row0, int col0, int row1, int col1, int row2, int col2)
 
 /*
  * returns whether the keys at row0, col0,  row1, col1,  row2, col2 form a roll
- * a roll being a trigram where two keys are on different fingers on one hand
- * and the third key is on the other hand
+ * a roll being a trigram where two consecutive keys are on different fingers on
+ * one hand and the third key is on the other hand
  */
 int is_roll(int row0, int col0, int row1, int col1, int row2, int col2)
 {
@@ -447,7 +447,7 @@ int is_adjacent_finger_roll(int row0, int col0, int row1, int col1, int row2, in
 
 /*
  * takes corpus and fills ngram arrays with data from the corpus
- * name is the name of the corpus file to be read, either from ./ngram or ./raw
+ * name is the file to be read, either from ./ngram or ./raw
  */
 void read_corpus(char *name)
 {
@@ -495,6 +495,7 @@ void read_corpus(char *name)
         }
         else {error_out("Corpus not long enough.");}
 
+        // read corpus file character by character, filling ngram arrays
         while ((c = fgetc(data)) != EOF)
         {
             c = convert_char(c);
@@ -525,10 +526,10 @@ void read_corpus(char *name)
         }
     }
 
-    //use ngram data if it exists
+    // use ngram data if it exists
     else
     {
-        //read corpus from ngram file
+        // read corpus from ngram file
         while ((c = fgetc(data)) != EOF)
         {
             switch(c)
@@ -565,7 +566,7 @@ void read_corpus(char *name)
  * reads layout from file into the matrix of a layout struct
  * name is the name of the layout file in ./layouts
  * **lt is a pointer to an empty pointer for a layout
- * rus note: should be look something like read_layout(hiyou, &lt)
+ * rus note: should be look something like read_layout(hiyou, &lt);
  */
 void read_layout(char *name, struct keyboard_layout **lt)
 {
@@ -603,7 +604,7 @@ void read_layout(char *name, struct keyboard_layout **lt)
 
 /*
  * analyzes monogram stats - stats for a single key presses
- * row, col is the positions the key
+ * row, col is the position of the key
  * value is the number of times this monogram appears in the corpus
  * lt is the layout that is being analyzed
  * the stats here are :
@@ -661,12 +662,12 @@ void analyze_monogram(int row, int col, int value, struct keyboard_layout *lt)
 }
 
 /*
- * analyzes skipgram stats - stats for sequences of 2 consecutive key presses
+ * analyzes bigram stats - stats for sequences of 2 consecutive key presses
  * row*, col* are the positions of each key
  * value is the number of times this bigram appears in the corpus
  * lt is the layout that is being analyzed
  * the stats here are :
- * Same Finger Birams, Lateral Stretch Bigrams, and Russor Bigrams
+ * Same Finger Bigrams, Lateral Stretch Bigrams, and Russor Bigrams
  */
 void analyze_bigram(int row0, int col0, int row1, int col1, int value, struct keyboard_layout *lt)
 {
@@ -682,7 +683,7 @@ void analyze_bigram(int row0, int col0, int row1, int col1, int value, struct ke
     {
         lt->stats[SFB] += value;
 
-        // bad same finger skipgram, where the distance between the keys is 2
+        // bad same finger bigrams, where the distance between the keys is 2
         if (distance(row0, col0, row1, col1) == 2) {lt->stats[BAD_SFB] += value;}
 
         // same finger bigrams by finger
@@ -734,8 +735,8 @@ void analyze_bigram(int row0, int col0, int row1, int col1, int value, struct ke
     if (is_lsb(row0, col0, row1, col1)) {lt->stats[LSB] += value;}
 
     /*
-     * russors, where two keys on different fingers on the same hand with one
-     * key being on ring or middle finger
+     * russors, where two keys are on different fingers on the same hand with
+     * one key being on ring or middle finger
      */
     if (is_russor(row0, col0, row1, col1))
     {
@@ -899,13 +900,13 @@ void analyze_trigram(int row0, int col0, int row1, int col1, int row2, int col2,
         }
     }
 
-    // Lateral Stretch Trigrams, where both bigrams within the trigram is an LSB
+    // Lateral Stretch Trigrams, where both bigrams within the trigram are LSBs
     if (is_lsb(row0, col0, row1, col1) && is_lsb(row1, col1, row2, col2))
     {
         lt->stats[LST] += value;
     }
 
-    // russor trigrams, where both bigrams within the trigram is a russor
+    // russor trigrams, where both bigrams within the trigram are russors
     if (is_russor(row0, col0, row1, col1) && is_russor(row1, col1, row2, col2))
     {
         // half russors if the distance is 1 both times
@@ -970,7 +971,7 @@ void analyze_trigram(int row0, int col0, int row1, int col1, int row2, int col2,
         }
 
         /*
-         * a redirect is when three keys arer on the same hand, but different
+         * a redirect is when three keys are on the same hand, but different
          * fingers, and the keys change directions and do not all "move"
          * towards or away from the index
          */
@@ -988,7 +989,7 @@ void analyze_trigram(int row0, int col0, int row1, int col1, int row2, int col2,
 
     /*
      * Best stat!
-     * rolls are when two keys in a row are on different fingers on the
+     * rolls are when two consecutive keys are on different fingers on the
      * same hand, and the third key is on the other hand
      */
     if (is_roll(row0, col0, row1, col1, row2, col2))
@@ -1068,7 +1069,7 @@ void analyze_layout(struct keyboard_layout *lt)
  * reads weight from file into the stat_weights struct
  * name is the name of the weight file in ./weights
  * **wt is a pointer to an empty pointer for a weight struct
- * rus note: should be look something like read_weights(default, &wt)
+ * rus note: should be look something like read_weights(default, &wt);
  */
 void read_weights(char *name, struct stat_weights **wt)
 {
@@ -1103,7 +1104,7 @@ void read_weights(char *name, struct stat_weights **wt)
         }
     }
 
-    // read layout
+    // read weights
     for(enum patterns i = SFB; i < END; i++)
     {
         fscanf(data, " %*[^0-9.-]%lf", &(*wt)->multiplier[i]);
@@ -1173,8 +1174,7 @@ int print_new_line(enum patterns stat)
 void print_layout(struct keyboard_layout *lt)
 {
     // print score
-    printf("Score : %f\n", lt->score);
-    puts("");
+    printf("Score : %f\n\n", lt->score);
 
     // print key matrix
     for (int i = 0; i < ROW; i++)
@@ -1438,7 +1438,7 @@ void blank_layout(struct keyboard_layout *src, struct keyboard_layout **dest)
  * shuffling the keys and checking if the score has improved, if it has
  * lt is replaced with the new best layout, do this generation_quantity numbers
  * of times
- * the seed is only there so that when used multithreaded all of the threads
+ * the seed is only there so that when using multithreading all of the threads
  * don't end up making the same swaps
  */
 void generate(int generation_quantity, struct keyboard_layout **lt, struct stat_weights *wt, int seed)
@@ -1799,7 +1799,7 @@ void multi_mode(char *corpus, char *layout, char *weight, int generation_quantit
         }
 
         // praise best thread
-        printf("Thread %d was best\n", best_thread);
+        printf("Thread %d was best: %lf\n", best_thread, best_layout->score);
     }
 
     // print the best generated layout
