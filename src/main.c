@@ -4,6 +4,7 @@
 #include <dirent.h>
 #include <time.h>
 #include <pthread.h>
+#include <unistd.h>
 
 #define UNUSED(x) (void)(x)
 
@@ -107,6 +108,15 @@ struct stat_weights
 {
     int pins[3][10];
     double multiplier[END];
+};
+
+struct ThreadData
+{
+    int thread_id;
+    int generation_quantity;
+    struct keyboard_layout *lt;
+    struct stat_weights *wt;
+    double score;
 };
 
 void error_out(char *message)
@@ -1080,10 +1090,11 @@ void blank_layout(struct keyboard_layout *src, struct keyboard_layout **dest)
     }
 }
 
-void generate(int generation_quantity, struct keyboard_layout **lt, struct stat_weights *wt)
+void generate(int generation_quantity, struct keyboard_layout **lt, struct stat_weights *wt, int seed)
 {
-    printf("Generating layouts...\n");
+    if (seed == 0) {printf("Generating layouts...\n");}
     srand(time(NULL));
+    for (int i = 0; i < seed; i++) {rand();}
     struct keyboard_layout *max = NULL;
     copy_layout(*lt, &max);
     int row0, col0, row1, col1;
@@ -1120,6 +1131,123 @@ void generate(int generation_quantity, struct keyboard_layout **lt, struct stat_
     }
     copy_layout(max, &(*lt));
     free(max);
+}
+
+void *thread_gen(void* arg)
+{
+    struct ThreadData* data = (struct ThreadData*)arg;
+    //do the generation stuff
+    generate(data->generation_quantity, &(data->lt), data->wt, data->thread_id);
+    data->score = data->lt->score;
+    pthread_exit(NULL);
+}
+
+void analyze_mode(char *corpus, char *layout, char *weight, char output)
+{
+    struct keyboard_layout *lt = NULL;
+    struct stat_weights *wt = NULL;
+    read_corpus(corpus);
+    read_layout(layout, &lt);
+    analyze_layout(lt);
+    read_weights(weight, &wt);
+    get_score(lt, wt);
+    if (output == 'l') {print_layout(lt);}
+    else {short_print(lt);}
+    free(lt);
+    free(wt);
+}
+
+void rank_mode(char *corpus, char* weight)
+{
+    struct stat_weights *wt = NULL;
+    read_corpus(corpus);
+    read_weights(weight, &wt);
+    rank_layouts(wt);
+    free(wt);
+}
+
+void generate_mode(char *corpus, char *layout, char *weight, int generation_quantity, int improve, char output)
+{
+    struct keyboard_layout *lt = NULL;
+    struct stat_weights *wt = NULL;
+    read_corpus(corpus);
+    read_layout(layout, &lt);
+    if (!improve)
+    {
+        for (int i = 0; i < 10; i++)
+        {
+            shuffle(lt);
+        }
+    }
+    analyze_layout(lt);
+    read_weights(weight, &wt);
+    get_score(lt, wt);
+    generate(generation_quantity, &lt, wt, 0);
+    if (output == 'l') {print_layout(lt);}
+    else {short_print(lt);}
+    free(lt);
+    free(wt);
+}
+
+void multi_mode(char *corpus, char *layout, char *weight, int generation_quantity, int improve, char output)
+{
+    struct keyboard_layout *lt = NULL;
+    struct stat_weights *wt = NULL;
+    read_corpus(corpus);
+    read_layout(layout, &lt);
+    if (!improve)
+    {
+        for (int i = 0; i < 10; i++)
+        {
+            shuffle(lt);
+        }
+    }
+    analyze_layout(lt);
+    read_weights(weight, &wt);
+    get_score(lt, wt);
+    //hmmm
+    printf("Multithreaded mode\n");
+    int numThread = sysconf(_SC_NPROCESSORS_CONF);
+    pthread_t threads[numThread];
+    printf("Identified %d cores: using %d threads\n", numThread, numThread);
+    int genThread = generation_quantity / numThread;
+    printf("Total generation quantity was %d -> %d per thread\n", generation_quantity, genThread);
+    struct ThreadData data[numThread];
+    for (int i = 0; i < numThread; i++)
+    {
+        data[i].thread_id = i;
+        data[i].generation_quantity = genThread;
+        data[i].lt = NULL;
+        copy_layout(lt, &(data[i].lt));
+        data[i].wt = wt;
+        data[i].score = lt->score;
+
+        pthread_create(&threads[i], NULL, thread_gen, (void*)&data[i]);
+    }
+    for (int i = 0; i < numThread; i++)
+    {
+        pthread_join(threads[i], NULL);
+    }
+    struct keyboard_layout *best_layout = NULL;
+    int best_thread = 0;
+    for (int i = 1; i < numThread; i++)
+    {
+        if (data[i].score > data[best_thread].score)
+        {
+            best_thread = i;
+        }
+    }
+    copy_layout(data[best_thread].lt, &best_layout);
+    for (int i = 0; i < numThread; i++)
+    {
+        free(data[i].lt);
+    }
+    printf("Thread %d was best\n", best_thread);
+    if (output == 'l') {print_layout(best_layout);}
+    else {short_print(best_layout);}
+    free(best_layout);
+    free(lt);
+    free(wt);
 }
 
 int main(int argc, char **argv)
@@ -1188,51 +1316,35 @@ int main(int argc, char **argv)
                 case 'e':
                     error_out("Test Error");
                     break;
+                case 'm':
+                    mode = 'm';
+                    if (i + 1 < argc && argv[i+1][0] != '-')
+            		{
+            			generation_quantity = atoi(argv[i+1]);
+            		}
+                    if (generation_quantity < 50) {error_out("Invalid generation quantity.");}
+                    break;
             }
         }
     }
 
     //actually start doing stuff
-    struct keyboard_layout *lt = NULL;
-    struct stat_weights *wt = NULL;
     switch (mode)
     {
         case 'a':
-            read_corpus(corpus);
-            read_layout(layout, &lt);
-            analyze_layout(lt);
-            read_weights(weight, &wt);
-            get_score(lt, wt);
-            if (output == 'l') {print_layout(lt);}
-            else {short_print(lt);}
+            analyze_mode(corpus, layout, weight, output);
             break;
         case 'r':
-            read_corpus(corpus);
-            read_weights(weight, &wt);
-            rank_layouts(wt);
+            rank_mode(corpus, weight);
             break;
         case 'g':
-            //if improve then keep as is, if not then shuffle
-            read_corpus(corpus);
-            read_layout(layout, &lt);
-            if (!improve)
-            {
-                for (int i = 0; i < 10; i++)
-                {
-                    shuffle(lt);
-                }
-            }
-            analyze_layout(lt);
-            read_weights(weight, &wt);
-            get_score(lt, wt);
-            generate(generation_quantity, &lt, wt);
-            if (output == 'l') {print_layout(lt);}
-            else {short_print(lt);}
+            generate_mode(corpus, layout, weight, generation_quantity, improve, output);
+            break;
+        case 'm':
+            multi_mode(corpus, layout, weight, generation_quantity, improve, output);
             break;
     }
 
-    if(lt != NULL) {free(lt);}
-    if(wt != NULL) {free(wt);}
     if(corpus_malloc){free(corpus);}
     if(layout_malloc){free(layout);}
     if(weights_malloc){free(weight);}
