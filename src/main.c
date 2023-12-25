@@ -1181,6 +1181,16 @@ void generate_mode(char *corpus, char *layout, char *weight, int generation_quan
     }
     analyze_layout(lt);
     read_weights(weight, &wt);
+    if (!improve)
+    {
+        for (int i = 0; i < ROW; i++)
+        {
+            for (int j = 0; j < COL; j++)
+            {
+                wt->pins[i][j] = 0;
+            }
+        }
+    }
     get_score(lt, wt);
     generate(generation_quantity, &lt, wt, 0);
     if (output == 'l') {print_layout(lt);}
@@ -1204,6 +1214,16 @@ void multi_mode(char *corpus, char *layout, char *weight, int generation_quantit
     }
     analyze_layout(lt);
     read_weights(weight, &wt);
+    if (!improve)
+    {
+        for (int i = 0; i < ROW; i++)
+        {
+            for (int j = 0; j < COL; j++)
+            {
+                wt->pins[i][j] = 0;
+            }
+        }
+    }
     get_score(lt, wt);
     //hmmm
     printf("Multithreaded mode\n");
@@ -1360,7 +1380,7 @@ int main(int argc, char **argv)
             		{
             			generation_quantity = atoi(argv[i+1]);
             		}
-                    if (generation_quantity < 50) {error_out("Invalid generation quantity.");}
+                    if (generation_quantity < 50*sysconf(_SC_NPROCESSORS_CONF)) {error_out("Invalid generation quantity.");}
                     break;
             }
         }
@@ -1388,3 +1408,4 @@ int main(int argc, char **argv)
     if(weights_malloc){free(weight);}
 	return EXIT_SUCCESS;
 }
+
