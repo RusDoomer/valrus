@@ -1209,7 +1209,7 @@ void multi_mode(char *corpus, char *layout, char *weight, int generation_quantit
     printf("Multithreaded mode\n");
     int numThread = sysconf(_SC_NPROCESSORS_CONF);
     pthread_t threads[numThread];
-    printf("Identified %d cores: using %d threads\n", numThread, numThread);
+    printf("Identified %d threads\n", numThread);
     int genThread = generation_quantity / numThread;
     printf("Total generation quantity was %d -> %d per thread\n", generation_quantity, genThread);
     struct ThreadData data[numThread];
@@ -1242,9 +1242,47 @@ void multi_mode(char *corpus, char *layout, char *weight, int generation_quantit
     {
         free(data[i].lt);
     }
-    printf("Thread %d was best\n", best_thread);
-    if (output == 'l') {print_layout(best_layout);}
-    else {short_print(best_layout);}
+    printf("Thread %d was best: %lf\n", best_thread, best_layout->score);
+
+    if (generation_quantity > 1000)
+    {
+        printf("Running second pass:\n");
+        genThread /= 10;
+        printf("Total generation quantity was %d -> %d per thread\n", generation_quantity, genThread);
+        copy_layout(best_layout, &lt);
+        for (int i = 0; i < numThread; i++)
+        {
+            data[i].thread_id = i;
+            data[i].generation_quantity = genThread;
+            data[i].lt = NULL;
+            copy_layout(lt, &(data[i].lt));
+            data[i].wt = wt;
+            data[i].score = lt->score;
+
+            pthread_create(&threads[i], NULL, thread_gen, (void*)&data[i]);
+        }
+        for (int i = 0; i < numThread; i++)
+        {
+            pthread_join(threads[i], NULL);
+        }
+        int best_thread = 0;
+        for (int i = 1; i < numThread; i++)
+        {
+            if (data[i].score > data[best_thread].score)
+            {
+                best_thread = i;
+            }
+        }
+        copy_layout(data[best_thread].lt, &best_layout);
+        for (int i = 0; i < numThread; i++)
+        {
+            free(data[i].lt);
+        }
+        printf("Thread %d was best\n", best_thread);
+        if (output == 'l') {print_layout(best_layout);}
+        else {short_print(best_layout);}
+    }
+
     free(best_layout);
     free(lt);
     free(wt);
