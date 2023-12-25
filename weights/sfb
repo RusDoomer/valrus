@@ -1,0 +1,106 @@
+. . . . .  . . . . .
+. . . . .  . . . . .
+. . . . .  . . . . .
+sfb : -1
+sfs : 0
+sft : 0
+bad sfb : 0
+bad sfs : 0
+bad sft : 0
+lsb : 0
+lss : 0
+lst : 0
+hrb : 0
+hrs : 0
+hrt : 0
+frb : 0
+frs : 0
+frt : 0
+alt : 0
+red : 0
+bad red : 0
+one : 0
+one in  : 0
+one out : 0
+same row one : 0
+same row one in  : 0
+same row one out : 0
+adjacent finger one : 0
+adjacent finger one in  : 0
+adjacent finger one out : 0
+same row adjacent finger one : 0
+same row adjacent finger one in  : 0
+same row adjacent finger one out : 0
+roll : 0
+roll in  : 0
+roll out : 0
+same row roll : 0
+same row roll in  : 0
+same row roll out : 0
+adjacent finger roll : 0
+adjacent finger roll in  : 0
+adjacent finger roll out : 0
+same row adjacent finger roll : 0
+same row adjacent finger roll in  : 0
+same row adjacent finger roll out : 0
+
+hand balance : 0
+Usage
+LH : 0
+RH : 0
+
+TR : 0
+HR : 0
+BR : 0
+
+LP : 0
+LR : 0
+LM : 0
+LI : 0
+LS : 0
+
+RS : 0
+RI : 0
+RM : 0
+RR : 0
+RP : 0
+
+Bigrams
+LP : 0
+LR : 0
+LM : 0
+LI : 0
+LS : 0
+
+RS : 0
+RI : 0
+RM : 0
+RR : 0
+RP : 0
+
+Skipgrams
+LP : 0
+LR : 0
+LM : 0
+LI : 0
+LS : 0
+
+RS : 0
+RI : 0
+RM : 0
+RR : 0
+RP : 0
+
+Trigrams
+LP : 0
+LR : 0
+LM : 0
+LI : 0
+LS : 0
+
+RS : 0
+RI : 0
+RM : 0
+RR : 0
+RP : 0
+
