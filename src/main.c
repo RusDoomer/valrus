@@ -1288,7 +1288,7 @@ void rank_layouts(struct stat_weights *wt)
     }
 
     // create temporary keyboard struct for finding each layout's score
-    struct keyboard_layout *lt;
+    struct keyboard_layout *lt = NULL;
 
     // for each layout in the directory
     while ((entry = readdir(dir)) != NULL)
