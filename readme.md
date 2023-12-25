@@ -13,7 +13,7 @@ universal arguments: work for all modes
 - `-q` - enables quiet mode when used
 
 arguments for generate and multithreaded modes
-- `-g` - number of layouts to test when generating, must be greater than 50 per thread
+- a number after `-g` or `-m` - number of layouts to test when generating, must be greater than 50 per thread
 - `-i` - enables improve mode, uses the layout selected by `-l` and improves upon it, keeping keys pinned in the weight file selected by `-w` stationary
 
 
