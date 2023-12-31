@@ -840,7 +840,7 @@ void analyze_skipgram(int row0, int col0, int row2, int col2, int value, struct 
 void analyze_trigram(int row0, int col0, int row1, int col1, int row2, int col2,  int value, struct keyboard_layout *lt)
 {
     // throw away never seen trigrams
-    if (value <= 0) {return;}
+    if (value <= 10) {return;}
     lt->tri_total += value;
 
     /*
@@ -1458,7 +1458,7 @@ void generate(int generation_quantity, struct keyboard_layout **lt, struct stat_
     //shuffle the keys generation_quantity numbers of times
     for (int i = generation_quantity; i > 0; i--)
     {
-        printf("%d / %d\r", generation_quantity - i, generation_quantity);
+        if (i%100 == 0) {printf("%d / %d\r", generation_quantity - i, generation_quantity);}
 
         // clear old stats
         blank_layout(max, &(*lt));
@@ -1638,7 +1638,7 @@ void generate_mode(char *corpus, char *layout, char *weight, int generation_quan
  * the generation quantity is split among the threads, and if it is high enough
  * a second pass is done to improve the best layouts the threads create
  */
-void multi_mode(char *corpus, char *layout, char *weight, int generation_quantity, int improve, char output)
+void multi_mode(char *corpus, char *layout, char *weight, int threadCount, int generation_quantity, int improve, char output)
 {
     // inititalize layout and weights
     struct keyboard_layout *lt = NULL;
@@ -1683,9 +1683,9 @@ void multi_mode(char *corpus, char *layout, char *weight, int generation_quantit
     printf("Multithreaded mode\n");
 
     // sets number of threads to the number of "processors" in the system
-    int numThread = sysconf(_SC_NPROCESSORS_CONF);
+    int numThread = threadCount;
     pthread_t threads[numThread];
-    printf("Identified %d threads\n", numThread);
+    printf("Identified %ld processors, running %d threads\n", sysconf(_SC_NPROCESSORS_CONF), numThread);
 
     // splits up generation quantity among threads
     int genThread = generation_quantity / numThread;
@@ -1824,6 +1824,7 @@ int main(int argc, char **argv)
     int generation_quantity = 100;
     char output = 'l';
     int improve = 0;
+    int threadCount = sysconf(_SC_NPROCESSORS_CONF) * 4;
 
     // read arguments
     for (int i = 1; i < argc; i++)
@@ -1888,6 +1889,15 @@ int main(int argc, char **argv)
                     if (generation_quantity < 50*sysconf(_SC_NPROCESSORS_CONF)) {error_out("Invalid generation quantity.");}
                     break;
 
+                // thread quantity
+                case 't':
+                    if (mode == 'g') {error_out("Running single threaded.");}
+                    if (i + 1 < argc && argv[i+1][0] != '-')
+            		{
+            			threadCount = atoi(argv[i+1]);
+            		}
+                    if (generation_quantity < 1) {error_out("Invalid threads.");}
+
                 // quite output
                 case 'q':
                     output = 'q';
@@ -1925,7 +1935,7 @@ int main(int argc, char **argv)
             generate_mode(corpus, layout, weight, generation_quantity, improve, output);
             break;
         case 'm':
-            multi_mode(corpus, layout, weight, generation_quantity, improve, output);
+            multi_mode(corpus, layout, weight, threadCount, generation_quantity, improve, output);
             break;
     }
 
