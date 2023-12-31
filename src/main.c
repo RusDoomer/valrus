@@ -1897,6 +1897,7 @@ int main(int argc, char **argv)
             			threadCount = atoi(argv[i+1]);
             		}
                     if (generation_quantity < 1) {error_out("Invalid threads.");}
+		    break;
 
                 // quite output
                 case 'q':
