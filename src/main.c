@@ -137,6 +137,12 @@ struct ThreadData
     double score;
 };
 
+// show cursor for atexit()
+void show_cursor()
+{
+    printf("\033[?25h");
+}
+
 // in case something goes wrong, displays message and frees the rank linked list
 void error_out(char *message)
 {
@@ -1363,20 +1369,16 @@ void swap (int row0, int col0, int row1, int col1, struct keyboard_layout *lt)
 // randomly shuffle the layout lt
 void shuffle(struct keyboard_layout *lt)
 {
-    srand(time(NULL));
-    for (int i = ROW - 1; i > 0; i--)
+    for (int i = ROW * COL - 1; i > 0; i--)
     {
-        for (int j = COL - 1; j > 0; j--)
-        {
-            int row0 = i;
-            int col0 = j;
-            int row1 = rand() % (i + 1);
-            int col1 = rand() % (j + 1);
-            if (row0 != row1 || col0 != col1)
-            {
-                swap(row0, col0, row1, col1, lt);
-            }
-        }
+        int j = rand() % (i + 1);
+
+        int row0 = i / COL;
+        int col0 = i % COL;
+        int row1 = j / COL;
+        int col1 = j % COL;
+
+        swap(row0, col0, row1, col1, lt);
     }
 }
 
@@ -1447,7 +1449,6 @@ void generate(int generation_quantity, struct keyboard_layout **lt, struct stat_
     if (seed == 0) {printf("Generating layouts...\n");}
 
     // get random numbers
-    srand(time(NULL));
     for (int i = 0; i < seed; i++) {rand();}
 
     // set current layout to the max score
@@ -1455,10 +1456,18 @@ void generate(int generation_quantity, struct keyboard_layout **lt, struct stat_
     copy_layout(*lt, &max);
     int row0, col0, row1, col1;
 
+    //get the right print width
+    int width = 0;
+    int n = generation_quantity;
+    while (n > 0)
+    {
+        width++;
+        n /= 10;
+    }
     //shuffle the keys generation_quantity numbers of times
     for (int i = generation_quantity; i > 0; i--)
     {
-        if (i%100 == 0) {printf("%d / %d\r", generation_quantity - i, generation_quantity);}
+        printf("%-*d / %d\r", width, generation_quantity - i, generation_quantity);
 
         // clear old stats
         blank_layout(max, &(*lt));
@@ -1813,6 +1822,13 @@ void multi_mode(char *corpus, char *layout, char *weight, int threadCount, int g
 
 int main(int argc, char **argv)
 {
+    // return cursor at exit
+    atexit(show_cursor);
+
+    // hide cursor
+    printf("\033[?25l");
+
+    srand(time(NULL));
     // set defaults
     char *corpus = "shai";
     int corpus_malloc = 0;
@@ -1897,7 +1913,7 @@ int main(int argc, char **argv)
             			threadCount = atoi(argv[i+1]);
             		}
                     if (generation_quantity < 1) {error_out("Invalid threads.");}
-		    break;
+                    break;
 
                 // quite output
                 case 'q':
